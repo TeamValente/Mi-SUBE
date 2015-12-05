@@ -14,6 +14,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var mapa: MKMapView!
+    @IBOutlet weak var menuUbicarme: UIView!
+
+    @IBOutlet weak var constraintMenuUbicarme: NSLayoutConstraint!
+    
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
@@ -25,6 +29,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         //Activo el Manager
         manager = CLLocationManager()
+        //Arranca con el menu oculto
+        self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,6 +39,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+
     override func viewDidAppear(animated: Bool) {
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestAlwaysAuthorization()
@@ -78,6 +86,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         print(error)
     }
     
+    //MARK: Gestos
+    @IBAction func tabMenuUbicar(sender: AnyObject){
+        self.manejarMenuUbicarme()
+    }
+    
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga){
     
@@ -90,6 +103,23 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: Funciones generales
+    
+    func manejarMenuUbicarme()
+    {
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1.5, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
+            
+            if self.constraintMenuUbicarme.constant != 0{
+                self.constraintMenuUbicarme.constant = 0
+                
+            }else
+            {
+                self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
+                
+            }
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
+    
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
         
