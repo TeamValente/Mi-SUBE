@@ -59,7 +59,7 @@ class PuntoCarga{
         let currentDate = NSDate()
         
         if self.hourClose + self.hourOpen == 0{
-        //Sin horario determinado devuelvo false
+            //Sin horario determinado devuelvo false
             return false
         }
         
@@ -80,7 +80,8 @@ class PuntoCarga{
         if self.hourClose + self.hourOpen != 0{
             let apertura = "\(self.hourOpen):00"
             let cierre = "\(self.hourClose):00"
-            return "\(self.type) abre de: \(apertura) hasta las \(cierre)"
+            
+            return "\(self.type), atiende de: \(apertura) a \(cierre) Hs."
         }else //En caso de que no tenga horario cargado muestro solo el tipo
         {
             return "\(self.type)"

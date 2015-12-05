@@ -15,12 +15,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Outlets
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var menuUbicarme: UIView!
-
+    
     @IBOutlet weak var constraintMenuUbicarme: NSLayoutConstraint!
     
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
+    var miUbicacion:MiUbicacion?
     
     
     //MARK: UIViewController
@@ -31,7 +32,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         manager = CLLocationManager()
         //Arranca con el menu oculto
         self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
-    
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,7 +40,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     override func viewDidAppear(animated: Bool) {
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestAlwaysAuthorization()
@@ -66,8 +67,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             manager.startUpdatingLocation()
         }
         manager.delegate = self
-        
+        //En este punto cargo los centro que vienen por defecto
         self.obtenerPuntosDeCargas()
+        
+        
     }
     
     //MARK: CLLocationManagerDelegate
@@ -79,6 +82,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             mapa.userLocation.title = "Te encontre"
             mapa.showsUserLocation = true
             mapa.setRegion(region, animated: true)
+            self.miUbicacion = MiUbicacion(lat: location.coordinate.longitude,lon: location.coordinate.longitude)
+            obtenerPuntosDeCargas()
+            
         }
     }
     
@@ -92,22 +98,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     //MARK: Botonera Ubicarme
-   
+    
     @IBAction func buscarmeEnElMundo() {
         manager.startUpdatingLocation()
-    
+        
     }
     
-   
+    
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga){
-    
+        
         let dropPin = MKPointAnnotation()
         dropPin.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
         dropPin.title = miPunto.address
         dropPin.subtitle = String(miPunto.detalleParaMapa())
         mapa.addAnnotation(dropPin)
-    
+        
     }
     
     //MARK: Funciones generales
@@ -131,17 +137,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
         
-        servidorDePuntos.obtenerPuntos{ (puntoCargo) -> () in
+        //Borro todos los puntos para volver a cargarlos
+        mapa.removeAnnotations(mapa.annotations)
+        
+        servidorDePuntos.obtenerPuntos(self.miUbicacion){(puntoCargo) -> () in
             if let misPuntos = puntoCargo{
-                
                 for miPunto in misPuntos{
                     self.marcarPuntoEnMapa(miPunto)
                 }
-                
             }
+            
         }
+       
+        
     }
-    
-    
+
+
+
 }
 
