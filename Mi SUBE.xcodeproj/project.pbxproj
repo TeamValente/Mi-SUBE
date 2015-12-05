@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
-		EC94BF9D1C1396F0005A88A2 /* buenos_aires.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC94BF9C1C1396F0005A88A2 /* buenos_aires.gpx */; };
 		ECC647B71C12822600896171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B61C12822600896171 /* AppDelegate.swift */; };
 		ECC647B91C12822600896171 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B81C12822600896171 /* MapController.swift */; };
 		ECC647BC1C12822600896171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BA1C12822600896171 /* Main.storyboard */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
-		EC94BF9C1C1396F0005A88A2 /* buenos_aires.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = buenos_aires.gpx; sourceTree = "<group>"; };
 		ECC647B31C12822600896171 /* Mi SUBE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi SUBE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC647B61C12822600896171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECC647B81C12822600896171 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
@@ -54,7 +52,6 @@
 		ECC647AA1C12822600896171 = {
 			isa = PBXGroup;
 			children = (
-				EC94BF9C1C1396F0005A88A2 /* buenos_aires.gpx */,
 				ECC647CC1C12832F00896171 /* MapKit.framework */,
 				ECC647CA1C12832A00896171 /* CoreLocation.framework */,
 				ECC647B51C12822600896171 /* Mi SUBE */,
@@ -178,7 +175,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC94BF9D1C1396F0005A88A2 /* buenos_aires.gpx in Resources */,
 				ECC647C11C12822600896171 /* LaunchScreen.storyboard in Resources */,
 				ECC647BE1C12822600896171 /* Assets.xcassets in Resources */,
 				ECC647BC1C12822600896171 /* Main.storyboard in Resources */,
