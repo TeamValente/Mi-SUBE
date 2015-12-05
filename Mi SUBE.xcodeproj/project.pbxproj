@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
 		ECC647B71C12822600896171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B61C12822600896171 /* AppDelegate.swift */; };
 		ECC647B91C12822600896171 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B81C12822600896171 /* MapController.swift */; };
 		ECC647BC1C12822600896171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BA1C12822600896171 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
 		ECC647B31C12822600896171 /* Mi SUBE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi SUBE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC647B61C12822600896171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECC647B81C12822600896171 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC647D01C12938A00896171 /* PuntoCarga.swift */,
+				EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
+				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
 				ECC647B91C12822600896171 /* MapController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
 				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
@@ -339,6 +343,7 @@
 				ECC647C71C12822600896171 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

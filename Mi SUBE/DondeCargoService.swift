@@ -8,8 +8,6 @@
 
 import Foundation
 
-
-
 class DondeCargoService{
     
     func generarURLValida(url: String) -> String {
@@ -18,11 +16,41 @@ class DondeCargoService{
         
     }
     
-    func obtenerPuntos(callback: [PuntoCarga]? ->()){
+    //Esta funcion se conecta por POST y pasa las cordenadas que se obtienen del manager location
+    func obtenerPuntosCercanos(lat:String,lng: String, callback: [PuntoCarga]? ->()){
         
-        let urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
+        var urlString: String
+        urlString = generarURLValida("http://dondecargolasube.com.ar/core/")
+        if let url = NSURL(string: urlString) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0)){
+                let request = NSMutableURLRequest(URL: url)
+                let bodyData = "query=getNearPoints&params[lat]=\(lat)&params[lng]=\(lng)"
+                request.HTTPMethod = "POST"
+                request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+                let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
+                    if data != nil {
+                        print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+                    }
+                }
+                task.resume()
+            }
+        }
+    }
+    
+    
+    //Esta funcion se conecta por GET y trae 299 puntos cercanos al obelisco
+    func obtenerPuntos(dondeEstoy: MiUbicacion? , callback: [PuntoCarga]? ->()){
+        
+        var urlString: String
+        
+        if dondeEstoy == nil{
+        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
+        }else
+        {
+        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints&params[lat]=\(dondeEstoy?.longitude)&params[lng]=\(dondeEstoy?.latitude)")
+        }
+        
         let url = NSURL(string: urlString)
-        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0)){
             
             var listadoPuntos = [PuntoCarga]()
@@ -32,6 +60,7 @@ class DondeCargoService{
             if let data = NSData(contentsOfURL:url!){
                 do{
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
+                    //print(jsonDictionary.count)
                     for index in 0...jsonDictionary.count-1{
                         let item : AnyObject? = jsonDictionary[index]
                         let punto = item as! Dictionary<String, AnyObject>
