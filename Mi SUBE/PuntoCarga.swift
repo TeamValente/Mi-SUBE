@@ -53,6 +53,28 @@ class PuntoCarga{
         
     }
     
+    func estaAbierto()->Bool
+    {
+        //Get Current Date
+        let currentDate = NSDate()
+        
+        if self.hourClose + self.hourOpen == 0{
+        //Sin horario determinado devuelvo false
+            return false
+        }
+        
+        if currentDate.hour() >= self.hourOpen && currentDate.hour() < self.hourClose
+        {
+            return true
+        }else if self.hourOpen <= self.hourClose
+        {
+            return true
+        }else{
+            return false
+        }
+    
+    }
+    
     func detalleParaMapa()->String{
     
         if self.hourClose + self.hourOpen != 0{
