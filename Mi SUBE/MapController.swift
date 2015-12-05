@@ -82,7 +82,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             mapa.userLocation.title = "Te encontre"
             mapa.showsUserLocation = true
             mapa.setRegion(region, animated: true)
-            self.miUbicacion = MiUbicacion(lat: location.coordinate.longitude,lon: location.coordinate.longitude)
+            self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
             obtenerPuntosDeCargas()
             
         }
@@ -136,12 +136,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
-        
-        //Borro todos los puntos para volver a cargarlos
-        mapa.removeAnnotations(mapa.annotations)
-        
         servidorDePuntos.obtenerPuntos(self.miUbicacion){(puntoCargo) -> () in
             if let misPuntos = puntoCargo{
+                //Borro todos los puntos para volver a cargarlos
+                self.mapa.removeAnnotations(self.mapa.annotations)
                 for miPunto in misPuntos{
                     self.marcarPuntoEnMapa(miPunto)
                 }

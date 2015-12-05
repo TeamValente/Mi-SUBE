@@ -43,11 +43,13 @@ class DondeCargoService{
         
         var urlString: String
         
-        if dondeEstoy == nil{
-        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
+        if let ubicacion = dondeEstoy {
+            urlString = "http://dondecargolasube.com.ar/core/?query=getNearPoints&params[lat]=\(ubicacion.latitude)&params[lng]=\(ubicacion.longitude)"
         }else
         {
-        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints&params[lat]=\(dondeEstoy?.longitude)&params[lng]=\(dondeEstoy?.latitude)")
+            
+            urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
+
         }
         
         let url = NSURL(string: urlString)
