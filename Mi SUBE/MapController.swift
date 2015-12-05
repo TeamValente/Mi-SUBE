@@ -91,6 +91,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         self.manejarMenuUbicarme()
     }
     
+    //MARK: Botonera Ubicarme
+   
+    @IBAction func buscarmeEnElMundo() {
+        manager.startUpdatingLocation()
+    
+    }
+    
+   
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga){
     

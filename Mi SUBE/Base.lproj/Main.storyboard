@@ -33,6 +33,9 @@
                                         <rect key="frame" x="570" y="8" width="22" height="22"/>
                                         <animations/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="buscarmeEnElMundo" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKZ-NH-QXe"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -58,7 +61,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="constraintMenuUbicarme" destination="FsR-1b-CLx" id="CzC-rK-rj7"/>
+                        <outlet property="constraintMenuUbicarme" destination="FsR-1b-CLx" id="0f6-qT-Hwi"/>
                         <outlet property="mapa" destination="RsN-Gz-LKJ" id="GA5-nD-I5D"/>
                         <outlet property="menuUbicarme" destination="LjZ-w6-P1b" id="GLV-2I-m1p"/>
                     </connections>
