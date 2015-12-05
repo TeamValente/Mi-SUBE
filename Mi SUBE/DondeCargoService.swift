@@ -43,7 +43,7 @@ class DondeCargoService{
         
         var urlString: String
         
-        if dondeEstoy != nil{
+        if dondeEstoy == nil{
         urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
         }else
         {
@@ -60,6 +60,7 @@ class DondeCargoService{
             if let data = NSData(contentsOfURL:url!){
                 do{
                     let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
+                    //print(jsonDictionary.count)
                     for index in 0...jsonDictionary.count-1{
                         let item : AnyObject? = jsonDictionary[index]
                         let punto = item as! Dictionary<String, AnyObject>
