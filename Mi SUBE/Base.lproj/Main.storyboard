@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-Gz-LKJ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="602" height="600"/>
                                 <animations/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -52,7 +52,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="LjZ-w6-P1b" secondAttribute="trailing" constant="-20" id="6G1-3R-CSS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RsN-Gz-LKJ" secondAttribute="trailing" constant="-20" id="9Vw-39-epW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RsN-Gz-LKJ" secondAttribute="trailing" constant="-22" id="9Vw-39-epW"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="FOZ-1k-ZOy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LjZ-w6-P1b" secondAttribute="bottom" id="FsR-1b-CLx"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="MRL-RZ-UBZ"/>
