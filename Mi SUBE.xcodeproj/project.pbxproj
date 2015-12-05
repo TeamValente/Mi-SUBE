@@ -1,0 +1,294 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECC647B71C12822600896171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B61C12822600896171 /* AppDelegate.swift */; };
+		ECC647B91C12822600896171 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B81C12822600896171 /* ViewController.swift */; };
+		ECC647BC1C12822600896171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BA1C12822600896171 /* Main.storyboard */; };
+		ECC647BE1C12822600896171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BD1C12822600896171 /* Assets.xcassets */; };
+		ECC647C11C12822600896171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BF1C12822600896171 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ECC647B31C12822600896171 /* Mi SUBE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi SUBE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECC647B61C12822600896171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECC647B81C12822600896171 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECC647BB1C12822600896171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECC647BD1C12822600896171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECC647C01C12822600896171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECC647C21C12822600896171 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECC647B01C12822600896171 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECC647AA1C12822600896171 = {
+			isa = PBXGroup;
+			children = (
+				ECC647B51C12822600896171 /* Mi SUBE */,
+				ECC647B41C12822600896171 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECC647B41C12822600896171 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECC647B31C12822600896171 /* Mi SUBE.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECC647B51C12822600896171 /* Mi SUBE */ = {
+			isa = PBXGroup;
+			children = (
+				ECC647B61C12822600896171 /* AppDelegate.swift */,
+				ECC647B81C12822600896171 /* ViewController.swift */,
+				ECC647BA1C12822600896171 /* Main.storyboard */,
+				ECC647BD1C12822600896171 /* Assets.xcassets */,
+				ECC647BF1C12822600896171 /* LaunchScreen.storyboard */,
+				ECC647C21C12822600896171 /* Info.plist */,
+			);
+			path = "Mi SUBE";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECC647B21C12822600896171 /* Mi SUBE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECC647C51C12822600896171 /* Build configuration list for PBXNativeTarget "Mi SUBE" */;
+			buildPhases = (
+				ECC647AF1C12822600896171 /* Sources */,
+				ECC647B01C12822600896171 /* Frameworks */,
+				ECC647B11C12822600896171 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mi SUBE";
+			productName = "Mi SUBE";
+			productReference = ECC647B31C12822600896171 /* Mi SUBE.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECC647AB1C12822600896171 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Hernan Matias Coppola";
+				TargetAttributes = {
+					ECC647B21C12822600896171 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = M28HMKLN5F;
+					};
+				};
+			};
+			buildConfigurationList = ECC647AE1C12822600896171 /* Build configuration list for PBXProject "Mi SUBE" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECC647AA1C12822600896171;
+			productRefGroup = ECC647B41C12822600896171 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECC647B21C12822600896171 /* Mi SUBE */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECC647B11C12822600896171 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC647C11C12822600896171 /* LaunchScreen.storyboard in Resources */,
+				ECC647BE1C12822600896171 /* Assets.xcassets in Resources */,
+				ECC647BC1C12822600896171 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECC647AF1C12822600896171 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECC647B91C12822600896171 /* ViewController.swift in Sources */,
+				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ECC647BA1C12822600896171 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECC647BB1C12822600896171 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECC647BF1C12822600896171 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECC647C01C12822600896171 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECC647C31C12822600896171 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECC647C41C12822600896171 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECC647C61C12822600896171 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Mi SUBE/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kashwaksoft.Mi-SUBE";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ECC647C71C12822600896171 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Mi SUBE/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kashwaksoft.Mi-SUBE";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECC647AE1C12822600896171 /* Build configuration list for PBXProject "Mi SUBE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC647C31C12822600896171 /* Debug */,
+				ECC647C41C12822600896171 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECC647C51C12822600896171 /* Build configuration list for PBXNativeTarget "Mi SUBE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECC647C61C12822600896171 /* Debug */,
+				ECC647C71C12822600896171 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECC647AB1C12822600896171 /* Project object */;
+}
