@@ -14,5 +14,6 @@ class CustomPointAnnotation: MKPointAnnotation {
     var index: Int!
     var alpha: CGFloat!
     var imageSelected: String!
+    var datos: PuntoCarga!
     
 }
