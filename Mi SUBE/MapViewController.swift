@@ -98,6 +98,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if !(view.annotation is CustomPointAnnotation) {
+            return
+        }
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageSelected)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
@@ -110,6 +113,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+        if !(view.annotation is CustomPointAnnotation) {
+            return
+        }
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageName)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
