@@ -13,7 +13,7 @@
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
 		ECA2E3DB1C13AF9500A6CA6E /* Davo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */; };
 		ECC647B71C12822600896171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B61C12822600896171 /* AppDelegate.swift */; };
-		ECC647B91C12822600896171 /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B81C12822600896171 /* MapController.swift */; };
+		ECC647B91C12822600896171 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B81C12822600896171 /* MapViewController.swift */; };
 		ECC647BC1C12822600896171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BA1C12822600896171 /* Main.storyboard */; };
 		ECC647BE1C12822600896171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BD1C12822600896171 /* Assets.xcassets */; };
 		ECC647C11C12822600896171 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BF1C12822600896171 /* LaunchScreen.storyboard */; };
@@ -32,7 +32,7 @@
 		ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Davo.gpx; sourceTree = "<group>"; };
 		ECC647B31C12822600896171 /* Mi SUBE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi SUBE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC647B61C12822600896171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECC647B81C12822600896171 /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
+		ECC647B81C12822600896171 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ECC647BB1C12822600896171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECC647BD1C12822600896171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC647C01C12822600896171 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		ECC647C81C1282AE00896171 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				ECC647B81C12822600896171 /* MapController.swift */,
+				ECC647B81C12822600896171 /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
 				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
 				EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */,
-				ECC647B91C12822600896171 /* MapController.swift in Sources */,
+				ECC647B91C12822600896171 /* MapViewController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
 				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
 				EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */,
