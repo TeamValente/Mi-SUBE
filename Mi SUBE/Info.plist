@@ -44,7 +44,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Vamos a usar tu ubicacion para encontrarte en el mapa</string>
+	<string>Vamos a usar tu ubicación para encontrarte en el mapa</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

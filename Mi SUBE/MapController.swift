@@ -108,11 +108,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga){
         
-        let dropPin = MKPointAnnotation()
-        dropPin.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
-        dropPin.title = miPunto.address
-        dropPin.subtitle = String(miPunto.detalleParaMapa())
-        mapa.addAnnotation(dropPin)
+//        let dropPin = MKPointAnnotation()
+//        dropPin.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
+//        dropPin.title = miPunto.address
+//        dropPin.subtitle = String(miPunto.detalleParaMapa())
+//        mapa.addAnnotation(dropPin)
+        
+        let pinFactory = MarketFactory()
+        mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
         
     }
     

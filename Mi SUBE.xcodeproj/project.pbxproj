@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC5B5BE41C14972200327D19 /* MarketFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarketFactory.swift */; };
+		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
 		ECA2E3DB1C13AF9500A6CA6E /* Davo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC5B5BE31C14972200327D19 /* MarketFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketFactory.swift; sourceTree = "<group>"; };
+		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Congreso.gpx; sourceTree = "<group>"; };
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
 		ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Davo.gpx; sourceTree = "<group>"; };
@@ -53,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC5B5BE21C1496F500327D19 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				EC5B5BE31C14972200327D19 /* MarketFactory.swift */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
 		ECC647AA1C12822600896171 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +88,7 @@
 		ECC647B51C12822600896171 /* Mi SUBE */ = {
 			isa = PBXGroup;
 			children = (
+				EC5B5BE21C1496F500327D19 /* Factory */,
 				ECC647D51C12B3A700896171 /* Utils */,
 				ECC647D21C12939100896171 /* Model */,
 				ECC647C91C1282C400896171 /* Services */,
@@ -110,6 +123,7 @@
 			children = (
 				ECC647D01C12938A00896171 /* PuntoCarga.swift */,
 				EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */,
+				EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -198,9 +212,11 @@
 			files = (
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
 				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
+				EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */,
 				ECC647B91C12822600896171 /* MapController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
 				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
+				EC5B5BE41C14972200327D19 /* MarketFactory.swift in Sources */,
 				ECC647D11C12938A00896171 /* PuntoCarga.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
