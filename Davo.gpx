@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="Geovative Solutions GeoTours" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+<metadata>
+  <name>buenos aires</name>
+  <desc>Tour turistico de la ciudad de buenos aires</desc>
+  <author>
+    <name>djerez, using GeoTours</name>
+    <link href="http://www.geovative.com/view?t=JHKL">
+      <text>buenos aires</text>
+    </link>
+  </author>
+  <link href="http://www.geovative.com/view?t=JHKL">
+    <text>buenos aires</text>
+  </link>
+  <time>2008-10-21T06:19:11</time>
+  <keywords>buenos aires
+capital federal
+argentina
+</keywords>
+</metadata>
+<wpt lat="-34.5860414" lon="-58.4378621">
+    <name>Congreso Nacional</name>
+    <desc>El Palacio del Congreso de la NaciÃ³n Argentina es el edificio donde desarrolla sus actividades el Congreso de la NaciÃ³n de la RepÃºblica Argentina. Se encuentra ubicado en la Ciudad de Buenos Aires, en la manzana limitada por la Avenida Rivadavia, Combate de Los Pozos, Avenida Entre RÃ­os e HipÃ³lito Yrigoyen, con una superficie de manzana de 12.079,60 m2.
+        El 8 de enero de 1896 la obra fue adjudicada al Italiano VÃ­ctor Meano, siendo el contrato aprobado el 31 de julio de ese aÃ±o. Se realizÃ³ una licitaciÃ³n el 31 de julio de 1897, y la obra fue adjudicada a la empresa constructora Pablo Besana y CÃ­a. por 5.776.745 pesos moneda nacional.
+        
+        La obra fue iniciada en agosto de 1897, y hasta su inauguraciÃ³n el 12 de mayo de 1906 fueron contratados mil operarios. Si bien fue inaugurado en 1906, las obras fueron finalizadas reciÃ©n en 1946, siendo completado casi 50 aÃ±os despuÃ©s de su planificaciÃ³n. El presupuesto para su construcciÃ³n pasÃ³ de los casi 6 millones de pesos moneda nacional en 1897, a superar los 31,4 millones en 1914, por esta razÃ³n fue bautizado por algunos periodistas como el Palacio de Oro, por la velocidad en que se gastaban las partidas presupuestarias.
+        
+        El 1 de julio de 1904 fue asesinado VÃ­ctor Meano, por lo que la finalizaciÃ³n de la obra quedÃ³ a cargo del arquitecto belga Julio Dormal, quien respetÃ³ el proyecto original.
+        
+        El Palacio fue inaugurado el 12 de mayo de 1906 para la apertura del 45Âº PerÃ­odo Legislativo, iniciado por el entonces Presidente JosÃ© Figueroa Alcorta.</desc>
+    <link href="Data/Location6478-8"/>
+    <sym>Waypoint</sym>
+    <extensions>
+        <gpxx:WaypointExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd">
+            <gpxx:Proximity>152.4</gpxx:Proximity>
+            <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+        </gpxx:WaypointExtension>
+    </extensions>
+</wpt>
+</gpx>

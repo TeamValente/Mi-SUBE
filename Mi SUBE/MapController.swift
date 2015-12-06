@@ -121,14 +121,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     func manejarMenuUbicarme()
     {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1.5, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-            
             if self.constraintMenuUbicarme.constant != 0{
                 self.constraintMenuUbicarme.constant = 0
                 
             }else
             {
                 self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
-                
             }
             self.view.layoutIfNeeded()
             }, completion: nil)
@@ -136,7 +134,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
-        servidorDePuntos.obtenerPuntos(self.miUbicacion){(puntoCargo) -> () in
+        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
             if let misPuntos = puntoCargo{
                 //Borro todos los puntos para volver a cargarlos
                 self.mapa.removeAnnotations(self.mapa.annotations)
@@ -144,13 +142,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                     self.marcarPuntoEnMapa(miPunto)
                 }
             }
-            
         }
-       
-        
     }
-
-
-
 }
 
