@@ -47,6 +47,7 @@ class MarkerFactory{
         //point.index = miPunto.idPunto
         puntoRetorno.imageSelected = "mk_selected"
         puntoRetorno.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
+        puntoRetorno.datos = miPunto
         
         return puntoRetorno
     }
