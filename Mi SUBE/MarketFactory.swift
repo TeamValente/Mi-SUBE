@@ -16,7 +16,7 @@ class MarketFactory{
     {
         
         let point = CustomPointAnnotation()
-        point.imageName = "ic_marker"
+        point.imageName = "flag.png"
         return point
         
     }
@@ -25,7 +25,7 @@ class MarketFactory{
     {
         
         let point = CustomPointAnnotation()
-        point.imageName = "ic_marker"
+        point.imageName = "flag.png"
         return point
         
     }
@@ -44,7 +44,7 @@ class MarketFactory{
         }
         puntoRetorno.title = miPunto.address
         puntoRetorno.subtitle = miPunto.detalleParaMapa()
-        //point.index = i
+        //point.index = miPunto.idPunto
         puntoRetorno.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
     
         return puntoRetorno

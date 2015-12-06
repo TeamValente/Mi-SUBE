@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     //MARK: Outlets
     @IBOutlet weak var mapa: MKMapView!
@@ -69,6 +69,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         manager.delegate = self
         //En este punto cargo los centro que vienen por defecto
         self.obtenerPuntosDeCargas()
+        mapa.delegate = self
         
         
     }
@@ -90,6 +91,36 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print(error)
+    }
+    
+    
+    //MARK: MKMapViewDelegate
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        
+        
+        let reuseId = "pin"
+        
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
+        }
+        else {
+            anView!.annotation = annotation
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = UIImage(named:cpa.imageName)
+        
+        return anView
+
     }
     
     //MARK: Gestos
