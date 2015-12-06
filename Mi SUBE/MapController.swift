@@ -69,6 +69,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         manager.delegate = self
         //En este punto cargo los centro que vienen por defecto
         self.obtenerPuntosDeCargas()
+        //guardo las coordenadas que se muestran en primera instancia
+        self.miUbicacion?.longitude = mapa.region.center.longitude
+        self.miUbicacion?.latitude = mapa.region.center.latitude
+        
         mapa.delegate = self
         
         
@@ -78,9 +82,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation() //Parar de buscar la ubicacion
         if let location = locations.last{
-            let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+            let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
-            mapa.userLocation.title = "Te encontre"
+            mapa.userLocation.title = "Tu ubicación"
             mapa.showsUserLocation = true
             mapa.setRegion(region, animated: true)
             self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
@@ -98,21 +102,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageSelected)
+        let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
+        let region = MKCoordinateRegion(center: cpa.coordinate, span: span)
+        mapa.setRegion(region, animated: true)
+        
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageName)
+        let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
+        let region = MKCoordinateRegion(center: mapa.userLocation.coordinate, span: span)
+        mapa.setRegion(region, animated: true)
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is CustomPointAnnotation) {
             return nil
         }
-        
-        
         let reuseId = "pin"
-        
         var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if anView == nil {
             anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
@@ -124,7 +132,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Set annotation-specific properties **AFTER**
         //the view is dequeued or created...
-        
         let cpa = annotation as! CustomPointAnnotation
         anView!.image = UIImage(named:cpa.imageName)
         

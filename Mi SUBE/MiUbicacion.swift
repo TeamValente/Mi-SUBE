@@ -13,10 +13,11 @@ class MiUbicacion{
     var latitude: Double
     var longitude: Double
 
-
     init(lat: Double,lon: Double)
     {
         self.latitude = lat
         self.longitude = lon
     }
+    
+    
 }
