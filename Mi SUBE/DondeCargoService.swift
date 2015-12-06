@@ -11,18 +11,11 @@ import Foundation
 class DondeCargoService{
     
     func generarURLValida(url: String) -> String {
-        
         return url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-        
-    }
-    
-    func obtenerPuntosSUBEOficial(callback: [PuntoCarga]? ->()){
-        
     }
     
     //Esta funcion se conecta por POST y pasa las cordenadas que se obtienen del manager location
     func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? ->()){
-        
         var urlString: String
         urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
         if let url = NSURL(string: urlString) {
@@ -31,7 +24,6 @@ class DondeCargoService{
                 if dondeEstoy != nil{
                     let bodyData = "session=1390472&params[lat]=\(dondeEstoy!.latitude)&params[lng]=\(dondeEstoy!.longitude)"
                     request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
-                    
                 }
                 request.HTTPMethod = "POST"
                 let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
@@ -39,15 +31,13 @@ class DondeCargoService{
                         print("error=\(error)")
                         return
                     }
-                    
-                    print("response = \(response)")
-                    
-                    let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    print("responseString = \(responseString)")
+//                    print("response = \(response)")
+//                    
+//                    let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+//                    print("responseString = \(responseString)")
                     var listadoPuntos = [PuntoCarga]()
                     var horaApertura = 0
                     var horaCierre = 0
-                    
                     //Parseo el data
                     do{
                         let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSArray
@@ -92,9 +82,8 @@ class DondeCargoService{
         }
     }
     
-    
-    //Esta funcion se conecta por GET y trae 299 puntos por defecto
-    func obtenerPuntos(dondeEstoy: MiUbicacion? , callback: [PuntoCarga]? ->()){
+    //Esta funcion se conecta por GET y trae 299 puntos por defecto NO SE USA MAS
+    func obtenerPuntosGET(dondeEstoy: MiUbicacion? , callback: [PuntoCarga]? ->()){
         var urlString: String
         if let ubicacion = dondeEstoy {
             urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints&session=1390472&&params[lat]=\(ubicacion.latitude)&params[lng]=\(ubicacion.longitude)")
