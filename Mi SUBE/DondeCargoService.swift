@@ -28,13 +28,9 @@ class DondeCargoService{
                 request.HTTPMethod = "POST"
                 let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
                     if error != nil {
-                        print("error=\(error)")
-                        return
+                        //print("error=\(error)")
+                        callback(nil)
                     }
-//                    print("response = \(response)")
-//                    
-//                    let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-//                    print("responseString = \(responseString)")
                     var listadoPuntos = [PuntoCarga]()
                     var horaApertura = 0
                     var horaCierre = 0
