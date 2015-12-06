@@ -69,8 +69,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         manager.delegate = self
         //En este punto cargo los centro que vienen por defecto
         self.obtenerPuntosDeCargas()
-        //guardo las coordenadas que se muestran en primera instancia
-        self.miUbicacion = MiUbicacion(lat: mapa.region.center.latitude,lon: mapa.region.center.longitude)
+        //Pongo coordenadas en el obelisco antes que nada
+        self.miUbicacion = MiUbicacion(lat: -34.603075,lon: -58.381653)
         mapa.delegate = self
         
         
@@ -98,6 +98,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: MKMapViewDelegate
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        if !(view.annotation is CustomPointAnnotation) {
+            return
+        }
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageSelected)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
@@ -110,6 +113,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+        if !(view.annotation is CustomPointAnnotation) {
+            return
+        }
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageName)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
