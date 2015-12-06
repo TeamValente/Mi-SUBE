@@ -16,7 +16,7 @@ class MarketFactory{
     {
         
         let point = CustomPointAnnotation()
-        point.imageName = "flag.png"
+        point.imageName = "mk"
         return point
         
     }
@@ -25,7 +25,7 @@ class MarketFactory{
     {
         
         let point = CustomPointAnnotation()
-        point.imageName = "flag.png"
+        point.imageName = "mk_close"
         return point
         
     }
