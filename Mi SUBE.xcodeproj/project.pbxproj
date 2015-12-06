@@ -57,13 +57,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC2E09651C14D2EA0089D23F /* Delegators */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Delegators;
-			sourceTree = "<group>";
-		};
 		EC5B5BE21C1496F500327D19 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +88,6 @@
 		ECC647B51C12822600896171 /* Mi SUBE */ = {
 			isa = PBXGroup;
 			children = (
-				EC2E09651C14D2EA0089D23F /* Delegators */,
 				EC5B5BE21C1496F500327D19 /* Factory */,
 				ECC647D51C12B3A700896171 /* Utils */,
 				ECC647D21C12939100896171 /* Model */,
