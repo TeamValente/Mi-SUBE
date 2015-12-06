@@ -70,7 +70,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //En este punto cargo los centro que vienen por defecto
         self.obtenerPuntosDeCargas()
         //Pongo coordenadas en el obelisco antes que nada
-        self.miUbicacion = MiUbicacion(lat: -34.603075,lon: -34.603075)
+        self.miUbicacion = MiUbicacion(lat: -34.603075,lon: -58.381653)
         mapa.delegate = self
         
         
