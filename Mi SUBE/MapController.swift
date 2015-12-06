@@ -161,7 +161,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 //        dropPin.subtitle = String(miPunto.detalleParaMapa())
 //        mapa.addAnnotation(dropPin)
         
-        let pinFactory = MarketFactory()
+        let pinFactory = MarkerFactory()
         mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
         
     }

@@ -9,7 +9,7 @@
 import Foundation
 import MapKit
 
-class MarketFactory{
+class MarkerFactory{
 
 
     private func makeMarkerOpen()->CustomPointAnnotation
