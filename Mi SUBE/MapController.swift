@@ -95,6 +95,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     //MARK: MKMapViewDelegate
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        let cpa = view.annotation as! CustomPointAnnotation
+        view.image = UIImage(named:cpa.imageSelected)
+    }
+    
+    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+        let cpa = view.annotation as! CustomPointAnnotation
+        view.image = UIImage(named:cpa.imageName)
+    }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is CustomPointAnnotation) {

@@ -45,6 +45,7 @@ class MarketFactory{
         puntoRetorno.title = miPunto.address
         puntoRetorno.subtitle = miPunto.detalleParaMapa()
         //point.index = miPunto.idPunto
+        puntoRetorno.imageSelected = "mk_fav"
         puntoRetorno.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
     
         return puntoRetorno

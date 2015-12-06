@@ -12,4 +12,7 @@ import MapKit
 class CustomPointAnnotation: MKPointAnnotation {
     var imageName: String!
     var index: Int!
+    var alpha: CGFloat!
+    var imageSelected: String!
+    
 }
