@@ -70,9 +70,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //En este punto cargo los centro que vienen por defecto
         self.obtenerPuntosDeCargas()
         //guardo las coordenadas que se muestran en primera instancia
-        self.miUbicacion?.longitude = mapa.region.center.longitude
-        self.miUbicacion?.latitude = mapa.region.center.latitude
-        
+        self.miUbicacion = MiUbicacion(lat: mapa.region.center.latitude,lon: mapa.region.center.longitude)
         mapa.delegate = self
         
         
@@ -115,7 +113,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageName)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
-        let region = MKCoordinateRegion(center: mapa.userLocation.coordinate, span: span)
+        let region = MKCoordinateRegion(center: self.miUbicacion!.coordinate, span: span)
         mapa.setRegion(region, animated: true)
     }
     
@@ -151,22 +149,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func buscarmeEnElMundo() {
         manager.startUpdatingLocation()
-        
     }
     
     
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga){
-        
-//        let dropPin = MKPointAnnotation()
-//        dropPin.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
-//        dropPin.title = miPunto.address
-//        dropPin.subtitle = String(miPunto.detalleParaMapa())
-//        mapa.addAnnotation(dropPin)
-        
         let pinFactory = MarkerFactory()
         mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
-        
     }
     
     //MARK: Funciones generales
