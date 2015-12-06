@@ -114,7 +114,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         view.image = UIImage(named:cpa.imageName)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: self.miUbicacion!.coordinate, span: span)
-        mapa.setRegion(region, animated: true)
+//        mapa.setRegion(region, animated: true)
+        UIView.animateWithDuration(0.5, animations: {
+            self.mapa.setRegion(region, animated: true);
+            }, completion: nil)
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
