@@ -31,6 +31,11 @@ class DondeCargoService{
                         //print("error=\(error)")
                         callback(nil)
                     }
+                    
+                    if data == nil{
+                        callback(nil)
+                    }
+                    
                     var listadoPuntos = [PuntoCarga]()
                     var horaApertura = 0
                     var horaCierre = 0
