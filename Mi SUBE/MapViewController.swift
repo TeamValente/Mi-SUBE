@@ -18,6 +18,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBOutlet weak var constraintMenuUbicarme: NSLayoutConstraint!
     
+    //MARK: OutletsDetail
+    @IBOutlet weak var selectedPointDirection: UILabel!
+    @IBOutlet weak var selectedPointHours: UILabel!
+    @IBOutlet weak var selectedPointSellSube: UILabel!
+    @IBOutlet weak var selectedPointType: UILabel!
+    
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
@@ -109,7 +115,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         UIView.animateWithDuration(0.5, animations: {
             self.mapa.setRegion(region, animated: true);
-            }, completion: nil)
+        }, completion: nil)
+        
+        // seteamos los datos en el detalle
+        self.selectedPointDirection.text = cpa.datos.address
+        
+        if cpa.datos.estaAbierto() {
+            self.selectedPointHours.text = "\(cpa.datos.hourOpen) AM - \(cpa.datos.hourClose) PM, Abierto ahora"
+        } else {
+            self.selectedPointHours.text = "\(cpa.datos.hourOpen) AM - \(cpa.datos.hourClose) PM, Cerrado"
+        }
+        
+        if cpa.datos.vendeSube() {
+            self.selectedPointSellSube.text = "Si"
+        } else {
+            self.selectedPointSellSube.text = "No"
+        }
+        
+        self.selectedPointType.text = cpa.datos.type
+        
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
