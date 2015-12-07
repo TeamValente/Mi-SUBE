@@ -116,7 +116,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             mapa.showsUserLocation = true
             mapa.setRegion(region, animated: false)
             
-            if (self.miUbicacion?.coordinate.latitude != location.coordinate.latitude && self.miUbicacion?.coordinate.longitude != location.coordinate.longitude ){
+            if (self.mapa.annotations.count < 2 || (self.miUbicacion?.coordinate.latitude != location.coordinate.latitude && self.miUbicacion?.coordinate.longitude != location.coordinate.longitude) ){
             self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
             obtenerPuntosDeCargas()
             }
@@ -169,6 +169,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         
         self.selectedPointType.text = cpa.datos.type
+        
+        
+//        //Prueba de agregar un punto
+//        let service: DondeCargoService
+//        service = DondeCargoService()
+//        
+//        cpa.datos.idType = 1
+//        
+//        service.agregarPuntoCarga(cpa.datos, completionHandler: {(response: Bool) -> () in
+//            print("response = \(response)")
+//        
+//        })
         
     }
     

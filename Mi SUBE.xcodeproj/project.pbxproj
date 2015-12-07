@@ -27,9 +27,9 @@
 /* Begin PBXFileReference section */
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
-		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Congreso.gpx; sourceTree = "<group>"; };
+		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Congreso.gpx; path = ../Congreso.gpx; sourceTree = "<group>"; };
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
-		ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Davo.gpx; sourceTree = "<group>"; };
+		ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Davo.gpx; path = ../Davo.gpx; sourceTree = "<group>"; };
 		ECC647B31C12822600896171 /* Mi SUBE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi SUBE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC647B61C12822600896171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECC647B81C12822600896171 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +57,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC105EE31C15C94E001847F6 /* GPX */ = {
+			isa = PBXGroup;
+			children = (
+				ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */,
+				EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */,
+			);
+			name = GPX;
+			sourceTree = "<group>";
+		};
 		EC5B5BE21C1496F500327D19 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +77,6 @@
 		ECC647AA1C12822600896171 = {
 			isa = PBXGroup;
 			children = (
-				ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */,
-				EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */,
 				ECC647CC1C12832F00896171 /* MapKit.framework */,
 				ECC647CA1C12832A00896171 /* CoreLocation.framework */,
 				ECC647B51C12822600896171 /* Mi SUBE */,
@@ -88,6 +95,7 @@
 		ECC647B51C12822600896171 /* Mi SUBE */ = {
 			isa = PBXGroup;
 			children = (
+				EC105EE31C15C94E001847F6 /* GPX */,
 				EC5B5BE21C1496F500327D19 /* Factory */,
 				ECC647D51C12B3A700896171 /* Utils */,
 				ECC647D21C12939100896171 /* Model */,
@@ -168,7 +176,7 @@
 				TargetAttributes = {
 					ECC647B21C12822600896171 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = MCJ455R27F;
+						DevelopmentTeam = M28HMKLN5F;
 					};
 				};
 			};
@@ -334,7 +342,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -348,7 +356,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
