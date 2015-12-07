@@ -98,9 +98,9 @@ class PuntoCarga{
             let cierre = "\(self.hourClose):00"
             if self.hourOpen >= self.hourClose
             {
-                return "Abierto durante las 24 Hs."
+                return "Abierto durante las 24 Hs"
             }
-            return "\(apertura) - \(cierre) Hs."
+            return "\(apertura) - \(cierre) Hs"
         }else //En caso de que no tenga horario cargado muestro solo el tipo
         {
             return "Sin horario cargado"
