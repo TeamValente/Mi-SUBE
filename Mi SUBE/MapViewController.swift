@@ -78,15 +78,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             */
             manager.distanceFilter = 10 //Metros
             manager.startUpdatingLocation()
+        }else
+        {
+            //Pongo coordenadas en el obelisco si no esta activado el GPS
+            self.miUbicacion = MiUbicacion(lat: -34.603075,lon: -58.381653)
+            self.obtenerPuntosDeCargas()
         }
+        
+        //Marco los delegates
         manager.delegate = self
-        //En este punto cargo los centro que vienen por defecto
-        self.obtenerPuntosDeCargas()
-        //Pongo coordenadas en el obelisco antes que nada
-        self.miUbicacion = MiUbicacion(lat: -34.603075,lon: -58.381653)
         mapa.delegate = self
-        
-        
+        //En este punto cargo los centro que vienen por defecto
     }
     
     //MARK: CLLocationManagerDelegate
@@ -98,9 +100,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             mapa.userLocation.title = "Tu ubicación"
             mapa.showsUserLocation = true
             mapa.setRegion(region, animated: false)
+            
+            if (self.miUbicacion?.coordinate.latitude != location.coordinate.latitude && self.miUbicacion?.coordinate.longitude != location.coordinate.longitude ){
             self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
             obtenerPuntosDeCargas()
-            
+            }
         }
     }
     
