@@ -47,19 +47,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.constraintDetalle.constant = -500
         // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        //always fill the view
-        
-        blurEffectView.frame = self.view.frame
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        
-//        blurEffectView.frame = self.detailView.frame
-        blurEffectView.layer.zPosition = -1;
-//        blurEffectView.bounds.width = self.detailView.frame.width
-//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        
-        self.detailView.addSubview(blurEffectView)
+
     
     }
     
@@ -169,6 +157,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         
         self.selectedPointType.text = cpa.datos.type
+        
+        if !(self.detailView.viewWithTag(3000) is UIVisualEffectView) {
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+            //always fill the view
+            
+            blurEffectView.frame = self.mapa.frame
+            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+            blurEffectView.layer.zPosition = -1
+            blurEffectView.autoresizesSubviews = true
+            
+            blurEffectView.tag = 3000 //le pongo este tag para no crearlo varias veces
+            
+            self.detailView.addSubview(blurEffectView)
+
+        }
         
         
 //        //Prueba de agregar un punto
