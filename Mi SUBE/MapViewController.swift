@@ -197,7 +197,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga){
         let pinFactory = MarkerFactory()
-        mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
+        mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto,muestroDatosEnPin: false))
     }
     
     //MARK: Funciones generales

@@ -31,7 +31,7 @@ class MarkerFactory{
     }
     
     
-    func makeCustomMarker(miPunto: PuntoCarga)->CustomPointAnnotation
+    func makeCustomMarker(miPunto: PuntoCarga, muestroDatosEnPin: Bool)->CustomPointAnnotation
     {
         var puntoRetorno: CustomPointAnnotation
         
@@ -42,8 +42,12 @@ class MarkerFactory{
         {
             puntoRetorno =  makeMarkerClose()
         }
-        puntoRetorno.title = miPunto.address
-        puntoRetorno.subtitle = miPunto.detalleParaMapa()
+        
+        if muestroDatosEnPin{
+            puntoRetorno.title = miPunto.address
+            puntoRetorno.subtitle = miPunto.detalleParaMapa()
+        }
+        
         //point.index = miPunto.idPunto
         puntoRetorno.imageSelected = "mk_selected"
         puntoRetorno.coordinate = CLLocationCoordinate2D(latitude: miPunto.latitude, longitude: miPunto.longitude)
