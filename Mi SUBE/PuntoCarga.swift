@@ -65,7 +65,7 @@ class PuntoCarga{
         if currentDate.hour() >= self.hourOpen && currentDate.hour() < self.hourClose
         {
             return true
-        }else if self.hourOpen <= self.hourClose
+        }else if self.hourOpen >= self.hourClose
         {
             return true
         }else{
