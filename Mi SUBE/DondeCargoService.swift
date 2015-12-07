@@ -70,6 +70,7 @@ class DondeCargoService{
                         dispatch_async(dispatch_get_main_queue()){
                             callback(listadoPuntos)
                         }
+                        
                     }catch{
                         //No logro parsear el JSON
                         dispatch_async(dispatch_get_main_queue()){
