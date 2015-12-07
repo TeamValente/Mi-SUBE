@@ -53,8 +53,7 @@ class PuntoCarga{
         
     }
     
-    func estaAbierto()->Bool
-    {
+    func estaAbierto() -> Bool {
         //Get Current Date
         let currentDate = NSDate()
         
@@ -75,7 +74,7 @@ class PuntoCarga{
     
     }
     
-    func detalleParaMapa()->String{
+    func detalleParaMapa() -> String {
     
         if self.hourClose + self.hourOpen != 0{
             let apertura = "\(self.hourOpen):00"
@@ -86,8 +85,13 @@ class PuntoCarga{
         {
             return "\(self.type)"
         }
-        
-       
+    }
+    
+    func vendeSube() -> Bool {
+        if self.flagSeller == 0 {
+            return false
+        }
+        return true
     }
     
     

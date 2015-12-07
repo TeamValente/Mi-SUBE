@@ -195,6 +195,10 @@
                         <outlet property="constraintMenuUbicarme" destination="FsR-1b-CLx" id="0f6-qT-Hwi"/>
                         <outlet property="mapa" destination="RsN-Gz-LKJ" id="GA5-nD-I5D"/>
                         <outlet property="menuUbicarme" destination="LjZ-w6-P1b" id="GLV-2I-m1p"/>
+                        <outlet property="selectedPointDirection" destination="aVP-kN-mhY" id="gbm-ah-bhd"/>
+                        <outlet property="selectedPointHours" destination="mpK-vT-KBX" id="bsB-o2-okk"/>
+                        <outlet property="selectedPointSellSube" destination="T8d-cb-pXa" id="rB7-Zq-iFf"/>
+                        <outlet property="selectedPointType" destination="Isi-I7-Lya" id="YGe-xG-9jS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
