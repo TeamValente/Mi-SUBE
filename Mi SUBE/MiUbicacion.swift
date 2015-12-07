@@ -25,5 +25,15 @@ class MiUbicacion{
         self.coordinate.longitude = lon
     }
     
+    //Devuelve la distancia en metros
+    func getDistanciaAPuntoCarga(punto: PuntoCarga) ->Double
+    {
+    
+        let metro = CLLocation(latitude: self.coordinate.latitude , longitude: self.coordinate.longitude)
+        return metro.distanceFromLocation(CLLocation(latitude: punto.latitude,longitude: punto.longitude))
+    
+    
+    }
+    
     
 }

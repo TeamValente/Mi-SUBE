@@ -159,6 +159,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         }
         
+        var distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
+        
         self.selectedPointType.text = cpa.datos.type
         
         if !(self.detailView.viewWithTag(3000) is UIVisualEffectView) {
