@@ -124,7 +124,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageSelected)
         let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let region = MKCoordinateRegion(center: cpa.coordinate, span: span)
+        var fixPoint = CLLocationCoordinate2D(latitude: cpa.coordinate.latitude, longitude: cpa.coordinate.longitude)
+        fixPoint.latitude = fixPoint.latitude - abs((fixPoint.latitude * 0.00005)) //Muevo la latitud para que se centre el punto.
+        
+        let region = MKCoordinateRegion(center: fixPoint, span: span)
         //mapa.setRegion(region, animated: true)
         self.constraintDetalle.constant = 0
         UIView.animateWithDuration(0.5, animations: {
