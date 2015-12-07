@@ -34,6 +34,7 @@ class DondeCargoService{
                     var listadoPuntos = [PuntoCarga]()
                     var horaApertura = 0
                     var horaCierre = 0
+                    var cost = 0
                     //Parseo el data
                     do{
                         let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSArray
@@ -53,9 +54,12 @@ class DondeCargoService{
                                                     if let hourClose = punto["hclose"] as? String{
                                                         horaCierre = Int(hourClose)!
                                                     }
+                                                    if let costoCarga = punto["cost"] as? String{
+                                                        cost = Int(costoCarga)!
+                                                    }
                                                     //Cargo el punto
                                                     
-                                                    listadoPuntos.append(PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono, hourOpen: horaApertura, hourClose: horaCierre))
+                                                    listadoPuntos.append(PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono,cost: cost, hourOpen: horaApertura, hourClose: horaCierre))
                                                 }
                                             }
                                         }
@@ -93,6 +97,7 @@ class DondeCargoService{
             var listadoPuntos = [PuntoCarga]()
             var horaApertura = 0
             var horaCierre = 0
+            var cost = 0
             
             if let data = NSData(contentsOfURL:url!){
                 do{
@@ -113,9 +118,12 @@ class DondeCargoService{
                                                 if let hourClose = punto["hclose"] as? String{
                                                     horaCierre = Int(hourClose)!
                                                 }
+                                                if let costoCarga = punto["cost"] as? String{
+                                                    cost = Int(costoCarga)!
+                                                }
                                                 //Cargo el punto
                                                 
-                                                listadoPuntos.append(PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono, hourOpen: horaApertura, hourClose: horaCierre))
+                                                listadoPuntos.append(PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono,cost: cost, hourOpen: horaApertura, hourClose: horaCierre))
                                             }
                                         }
                                     }

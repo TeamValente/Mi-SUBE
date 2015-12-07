@@ -23,6 +23,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var selectedPointHours: UILabel!
     @IBOutlet weak var selectedPointSellSube: UILabel!
     @IBOutlet weak var selectedPointType: UILabel!
+    @IBOutlet weak var selectedPointCostCharge: UILabel!
     
     
     //MARK: Variables de la clase
@@ -130,6 +131,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.selectedPointSellSube.text = "Si"
         } else {
             self.selectedPointSellSube.text = "No"
+        }
+        
+        if cpa.datos.cobraPorCargar(){
+            self.selectedPointCostCharge.text = "Si"
+        }else
+        {
+            self.selectedPointCostCharge.text = "No"
+        
         }
         
         self.selectedPointType.text = cpa.datos.type

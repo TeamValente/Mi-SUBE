@@ -39,7 +39,7 @@ class PuntoCarga{
     
     }
     
-    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String,hourOpen:Int,hourClose:Int){
+    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: Int,hourOpen:Int,hourClose:Int){
         
         self.idPunto = idPunto
         self.address = address
@@ -49,6 +49,7 @@ class PuntoCarga{
         self.icon = icon 
         self.hourOpen = hourOpen
         self.hourClose = hourClose
+        self.cost = cost
 
         
     }
@@ -92,6 +93,14 @@ class PuntoCarga{
             return false
         }
         return true
+    }
+    
+    func cobraPorCargar() ->Bool{
+        if self.cost == 0{
+            return false
+        }
+        return true
+    
     }
     
     
