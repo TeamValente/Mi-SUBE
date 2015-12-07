@@ -121,9 +121,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.selectedPointDirection.text = cpa.datos.address
         
         if cpa.datos.estaAbierto() {
-            self.selectedPointHours.text = "\(cpa.datos.hourOpen) AM - \(cpa.datos.hourClose) PM, Abierto ahora"
+            self.selectedPointHours.text = "\(cpa.datos.getHorarioDeAtencion()), Abierto ahora"
         } else {
-            self.selectedPointHours.text = "\(cpa.datos.hourOpen) AM - \(cpa.datos.hourClose) PM, Cerrado"
+            self.selectedPointHours.text = "\(cpa.datos.getHorarioDeAtencion()), Cerrado"
         }
         
         if cpa.datos.vendeSube() {
