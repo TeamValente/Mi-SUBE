@@ -8,6 +8,11 @@
 
 import Foundation
 
+//En el caso de los tipos de Comercio son los siguientes
+//[{"id":"1","name":"Comercio"},{"id":"2","name":"Centro de carga"},{"id":"3","name":"Terminal Autom\u00e1tica"},{"id":"4","name":"Estaci\u00f3n de Tren"},{"id":"5","name":"Estaci\u00f3n de Subte"}]
+
+
+
 class PuntoCarga{
 
     var idPunto:Int
@@ -16,14 +21,15 @@ class PuntoCarga{
     var longitude: Double
     var type: String
     var icon:String
-    var cost:Int?
+    var cost:String
     var hourOpen:Int
     var hourClose:Int
-    var flagSeller:Int?
+    var flagSeller:Int
     var flagInvalid:Int?
+    var idType:Int?
 
     
-    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String,cost:Int,hourOpen:Int,hourClose:Int,flagSeller:Int,flagInvalid:Int){
+    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String,cost:String,hourOpen:Int,hourClose:Int,flagSeller:Int,flagInvalid:Int){
         
         self.idPunto = idPunto
         self.address = address
@@ -36,10 +42,9 @@ class PuntoCarga{
         self.hourClose = hourClose
         self.flagSeller = flagSeller
         self.flagInvalid = flagInvalid
-    
     }
     
-    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: Int,hourOpen:Int,hourClose:Int){
+    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: String,hourOpen:Int,hourClose:Int, flagSeller: Int){
         
         self.idPunto = idPunto
         self.address = address
@@ -50,7 +55,25 @@ class PuntoCarga{
         self.hourOpen = hourOpen
         self.hourClose = hourClose
         self.cost = cost
+        self.flagSeller = flagSeller
 
+        
+    }
+    
+    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: String,hourOpen:Int,hourClose:Int, flagSeller: Int, idType: Int ){
+        
+        self.idPunto = idPunto
+        self.address = address
+        self.latitude = latitude
+        self.longitude = longitude
+        self.type = type
+        self.icon = icon
+        self.hourOpen = hourOpen
+        self.hourClose = hourClose
+        self.cost = cost
+        self.idType = idType
+        self.flagSeller = flagSeller
+        
         
     }
     
@@ -115,7 +138,7 @@ class PuntoCarga{
     }
     
     func cobraPorCargar() ->Bool{
-        if self.cost == 0{
+        if self.cost == "0"{
             return false
         }
         return true
