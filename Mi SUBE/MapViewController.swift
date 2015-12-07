@@ -97,7 +97,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapa.userLocation.title = "Tu ubicación"
             mapa.showsUserLocation = true
-            mapa.setRegion(region, animated: true)
+            mapa.setRegion(region, animated: false)
             self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
             obtenerPuntosDeCargas()
             
@@ -116,7 +116,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         let cpa = view.annotation as! CustomPointAnnotation
         view.image = UIImage(named:cpa.imageSelected)
-        let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         let region = MKCoordinateRegion(center: cpa.coordinate, span: span)
         //mapa.setRegion(region, animated: true)
         self.constraintDetalle.constant = 0
