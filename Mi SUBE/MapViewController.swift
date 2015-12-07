@@ -181,7 +181,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return anView
 
     }
-    
+    //MARK: Cerrar detalle
+    @IBAction func closeDetail() {
+        
+    }
     //MARK: Gestos
     @IBAction func tabMenuUbicar(sender: AnyObject){
         self.manejarMenuUbicarme()

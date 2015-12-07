@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -48,7 +48,7 @@
                                     <constraint firstItem="5qB-uO-t9K" firstAttribute="top" secondItem="LjZ-w6-P1b" secondAttribute="top" constant="8" id="fwj-k4-WeR"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9X-bi-dcR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9X-bi-dcR" userLabel="Detalle">
                                 <rect key="frame" x="0.0" y="330" width="600" height="270"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="direccion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVP-kN-mhY">
@@ -60,7 +60,7 @@
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horarios" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGD-qY-rjk">
-                                        <rect key="frame" x="36" y="90" width="58.5" height="18"/>
+                                        <rect key="frame" x="36" y="90" width="59" height="18"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -97,7 +97,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cobra por cargar saldo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLU-sT-iQ0">
-                                        <rect key="frame" x="178" y="148" width="157.5" height="18"/>
+                                        <rect key="frame" x="178" y="148" width="158" height="18"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -118,7 +118,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tipo de lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvZ-Lh-cCs">
-                                        <rect key="frame" x="36" y="206" width="90.5" height="18"/>
+                                        <rect key="frame" x="36" y="206" width="91" height="18"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -174,6 +174,9 @@
                                     <constraint firstAttribute="width" constant="42" id="zRQ-Tb-rfk"/>
                                 </constraints>
                                 <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeDetail" destination="BYZ-38-t0r" eventType="touchUpInside" id="62l-ej-HFm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -191,7 +194,7 @@
                             <constraint firstItem="LjZ-w6-P1b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="RKh-4H-9Uw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R9X-bi-dcR" secondAttribute="trailing" constant="-20" id="TUd-n1-WBa"/>
                             <constraint firstItem="R9X-bi-dcR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="cdp-B9-KAJ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R9X-bi-dcR" secondAttribute="bottom" id="mbd-iw-cJ9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R9X-bi-dcR" secondAttribute="bottom" identifier="detailBottomConstrain" id="mbd-iw-cJ9"/>
                             <constraint firstItem="R9X-bi-dcR" firstAttribute="width" secondItem="RsN-Gz-LKJ" secondAttribute="width" id="rOB-Pl-P0b"/>
                             <constraint firstItem="R9X-bi-dcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yZp-hT-Mh6"/>
                         </constraints>
