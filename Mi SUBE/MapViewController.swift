@@ -45,6 +45,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
+        // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
+        
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        //always fill the view
+        
+        blurEffectView.frame = self.view.frame
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+//        blurEffectView.frame = self.detailView.frame
+        blurEffectView.layer.zPosition = -1;
+//        blurEffectView.bounds.width = self.detailView.frame.width
+//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        self.detailView.addSubview(blurEffectView)
     
     }
     

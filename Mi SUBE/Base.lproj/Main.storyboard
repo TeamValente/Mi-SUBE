@@ -133,7 +133,7 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" red="0.12549019607843137" green="0.4823529411764706" blue="0.96470588235294119" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.12549019607843137" green="0.4823529411764706" blue="0.96470588235294119" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="T8d-cb-pXa" firstAttribute="leading" secondItem="R9X-bi-dcR" secondAttribute="leading" constant="24" id="1RZ-k4-v5h"/>
