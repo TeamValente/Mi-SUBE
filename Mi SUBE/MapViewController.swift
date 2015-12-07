@@ -195,13 +195,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: Cerrar detalle
     @IBAction func closeDetail() {
         self.constraintDetalle.constant = -500
-        let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
-        let region = MKCoordinateRegion(center: self.miUbicacion!.coordinate, span: span)
-        UIView.animateWithDuration(0.5, animations: {
-            self.mapa.setRegion(region, animated: true)
-            self.view.layoutIfNeeded()
-            self.closeButton.alpha = 0
-            }, completion: nil)
+        self.mapa.deselectAnnotation(nil,animated: false)
     }
     //MARK: Gestos
     
