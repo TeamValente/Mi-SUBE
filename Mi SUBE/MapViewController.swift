@@ -18,7 +18,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBOutlet weak var constraintMenuUbicarme: NSLayoutConstraint!
     
+    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
     //MARK: OutletsDetail
+    @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var selectedPointDirection: UILabel!
     @IBOutlet weak var selectedPointHours: UILabel!
     @IBOutlet weak var selectedPointSellSube: UILabel!
@@ -38,8 +41,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Activo el Manager
         manager = CLLocationManager()
         //Arranca con el menu oculto
+        self.closeButton.alpha = 0
         self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
-        
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,8 +117,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: cpa.coordinate, span: span)
         //mapa.setRegion(region, animated: true)
+        self.constraintDetalle.constant = 0
         UIView.animateWithDuration(0.5, animations: {
-            self.mapa.setRegion(region, animated: true);
+            self.mapa.setRegion(region, animated: true)
+            self.view.layoutIfNeeded()
+            self.closeButton.alpha = 1
         }, completion: nil)
         
         // seteamos los datos en el detalle
@@ -152,9 +159,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         view.image = UIImage(named:cpa.imageName)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: self.miUbicacion!.coordinate, span: span)
-
+        self.constraintDetalle.constant = -500
         UIView.animateWithDuration(0.5, animations: {
-            self.mapa.setRegion(region, animated: true);
+            self.mapa.setRegion(region, animated: true)
+            self.view.layoutIfNeeded()
+            self.closeButton.alpha = 0
             }, completion: nil)
     }
     
@@ -183,9 +192,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     //MARK: Cerrar detalle
     @IBAction func closeDetail() {
-        
+        self.constraintDetalle.constant = -500
+        UIView.animateWithDuration(0.5, animations: {
+            //self.mapa.setRegion(region, animated: true)
+            self.view.layoutIfNeeded()
+            self.closeButton.alpha = 0
+            }, completion: nil)
     }
     //MARK: Gestos
+    
     @IBAction func tabMenuUbicar(sender: AnyObject){
         self.manejarMenuUbicarme()
     }
