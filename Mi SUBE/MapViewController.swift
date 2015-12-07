@@ -113,7 +113,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: cpa.coordinate, span: span)
         //mapa.setRegion(region, animated: true)
-        
         UIView.animateWithDuration(0.5, animations: {
             self.mapa.setRegion(region, animated: true);
         }, completion: nil)
@@ -153,7 +152,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         view.image = UIImage(named:cpa.imageName)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: self.miUbicacion!.coordinate, span: span)
-//        mapa.setRegion(region, animated: true)
+
         UIView.animateWithDuration(0.5, animations: {
             self.mapa.setRegion(region, animated: true);
             }, completion: nil)
@@ -167,7 +166,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
         if anView == nil {
             anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            anView!.canShowCallout = true
+            anView!.canShowCallout = false
         }
         else {
             anView!.annotation = annotation
@@ -177,6 +176,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //the view is dequeued or created...
         let cpa = annotation as! CustomPointAnnotation
         anView!.image = UIImage(named:cpa.imageName)
+        
         
         return anView
 
@@ -197,7 +197,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga){
         let pinFactory = MarkerFactory()
-        mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto,muestroDatosEnPin: false))
+        mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
     }
     
     //MARK: Funciones generales
