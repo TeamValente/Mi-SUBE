@@ -11,6 +11,12 @@ import Foundation
 //En el caso de los tipos de Comercio son los siguientes
 //[{"id":"1","name":"Comercio"},{"id":"2","name":"Centro de carga"},{"id":"3","name":"Terminal Autom\u00e1tica"},{"id":"4","name":"Estaci\u00f3n de Tren"},{"id":"5","name":"Estaci\u00f3n de Subte"}]
 
+enum EstadoNegocio
+{
+    case Abierto
+    case Cerrado
+    case Indeterminado
+}
 
 
 class PuntoCarga{
@@ -77,23 +83,23 @@ class PuntoCarga{
         
     }
     
-    func estaAbierto() -> Bool {
+    func estaAbierto() -> EstadoNegocio {
         //Get Current Date
         let currentDate = NSDate()
         
         if self.hourClose + self.hourOpen == 0{
             //Sin horario determinado devuelvo false
-            return false
+            return EstadoNegocio.Indeterminado
         }
         if currentDate.hour() >= self.hourOpen && currentDate.hour() < self.hourClose
         {
-            return true
+            return EstadoNegocio.Abierto
         }else if self.hourOpen >= self.hourClose
         {
-            return true
+            return EstadoNegocio.Abierto
         }else
         {
-            return false
+            return EstadoNegocio.Cerrado
         }
     
     }
