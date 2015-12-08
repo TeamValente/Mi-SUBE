@@ -26,11 +26,23 @@ class MiUbicacion{
     }
     
     //Devuelve la distancia en metros
-    func getDistanciaAPuntoCarga(punto: PuntoCarga) ->Double
+    func getDistanciaAPuntoCarga(punto: PuntoCarga) -> Distancia
     {
     
         let metro = CLLocation(latitude: self.coordinate.latitude , longitude: self.coordinate.longitude)
-        return metro.distanceFromLocation(CLLocation(latitude: punto.latitude,longitude: punto.longitude))
+        let valorMetros = metro.distanceFromLocation(CLLocation(latitude: punto.latitude,longitude: punto.longitude))
+        var retDistancia: Distancia
+        
+        if valorMetros >= 1000{
+            retDistancia = Distancia(valor: round(valorMetros/1000), unidad: "kilometros")
+        }else{
+        
+            retDistancia = Distancia(valor: round(valorMetros), unidad: "metros")
+
+        }
+        
+        return retDistancia
+        
     
     
     }
