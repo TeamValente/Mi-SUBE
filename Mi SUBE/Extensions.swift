@@ -35,10 +35,6 @@ extension String {
         }
         return newStr
     }
-}
-
-
-extension String {
     
     subscript (i: Int) -> Character {
         return self[self.startIndex.advancedBy(i)]
