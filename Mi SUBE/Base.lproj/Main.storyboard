@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -204,18 +204,6 @@
                                     <action selector="closeDetail" destination="BYZ-38-t0r" eventType="touchUpInside" id="62l-ej-HFm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeW-ZK-h48">
-                                <rect key="frame" x="30" y="40" width="42" height="42"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="6gn-Wf-ehw"/>
-                                    <constraint firstAttribute="width" constant="42" id="yTH-3x-yVb"/>
-                                </constraints>
-                                <state key="normal" image="menu"/>
-                                <connections>
-                                    <action selector="closeDetail" destination="BYZ-38-t0r" eventType="touchUpInside" id="DDu-CL-PGU"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -223,10 +211,8 @@
                             <constraint firstAttribute="trailingMargin" secondItem="LjZ-w6-P1b" secondAttribute="trailing" constant="-20" id="6G1-3R-CSS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RsN-Gz-LKJ" secondAttribute="trailing" constant="-20" id="9Vw-39-epW"/>
                             <constraint firstItem="ihs-Qn-ddu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="DNk-pH-EX3"/>
-                            <constraint firstItem="yeW-ZK-h48" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="Dns-wu-x1G"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="FOZ-1k-ZOy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LjZ-w6-P1b" secondAttribute="bottom" id="FsR-1b-CLx"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="yeW-ZK-h48" secondAttribute="leading" constant="-10" id="HuP-uC-PWI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ihs-Qn-ddu" secondAttribute="trailing" constant="10" id="Ls2-pG-YaN"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="MRL-RZ-UBZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RsN-Gz-LKJ" secondAttribute="bottom" id="O2a-Ui-k8A"/>
@@ -267,6 +253,5 @@
     </scenes>
     <resources>
         <image name="close" width="92" height="92"/>
-        <image name="menu" width="92" height="92"/>
     </resources>
 </document>
