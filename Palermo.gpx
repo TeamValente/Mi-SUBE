@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="Geovative Solutions GeoTours" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+
+<metadata>
+  <name>buenos aires</name>
+  <desc>Tour turistico de la ciudad de buenos aires</desc>
+  <author>
+    <name>djerez, using GeoTours</name>
+    <link href="http://www.geovative.com/view?t=JHKL">
+      <text>buenos aires</text>
+    </link>
+  </author>
+  <link href="http://www.geovative.com/view?t=JHKL">
+    <text>buenos aires</text>
+  </link>
+  <time>2008-10-21T06:19:11</time>
+  <keywords>buenos aires
+capital federal
+argentina
+</keywords>
+</metadata>
+<wpt lat="-34.5860414" lon="-58.4378621">
+    <name>Punto en Capital Federal</name>
+    <desc>Ubicacion de prueba por Palermo</desc>
+    <link href="Data/Location6478-8"/>
+    <sym>Waypoint</sym>
+    <extensions>
+        <gpxx:WaypointExtension xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd">
+            <gpxx:Proximity>152.4</gpxx:Proximity>
+            <gpxx:DisplayMode>SymbolAndName</gpxx:DisplayMode>
+        </gpxx:WaypointExtension>
+    </extensions>
+</wpt>
+</gpx>

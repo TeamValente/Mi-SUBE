@@ -11,7 +11,7 @@
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
-		ECA2E3DB1C13AF9500A6CA6E /* Davo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */; };
+		ECA2E3DB1C13AF9500A6CA6E /* Palermo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ECA2E3DA1C13AF9500A6CA6E /* Palermo.gpx */; };
 		ECC647B71C12822600896171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B61C12822600896171 /* AppDelegate.swift */; };
 		ECC647B91C12822600896171 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B81C12822600896171 /* MapViewController.swift */; };
 		ECC647BC1C12822600896171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BA1C12822600896171 /* Main.storyboard */; };
@@ -29,7 +29,7 @@
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Congreso.gpx; path = ../Congreso.gpx; sourceTree = "<group>"; };
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
-		ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Davo.gpx; path = ../Davo.gpx; sourceTree = "<group>"; };
+		ECA2E3DA1C13AF9500A6CA6E /* Palermo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Palermo.gpx; path = ../Palermo.gpx; sourceTree = "<group>"; };
 		ECC647B31C12822600896171 /* Mi SUBE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi SUBE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC647B61C12822600896171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECC647B81C12822600896171 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		EC105EE31C15C94E001847F6 /* GPX */ = {
 			isa = PBXGroup;
 			children = (
-				ECA2E3DA1C13AF9500A6CA6E /* Davo.gpx */,
+				ECA2E3DA1C13AF9500A6CA6E /* Palermo.gpx */,
 				EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */,
 			);
 			name = GPX;
@@ -205,7 +205,7 @@
 			files = (
 				ECC647C11C12822600896171 /* LaunchScreen.storyboard in Resources */,
 				EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */,
-				ECA2E3DB1C13AF9500A6CA6E /* Davo.gpx in Resources */,
+				ECA2E3DB1C13AF9500A6CA6E /* Palermo.gpx in Resources */,
 				ECC647BE1C12822600896171 /* Assets.xcassets in Resources */,
 				ECC647BC1C12822600896171 /* Main.storyboard in Resources */,
 			);
