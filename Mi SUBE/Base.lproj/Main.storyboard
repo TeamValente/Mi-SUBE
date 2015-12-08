@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
@@ -225,7 +225,7 @@
                             <constraint firstItem="R9X-bi-dcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yZp-hT-Mh6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="oAN-DO-wCi"/>
+                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="oAN-DO-wCi"/>
                     <connections>
                         <outlet property="closeButton" destination="ihs-Qn-ddu" id="Tdy-WS-fuh"/>
                         <outlet property="constraintDetalle" destination="mbd-iw-cJ9" id="KQa-eQ-L6P"/>
@@ -249,12 +249,80 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1057" y="305"/>
+            <point key="canvasLocation" x="1173" y="-441"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="8Ig-Ga-Bnp">
+            <objects>
+                <viewController id="yNX-vN-G4n" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f2R-6W-YLa"/>
+                        <viewControllerLayoutGuide type="bottom" id="6gt-dV-Lub"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eL5-TQ-uDo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG0-vc-k1D">
+                                <rect key="frame" x="278.5" y="289.5" width="43.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wG0-vc-k1D" firstAttribute="centerY" secondItem="eL5-TQ-uDo" secondAttribute="centerY" id="5Uy-KC-OQp"/>
+                            <constraint firstItem="wG0-vc-k1D" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="7t6-hf-Qsm"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="KBm-H1-mwG"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173" y="305"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YEL-GN-afk">
+            <objects>
+                <viewController id="biu-dx-Aoh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bfV-27-6q0"/>
+                        <viewControllerLayoutGuide type="bottom" id="m5w-xh-PmV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L6J-ph-0bC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajustes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eX-b5-EOe">
+                                <rect key="frame" x="272" y="289.5" width="56.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0eX-b5-EOe" firstAttribute="centerX" secondItem="L6J-ph-0bC" secondAttribute="centerX" id="KpN-pe-HXz"/>
+                            <constraint firstItem="0eX-b5-EOe" firstAttribute="centerY" secondItem="L6J-ph-0bC" secondAttribute="centerY" id="eU7-Uh-V72"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="lxv-sX-8St"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bqN-QT-fxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173" y="1081"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pwp-DN-9iB">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lge-0e-Fi6" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lge-0e-Fi6" customClass="TabBarController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="0ar-pH-nsi">
                         <autoresizingMask key="autoresizingMask"/>
@@ -263,6 +331,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Zsb-rU-8wO"/>
+                        <segue destination="yNX-vN-G4n" kind="relationship" relationship="viewControllers" id="eQQ-Xt-Tzi"/>
+                        <segue destination="biu-dx-Aoh" kind="relationship" relationship="viewControllers" id="QFZ-up-1g9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFB-b0-hhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

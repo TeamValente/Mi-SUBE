@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
 		EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarkerFactory.swift */; };
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Congreso.gpx; path = ../Congreso.gpx; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC647B81C12822600896171 /* MapViewController.swift */,
+				7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
 				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
 				EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */,
+				7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */,
 				ECC647B91C12822600896171 /* MapViewController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
 				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
