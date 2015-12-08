@@ -47,6 +47,21 @@ class DondeCargoService{
         
     }
     
+    private func generarBodyDenunciarPuntoCarga(nuevoPunto: PuntoCarga) ->String{
+        
+        var resultado:String
+        var parametro0:String
+        
+        parametro0 = ("params[id]=\(nuevoPunto.idPunto)")
+        resultado = ("session=1390472&\(parametro0)")
+        
+        
+        return resultado
+        
+        
+        
+    }
+    
     func agregarPuntoCarga(puntoNuevo: PuntoCarga, completionHandler: (response: Bool) -> ())
     {
         var urlString: String
@@ -78,6 +93,43 @@ class DondeCargoService{
         }
         
     }
+    
+    func denunciarPuntoCarga(puntoDenunciado: PuntoCarga, completionHandler: (response: Bool) -> ())
+    {
+        var urlString: String
+        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=addFlagInvalid")
+        if let url = NSURL(string: urlString) {
+            let request = NSMutableURLRequest(URL: url)
+            let bodyData = self.generarBodyDenunciarPuntoCarga(puntoDenunciado)
+            request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
+            request.HTTPMethod = "POST"
+            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
+                if error != nil {
+                    print("error=\(error)")
+                    completionHandler(response: false)
+                }
+                print("response = \(response)")
+                
+                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("data: \(responseString)")
+                
+                if responseString! == "\"OK\""
+                {
+                    completionHandler(response: true)
+                }else
+                {
+                    completionHandler(response: false)
+                }
+            }
+            task.resume()
+        }
+        
+    }
+    
+    
+    
+    
+    
     
     //Esta funcion se conecta por POST y pasa las cordenadas que se obtienen del manager location
     func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? ->()){
