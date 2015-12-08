@@ -274,8 +274,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
-        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion, completionHandler: {(puntoCargo: [PuntoCarga]?) -> () in
-            
+        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
             if let misPuntos = puntoCargo{
                 //Borro todos los puntos para volver a cargarlos
                 self.mapa.removeAnnotations(self.mapa.annotations)
@@ -283,20 +282,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     self.marcarPuntoEnMapa(miPunto)
                 }
             }
-            
-            
-        })
-        
-        
-//        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
-//            if let misPuntos = puntoCargo{
-//                //Borro todos los puntos para volver a cargarlos
-//                self.mapa.removeAnnotations(self.mapa.annotations)
-//                for miPunto in misPuntos{
-//                    self.marcarPuntoEnMapa(miPunto)
-//                }
-//            }
-//        }
+        }
     }
 }
 

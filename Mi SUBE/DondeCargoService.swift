@@ -140,41 +140,46 @@ class DondeCargoService{
     }
     
     
-    func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, completionHandler: (response: [PuntoCarga]?) -> ())
-    {
+    func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? ->()){
         var urlString: String
-        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
+        urlString = self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
         if let url = NSURL(string: urlString) {
-            let request = NSMutableURLRequest(URL: url)
-            if dondeEstoy != nil{
-                let bodyData = self.generarBodyObtenerPuntosPOST(dondeEstoy!)
-                request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
-            }
-            request.HTTPMethod = "POST"
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
-                if error != nil {
-                    print("error=\(error)")
-                    completionHandler(response: nil)
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0)){
+                let request = NSMutableURLRequest(URL: url)
+                if dondeEstoy != nil{
+                    let bodyData = self.generarBodyObtenerPuntosPOST(dondeEstoy!)
+                    request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
                 }
-                //print("response = \(response)")
-                
-                //let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                //print("data: \(responseString)")
-                
-                if let payload = data
-                {
-                    do{
-                        let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(payload, options: NSJSONReadingOptions.AllowFragments) as! NSArray
-                        completionHandler(response: self.desempaquetarPayLoad(jsonDictionary))
-                    }catch{
-                        completionHandler(response: nil)
+                request.HTTPMethod = "POST"
+                let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
+                    if error != nil {
+                        print("error=\(error)")
+                        dispatch_async(dispatch_get_main_queue()){
+                            callback(nil)
+                        }
                     }
-                }else
-                {
-                    completionHandler(response: nil)
+                    if let payload = data
+                    {
+                        do{
+                            let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(payload, options: NSJSONReadingOptions.AllowFragments) as! NSArray
+                            dispatch_async(dispatch_get_main_queue()){
+                                callback(self.desempaquetarPayLoad(jsonDictionary))
+                            }
+                        }catch{
+                            dispatch_async(dispatch_get_main_queue()){
+                            callback(nil)
+                            }
+                            
+                        }
+                    }else
+                    {
+                        dispatch_async(dispatch_get_main_queue()){
+                            callback(nil)
+                        }
+                    }
                 }
+                task.resume()
             }
-            task.resume()
         }
     }
     
@@ -223,90 +228,4 @@ class DondeCargoService{
         return listadoPuntos
         
     }
-    
-    
-    
-    //Esta funcion se conecta por POST y pasa las cordenadas que se obtienen del manager location
-    func obtenerPuntosPOST2(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? ->()){
-        var urlString: String
-        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
-        if let url = NSURL(string: urlString) {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0)){
-                let request = NSMutableURLRequest(URL: url)
-                if dondeEstoy != nil{
-                    let bodyData = self.generarBodyObtenerPuntosPOST(dondeEstoy!)
-                    request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
-                }
-                request.HTTPMethod = "POST"
-                let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data1, response, error) in
-                    if error != nil {
-                        //print("error=\(error)")
-                        callback(nil)
-                    }
-                    
-                    if let data = data1{
-                        var listadoPuntos = [PuntoCarga]()
-                        var horaApertura = 0
-                        var horaCierre = 0
-                        var cost = "0"
-                        var flagSeller = 0
-                        //Parseo el data
-                        do{
-                            let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments) as! NSArray
-                            //print(jsonDictionary.count)
-                            for index in 0...jsonDictionary.count-1{
-                                let item : AnyObject? = jsonDictionary[index]
-                                let punto = item as! Dictionary<String, AnyObject>
-                                if let puntoId = punto["id"] as? String{
-                                    if let direccion = punto["address"] as? String{
-                                        if let latitud = punto["latitude"] as? String{
-                                            if let longitud = punto["longitude"] as? String{
-                                                if let tipo = punto["type"] as? String{
-                                                    if let icono = punto["icon"] as? String{
-                                                        if let hourOpen = punto["hopen"] as? String{
-                                                            horaApertura = Int(hourOpen)!
-                                                        }
-                                                        if let hourClose = punto["hclose"] as? String{
-                                                            horaCierre = Int(hourClose)!
-                                                        }
-                                                        if let costoCarga = punto["cost"] as? String{
-                                                            cost = costoCarga
-                                                        }
-                                                        if let fSeller = punto["flagSeller"] as? String{
-                                                            flagSeller = Int(fSeller)!
-                                                        }
-                                                        //Cargo el punto
-                                                        
-                                                        listadoPuntos.append(PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono,cost: cost, hourOpen: horaApertura, hourClose: horaCierre, flagSeller: flagSeller))
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                            dispatch_async(dispatch_get_main_queue()){
-                                callback(listadoPuntos)
-                            }
-                            
-                        }catch{
-                            //No logro parsear el JSON
-                            dispatch_async(dispatch_get_main_queue()){
-                                callback(nil)
-                            }
-                        }
-                    }else{
-                        dispatch_async(dispatch_get_main_queue()){
-                            callback(nil)
-                        }
-                    }
-                }
-                
-                
-                
-                task.resume()
-            }
-        }
-    }
-    
 }
