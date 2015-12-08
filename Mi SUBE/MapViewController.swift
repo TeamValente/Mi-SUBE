@@ -172,6 +172,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
             blurEffectView.layer.zPosition = -1
             blurEffectView.autoresizesSubviews = true
+            blurEffectView.alpha = 0.9
             
             blurEffectView.tag = 3000 //le pongo este tag para no crearlo varias veces
             
