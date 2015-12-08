@@ -24,41 +24,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <animations/>
                                 <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="uwL-lF-1TC" appends="YES" id="Bkm-rk-Efi"/>
-                                </connections>
                             </mapView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-w6-P1b">
-                                <rect key="frame" x="0.0" y="477" width="600" height="74"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-uO-t9K">
-                                        <rect key="frame" x="534" y="8" width="50" height="50"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="0Lx-1L-Dpe"/>
-                                            <constraint firstAttribute="width" secondItem="5qB-uO-t9K" secondAttribute="height" multiplier="1:1" id="1pg-JZ-lgq"/>
-                                            <constraint firstAttribute="height" constant="50" id="kA9-5z-Wq1"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" image="location"/>
-                                        <connections>
-                                            <action selector="buscarmeEnElMundo" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKZ-NH-QXe"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-uO-t9K">
+                                <rect key="frame" x="534" y="485" width="50" height="50"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="AAM-ki-yvc"/>
-                                    <constraint firstAttribute="bottom" secondItem="5qB-uO-t9K" secondAttribute="bottom" constant="16" id="Gsf-NF-n3J"/>
-                                    <constraint firstAttribute="trailing" secondItem="5qB-uO-t9K" secondAttribute="trailing" constant="16" id="KFl-60-hzZ"/>
-                                    <constraint firstItem="5qB-uO-t9K" firstAttribute="top" secondItem="LjZ-w6-P1b" secondAttribute="top" constant="8" id="fwj-k4-WeR"/>
+                                    <constraint firstAttribute="width" constant="50" id="0Lx-1L-Dpe"/>
+                                    <constraint firstAttribute="width" secondItem="5qB-uO-t9K" secondAttribute="height" multiplier="1:1" id="1pg-JZ-lgq"/>
+                                    <constraint firstAttribute="height" constant="50" id="kA9-5z-Wq1"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="AAM-ki-yvc"/>
-                                    </mask>
-                                </variation>
-                            </view>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="buscarmeEnElMundo" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKZ-NH-QXe"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9X-bi-dcR" userLabel="Detalle">
                                 <rect key="frame" x="0.0" y="302" width="600" height="248"/>
                                 <subviews>
@@ -204,7 +184,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihs-Qn-ddu">
-                                <rect key="frame" x="528" y="40" width="42" height="42"/>
+                                <rect key="frame" x="542" y="36" width="42" height="42"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="TkQ-a1-b1l"/>
@@ -219,16 +199,15 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="LjZ-w6-P1b" secondAttribute="trailing" constant="-20" id="6G1-3R-CSS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5qB-uO-t9K" secondAttribute="bottom" constant="16" id="4Zz-B0-IPU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RsN-Gz-LKJ" secondAttribute="trailing" constant="-20" id="9Vw-39-epW"/>
-                            <constraint firstItem="ihs-Qn-ddu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="DNk-pH-EX3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5qB-uO-t9K" secondAttribute="trailing" constant="-4" id="D5K-NH-iu1"/>
+                            <constraint firstItem="ihs-Qn-ddu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="DNk-pH-EX3"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="FOZ-1k-ZOy"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="LjZ-w6-P1b" secondAttribute="bottom" id="FsR-1b-CLx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ihs-Qn-ddu" secondAttribute="trailing" constant="10" id="Ls2-pG-YaN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ihs-Qn-ddu" secondAttribute="trailing" constant="-4" id="Ls2-pG-YaN"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="MRL-RZ-UBZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RsN-Gz-LKJ" secondAttribute="bottom" id="O2a-Ui-k8A"/>
                             <constraint firstItem="R9X-bi-dcR" firstAttribute="height" secondItem="RsN-Gz-LKJ" secondAttribute="height" multiplier="0.45" id="Peg-aJ-Kp7"/>
-                            <constraint firstItem="LjZ-w6-P1b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="RKh-4H-9Uw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R9X-bi-dcR" secondAttribute="trailing" constant="-20" id="TUd-n1-WBa"/>
                             <constraint firstItem="R9X-bi-dcR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="cdp-B9-KAJ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="R9X-bi-dcR" secondAttribute="bottom" constant="1" identifier="detailBottomConstrain" id="mbd-iw-cJ9"/>
@@ -240,10 +219,9 @@
                     <connections>
                         <outlet property="closeButton" destination="ihs-Qn-ddu" id="Tdy-WS-fuh"/>
                         <outlet property="constraintDetalle" destination="mbd-iw-cJ9" id="KQa-eQ-L6P"/>
-                        <outlet property="constraintMenuUbicarme" destination="FsR-1b-CLx" id="0f6-qT-Hwi"/>
                         <outlet property="detailView" destination="R9X-bi-dcR" id="4XO-tU-qIU"/>
+                        <outlet property="locateButton" destination="5qB-uO-t9K" id="Od7-vU-kvI"/>
                         <outlet property="mapa" destination="RsN-Gz-LKJ" id="GA5-nD-I5D"/>
-                        <outlet property="menuUbicarme" destination="LjZ-w6-P1b" id="GLV-2I-m1p"/>
                         <outlet property="selectedPointCostCharge" destination="5KM-pR-hhY" id="vRK-W9-IuF"/>
                         <outlet property="selectedPointDirection" destination="aVP-kN-mhY" id="gbm-ah-bhd"/>
                         <outlet property="selectedPointDistance" destination="6Oo-SO-x7X" id="mC5-UQ-Ki5"/>
@@ -253,12 +231,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="uwL-lF-1TC">
-                    <connections>
-                        <action selector="tabMenuUbicar:" destination="BYZ-38-t0r" id="B0y-XI-xLT"/>
-                        <outlet property="delegate" destination="RsN-Gz-LKJ" id="qJ2-a5-dcE"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1173" y="-441"/>
         </scene>

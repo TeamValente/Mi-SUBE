@@ -14,9 +14,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: Outlets
     @IBOutlet weak var mapa: MKMapView!
-    @IBOutlet weak var menuUbicarme: UIView!
-    
-    @IBOutlet weak var constraintMenuUbicarme: NSLayoutConstraint!
+    @IBOutlet weak var locateButton: UIButton!
     
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
@@ -43,13 +41,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         manager = CLLocationManager()
         //Arranca con el menu oculto
         self.closeButton.alpha = 0
-        self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
         // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -135,6 +129,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
             self.closeButton.alpha = 1
+            self.locateButton.alpha = 0
             }, completion: nil)
         
         // seteamos los datos en el detalle
@@ -213,6 +208,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
             self.closeButton.alpha = 0
+            self.locateButton.alpha = 1
             }, completion: nil)
     }
     
@@ -235,7 +231,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let cpa = annotation as! CustomPointAnnotation
         anView!.image = UIImage(named:cpa.imageName)
         
-        
         return anView
         
     }
@@ -244,41 +239,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.constraintDetalle.constant = -500
         self.mapa.deselectAnnotation(nil,animated: false)
     }
-    //MARK: Gestos
-    
-    @IBAction func tabMenuUbicar(sender: AnyObject){
-        self.manejarMenuUbicarme()
-    }
-    
+
     //MARK: Botonera Ubicarme
-    
     @IBAction func buscarmeEnElMundo() {
         manager.startUpdatingLocation()
     }
     
-    
     //MARK: Funciones de Mapa
-    func marcarPuntoEnMapa(miPunto: PuntoCarga){
+    func marcarPuntoEnMapa(miPunto: PuntoCarga) {
         let pinFactory = MarkerFactory()
         mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
     }
     
     //MARK: Funciones generales
-    
-    func manejarMenuUbicarme()
-    {
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 1, initialSpringVelocity: 1.5, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
-            if self.constraintMenuUbicarme.constant != 0{
-                self.constraintMenuUbicarme.constant = 0
-                
-            }else
-            {
-                self.constraintMenuUbicarme.constant = self.menuUbicarme.frame.height * -1
-            }
-            self.view.layoutIfNeeded()
-            }, completion: nil)
-    }
-    
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
         servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
