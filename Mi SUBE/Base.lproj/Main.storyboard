@@ -28,12 +28,17 @@
                                 </connections>
                             </mapView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-w6-P1b">
-                                <rect key="frame" x="0.0" y="513" width="600" height="38"/>
+                                <rect key="frame" x="0.0" y="493" width="600" height="58"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-uO-t9K">
-                                        <rect key="frame" x="570" y="8" width="22" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-uO-t9K">
+                                        <rect key="frame" x="550" y="8" width="42" height="42"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="0Lx-1L-Dpe"/>
+                                            <constraint firstAttribute="height" constant="42" id="kA9-5z-Wq1"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="location"/>
                                         <connections>
                                             <action selector="buscarmeEnElMundo" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKZ-NH-QXe"/>
                                         </connections>
@@ -47,6 +52,11 @@
                                     <constraint firstAttribute="trailing" secondItem="5qB-uO-t9K" secondAttribute="trailing" constant="8" id="KFl-60-hzZ"/>
                                     <constraint firstItem="5qB-uO-t9K" firstAttribute="top" secondItem="LjZ-w6-P1b" secondAttribute="top" constant="8" id="fwj-k4-WeR"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AAM-ki-yvc"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9X-bi-dcR" userLabel="Detalle">
                                 <rect key="frame" x="0.0" y="302" width="600" height="248"/>
@@ -342,5 +352,6 @@
     </scenes>
     <resources>
         <image name="close" width="92" height="92"/>
+        <image name="location" width="128" height="128"/>
     </resources>
 </document>
