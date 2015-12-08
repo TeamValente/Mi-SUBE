@@ -23,6 +23,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: OutletsDetail
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var selectedPointDirection: UILabel!
+    @IBOutlet weak var selectedPointDistance: UILabel!
     @IBOutlet weak var selectedPointHours: UILabel!
     @IBOutlet weak var selectedPointSellSube: UILabel!
     @IBOutlet weak var selectedPointType: UILabel!
@@ -139,6 +140,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // seteamos los datos en el detalle
         self.selectedPointDirection.text = cpa.datos.address
         
+        let distancia = round((miUbicacion?.getDistanciaAPuntoCarga(cpa.datos))!)
+        
+        self.selectedPointDistance.text = "\(distancia) metros"
+        
         if cpa.datos.estaAbierto() {
             self.selectedPointHours.text = "\(cpa.datos.getHorarioDeAtencion()), Abierto ahora"
         } else {
@@ -153,13 +158,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         if cpa.datos.cobraPorCargar(){
             self.selectedPointCostCharge.text = "Si"
-        }else
-        {
+        } else {
             self.selectedPointCostCharge.text = "No"
             
         }
-        
-        var distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
         
         self.selectedPointType.text = cpa.datos.type
         
