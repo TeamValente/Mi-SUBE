@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         // 207BF6
-        UITabBar.appearance().barTintColor = colorWithHexString("#207BF6")
+        // UITabBar.appearance().barTintColor = colorWithHexString("#207BF6")
     }
     
 }
