@@ -8,7 +8,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Donde cargar-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
@@ -236,7 +236,7 @@
                             <constraint firstItem="R9X-bi-dcR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yZp-hT-Mh6"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="oAN-DO-wCi"/>
+                    <tabBarItem key="tabBarItem" title="Donde cargar" image="map" id="oAN-DO-wCi"/>
                     <connections>
                         <outlet property="closeButton" destination="ihs-Qn-ddu" id="Tdy-WS-fuh"/>
                         <outlet property="constraintDetalle" destination="mbd-iw-cJ9" id="KQa-eQ-L6P"/>
@@ -262,7 +262,7 @@
             </objects>
             <point key="canvasLocation" x="1173" y="-441"/>
         </scene>
-        <!--View Controller-->
+        <!--Mi SUBE-->
         <scene sceneID="8Ig-Ga-Bnp">
             <objects>
                 <viewController id="yNX-vN-G4n" sceneMemberID="viewController">
@@ -289,14 +289,14 @@
                             <constraint firstItem="wG0-vc-k1D" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="7t6-hf-Qsm"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="KBm-H1-mwG"/>
+                    <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1173" y="305"/>
         </scene>
-        <!--View Controller-->
+        <!--Configuración-->
         <scene sceneID="YEL-GN-afk">
             <objects>
                 <viewController id="biu-dx-Aoh" sceneMemberID="viewController">
@@ -323,7 +323,7 @@
                             <constraint firstItem="0eX-b5-EOe" firstAttribute="centerY" secondItem="L6J-ph-0bC" secondAttribute="centerY" id="eU7-Uh-V72"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="lxv-sX-8St"/>
+                    <tabBarItem key="tabBarItem" title="Configuración" image="config" id="lxv-sX-8St"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bqN-QT-fxe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,7 +352,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="card" width="36" height="25"/>
         <image name="close" width="92" height="92"/>
+        <image name="config" width="25" height="25"/>
         <image name="location" width="128" height="128"/>
+        <image name="map" width="25" height="25"/>
     </resources>
 </document>
