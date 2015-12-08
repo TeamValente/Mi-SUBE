@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
+		99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */; };
 		EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarkerFactory.swift */; };
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
@@ -27,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.debug.xcconfig"; sourceTree = "<group>"; };
+		2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.release.xcconfig"; sourceTree = "<group>"; };
+		4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mi_SUBE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
@@ -55,12 +59,30 @@
 			files = (
 				ECC647CD1C12832F00896171 /* MapKit.framework in Frameworks */,
 				ECC647CB1C12832A00896171 /* CoreLocation.framework in Frameworks */,
+				99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A966553260A75B5BA6B949AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */,
+				2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B10498DA2A33A67E3D0BEF0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC105EE31C15C94E001847F6 /* GPX */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				ECC647CA1C12832A00896171 /* CoreLocation.framework */,
 				ECC647B51C12822600896171 /* Mi SUBE */,
 				ECC647B41C12822600896171 /* Products */,
+				A966553260A75B5BA6B949AE /* Pods */,
+				B10498DA2A33A67E3D0BEF0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECC647C51C12822600896171 /* Build configuration list for PBXNativeTarget "Mi SUBE" */;
 			buildPhases = (
+				F9A2F19BAC9F75133391078B /* Check Pods Manifest.lock */,
 				ECC647AF1C12822600896171 /* Sources */,
 				ECC647B01C12822600896171 /* Frameworks */,
 				ECC647B11C12822600896171 /* Resources */,
+				A541F643BFFCD79EFD979226 /* Embed Pods Frameworks */,
+				0550BFEDD3A009271EC141FA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +245,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0550BFEDD3A009271EC141FA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A541F643BFFCD79EFD979226 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A2F19BAC9F75133391078B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ECC647AF1C12822600896171 /* Sources */ = {
@@ -344,6 +419,7 @@
 		};
 		ECC647C61C12822600896171 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -358,6 +434,7 @@
 		};
 		ECC647C71C12822600896171 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
