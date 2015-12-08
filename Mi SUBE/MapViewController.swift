@@ -47,8 +47,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.constraintDetalle.constant = -500
         // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
         
-
-    
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,8 +105,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             mapa.setRegion(region, animated: false)
             
             if (self.mapa.annotations.count < 2 || (self.miUbicacion?.coordinate.latitude != location.coordinate.latitude && self.miUbicacion?.coordinate.longitude != location.coordinate.longitude) ){
-            self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
-            obtenerPuntosDeCargas()
+                self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
+                obtenerPuntosDeCargas()
             }
         }
     }
@@ -134,7 +134,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
             self.closeButton.alpha = 1
-        }, completion: nil)
+            }, completion: nil)
         
         // seteamos los datos en el detalle
         self.selectedPointDirection.text = cpa.datos.address
@@ -156,7 +156,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }else
         {
             self.selectedPointCostCharge.text = "No"
-        
+            
         }
         
         var distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
@@ -176,20 +176,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             blurEffectView.tag = 3000 //le pongo este tag para no crearlo varias veces
             
             self.detailView.addSubview(blurEffectView)
-
+            
         }
         
         
-//        //Prueba de agregar un punto
-//        let service: DondeCargoService
-//        service = DondeCargoService()
-//        
-//        cpa.datos.idType = 1
-//        
-//        service.agregarPuntoCarga(cpa.datos, completionHandler: {(response: Bool) -> () in
-//            print("response = \(response)")
-//        
-//        })
+        //        //Prueba de agregar un punto
+        //        let service: DondeCargoService
+        //        service = DondeCargoService()
+        //
+        //        cpa.datos.idType = 1
+        //
+        //        service.agregarPuntoCarga(cpa.datos, completionHandler: {(response: Bool) -> () in
+        //            print("response = \(response)")
+        //
+        //        })
         
     }
     
@@ -230,7 +230,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         
         return anView
-
+        
     }
     //MARK: Cerrar detalle
     @IBAction func closeDetail() {
@@ -274,7 +274,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
-        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
+        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion, completionHandler: {(puntoCargo: [PuntoCarga]?) -> () in
+            
             if let misPuntos = puntoCargo{
                 //Borro todos los puntos para volver a cargarlos
                 self.mapa.removeAnnotations(self.mapa.annotations)
@@ -282,7 +283,20 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     self.marcarPuntoEnMapa(miPunto)
                 }
             }
-        }
+            
+            
+        })
+        
+        
+//        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
+//            if let misPuntos = puntoCargo{
+//                //Borro todos los puntos para volver a cargarlos
+//                self.mapa.removeAnnotations(self.mapa.annotations)
+//                for miPunto in misPuntos{
+//                    self.marcarPuntoEnMapa(miPunto)
+//                }
+//            }
+//        }
     }
 }
 
