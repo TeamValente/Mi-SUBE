@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D7C0A4144553862FC259C30 /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB11BD73AF9E7410EF35E34 /* Pods_Mi_SUBE.framework */; };
 		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
+		99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */; };
 		EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarkerFactory.swift */; };
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
@@ -28,8 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7129ABDE90753367A2E680F8 /* Pods-Mi SUBE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.release.xcconfig"; sourceTree = "<group>"; };
-		7741D5EEFE67BA738B5E891D /* Pods-Mi SUBE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.debug.xcconfig"; sourceTree = "<group>"; };
+		0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.debug.xcconfig"; sourceTree = "<group>"; };
+		2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.release.xcconfig"; sourceTree = "<group>"; };
+		4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mi_SUBE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		ECC647CE1C12932C00896171 /* DondeCargoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DondeCargoService.swift; sourceTree = "<group>"; };
 		ECC647D01C12938A00896171 /* PuntoCarga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoCarga.swift; sourceTree = "<group>"; };
 		ECC647D31C12B39100896171 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		FEB11BD73AF9E7410EF35E34 /* Pods_Mi_SUBE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mi_SUBE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,26 +59,26 @@
 			files = (
 				ECC647CD1C12832F00896171 /* MapKit.framework in Frameworks */,
 				ECC647CB1C12832A00896171 /* CoreLocation.framework in Frameworks */,
-				2D7C0A4144553862FC259C30 /* Pods_Mi_SUBE.framework in Frameworks */,
+				99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8FA973B468C6FE10153AD6C8 /* Pods */ = {
+		A966553260A75B5BA6B949AE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7741D5EEFE67BA738B5E891D /* Pods-Mi SUBE.debug.xcconfig */,
-				7129ABDE90753367A2E680F8 /* Pods-Mi SUBE.release.xcconfig */,
+				0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */,
+				2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BD0D004604A22CD2E20154CE /* Frameworks */ = {
+		B10498DA2A33A67E3D0BEF0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FEB11BD73AF9E7410EF35E34 /* Pods_Mi_SUBE.framework */,
+				4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,8 +107,8 @@
 				ECC647CA1C12832A00896171 /* CoreLocation.framework */,
 				ECC647B51C12822600896171 /* Mi SUBE */,
 				ECC647B41C12822600896171 /* Products */,
-				8FA973B468C6FE10153AD6C8 /* Pods */,
-				BD0D004604A22CD2E20154CE /* Frameworks */,
+				A966553260A75B5BA6B949AE /* Pods */,
+				B10498DA2A33A67E3D0BEF0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,12 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECC647C51C12822600896171 /* Build configuration list for PBXNativeTarget "Mi SUBE" */;
 			buildPhases = (
-				6D1CB557058629F2272AF4EF /* Check Pods Manifest.lock */,
+				F9A2F19BAC9F75133391078B /* Check Pods Manifest.lock */,
 				ECC647AF1C12822600896171 /* Sources */,
 				ECC647B01C12822600896171 /* Frameworks */,
 				ECC647B11C12822600896171 /* Resources */,
-				06D62380540F3AE6A99C126A /* Embed Pods Frameworks */,
-				0DB9FE311824C133F7B8573F /* Copy Pods Resources */,
+				A541F643BFFCD79EFD979226 /* Embed Pods Frameworks */,
+				0550BFEDD3A009271EC141FA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,7 +209,7 @@
 				TargetAttributes = {
 					ECC647B21C12822600896171 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = HLY49RTLRG;
+						DevelopmentTeam = MCJ455R27F;
 					};
 				};
 			};
@@ -247,22 +247,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		06D62380540F3AE6A99C126A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0DB9FE311824C133F7B8573F /* Copy Pods Resources */ = {
+		0550BFEDD3A009271EC141FA /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,7 +262,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D1CB557058629F2272AF4EF /* Check Pods Manifest.lock */ = {
+		A541F643BFFCD79EFD979226 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A2F19BAC9F75133391078B /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -419,14 +419,14 @@
 		};
 		ECC647C61C12822600896171 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7741D5EEFE67BA738B5E891D /* Pods-Mi SUBE.debug.xcconfig */;
+			baseConfigurationReference = 0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "funka.la.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -434,14 +434,14 @@
 		};
 		ECC647C71C12822600896171 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7129ABDE90753367A2E680F8 /* Pods-Mi SUBE.release.xcconfig */;
+			baseConfigurationReference = 2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "funka.la.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

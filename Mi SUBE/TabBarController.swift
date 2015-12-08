@@ -12,8 +12,6 @@ import UIColor_Hex_Swift
 class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // 207BF6
         UITabBar.appearance().barTintColor = UIColor(rgba: "#207BF6")
     }
     

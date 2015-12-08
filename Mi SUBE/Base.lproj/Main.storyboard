@@ -29,15 +29,15 @@
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-w6-P1b">
-                                <rect key="frame" x="0.0" y="482" width="600" height="69"/>
+                                <rect key="frame" x="0.0" y="477" width="600" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-uO-t9K">
-                                        <rect key="frame" x="539" y="8" width="45" height="45"/>
+                                        <rect key="frame" x="534" y="8" width="50" height="50"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="0Lx-1L-Dpe"/>
+                                            <constraint firstAttribute="width" constant="50" id="0Lx-1L-Dpe"/>
                                             <constraint firstAttribute="width" secondItem="5qB-uO-t9K" secondAttribute="height" multiplier="1:1" id="1pg-JZ-lgq"/>
-                                            <constraint firstAttribute="height" constant="45" id="kA9-5z-Wq1"/>
+                                            <constraint firstAttribute="height" constant="50" id="kA9-5z-Wq1"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="location"/>
@@ -275,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG0-vc-k1D">
-                                <rect key="frame" x="278.5" y="289.5" width="43.5" height="20.5"/>
+                                <rect key="frame" x="279" y="290" width="43" height="20"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -289,7 +289,7 @@
                             <constraint firstItem="wG0-vc-k1D" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="7t6-hf-Qsm"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="KBm-H1-mwG"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="KBm-H1-mwG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -309,7 +309,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ajustes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eX-b5-EOe">
-                                <rect key="frame" x="272" y="289.5" width="56.5" height="20.5"/>
+                                <rect key="frame" x="272" y="290" width="57" height="20"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
