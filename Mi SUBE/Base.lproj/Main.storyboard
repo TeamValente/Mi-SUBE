@@ -26,12 +26,12 @@
                                 <gestureRecognizers/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-uO-t9K">
-                                <rect key="frame" x="534" y="485" width="50" height="50"/>
+                                <rect key="frame" x="528" y="479" width="56" height="56"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="0Lx-1L-Dpe"/>
+                                    <constraint firstAttribute="width" constant="56" id="0Lx-1L-Dpe"/>
                                     <constraint firstAttribute="width" secondItem="5qB-uO-t9K" secondAttribute="height" multiplier="1:1" id="1pg-JZ-lgq"/>
-                                    <constraint firstAttribute="height" constant="50" id="kA9-5z-Wq1"/>
+                                    <constraint firstAttribute="height" constant="56" id="kA9-5z-Wq1"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="location"/>

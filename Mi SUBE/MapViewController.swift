@@ -51,7 +51,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Dispose of any resources that can be recreated.
     }
     
-    
     override func viewDidAppear(animated: Bool) {
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestAlwaysAuthorization()

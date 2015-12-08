@@ -32,6 +32,11 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
             }
         }
     }
+    
+    // block autorotate
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
 }
 
 extension UIImage {
