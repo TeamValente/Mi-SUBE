@@ -142,7 +142,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
         
-        self.selectedPointDistance.text = "\(distancia!.valor) \(distancia!.unidad)"
+        self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
         
         if cpa.datos.estaAbierto() {
             self.selectedPointHours.text = "\(cpa.datos.getHorarioDeAtencion()), Abierto ahora"

@@ -10,13 +10,15 @@ import Foundation
 
 class Distancia {
     
-    var valor: Double
+    var valorNumerico: Double
     var unidad: String
+    var valorString: String
     
-    init(valor: Double, unidad: String)
+    init(valorNum: Double, valorStr: String, unidad: String)
     {
         //Siempre se reciben
-        self.valor = valor
+        self.valorNumerico = valorNum
         self.unidad = unidad
+        self.valorString   = valorStr
     }
 }

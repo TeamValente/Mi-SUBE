@@ -32,13 +32,24 @@ class MiUbicacion{
         let metro = CLLocation(latitude: self.coordinate.latitude , longitude: self.coordinate.longitude)
         let valorMetros = metro.distanceFromLocation(CLLocation(latitude: punto.latitude,longitude: punto.longitude))
         var retDistancia: Distancia
-        
+        var unidadRet = "metros"
         if valorMetros >= 1000{
-            retDistancia = Distancia(valor: round(valorMetros/1000), unidad: "kilometros")
+            let valorEnKm = valorMetros/1000
+            
+            if valorEnKm == 1
+            {
+                unidadRet = "kilometro"
+            }else{
+                unidadRet = "kilometros"
+            }
+            
+            retDistancia = Distancia(valorNum: valorEnKm,valorStr: String(format: "%.2f", valorEnKm), unidad: unidadRet)
         }else{
-        
-            retDistancia = Distancia(valor: round(valorMetros), unidad: "metros")
-
+            if valorMetros == 1
+            {
+                unidadRet = "metro"
+            }
+            retDistancia = Distancia(valorNum: valorMetros,valorStr: String(format: "%.0f", valorMetros), unidad: unidadRet)
         }
         
         return retDistancia
