@@ -35,7 +35,7 @@ class MarkerFactory{
     {
         var puntoRetorno: CustomPointAnnotation
         
-        if miPunto.estaAbierto()
+        if (miPunto.estaAbierto() == EstadoNegocio.Abierto)
         {
             puntoRetorno =  makeMarkerOpen()
         }else
