@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -27,15 +28,16 @@
                                     <outletCollection property="gestureRecognizers" destination="uwL-lF-1TC" appends="YES" id="Bkm-rk-Efi"/>
                                 </connections>
                             </mapView>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-w6-P1b">
-                                <rect key="frame" x="0.0" y="493" width="600" height="58"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjZ-w6-P1b">
+                                <rect key="frame" x="0.0" y="482" width="600" height="69"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qB-uO-t9K">
-                                        <rect key="frame" x="550" y="8" width="42" height="42"/>
+                                        <rect key="frame" x="539" y="8" width="45" height="45"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="42" id="0Lx-1L-Dpe"/>
-                                            <constraint firstAttribute="height" constant="42" id="kA9-5z-Wq1"/>
+                                            <constraint firstAttribute="width" constant="45" id="0Lx-1L-Dpe"/>
+                                            <constraint firstAttribute="width" secondItem="5qB-uO-t9K" secondAttribute="height" multiplier="1:1" id="1pg-JZ-lgq"/>
+                                            <constraint firstAttribute="height" constant="45" id="kA9-5z-Wq1"/>
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="location"/>
@@ -45,11 +47,10 @@
                                     </button>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="AAM-ki-yvc"/>
-                                    <constraint firstAttribute="bottom" secondItem="5qB-uO-t9K" secondAttribute="bottom" constant="8" id="Gsf-NF-n3J"/>
-                                    <constraint firstAttribute="trailing" secondItem="5qB-uO-t9K" secondAttribute="trailing" constant="8" id="KFl-60-hzZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="5qB-uO-t9K" secondAttribute="bottom" constant="16" id="Gsf-NF-n3J"/>
+                                    <constraint firstAttribute="trailing" secondItem="5qB-uO-t9K" secondAttribute="trailing" constant="16" id="KFl-60-hzZ"/>
                                     <constraint firstItem="5qB-uO-t9K" firstAttribute="top" secondItem="LjZ-w6-P1b" secondAttribute="top" constant="8" id="fwj-k4-WeR"/>
                                 </constraints>
                                 <variation key="default">
