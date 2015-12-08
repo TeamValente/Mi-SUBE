@@ -85,33 +85,21 @@ class PuntoCarga{
             //Sin horario determinado devuelvo false
             return false
         }
-        
         if currentDate.hour() >= self.hourOpen && currentDate.hour() < self.hourClose
         {
             return true
         }else if self.hourOpen >= self.hourClose
         {
             return true
-        }else{
+        }else
+        {
             return false
         }
     
     }
     
     func detalleParaMapa() -> String {
-    
-        if self.hourClose + self.hourOpen != 0{
-            let apertura = "\(self.hourOpen):00"
-            let cierre = "\(self.hourClose):00"
-            if self.hourOpen >= self.hourClose
-            {
-               return "Abierto durante las 24 Hs."
-            }
-            return "\(apertura) a \(cierre) Hs."
-        }else //En caso de que no tenga horario cargado muestro solo el tipo
-        {
             return "\(self.type)"
-        }
     }
     
     func getHorarioDeAtencion() ->String
@@ -119,10 +107,6 @@ class PuntoCarga{
         if self.hourClose + self.hourOpen != 0{
             let apertura = "\(self.hourOpen):00"
             let cierre = "\(self.hourClose):00"
-            if self.hourOpen >= self.hourClose
-            {
-                return "Abierto durante las 24 Hs"
-            }
             return "\(apertura) - \(cierre) Hs"
         }else //En caso de que no tenga horario cargado muestro solo el tipo
         {
