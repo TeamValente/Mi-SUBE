@@ -193,6 +193,9 @@ xcuserdata/
 # c.f. http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
 #!Podfile.lock
+
+Pods/
+
 #
 # RUBY:
 #
@@ -203,7 +206,7 @@ xcuserdata/
 # IDEA:
 #
 # c.f. https://www.jetbrains.com/objc/help/managing-projects-under-version-control.html?search=workspace.xml
-# 
+#
 #.idea/workspace.xml
 #
 # TEXTMATE:
