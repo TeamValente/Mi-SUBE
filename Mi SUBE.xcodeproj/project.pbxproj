@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D7C0A4144553862FC259C30 /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB11BD73AF9E7410EF35E34 /* Pods_Mi_SUBE.framework */; };
 		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
 		EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarkerFactory.swift */; };
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7129ABDE90753367A2E680F8 /* Pods-Mi SUBE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.release.xcconfig"; sourceTree = "<group>"; };
+		7741D5EEFE67BA738B5E891D /* Pods-Mi SUBE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.debug.xcconfig"; sourceTree = "<group>"; };
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		ECC647CE1C12932C00896171 /* DondeCargoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DondeCargoService.swift; sourceTree = "<group>"; };
 		ECC647D01C12938A00896171 /* PuntoCarga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoCarga.swift; sourceTree = "<group>"; };
 		ECC647D31C12B39100896171 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FEB11BD73AF9E7410EF35E34 /* Pods_Mi_SUBE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mi_SUBE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +59,30 @@
 			files = (
 				ECC647CD1C12832F00896171 /* MapKit.framework in Frameworks */,
 				ECC647CB1C12832A00896171 /* CoreLocation.framework in Frameworks */,
+				2D7C0A4144553862FC259C30 /* Pods_Mi_SUBE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8FA973B468C6FE10153AD6C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7741D5EEFE67BA738B5E891D /* Pods-Mi SUBE.debug.xcconfig */,
+				7129ABDE90753367A2E680F8 /* Pods-Mi SUBE.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD0D004604A22CD2E20154CE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEB11BD73AF9E7410EF35E34 /* Pods_Mi_SUBE.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC105EE31C15C94E001847F6 /* GPX */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				ECC647CA1C12832A00896171 /* CoreLocation.framework */,
 				ECC647B51C12822600896171 /* Mi SUBE */,
 				ECC647B41C12822600896171 /* Products */,
+				8FA973B468C6FE10153AD6C8 /* Pods */,
+				BD0D004604A22CD2E20154CE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECC647C51C12822600896171 /* Build configuration list for PBXNativeTarget "Mi SUBE" */;
 			buildPhases = (
+				6D1CB557058629F2272AF4EF /* Check Pods Manifest.lock */,
 				ECC647AF1C12822600896171 /* Sources */,
 				ECC647B01C12822600896171 /* Frameworks */,
 				ECC647B11C12822600896171 /* Resources */,
+				06D62380540F3AE6A99C126A /* Embed Pods Frameworks */,
+				0DB9FE311824C133F7B8573F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +245,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06D62380540F3AE6A99C126A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DB9FE311824C133F7B8573F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D1CB557058629F2272AF4EF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ECC647AF1C12822600896171 /* Sources */ = {
@@ -344,6 +419,7 @@
 		};
 		ECC647C61C12822600896171 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7741D5EEFE67BA738B5E891D /* Pods-Mi SUBE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -358,6 +434,7 @@
 		};
 		ECC647C71C12822600896171 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7129ABDE90753367A2E680F8 /* Pods-Mi SUBE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
