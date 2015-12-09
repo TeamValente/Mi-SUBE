@@ -11,7 +11,7 @@ import RealmSwift
 
 class ModelService{
 
-    var miTarjeta:Tarjeta
+    private var miTarjeta:Tarjeta
     //Creo una tarjeta de cero si no existen
     init()
     {
