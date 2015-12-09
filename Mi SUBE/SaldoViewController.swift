@@ -7,18 +7,24 @@
 //
 
 import UIKit
-import RealmSwift
 
 class SaldoViewController: UIViewController {
 
-    @IBOutlet weak var txtConTarjetas: UITextView!
     @IBOutlet weak var aliasTarjeta: UITextField!
-    @IBOutlet weak var numeroTarjeta: UITextField!
-
+    
+    
+    //MARK: Variables de la clase
+    var miTarjeta: Tarjeta!
+    var managerModelo: ModelService!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        miTarjeta = ModelService().getTarjeta()
+        managerModelo = ModelService()
+        aliasTarjeta.text = "$\(miTarjeta.saldo)"
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,31 +32,29 @@ class SaldoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    @IBAction func agregarTarjeta() {
+    @IBAction func agregoCredito(sender: UIButton) {
+    
+        let miMov = Movimiento()
+        let monto = sender.titleLabel?.text
+        miMov.valorMovimiento = Double(monto!)!
         
-        var resultado:String = ""
-        
-        let miTarjeta = Tarjeta()
-        miTarjeta.alias = aliasTarjeta.text!
-        miTarjeta.numero = numeroTarjeta.text!
+        managerModelo.actualizarSaldo(miMov)
+        aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
         
     
-        let realm = try! Realm()
-        // You only need to do this once (per thread)
-        
-        // Add to the Realm inside a transaction
-        try! realm.write {
-            realm.add(miTarjeta)
-        }
-        
-        let tarjetas = realm.objects(Tarjeta)
-        
-        for t in tarjetas{
-             resultado = "\(resultado) \(t.numero)"
-        }
-        
-        txtConTarjetas.text = resultado
     }
+
+    @IBAction func sacarCredito(sender: UIButton) {
+    
+        let miMov = Movimiento()
+        let monto = sender.titleLabel?.text
+        miMov.valorMovimiento = Double(monto!)!
+        
+        managerModelo.actualizarSaldo(miMov)
+        aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
+    
+    }
+    
+
 
 }

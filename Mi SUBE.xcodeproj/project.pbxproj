@@ -13,6 +13,7 @@
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
 		EC6836331C17AC6A000EC0C8 /* MiSUBEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836321C17AC6A000EC0C8 /* MiSUBEModel.swift */; };
 		EC6836351C17AE7A000EC0C8 /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836341C17AE7A000EC0C8 /* SaldoViewController.swift */; };
+		EC6836371C17B603000EC0C8 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836361C17B603000EC0C8 /* ModelService.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
 		EC9C0C151C170A7C002C5F2A /* Distancia.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0C141C170A7C002C5F2A /* Distancia.swift */; };
@@ -38,6 +39,7 @@
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		EC6836321C17AC6A000EC0C8 /* MiSUBEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiSUBEModel.swift; sourceTree = "<group>"; };
 		EC6836341C17AE7A000EC0C8 /* SaldoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
+		EC6836361C17B603000EC0C8 /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelService.swift; sourceTree = "<group>"; };
 		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Congreso.gpx; path = ../Congreso.gpx; sourceTree = "<group>"; };
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
 		EC9C0C141C170A7C002C5F2A /* Distancia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distancia.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				ECC647CE1C12932C00896171 /* DondeCargoService.swift */,
+				EC6836361C17B603000EC0C8 /* ModelService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
 				EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */,
 				7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */,
+				EC6836371C17B603000EC0C8 /* ModelService.swift in Sources */,
 				ECC647B91C12822600896171 /* MapViewController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
 				EC6836351C17AE7A000EC0C8 /* SaldoViewController.swift in Sources */,
