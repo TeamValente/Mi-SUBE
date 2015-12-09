@@ -11,6 +11,7 @@ import UIKit
 class SaldoViewController: UIViewController {
 
     @IBOutlet weak var aliasTarjeta: UITextField!
+    @IBOutlet weak var movimientos: UITextView!
     
     
     //MARK: Variables de la clase
@@ -24,7 +25,9 @@ class SaldoViewController: UIViewController {
         miTarjeta = ModelService().getTarjeta()
         managerModelo = ModelService()
         aliasTarjeta.text = "$\(miTarjeta.saldo)"
-        
+    
+        cargoMovimientos(miTarjeta)
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,7 +43,8 @@ class SaldoViewController: UIViewController {
         
         managerModelo.actualizarSaldo(miMov)
         aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
-        
+    
+        cargoMovimientos(managerModelo.getTarjeta())
     
     }
 
@@ -53,6 +57,21 @@ class SaldoViewController: UIViewController {
         managerModelo.actualizarSaldo(miMov)
         aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
     
+        cargoMovimientos(managerModelo.getTarjeta())
+        
+    }
+    
+    func cargoMovimientos(tarjeta: Tarjeta)
+    {
+    
+        movimientos.text = "Movimientos: \n"
+        var salida = movimientos.text
+        for mov in tarjeta.movimientos
+        {
+            salida = "\(salida) fecha: \(mov.fechaMovimiento) monto: \(mov.valorMovimiento) \n"
+        }
+        
+        movimientos.text = salida
     }
     
 

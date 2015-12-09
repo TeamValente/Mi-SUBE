@@ -279,6 +279,13 @@
                                     <action selector="sacarCredito:" destination="yNX-vN-G4n" eventType="touchUpInside" id="k9T-0Q-6dH"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nco-qw-L75">
+                                <rect key="frame" x="20" y="96" width="560" height="447"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -289,9 +296,13 @@
                             <constraint firstItem="kbf-vE-Qyy" firstAttribute="leading" secondItem="eL5-TQ-uDo" secondAttribute="leadingMargin" id="4Ny-du-Jxc"/>
                             <constraint firstItem="hb6-KD-mdB" firstAttribute="width" secondItem="fz0-l8-ikr" secondAttribute="width" id="79q-SC-re4"/>
                             <constraint firstItem="hb6-KD-mdB" firstAttribute="leading" secondItem="fz0-l8-ikr" secondAttribute="trailing" constant="8" id="7Q4-3x-pT5"/>
+                            <constraint firstItem="nco-qw-L75" firstAttribute="top" secondItem="hb6-KD-mdB" secondAttribute="bottom" constant="8" id="8pm-kU-LZE"/>
+                            <constraint firstItem="nco-qw-L75" firstAttribute="trailing" secondItem="eL5-TQ-uDo" secondAttribute="trailingMargin" id="EIF-da-7DD"/>
                             <constraint firstItem="fz0-l8-ikr" firstAttribute="leading" secondItem="kbf-vE-Qyy" secondAttribute="trailing" constant="8" id="Hkg-Ty-vOJ"/>
                             <constraint firstItem="kbf-vE-Qyy" firstAttribute="top" secondItem="gUV-OP-OZy" secondAttribute="bottom" constant="8" id="Ou1-XY-wmt"/>
                             <constraint firstItem="gUV-OP-OZy" firstAttribute="trailing" secondItem="eL5-TQ-uDo" secondAttribute="trailingMargin" id="Xkq-0I-niT"/>
+                            <constraint firstItem="6gt-dV-Lub" firstAttribute="top" secondItem="nco-qw-L75" secondAttribute="bottom" constant="8" id="nx5-c5-5V8"/>
+                            <constraint firstItem="nco-qw-L75" firstAttribute="leading" secondItem="eL5-TQ-uDo" secondAttribute="leadingMargin" id="pbx-F8-IIm"/>
                             <constraint firstItem="hb6-KD-mdB" firstAttribute="leading" secondItem="fz0-l8-ikr" secondAttribute="trailing" constant="8" id="wE9-fi-bdc"/>
                             <constraint firstItem="fz0-l8-ikr" firstAttribute="width" secondItem="kbf-vE-Qyy" secondAttribute="width" id="wiZ-UY-0dd"/>
                             <constraint firstItem="hb6-KD-mdB" firstAttribute="top" secondItem="gUV-OP-OZy" secondAttribute="bottom" constant="8" id="wyc-cZ-LdE"/>
@@ -301,6 +312,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="aliasTarjeta" destination="gUV-OP-OZy" id="jjm-La-yxG"/>
+                        <outlet property="movimientos" destination="nco-qw-L75" id="SuN-EG-bp8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
