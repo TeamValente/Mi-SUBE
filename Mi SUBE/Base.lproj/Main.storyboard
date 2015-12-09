@@ -237,7 +237,7 @@
         <!--Mi SUBE-->
         <scene sceneID="8Ig-Ga-Bnp">
             <objects>
-                <viewController id="yNX-vN-G4n" sceneMemberID="viewController">
+                <viewController id="yNX-vN-G4n" customClass="SaldoViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f2R-6W-YLa"/>
                         <viewControllerLayoutGuide type="bottom" id="6gt-dV-Lub"/>
@@ -246,23 +246,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG0-vc-k1D">
-                                <rect key="frame" x="279" y="290" width="43" height="20"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alias Tarjeta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUV-OP-OZy">
+                                <rect key="frame" x="20" y="20" width="560" height="30"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Numero de Tarjeta" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HcE-FV-BGD">
+                                <rect key="frame" x="20" y="58" width="560" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbf-vE-Qyy">
+                                <rect key="frame" x="247" y="96" width="106" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Agregar Tarjeta"/>
+                                <connections>
+                                    <action selector="agregarTarjeta" destination="yNX-vN-G4n" eventType="touchUpInside" id="SvJ-BT-Ajs"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ffe-ic-Yto">
+                                <rect key="frame" x="20" y="134" width="560" height="417"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wG0-vc-k1D" firstAttribute="centerY" secondItem="eL5-TQ-uDo" secondAttribute="centerY" id="5Uy-KC-OQp"/>
-                            <constraint firstItem="wG0-vc-k1D" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="7t6-hf-Qsm"/>
+                            <constraint firstItem="gUV-OP-OZy" firstAttribute="leading" secondItem="eL5-TQ-uDo" secondAttribute="leadingMargin" id="2PH-nu-26k"/>
+                            <constraint firstItem="kbf-vE-Qyy" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="2dI-un-OrA"/>
+                            <constraint firstItem="gUV-OP-OZy" firstAttribute="top" secondItem="f2R-6W-YLa" secondAttribute="bottom" id="3JY-Fx-2ta"/>
+                            <constraint firstItem="kbf-vE-Qyy" firstAttribute="top" secondItem="HcE-FV-BGD" secondAttribute="bottom" constant="8" id="Anf-Uf-cvt"/>
+                            <constraint firstItem="HcE-FV-BGD" firstAttribute="trailing" secondItem="eL5-TQ-uDo" secondAttribute="trailingMargin" id="C6w-SJ-NCg"/>
+                            <constraint firstItem="ffe-ic-Yto" firstAttribute="top" secondItem="kbf-vE-Qyy" secondAttribute="bottom" constant="8" id="CUL-eJ-d4n"/>
+                            <constraint firstItem="kbf-vE-Qyy" firstAttribute="top" secondItem="HcE-FV-BGD" secondAttribute="bottom" constant="8" id="DSH-Df-BBT"/>
+                            <constraint firstItem="HcE-FV-BGD" firstAttribute="leading" secondItem="eL5-TQ-uDo" secondAttribute="leadingMargin" id="GUW-k5-PSa"/>
+                            <constraint firstItem="6gt-dV-Lub" firstAttribute="top" secondItem="ffe-ic-Yto" secondAttribute="bottom" id="JrL-Vz-4wc"/>
+                            <constraint firstItem="ffe-ic-Yto" firstAttribute="trailing" secondItem="eL5-TQ-uDo" secondAttribute="trailingMargin" id="Put-jR-jUM"/>
+                            <constraint firstItem="gUV-OP-OZy" firstAttribute="trailing" secondItem="eL5-TQ-uDo" secondAttribute="trailingMargin" id="Xkq-0I-niT"/>
+                            <constraint firstItem="ffe-ic-Yto" firstAttribute="leading" secondItem="eL5-TQ-uDo" secondAttribute="leadingMargin" id="acj-GB-gwz"/>
+                            <constraint firstItem="HcE-FV-BGD" firstAttribute="top" secondItem="gUV-OP-OZy" secondAttribute="bottom" constant="8" id="fZy-3W-CCx"/>
+                            <constraint firstItem="HcE-FV-BGD" firstAttribute="top" secondItem="gUV-OP-OZy" secondAttribute="bottom" constant="8" id="kdc-eT-gup"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="aliasTarjeta" destination="gUV-OP-OZy" id="jjm-La-yxG"/>
+                        <outlet property="numeroTarjeta" destination="HcE-FV-BGD" id="8mo-9c-7aa"/>
+                        <outlet property="txtConTarjetas" destination="ffe-ic-Yto" id="YvH-P1-48k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

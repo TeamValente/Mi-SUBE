@@ -11,6 +11,8 @@
 		99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */; };
 		EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarkerFactory.swift */; };
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
+		EC6836331C17AC6A000EC0C8 /* MiSUBEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836321C17AC6A000EC0C8 /* MiSUBEModel.swift */; };
+		EC6836351C17AE7A000EC0C8 /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836341C17AE7A000EC0C8 /* SaldoViewController.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
 		EC9C0C151C170A7C002C5F2A /* Distancia.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0C141C170A7C002C5F2A /* Distancia.swift */; };
@@ -34,6 +36,8 @@
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
+		EC6836321C17AC6A000EC0C8 /* MiSUBEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiSUBEModel.swift; sourceTree = "<group>"; };
+		EC6836341C17AE7A000EC0C8 /* SaldoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
 		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Congreso.gpx; path = ../Congreso.gpx; sourceTree = "<group>"; };
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
 		EC9C0C141C170A7C002C5F2A /* Distancia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distancia.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 		B10498DA2A33A67E3D0BEF0E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ECC647CC1C12832F00896171 /* MapKit.framework */,
+				ECC647CA1C12832A00896171 /* CoreLocation.framework */,
 				4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */,
 			);
 			name = Frameworks;
@@ -103,8 +109,6 @@
 		ECC647AA1C12822600896171 = {
 			isa = PBXGroup;
 			children = (
-				ECC647CC1C12832F00896171 /* MapKit.framework */,
-				ECC647CA1C12832A00896171 /* CoreLocation.framework */,
 				ECC647B51C12822600896171 /* Mi SUBE */,
 				ECC647B41C12822600896171 /* Products */,
 				A966553260A75B5BA6B949AE /* Pods */,
@@ -143,6 +147,7 @@
 			children = (
 				ECC647B81C12822600896171 /* MapViewController.swift */,
 				7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */,
+				EC6836341C17AE7A000EC0C8 /* SaldoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 		ECC647D21C12939100896171 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EC6836321C17AC6A000EC0C8 /* MiSUBEModel.swift */,
 				ECC647D01C12938A00896171 /* PuntoCarga.swift */,
 				EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */,
 				EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */,
@@ -305,10 +311,12 @@
 				7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */,
 				ECC647B91C12822600896171 /* MapViewController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
+				EC6836351C17AE7A000EC0C8 /* SaldoViewController.swift in Sources */,
 				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
 				EC9C0C151C170A7C002C5F2A /* Distancia.swift in Sources */,
 				EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */,
 				ECC647D11C12938A00896171 /* PuntoCarga.swift in Sources */,
+				EC6836331C17AC6A000EC0C8 /* MiSUBEModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
