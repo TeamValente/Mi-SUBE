@@ -10,9 +10,6 @@ import UIKit
 
 class SaldoViewController: UIViewController {
 
-    @IBOutlet weak var aliasTarjeta: UITextField!
-    @IBOutlet weak var movimientos: UITextView!
-    
     
     //MARK: Variables de la clase
     var miTarjeta: Tarjeta!
@@ -22,11 +19,11 @@ class SaldoViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        miTarjeta = ModelService().getTarjeta()
-        managerModelo = ModelService()
-        aliasTarjeta.text = "$\(miTarjeta.saldo)"
-    
-        cargoMovimientos(miTarjeta)
+//        miTarjeta = ModelService().getTarjeta()
+//        managerModelo = ModelService()
+//        aliasTarjeta.text = "$\(miTarjeta.saldo)"
+//    
+//        cargoMovimientos(miTarjeta)
     
     }
 
@@ -35,44 +32,43 @@ class SaldoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func agregoCredito(sender: UIButton) {
-    
-        let miMov = Movimiento()
-        let monto = sender.titleLabel?.text
-        miMov.valorMovimiento = Double(monto!)!
-        
-        managerModelo.actualizarSaldo(miMov)
-        aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
-    
-        cargoMovimientos(managerModelo.getTarjeta())
-    
-    }
-
-    @IBAction func sacarCredito(sender: UIButton) {
-    
-        let miMov = Movimiento()
-        let monto = sender.titleLabel?.text
-        miMov.valorMovimiento = Double(monto!)!
-        
-        managerModelo.actualizarSaldo(miMov)
-        aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
-    
-        cargoMovimientos(managerModelo.getTarjeta())
-        
-    }
-    
-    func cargoMovimientos(tarjeta: Tarjeta)
-    {
-    
-        movimientos.text = "Movimientos: \n"
-        var salida = movimientos.text
-        for mov in tarjeta.movimientos
-        {
-            salida = "\(salida) fecha: \(mov.fechaMovimiento) monto: \(mov.valorMovimiento) \n"
-        }
-        
-        movimientos.text = salida
-    }
+//    @IBAction func agregoCredito(sender: UIButton) {
+//    
+//        let miMov = Movimiento()
+//        let monto = sender.titleLabel?.text
+//        miMov.valorMovimiento = Double(monto!)!
+//        
+//        managerModelo.actualizarSaldo(miMov)
+//        aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
+//    
+//        cargoMovimientos(managerModelo.getTarjeta())
+//    
+//    }
+//
+//    @IBAction func sacarCredito(sender: UIButton) {
+//    
+//        let miMov = Movimiento()
+//        let monto = sender.titleLabel?.text
+//        miMov.valorMovimiento = Double(monto!)!
+//        
+//        managerModelo.actualizarSaldo(miMov)
+//        aliasTarjeta.text = "$\(managerModelo.getTarjeta().saldo)"
+//    
+//        cargoMovimientos(managerModelo.getTarjeta())
+//        
+//    }
+//    
+//    func cargoMovimientos(tarjeta: Tarjeta) {
+//    
+//        movimientos.text = "Movimientos: \n"
+//        var salida = movimientos.text
+//        for mov in tarjeta.movimientos
+//        {
+//            salida = "\(salida) fecha: \(mov.fechaMovimiento) monto: \(mov.valorMovimiento) \n"
+//        }
+//        
+//        movimientos.text = salida
+//    }
     
 
 

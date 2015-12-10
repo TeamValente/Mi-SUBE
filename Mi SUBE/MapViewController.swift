@@ -76,8 +76,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             manager.distanceFilter = 10 //Metros
             //manager.requestLocation()
             manager.startUpdatingLocation()
-        }else
-        {
+        } else {
             //Pongo coordenadas en el obelisco si no esta activado el GPS
             self.miUbicacion = MiUbicacion(lat: -34.603075,lon: -58.381653)
             self.obtenerPuntosDeCargas()
@@ -246,9 +245,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
             if (overlay is MKPolyline) {
-                
-                polylineRenderer.strokeColor =
-                    UIColor.blueColor().colorWithAlphaComponent(0.75)
+                //polylineRenderer.strokeColor = UIColor.blueColor().colorWithAlphaComponent(0.75)
+                polylineRenderer.strokeColor = UIColor(rgba: "#02BB4F").colorWithAlphaComponent(0.75)
 //                if mapView.overlays.count == 1 {
 //                    
 //                } else if mapView.overlays.count == 2 {
