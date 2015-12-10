@@ -9,16 +9,6 @@
 import Foundation
 import RealmSwift
 
-class MiSUBEModel: Object {
-    
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
-
-}
-
 // Person model
 class Tarjeta: Object {
     dynamic var alias = "Tarjeta"

@@ -329,6 +329,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="labelLastUpdate" destination="Ewp-GZ-W5M" id="F52-52-8Pd"/>
+                        <outlet property="labelSaldo" destination="PJJ-BD-4Wc" id="lX7-Ac-OfG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

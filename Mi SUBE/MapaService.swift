@@ -13,8 +13,12 @@ import MapKit
 class MapaService {
     
     
-    
-    
+    func removeRoute(mapa: MKMapView)
+    {
+        if mapa.overlays.count == 1 {
+            mapa.removeOverlay(mapa.overlays.first!)
+        }
+    }
     
     func calculateSegmentDirections(puntoFuente: MiUbicacion ,puntoDestino: PuntoCarga, mapa: MKMapView) {
         let placemarkSource = MKPlacemark(coordinate: puntoFuente.coordinate, addressDictionary: nil)

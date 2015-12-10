@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class ModelService{
+class TarjetaSUBEService{
 
     private var miTarjeta:Tarjeta
     //Creo una tarjeta de cero si no existen
@@ -55,8 +55,28 @@ class ModelService{
             self.miTarjeta.movimientos.append(nuevoMovimiento)
             realm.add(self.miTarjeta , update: true)
         }
+    }
+    
+    func getUltimoMovimiento()->String
+    {
+     
+        let realm = try! Realm()
+        var retorno:String = ""
+        if miTarjeta.movimientos.count > 0
+        {
+            if let ultimoMov = realm.objects(Movimiento).last
+            {
+                let fechaUltimoMov: NSDate = ultimoMov.fechaMovimiento
+                print(retorno)
+                
+                retorno = NSDate().offsetFrom(fechaUltimoMov)
+                print(NSDate().offsetFrom(fechaUltimoMov))
+
+            }
+
+        }
         
-        
+        return retorno
     
     }
 
