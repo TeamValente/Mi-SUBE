@@ -32,6 +32,11 @@ class SaldoViewController: UIViewController {
             miMovimiento.fechaMovimiento = NSDate()
             miMovimiento.valorMovimiento = 100
             managerModelo.actualizarSaldo(miMovimiento)
+        }else if miTarjeta.saldo == 100{
+            let miMovimiento = Movimiento()
+            miMovimiento.fechaMovimiento = NSDate()
+            miMovimiento.valorMovimiento = -3.5
+            managerModelo.actualizarSaldo(miMovimiento)
         }
         
         labelSaldo.text = "\(miTarjeta.saldo)"

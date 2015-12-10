@@ -108,14 +108,20 @@ extension NSDate
     }
     
     func offsetFrom(date:NSDate) -> String {
-        if yearsFrom(date)   > 0 { return "\(yearsFrom(date))y"   }
-        if monthsFrom(date)  > 0 { return "\(monthsFrom(date))M"  }
-        if weeksFrom(date)   > 0 { return "\(weeksFrom(date))w"   }
-        if daysFrom(date)    > 0 { return "\(daysFrom(date))d"    }
-        if hoursFrom(date)   > 0 { return "\(hoursFrom(date))h"   }
-        if minutesFrom(date) > 0 { return "\(minutesFrom(date))m" }
-        if secondsFrom(date) > 0 { return "\(secondsFrom(date))s" }
-        return ""
+        if yearsFrom(date)   > 1 { return "\(yearsFrom(date)) años"   }
+        if yearsFrom(date)   == 1 { return "\(yearsFrom(date)) año"   }
+        if monthsFrom(date)  > 1 { return "\(monthsFrom(date)) meses"  }
+        if monthsFrom(date)  == 1 { return "\(monthsFrom(date)) mes"  }
+        if weeksFrom(date)   > 1 { return "\(weeksFrom(date)) semanas"   }
+        if weeksFrom(date)   == 1 { return "\(weeksFrom(date)) semana"   }
+        if daysFrom(date)    > 1 { return "\(daysFrom(date)) días"    }
+        if daysFrom(date)    == 1 { return "\(daysFrom(date)) día"    }
+        if hoursFrom(date)   > 1 { return "\(hoursFrom(date)) horas"   }
+        if hoursFrom(date)   == 1 { return "\(hoursFrom(date)) hora"   }
+        if minutesFrom(date) > 1 { return "\(minutesFrom(date)) minutos" }
+        if minutesFrom(date) == 1 { return "\(minutesFrom(date)) minuto" }
+        if secondsFrom(date) > 1 { return "\(secondsFrom(date)) segundos" }
+        return "1 segundo"
     }
     
 }
