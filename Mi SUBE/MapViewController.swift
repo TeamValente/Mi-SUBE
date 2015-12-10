@@ -30,7 +30,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
-    var miUbicacion:MiUbicacion?
+    var miUbicacion:MiUbicacion!
     
     
     //MARK: UIViewController
@@ -74,6 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             * Se setea en metros la distancia con la que se va a activar el movimiento
             */
             manager.distanceFilter = 10 //Metros
+            //manager.requestLocation()
             manager.startUpdatingLocation()
         }else
         {
@@ -161,6 +162,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
         }
         
+        let mapaServicio = MapaService()
+        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: cpa.datos, mapa: mapa)
+        
         self.selectedPointType.text = cpa.datos.type
         
         if !(self.detailView.viewWithTag(3000) is UIVisualEffectView) {
@@ -191,6 +195,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //            print("response = \(response)")
         //
         //        })
+        
+        
         
     }
     
@@ -233,6 +239,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         return anView
         
     }
+    
+    //Seteo el color de la linea del mapa
+    func mapView(mapView: MKMapView,
+        rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+            
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            if (overlay is MKPolyline) {
+                
+                polylineRenderer.strokeColor =
+                    UIColor.blueColor().colorWithAlphaComponent(0.75)
+//                if mapView.overlays.count == 1 {
+//                    
+//                } else if mapView.overlays.count == 2 {
+//                    polylineRenderer.strokeColor =
+//                        UIColor.greenColor().colorWithAlphaComponent(0.75)
+//                } else if mapView.overlays.count == 3 {
+//                    polylineRenderer.strokeColor =
+//                        UIColor.redColor().colorWithAlphaComponent(0.75)
+//                }
+                polylineRenderer.lineWidth = 5
+            }
+            return polylineRenderer
+    }
+    
     //MARK: Cerrar detalle
     @IBAction func closeDetail() {
         self.constraintDetalle.constant = -500
@@ -263,5 +293,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
         }
     }
+
+
+
+    
+
+
 }
 

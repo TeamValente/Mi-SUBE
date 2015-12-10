@@ -15,6 +15,7 @@
 		EC6836351C17AE7A000EC0C8 /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836341C17AE7A000EC0C8 /* SaldoViewController.swift */; };
 		EC6836371C17B603000EC0C8 /* ModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836361C17B603000EC0C8 /* ModelService.swift */; };
 		EC83B4BC1C13A5C300B9E6AA /* Congreso.gpx in Resources */ = {isa = PBXBuildFile; fileRef = EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */; };
+		EC946F081C18FD4200982CDA /* MapaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC946F071C18FD4200982CDA /* MapaService.swift */; };
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
 		EC9C0C151C170A7C002C5F2A /* Distancia.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0C141C170A7C002C5F2A /* Distancia.swift */; };
 		ECA2E3DB1C13AF9500A6CA6E /* Palermo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ECA2E3DA1C13AF9500A6CA6E /* Palermo.gpx */; };
@@ -41,6 +42,7 @@
 		EC6836341C17AE7A000EC0C8 /* SaldoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
 		EC6836361C17B603000EC0C8 /* ModelService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelService.swift; sourceTree = "<group>"; };
 		EC83B4BB1C13A5C300B9E6AA /* Congreso.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Congreso.gpx; path = ../Congreso.gpx; sourceTree = "<group>"; };
+		EC946F071C18FD4200982CDA /* MapaService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaService.swift; sourceTree = "<group>"; };
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
 		EC9C0C141C170A7C002C5F2A /* Distancia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distancia.swift; sourceTree = "<group>"; };
 		ECA2E3DA1C13AF9500A6CA6E /* Palermo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Palermo.gpx; path = ../Palermo.gpx; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				ECC647CE1C12932C00896171 /* DondeCargoService.swift */,
 				EC6836361C17B603000EC0C8 /* ModelService.swift */,
+				EC946F071C18FD4200982CDA /* MapaService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC946F081C18FD4200982CDA /* MapaService.swift in Sources */,
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
 				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
 				EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 //En el caso de los tipos de Comercio son los siguientes
 //[{"id":"1","name":"Comercio"},{"id":"2","name":"Centro de carga"},{"id":"3","name":"Terminal Autom\u00e1tica"},{"id":"4","name":"Estaci\u00f3n de Tren"},{"id":"5","name":"Estaci\u00f3n de Subte"}]
@@ -33,6 +34,7 @@ class PuntoCarga{
     var flagSeller:Int
     var flagInvalid:Int?
     var idType:Int?
+    var coordinate: CLLocationCoordinate2D
 
     
     init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String,cost:String,hourOpen:Int,hourClose:Int,flagSeller:Int,flagInvalid:Int){
@@ -48,6 +50,9 @@ class PuntoCarga{
         self.hourClose = hourClose
         self.flagSeller = flagSeller
         self.flagInvalid = flagInvalid
+        coordinate = CLLocationCoordinate2D()
+        self.coordinate.latitude = latitude
+        self.coordinate.longitude = longitude
     }
     
     init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: String,hourOpen:Int,hourClose:Int, flagSeller: Int){
@@ -62,6 +67,9 @@ class PuntoCarga{
         self.hourClose = hourClose
         self.cost = cost
         self.flagSeller = flagSeller
+        coordinate = CLLocationCoordinate2D()
+        self.coordinate.latitude = latitude
+        self.coordinate.longitude = longitude
 
         
     }
@@ -79,6 +87,9 @@ class PuntoCarga{
         self.cost = cost
         self.idType = idType
         self.flagSeller = flagSeller
+        coordinate = CLLocationCoordinate2D()
+        self.coordinate.latitude = latitude
+        self.coordinate.longitude = longitude
         
         
     }

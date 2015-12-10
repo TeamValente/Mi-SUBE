@@ -25,6 +25,13 @@ class MiUbicacion{
         self.coordinate.longitude = lon
     }
     
+    
+    func getRutaHastaPuntoCarga(punto: PuntoCarga)
+    {
+    
+    }
+    
+    
     //Devuelve la distancia en metros
     func getDistanciaAPuntoCarga(punto: PuntoCarga) -> Distancia
     {
