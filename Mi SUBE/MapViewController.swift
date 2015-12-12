@@ -16,12 +16,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var locateButton: UIButton!
     
+    //MARK: Button Distance
+    @IBAction func selectedPoinDistanceButton() {
+    }
+    
+    @IBOutlet weak var selectedPointDistance: UIButton!
     @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
     //MARK: OutletsDetail
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var selectedPointDirection: UILabel!
-    @IBOutlet weak var selectedPointDistance: UILabel!
     @IBOutlet weak var selectedPointHours: UILabel!
     @IBOutlet weak var selectedPointSellSube: UILabel!
     @IBOutlet weak var selectedPointType: UILabel!
@@ -147,7 +151,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
         
-        self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
+        self.selectedPointDistance.setTitle("\(distancia!.valorString) \(distancia!.unidad)", forState: .Normal)
+        
+ //       self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
         
         var stringHorario = cpa.datos.getHorarioDeAtencion()
         
