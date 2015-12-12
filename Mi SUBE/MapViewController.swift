@@ -121,6 +121,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var fixPoint = CLLocationCoordinate2D(latitude: cpa.coordinate.latitude, longitude: cpa.coordinate.longitude)
         fixPoint.latitude = fixPoint.latitude - abs((fixPoint.latitude * 0.00005)) //Muevo la latitud para que se centre el punto.
         
+        let mapaServicio = MapaService()
+        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: cpa.datos, mapa: mapa)
+        
         let region = MKCoordinateRegion(center: fixPoint, span: span)
         //mapa.setRegion(region, animated: true)
         self.constraintDetalle.constant = 0
@@ -161,8 +164,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
         }
         
-        let mapaServicio = MapaService()
-        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: cpa.datos, mapa: mapa)
+        
         
         self.selectedPointType.text = cpa.datos.type
         
