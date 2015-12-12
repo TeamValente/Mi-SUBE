@@ -37,6 +37,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // navigation controller hidden
+        self.navigationController?.navigationBarHidden = true
+        
         //Activo el Manager
         manager = CLLocationManager()
         //Arranca con el menu oculto
@@ -52,6 +56,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        // navigation controller hidden
+        self.navigationController?.navigationBarHidden = true
+        
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestAlwaysAuthorization()
         }
