@@ -148,9 +148,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         let distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
         
+        
+        //self.selectedPointDistance.titleLabel!.text = "\(distancia!.valorString) \(distancia!.unidad)"
         self.selectedPointDistance.setTitle("\(distancia!.valorString) \(distancia!.unidad)", forState: .Normal)
         
- //       self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
+        //self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
         
         var stringHorario = cpa.datos.getHorarioDeAtencion()
         
