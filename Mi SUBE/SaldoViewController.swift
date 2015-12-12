@@ -40,7 +40,7 @@ class SaldoViewController: UIViewController {
         }
         
         labelSaldo.text = "\(miTarjeta.saldo)"
-        labelLastUpdate.text = "\(managerModelo.getUltimoMovimiento())"
+        labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
         
     }
     
