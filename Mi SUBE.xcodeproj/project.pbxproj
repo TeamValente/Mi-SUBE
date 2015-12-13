@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
 		99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */; };
+		EC3BA51E1C1CE37C0058CDD1 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3BA51D1C1CE37C0058CDD1 /* RouteViewController.swift */; };
 		EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE31C14972200327D19 /* MarkerFactory.swift */; };
 		EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */; };
 		EC6836331C17AC6A000EC0C8 /* MiSUBEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6836321C17AC6A000EC0C8 /* MiSUBEModel.swift */; };
@@ -36,6 +37,7 @@
 		2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.release.xcconfig"; sourceTree = "<group>"; };
 		4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mi_SUBE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		EC3BA51D1C1CE37C0058CDD1 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
 		EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
 		EC6836321C17AC6A000EC0C8 /* MiSUBEModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiSUBEModel.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				ECC647B81C12822600896171 /* MapViewController.swift */,
 				7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */,
 				ECC9679A1C1A32EC0070BA4F /* SaldoViewController.swift */,
+				EC3BA51D1C1CE37C0058CDD1 /* RouteViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				EC6836371C17B603000EC0C8 /* TarjetaSUBEService.swift in Sources */,
 				ECC647B91C12822600896171 /* MapViewController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
+				EC3BA51E1C1CE37C0058CDD1 /* RouteViewController.swift in Sources */,
 				ECC9679B1C1A32EC0070BA4F /* SaldoViewController.swift in Sources */,
 				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
 				EC9C0C151C170A7C002C5F2A /* Distancia.swift in Sources */,
