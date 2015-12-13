@@ -7,16 +7,27 @@
 //
 
 import UIKit
+import MapKit
 
-class RouteViewController: UIViewController {
+class RouteViewController: UIViewController, MKMapViewDelegate {
 
     
+    //MARK: Property
     var puntoDestino:PuntoCarga!
+    var miUbicacion: MiUbicacion!
+    
+    //MARK: Outlet
+    @IBOutlet weak var mapa: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let mapaServicio = MapaService()
+        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +35,17 @@ class RouteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: MKMapViewDelegate
+    //Seteo el color de la linea del mapa
+    func mapView(mapView: MKMapView,
+        rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+            
+            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
+            if (overlay is MKPolyline) {
+                polylineRenderer.strokeColor = UIColor(rgba: "#02BB4F").colorWithAlphaComponent(0.75)
+                polylineRenderer.lineWidth = 5
+            }
+            return polylineRenderer
     }
-    */
 
 }
