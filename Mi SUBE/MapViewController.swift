@@ -118,14 +118,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "mapViewToRouteView"{
-            if mapa.selectedAnnotations.count == 1 {
-                return true
-            }else
-            {
-                return false
-            }
-        }
         return true
     }
     
@@ -225,6 +217,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             //self.detailView.addSubview(blurEffectView)
             
         }
+        
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
@@ -276,17 +269,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
 
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
-//        self.selectedPointDistance.layer.zPosition = 1000
         performSegueWithIdentifier("mapViewToRouteView", sender: self)
     }
-    //MARK: Button Distance
 
-    /*
-    @IBAction func selectedPointDistanceButton() {
-        performSegueWithIdentifier("mapViewToRouteView", sender: self)
-        print("What in da actual faq?")
-    }
-    */
     
     //MARK: Botonera Ubicarme
     @IBAction func buscarmeEnElMundo() {
