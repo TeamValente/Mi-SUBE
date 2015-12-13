@@ -242,6 +242,9 @@
                             <constraint firstItem="ZJu-89-rfg" firstAttribute="leading" secondItem="Xv8-gh-rJH" secondAttribute="leadingMargin" constant="-20" id="enx-2d-I3Z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapa" destination="ZJu-89-rfg" id="weB-SA-VEl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsV-iL-5Qj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

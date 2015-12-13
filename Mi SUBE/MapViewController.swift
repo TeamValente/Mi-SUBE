@@ -99,7 +99,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "routeView" {
+        if segue.identifier == "mapViewToRouteView" {
             if let routeController = segue.destinationViewController as? RouteViewController{
                 if mapa.selectedAnnotations.count == 1
                 {
@@ -109,6 +109,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     }
                     let cpa = puntoSeleccionado as! CustomPointAnnotation
                     routeController.puntoDestino = cpa.datos
+                    routeController.miUbicacion = miUbicacion!
                     
                 }
             }
@@ -116,7 +117,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "routeView"{
+        if identifier == "mapViewToRouteView"{
             if mapa.selectedAnnotations.count == 1 {
                 return true
             }else
@@ -159,9 +160,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
         var fixPoint = CLLocationCoordinate2D(latitude: cpa.coordinate.latitude, longitude: cpa.coordinate.longitude)
         fixPoint.latitude = fixPoint.latitude - abs((fixPoint.latitude * 0.00005)) //Muevo la latitud para que se centre el punto.
-        
-        let mapaServicio = MapaService()
-        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: cpa.datos, mapa: mapa)
         
         let region = MKCoordinateRegion(center: fixPoint, span: span)
         //mapa.setRegion(region, animated: true)
@@ -267,18 +265,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
-    //Seteo el color de la linea del mapa
-    func mapView(mapView: MKMapView,
-        rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
-            
-            let polylineRenderer = MKPolylineRenderer(overlay: overlay)
-            if (overlay is MKPolyline) {
-                polylineRenderer.strokeColor = UIColor(rgba: "#02BB4F").colorWithAlphaComponent(0.75)
-                polylineRenderer.lineWidth = 5
-            }
-            return polylineRenderer
-    }
-    
+        
     //MARK: Cerrar detalle
     @IBAction func closeDetail() {
         self.constraintDetalle.constant = -500
@@ -287,10 +274,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     //MARK: Button Distance
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
-        
-        
-        var holaMundo = "HOLA MUNDO"
-        performSegueWithIdentifier("mapViewToRouteView", sender: self)
+    performSegueWithIdentifier("mapViewToRouteView", sender: self)
 
     }
     
