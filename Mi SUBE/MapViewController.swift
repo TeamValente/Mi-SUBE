@@ -61,6 +61,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidAppear(animated)
         // navigation controller hidden
         self.navigationController?.navigationBarHidden = true
+
         
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestAlwaysAuthorization()
@@ -164,6 +165,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let region = MKCoordinateRegion(center: fixPoint, span: span)
         //mapa.setRegion(region, animated: true)
         self.constraintDetalle.constant = 0
+        //self.detailView.layoutIfNeeded()
         UIView.animateWithDuration(0.5, animations: {
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
@@ -214,13 +216,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             blurEffectView.frame = self.mapa.frame
             blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            blurEffectView.layer.zPosition = -1
+            blurEffectView.layer.zPosition = -10
             blurEffectView.autoresizesSubviews = true
             blurEffectView.alpha = 0.9
             
             blurEffectView.tag = 3000 //le pongo este tag para no crearlo varias veces
             
-            self.detailView.addSubview(blurEffectView)
+            //self.detailView.addSubview(blurEffectView)
             
         }
     }
@@ -272,14 +274,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.mapa.deselectAnnotation(nil,animated: false)
     }
 
-    //MARK: Button Distance
+
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
-    performSegueWithIdentifier("mapViewToRouteView", sender: self)
-
+//        self.selectedPointDistance.layer.zPosition = 1000
+        performSegueWithIdentifier("mapViewToRouteView", sender: self)
     }
-    
+    //MARK: Button Distance
 
-
+    /*
+    @IBAction func selectedPointDistanceButton() {
+        performSegueWithIdentifier("mapViewToRouteView", sender: self)
+        print("What in da actual faq?")
+    }
+    */
     
     //MARK: Botonera Ubicarme
     @IBAction func buscarmeEnElMundo() {
