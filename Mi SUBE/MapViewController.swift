@@ -16,9 +16,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var locateButton: UIButton!
     
-    //MARK: Button Distance
-    @IBAction func selectedPoinDistanceButton() {
-    }
+
     
     @IBOutlet weak var selectedPointDistance: UIButton!
     @IBOutlet weak var detailView: UIView!
@@ -100,6 +98,35 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //En este punto cargo los centro que vienen por defecto
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "routeView" {
+            if let routeController = segue.destinationViewController as? RouteViewController{
+                if mapa.selectedAnnotations.count == 1
+                {
+                    let puntoSeleccionado = mapa.selectedAnnotations[0]
+                    if !(puntoSeleccionado is CustomPointAnnotation) {
+                        return
+                    }
+                    let cpa = puntoSeleccionado as! CustomPointAnnotation
+                    routeController.puntoDestino = cpa.datos
+                    
+                }
+            }
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "routeView"{
+            if mapa.selectedAnnotations.count == 1 {
+                return true
+            }else
+            {
+                return false
+            }
+        }
+        return true
+    }
+    
     //MARK: CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation() //Parar de buscar la ubicacion
@@ -133,6 +160,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         var fixPoint = CLLocationCoordinate2D(latitude: cpa.coordinate.latitude, longitude: cpa.coordinate.longitude)
         fixPoint.latitude = fixPoint.latitude - abs((fixPoint.latitude * 0.00005)) //Muevo la latitud para que se centre el punto.
         
+        let mapaServicio = MapaService()
+        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: cpa.datos, mapa: mapa)
+        
         let region = MKCoordinateRegion(center: fixPoint, span: span)
         //mapa.setRegion(region, animated: true)
         self.constraintDetalle.constant = 0
@@ -152,7 +182,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //self.selectedPointDistance.titleLabel!.text = "\(distancia!.valorString) \(distancia!.unidad)"
         self.selectedPointDistance.setTitle("\(distancia!.valorString) \(distancia!.unidad)", forState: .Normal)
         
-        //self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
+       //self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
         
         var stringHorario = cpa.datos.getHorarioDeAtencion()
         
@@ -177,11 +207,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
         }
         
-        let mapaServicio = MapaService()
-        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: cpa.datos, mapa: mapa)
-        
         self.selectedPointType.text = cpa.datos.type
-        
+
         if !(self.detailView.viewWithTag(3000) is UIVisualEffectView) {
             let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -198,21 +225,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.detailView.addSubview(blurEffectView)
             
         }
-        
-        
-        //        //Prueba de agregar un punto
-        //        let service: DondeCargoService
-        //        service = DondeCargoService()
-        //
-        //        cpa.datos.idType = 1
-        //
-        //        service.agregarPuntoCarga(cpa.datos, completionHandler: {(response: Bool) -> () in
-        //            print("response = \(response)")
-        //
-        //        })
-        
-        
-        
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
@@ -261,17 +273,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             
             let polylineRenderer = MKPolylineRenderer(overlay: overlay)
             if (overlay is MKPolyline) {
-                //polylineRenderer.strokeColor = UIColor.blueColor().colorWithAlphaComponent(0.75)
                 polylineRenderer.strokeColor = UIColor(rgba: "#02BB4F").colorWithAlphaComponent(0.75)
-//                if mapView.overlays.count == 1 {
-//                    
-//                } else if mapView.overlays.count == 2 {
-//                    polylineRenderer.strokeColor =
-//                        UIColor.greenColor().colorWithAlphaComponent(0.75)
-//                } else if mapView.overlays.count == 3 {
-//                    polylineRenderer.strokeColor =
-//                        UIColor.redColor().colorWithAlphaComponent(0.75)
-//                }
                 polylineRenderer.lineWidth = 5
             }
             return polylineRenderer
@@ -283,6 +285,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.mapa.deselectAnnotation(nil,animated: false)
     }
 
+    //MARK: Button Distance
+    @IBAction func selectedPointDistanceButton(sender: AnyObject) {
+        
+        
+        var holaMundo = "HOLA MUNDO"
+        performSegueWithIdentifier("mapViewToRouteView", sender: self)
+
+    }
+    
+
+
+    
     //MARK: Botonera Ubicarme
     @IBAction func buscarmeEnElMundo() {
         manager.startUpdatingLocation()
