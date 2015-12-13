@@ -35,9 +35,12 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
         mapa.showsUserLocation = true
         mapa.setRegion(region, animated: false)
-
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
