@@ -17,9 +17,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var locateButton: UIButton!
     
 
-    
+    // Outlets detailView
     @IBOutlet weak var selectedPointDistance: UIButton!
-    @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var detailView: UIVisualEffectView!
     @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
     //MARK: OutletsDetail
     @IBOutlet weak var closeButton: UIButton!
