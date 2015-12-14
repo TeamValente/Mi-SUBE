@@ -40,7 +40,25 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        // NavigationController Visible
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+
+        if let puntoDestino = self.puntoDestino{
+
+            let pinFactory = MarkerFactory()
+            mapa.addAnnotation(pinFactory.makeCustomMarker(puntoDestino))
+            mapa.showsUserLocation = true
+            mapa.delegate = self
+            
+            let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
+            let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
+            mapa.showsUserLocation = true
+            mapa.setRegion(region, animated: false)
+            
+            let mapaServicio = MapaService()
+            mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa)
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,6 +77,31 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
                 polylineRenderer.lineWidth = 5
             }
             return polylineRenderer
+    }
+    
+    
+    //Dibujo los puntos que vinieron
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        let reuseId = "pin"
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = false
+        }
+        else {
+            anView!.annotation = annotation
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = UIImage(named:cpa.imageName)
+        
+        return anView
+        
     }
 
 }

@@ -19,6 +19,7 @@
 		EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */; };
 		EC9C0C151C170A7C002C5F2A /* Distancia.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9C0C141C170A7C002C5F2A /* Distancia.swift */; };
 		ECA2E3DB1C13AF9500A6CA6E /* Palermo.gpx in Resources */ = {isa = PBXBuildFile; fileRef = ECA2E3DA1C13AF9500A6CA6E /* Palermo.gpx */; };
+		ECABF5871C1E36CA00C8B25C /* DetailFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECABF5861C1E36CA00C8B25C /* DetailFactory.swift */; };
 		ECC647B71C12822600896171 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B61C12822600896171 /* AppDelegate.swift */; };
 		ECC647B91C12822600896171 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647B81C12822600896171 /* MapViewController.swift */; };
 		ECC647BC1C12822600896171 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECC647BA1C12822600896171 /* Main.storyboard */; };
@@ -47,6 +48,7 @@
 		EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiUbicacion.swift; sourceTree = "<group>"; };
 		EC9C0C141C170A7C002C5F2A /* Distancia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Distancia.swift; sourceTree = "<group>"; };
 		ECA2E3DA1C13AF9500A6CA6E /* Palermo.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Palermo.gpx; path = ../Palermo.gpx; sourceTree = "<group>"; };
+		ECABF5861C1E36CA00C8B25C /* DetailFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailFactory.swift; sourceTree = "<group>"; };
 		ECC647B31C12822600896171 /* Mi SUBE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mi SUBE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECC647B61C12822600896171 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECC647B81C12822600896171 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				EC5B5BE31C14972200327D19 /* MarkerFactory.swift */,
+				ECABF5861C1E36CA00C8B25C /* DetailFactory.swift */,
 			);
 			name = Factory;
 			sourceTree = "<group>";
@@ -224,7 +227,7 @@
 				TargetAttributes = {
 					ECC647B21C12822600896171 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = MCJ455R27F;
+						DevelopmentTeam = HLY49RTLRG;
 					};
 				};
 			};
@@ -323,6 +326,7 @@
 				ECC647B91C12822600896171 /* MapViewController.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
 				EC3BA51E1C1CE37C0058CDD1 /* RouteViewController.swift in Sources */,
+				ECABF5871C1E36CA00C8B25C /* DetailFactory.swift in Sources */,
 				ECC9679B1C1A32EC0070BA4F /* SaldoViewController.swift in Sources */,
 				ECC647B71C12822600896171 /* AppDelegate.swift in Sources */,
 				EC9C0C151C170A7C002C5F2A /* Distancia.swift in Sources */,
@@ -446,7 +450,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "funka.la.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -461,7 +465,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "funka.la.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

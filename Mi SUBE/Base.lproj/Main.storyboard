@@ -20,7 +20,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-Gz-LKJ">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsN-Gz-LKJ">
                                 <rect key="frame" x="0.0" y="44" width="600" height="507"/>
                                 <gestureRecognizers/>
                             </mapView>
@@ -178,10 +178,10 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="Dyb-cv-lne"/>
-                                            <exclude reference="GmE-6v-smR"/>
                                             <exclude reference="0Mz-Yq-7sO"/>
                                             <exclude reference="I6G-i5-FJZ"/>
                                             <exclude reference="lhB-Pb-2Z9"/>
+                                            <exclude reference="GmE-6v-smR"/>
                                             <exclude reference="AqF-bI-glU"/>
                                             <exclude reference="g49-sw-3ea"/>
                                             <exclude reference="iMA-s1-8og"/>

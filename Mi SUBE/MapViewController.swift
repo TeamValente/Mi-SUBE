@@ -16,11 +16,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var locateButton: UIButton!
     
-
+    
     // Outlets detailView
     @IBOutlet weak var selectedPointDistance: UIButton!
     @IBOutlet weak var detailView: UIVisualEffectView!
     @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
+    
+    
     //MARK: OutletsDetail
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var selectedPointDirection: UILabel!
@@ -38,18 +40,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
         // navigation controller hidden
         self.navigationController?.navigationBarHidden = true
-        
         //Activo el Manager
         manager = CLLocationManager()
         //Arranca con el menu oculto
         self.closeButton.alpha = 0
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
-        // let gradientLayerView: UIView = UIView(frame: CGRectMake(0, 0, view.bounds.width, view.bounds.height))
     }
     
     override func didReceiveMemoryWarning() {
@@ -61,38 +59,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidAppear(animated)
         // navigation controller hidden
         self.navigationController?.navigationBarHidden = true
-
         
+        //Pido Request del Location
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             manager.requestAlwaysAuthorization()
         }
-        /* Pinpoint our location with the following accuracy:
-        *
-        *     kCLLocationAccuracyBestForNavigation  highest + sensor data
-        *     kCLLocationAccuracyBest               highest
-        *     kCLLocationAccuracyNearestTenMeters   10 meters
-        *     kCLLocationAccuracyHundredMeters      100 meters
-        *     kCLLocationAccuracyKilometer          1000 meters
-        *     kCLLocationAccuracyThreeKilometers    3000 meters
-        */
-        
         if CLLocationManager.locationServicesEnabled() {
-            
             //Distancia accuracy
             manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            /* Notify changes when device has moved x meters.
-            * Default value is kCLDistanceFilterNone: all movements are reported.
-            * Se setea en metros la distancia con la que se va a activar el movimiento
-            */
             manager.distanceFilter = 10 //Metros
-            //manager.requestLocation()
             manager.startUpdatingLocation()
-        } else {
-            //Pongo coordenadas en el obelisco si no esta activado el GPS
-            self.miUbicacion = MiUbicacion(lat: -34.603075,lon: -58.381653)
-            self.obtenerPuntosDeCargas()
         }
-        
         //Marco los delegates
         manager.delegate = self
         mapa.delegate = self
@@ -124,13 +101,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation() //Parar de buscar la ubicacion
+        
         if let location = locations.last{
             let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapa.userLocation.title = "Tu ubicación"
             mapa.showsUserLocation = true
             mapa.setRegion(region, animated: false)
+           
             
+            //Pido Request si se movio el usuario o si no se cargaron puntos.
             if (self.mapa.annotations.count < 2 || (self.miUbicacion?.coordinate.latitude != location.coordinate.latitude && self.miUbicacion?.coordinate.longitude != location.coordinate.longitude) ){
                 self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
                 obtenerPuntosDeCargas()
@@ -166,57 +146,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }, completion: nil)
         
         // seteamos los datos en el detalle
-        self.selectedPointDirection.text = cpa.datos.address
+        let factoryDetalles = DetailFActory(datos: cpa.datos)
+        self.selectedPointDirection.text = factoryDetalles.getDireccion()
+        self.selectedPointDistance.setTitle(factoryDetalles.getDistancia(miUbicacion), forState: .Normal)
+        self.selectedPointHours.text = factoryDetalles.getHorario()
+        self.selectedPointSellSube.text = factoryDetalles.getVendeSube()
+        self.selectedPointCostCharge.text = factoryDetalles.getCobraCarga()
+        self.selectedPointType.text = factoryDetalles.getTipoPunto()
         
-        let distancia = miUbicacion?.getDistanciaAPuntoCarga(cpa.datos)
-        
-        
-        //self.selectedPointDistance.titleLabel!.text = "\(distancia!.valorString) \(distancia!.unidad)"
-        self.selectedPointDistance.setTitle("\(distancia!.valorString) \(distancia!.unidad)", forState: .Normal)
-        
-       //self.selectedPointDistance.text = "\(distancia!.valorString) \(distancia!.unidad)"
-        
-        var stringHorario = cpa.datos.getHorarioDeAtencion()
-        
-        //Marco el estado
-        if cpa.datos.estaAbierto() == EstadoNegocio.Abierto {
-            stringHorario = "\(stringHorario), Abierto ahora"
-        } else if cpa.datos.estaAbierto() == EstadoNegocio.Cerrado {
-            stringHorario = "\(stringHorario), Cerrado"
-        }
-        self.selectedPointHours.text = "\(stringHorario)"
-        
-        if cpa.datos.vendeSube() {
-            self.selectedPointSellSube.text = "Si"
-        } else {
-            self.selectedPointSellSube.text = "No"
-        }
-        
-        if cpa.datos.cobraPorCargar(){
-            self.selectedPointCostCharge.text = "Si"
-        } else {
-            self.selectedPointCostCharge.text = "No"
-            
-        }
-        
-        self.selectedPointType.text = cpa.datos.type
-
-        if !(self.detailView.viewWithTag(3000) is UIVisualEffectView) {
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-            //always fill the view
-            
-            blurEffectView.frame = self.mapa.frame
-            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            blurEffectView.layer.zPosition = -10
-            blurEffectView.autoresizesSubviews = true
-            blurEffectView.alpha = 0.9
-            
-            blurEffectView.tag = 3000 //le pongo este tag para no crearlo varias veces
-            
-            //self.detailView.addSubview(blurEffectView)
-            
-        }
         
     }
     
@@ -260,18 +197,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
     }
     
-        
+    
     //MARK: Cerrar detalle
     @IBAction func closeDetail() {
         self.constraintDetalle.constant = -500
         self.mapa.deselectAnnotation(nil,animated: false)
     }
-
-
+    
+    
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
         performSegueWithIdentifier("mapViewToRouteView", sender: self)
     }
-
+    
     
     //MARK: Botonera Ubicarme
     @IBAction func buscarmeEnElMundo() {
@@ -297,11 +234,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
         }
     }
-
-
-
-    
-
 
 }
 
