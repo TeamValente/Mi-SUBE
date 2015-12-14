@@ -154,7 +154,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.selectedPointCostCharge.text = factoryDetalles.getCobraCarga()
         self.selectedPointType.text = factoryDetalles.getTipoPunto()
         
-        
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
@@ -207,6 +206,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
         performSegueWithIdentifier("mapViewToRouteView", sender: self)
+        //self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     
