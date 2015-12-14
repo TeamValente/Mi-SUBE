@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DetailFActory{
+class DetailHelper{
 
 
     private let datos: PuntoCarga

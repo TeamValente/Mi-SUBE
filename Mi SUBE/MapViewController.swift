@@ -146,7 +146,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }, completion: nil)
         
         // seteamos los datos en el detalle
-        let factoryDetalles = DetailFActory(datos: cpa.datos)
+        let factoryDetalles = DetailHelper(datos: cpa.datos)
         self.selectedPointDirection.text = factoryDetalles.getDireccion()
         self.selectedPointDistance.setTitle(factoryDetalles.getDistancia(miUbicacion), forState: .Normal)
         self.selectedPointHours.text = factoryDetalles.getHorario()
