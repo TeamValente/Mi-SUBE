@@ -22,21 +22,26 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        let mapaServicio = MapaService()
-        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa)
-        
-        let pinFactory = MarkerFactory()
-        mapa.addAnnotation(pinFactory.makeCustomMarker(puntoDestino))
-        mapa.showsUserLocation = true
-        mapa.delegate = self
-        
-        let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
-        let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
-        mapa.showsUserLocation = true
-        mapa.setRegion(region, animated: false)
+        if let puntoDestino = self.puntoDestino{
+            // Do any additional setup after loading the view.
+            
+            let pinFactory = MarkerFactory()
+            mapa.addAnnotation(pinFactory.makeCustomMarker(puntoDestino))
+            mapa.showsUserLocation = true
+            mapa.delegate = self
+            
+            let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
+            let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
+            mapa.showsUserLocation = true
+            mapa.setRegion(region, animated: false)
+            
+            
+            let mapaServicio = MapaService()
+            mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa)
+            
+            
 
-        
+        }
         
     }
 
@@ -58,6 +63,8 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
             return polylineRenderer
     }
     
+    
+    //Dibujo los puntos que vinieron
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is CustomPointAnnotation) {
             return nil
