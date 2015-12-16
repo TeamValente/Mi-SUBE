@@ -293,13 +293,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5hH-SS-mxu">
-                                <rect key="frame" x="97" y="35" width="126" height="40"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="115" y="35" width="90" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <color key="textColor" red="0.17715003069999999" green="0.35853607382550334" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFL-iz-jSa">
-                                <rect key="frame" x="16" y="89" width="288" height="162"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFL-iz-jSa">
+                                <rect key="frame" x="16" y="79" width="288" height="162"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PJJ-BD-4Wc">
                                         <rect key="frame" x="36" y="36" width="230" height="91"/>
@@ -308,8 +308,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actualizado hace 2 horas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ewp-GZ-W5M">
-                                        <rect key="frame" x="8" y="139" width="262" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <rect key="frame" x="8" y="142" width="262" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -346,30 +346,25 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Registrar una carga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-Qn-ovg">
-                                <rect key="frame" x="16" y="279" width="149" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Registrar un viaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HI-BZ-4LZ">
-                                <rect key="frame" x="172" y="279" width="132" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SAg-L2-117">
+                                <rect key="frame" x="16" y="475" width="288" height="29"/>
+                                <segments>
+                                    <segment title="Registrar una carga"/>
+                                    <segment title="Registrar un viaje"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5hH-SS-mxu" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="1nZ-oX-ZHa"/>
-                            <constraint firstItem="7HI-BZ-4LZ" firstAttribute="top" secondItem="IFL-iz-jSa" secondAttribute="bottom" constant="28" id="O69-4K-RxC"/>
+                            <constraint firstItem="SAg-L2-117" firstAttribute="leading" secondItem="IFL-iz-jSa" secondAttribute="leading" id="3pF-Sn-l7Q"/>
+                            <constraint firstItem="SAg-L2-117" firstAttribute="trailing" secondItem="IFL-iz-jSa" secondAttribute="trailing" id="L7U-lB-Pu9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="IFL-iz-jSa" secondAttribute="leading" id="TQd-Vn-cKm"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="ruX-Qn-ovg" secondAttribute="leading" id="cjJ-6L-nwn"/>
+                            <constraint firstItem="6gt-dV-Lub" firstAttribute="top" secondItem="SAg-L2-117" secondAttribute="bottom" constant="16" id="bgn-QC-CUp"/>
                             <constraint firstItem="IFL-iz-jSa" firstAttribute="top" secondItem="5hH-SS-mxu" secondAttribute="bottom" constant="15" id="nds-K4-cZf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7HI-BZ-4LZ" secondAttribute="trailing" id="niN-GT-FRe"/>
                             <constraint firstItem="5hH-SS-mxu" firstAttribute="top" secondItem="f2R-6W-YLa" secondAttribute="bottom" constant="15" id="p54-tP-MLb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IFL-iz-jSa" secondAttribute="trailing" id="pr4-1f-gII"/>
-                            <constraint firstItem="ruX-Qn-ovg" firstAttribute="top" secondItem="IFL-iz-jSa" secondAttribute="bottom" constant="28" id="xg9-CC-xHW"/>
+                            <constraint firstItem="SAg-L2-117" firstAttribute="width" secondItem="IFL-iz-jSa" secondAttribute="width" id="tad-IC-XrE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
