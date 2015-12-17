@@ -62,7 +62,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Pido Request del Location
         if CLLocationManager.authorizationStatus() == .NotDetermined {
-            manager.requestAlwaysAuthorization()
+            manager.requestWhenInUseAuthorization()
         }
         if CLLocationManager.locationServicesEnabled() {
             //Distancia accuracy

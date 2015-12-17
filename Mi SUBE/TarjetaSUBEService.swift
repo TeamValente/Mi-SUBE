@@ -10,12 +10,12 @@ import Foundation
 import RealmSwift
 
 class TarjetaSUBEService{
-
+    
     private var miTarjeta:Tarjeta
     //Creo una tarjeta de cero si no existen
     init()
     {
-    
+        
         //ManagerRealm
         let realm = try! Realm()
         
@@ -33,7 +33,7 @@ class TarjetaSUBEService{
             miTarjeta = tarjetas[0]
         }
     }
-
+    
     func listadoDeMovimientos()->List<Movimiento>
     {
         return miTarjeta.movimientos
@@ -42,6 +42,20 @@ class TarjetaSUBEService{
     func getTarjeta()->Tarjeta
     {
         return miTarjeta
+    }
+    
+    func removeTarjeta()
+    {
+        //ManagerRealm
+        let realm = try! Realm()
+        //Traigo las tarjeta debe venir solo una
+        let tarjetas = realm.objects(Tarjeta).filter("id = 1")
+        if tarjetas.count != 0{
+            try! realm.write {
+                realm.delete(tarjetas[0])
+            }
+            
+        }
     }
     
     func actualizarSaldo(nuevoMovimiento: Movimiento)
@@ -59,7 +73,7 @@ class TarjetaSUBEService{
     
     func getUltimoMovimiento()->String
     {
-     
+        
         let realm = try! Realm()
         var retorno:String = ""
         if miTarjeta.movimientos.count > 0
@@ -71,15 +85,15 @@ class TarjetaSUBEService{
                 
                 retorno = NSDate().offsetFrom(fechaUltimoMov)
                 print(NSDate().offsetFrom(fechaUltimoMov))
-
+                
             }
-
+            
         }
         
         return retorno
-    
+        
     }
-
-
-
+    
+    
+    
 }
