@@ -66,9 +66,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         if CLLocationManager.locationServicesEnabled() {
             //Distancia accuracy
-            manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            manager.distanceFilter = 10 //Metros
-            manager.startUpdatingLocation()
+            if miUbicacion == nil
+            {
+                manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                manager.distanceFilter = 10 //Metros
+                manager.startUpdatingLocation()
+            }
+
         }
         //Marco los delegates
         manager.delegate = self
