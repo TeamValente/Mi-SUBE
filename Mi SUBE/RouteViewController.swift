@@ -112,7 +112,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     
     private func configureFourColorCircularProgress() {
         circularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
-        view.addSubview(circularProgress)
+        //view.addSubview(circularProgress)
     }
     
     func updateProgress() {
