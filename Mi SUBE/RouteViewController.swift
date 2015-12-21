@@ -30,7 +30,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         // NavigationController Visible
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         configureFourColorCircularProgress()
-        NSTimer.scheduledTimerWithTimeInterval(0.03, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.003, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
@@ -50,9 +50,6 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
             mapa.addAnnotation(pinFactory.makeCustomMarker(puntoDestino))
             mapa.showsUserLocation = true
             mapa.delegate = self
-            
-            
-            
             let mapaServicio = MapaService()
             mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa, layoutProgress: progressOverlay)
             
@@ -106,7 +103,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     }
     
     func updateProgress() {
-        progress = progress &+ 1
+        progress = progress &+ 10
         let normalizedProgress = Double(progress) / 255.0
         circularProgress.progress = normalizedProgress
     }
