@@ -103,7 +103,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     }
     
     func updateProgress() {
-        progress = progress &+ 10
+        progress = progress &+ 1
         let normalizedProgress = Double(progress) / 255.0
         circularProgress.progress = normalizedProgress
     }
