@@ -262,23 +262,72 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZJu-89-rfg">
                                 <rect key="frame" x="-4" y="44" width="328" height="475"/>
                             </mapView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kzn-dd-qxa">
+                                <rect key="frame" x="-4" y="64" width="328" height="455"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="TqN-wO-7p1">
+                                    <rect key="frame" x="0.0" y="0.0" width="328" height="455"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMW-A8-Hx8" customClass="KYCircularProgress" customModule="KYCircularProgress">
+                                            <rect key="frame" x="114" y="177.5" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="DyA-1M-4L8"/>
+                                                <constraint firstAttribute="height" constant="100" id="aVc-yt-VHg"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="progress">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="guideLineWidth">
+                                                    <real key="value" value="4"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculando ruta..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaG-3G-sAA">
+                                            <rect key="frame" x="28" y="326" width="268" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MaG-3G-sAA" firstAttribute="leading" secondItem="TqN-wO-7p1" secondAttribute="leading" constant="28" id="5ej-sb-Gg3"/>
+                                        <constraint firstAttribute="trailing" secondItem="MaG-3G-sAA" secondAttribute="trailing" constant="32" id="9ll-Ne-5xT"/>
+                                        <constraint firstItem="MaG-3G-sAA" firstAttribute="top" secondItem="DMW-A8-Hx8" secondAttribute="bottom" constant="48.5" id="IAJ-OQ-sAN"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="DMW-A8-Hx8" firstAttribute="centerX" secondItem="Kzn-dd-qxa" secondAttribute="centerX" id="KOb-Kt-PqD"/>
+                                    <constraint firstItem="DMW-A8-Hx8" firstAttribute="centerY" secondItem="Kzn-dd-qxa" secondAttribute="centerY" id="YyL-m6-wMw"/>
+                                </constraints>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="ZJu-89-rfg" secondAttribute="trailing" constant="-20" id="4b7-pj-qCW"/>
+                            <constraint firstItem="3eu-Mf-FuS" firstAttribute="top" secondItem="Kzn-dd-qxa" secondAttribute="bottom" id="6Cr-BX-w9C"/>
+                            <constraint firstItem="Kzn-dd-qxa" firstAttribute="top" secondItem="7Uc-OU-9Ng" secondAttribute="bottom" id="6aT-MJ-uWi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kzn-dd-qxa" secondAttribute="trailing" constant="-20" id="CEl-2E-2zW"/>
                             <constraint firstItem="ZJu-89-rfg" firstAttribute="top" secondItem="7Uc-OU-9Ng" secondAttribute="bottom" constant="-20" id="amq-eu-CIs"/>
                             <constraint firstItem="3eu-Mf-FuS" firstAttribute="top" secondItem="ZJu-89-rfg" secondAttribute="bottom" id="cwn-bI-Vw7"/>
                             <constraint firstItem="ZJu-89-rfg" firstAttribute="leading" secondItem="Xv8-gh-rJH" secondAttribute="leadingMargin" constant="-20" id="enx-2d-I3Z"/>
+                            <constraint firstItem="Kzn-dd-qxa" firstAttribute="leading" secondItem="Xv8-gh-rJH" secondAttribute="leadingMargin" constant="-20" id="qEo-Oc-o0i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nQn-U6-Yks"/>
                     <connections>
+                        <outlet property="circularProgress" destination="DMW-A8-Hx8" id="QpV-al-lUT"/>
                         <outlet property="mapa" destination="ZJu-89-rfg" id="weB-SA-VEl"/>
+                        <outlet property="progressOverlay" destination="Kzn-dd-qxa" id="kg0-VZ-a1H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XsV-iL-5Qj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1454.4000000000001" y="-417.48000000000002"/>
+            <point key="canvasLocation" x="1454" y="-418"/>
         </scene>
         <!--Mi SUBE-->
         <scene sceneID="8Ig-Ga-Bnp">
