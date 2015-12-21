@@ -26,13 +26,16 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         // NavigationController Visible
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
         configureFourColorCircularProgress()
         NSTimer.scheduledTimerWithTimeInterval(0.03, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
+        let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
+        mapa.showsUserLocation = true
+        mapa.setRegion(region, animated: false)
         
         
     }
@@ -48,10 +51,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
             mapa.showsUserLocation = true
             mapa.delegate = self
             
-            let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
-            let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
-            mapa.showsUserLocation = true
-            mapa.setRegion(region, animated: false)
+            
             
             let mapaServicio = MapaService()
             mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa, layoutProgress: progressOverlay)
