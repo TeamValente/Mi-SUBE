@@ -9,6 +9,8 @@
 import Foundation
 import CoreLocation
 import MapKit
+import KYCircularProgress
+import UIKit
 
 class MapaService {
     
@@ -20,7 +22,7 @@ class MapaService {
         }
     }
     
-    func calculateSegmentDirections(puntoFuente: MiUbicacion ,puntoDestino: PuntoCarga, mapa: MKMapView) {
+    func calculateSegmentDirections(puntoFuente: MiUbicacion ,puntoDestino: PuntoCarga, mapa: MKMapView, layoutProgress: UIVisualEffectView) {
         let placemarkSource = MKPlacemark(coordinate: puntoFuente.coordinate, addressDictionary: nil)
         let placermarkerDestination = MKPlacemark(coordinate: puntoDestino.coordinate, addressDictionary: nil)
         let request: MKDirectionsRequest = MKDirectionsRequest()
@@ -37,6 +39,7 @@ class MapaService {
                 routeResponse.sort({$0.expectedTravelTime <
                     $1.expectedTravelTime})[0]
                 self.dibujarRuta(quickestRouteForSegment,mapa: mapa)
+                layoutProgress.hidden = true
                 
             } else if let _ = error {
                 

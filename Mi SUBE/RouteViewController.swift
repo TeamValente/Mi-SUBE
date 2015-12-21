@@ -28,21 +28,13 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let mapaServicio = MapaService()
-        mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa)
+        //let mapaServicio = MapaService()
+        //mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa, layoutProgress: progressOverlay )
         
         configureFourColorCircularProgress()
         NSTimer.scheduledTimerWithTimeInterval(0.03, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
         
-        let pinFactory = MarkerFactory()
-        mapa.addAnnotation(pinFactory.makeCustomMarker(puntoDestino))
-        mapa.showsUserLocation = true
-        mapa.delegate = self
         
-        let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
-        let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
-        mapa.showsUserLocation = true
-        mapa.setRegion(region, animated: false)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -64,7 +56,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
             mapa.setRegion(region, animated: false)
             
             let mapaServicio = MapaService()
-            mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa)
+            mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa, layoutProgress: progressOverlay)
             
         }
     }
