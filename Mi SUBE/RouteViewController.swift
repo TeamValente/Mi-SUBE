@@ -28,8 +28,8 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //let mapaServicio = MapaService()
-        //mapaServicio.calculateSegmentDirections(miUbicacion!, puntoDestino: puntoDestino, mapa: mapa, layoutProgress: progressOverlay )
+        // NavigationController Visible
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         configureFourColorCircularProgress()
         NSTimer.scheduledTimerWithTimeInterval(0.03, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
@@ -40,9 +40,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        // NavigationController Visible
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-
+       
         if let puntoDestino = self.puntoDestino {
 
             let pinFactory = MarkerFactory()
