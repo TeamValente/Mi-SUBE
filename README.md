@@ -1,5 +1,4 @@
 # Mi-Sube
-=========
 Aplicación iOS para saber donde cargar la tarjeta SUBE y controlar tus gastos.
 
 ## Desarrollada por:
@@ -17,10 +16,10 @@ Aplicación iOS para saber donde cargar la tarjeta SUBE y controlar tus gastos.
 ## Licencia
 This project is licensed under the MIT license.
 
-Copyright (c) 2015  - Hernán [aitchbot](https://github.com/aitchbot),
-					- Diego [diecp](https://github.com/diecp),
-					- David [davo](https://github.com/davo),
-					- Mariano [xmarianox](https://github.com/xmarianox).
+Copyright (c) 2015 Hernán [aitchbot](https://github.com/aitchbot),
+				   Diego [diecp](https://github.com/diecp),
+				   David [davo](https://github.com/davo),
+				   Mariano [xmarianox](https://github.com/xmarianox).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
