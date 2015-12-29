@@ -22,8 +22,11 @@ class SaldoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
         
@@ -41,7 +44,7 @@ class SaldoViewController: UIViewController {
         
         labelSaldo.text = "\(miTarjeta.saldo)"
         labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
-        
+
     }
     
     override func didReceiveMemoryWarning() {
