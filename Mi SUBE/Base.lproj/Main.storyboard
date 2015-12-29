@@ -610,10 +610,10 @@
             </objects>
             <point key="canvasLocation" x="1652" y="1945"/>
         </scene>
-        <!--View Controller-->
+        <!--Card Config View Controller-->
         <scene sceneID="Req-NO-fl2">
             <objects>
-                <viewController id="Ikn-2w-Vpe" sceneMemberID="viewController">
+                <viewController id="Ikn-2w-Vpe" customClass="CardConfigViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1O4-Zd-rYd"/>
                         <viewControllerLayoutGuide type="bottom" id="4uu-PZ-BSY"/>
@@ -622,19 +622,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desde acá se pueden borrar los datos de la tarjeta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Enj-7w-Qp2">
-                                <rect key="frame" x="16" y="274" width="288" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminar datos de la tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjL-Ji-nnC">
+                                <rect key="frame" x="16" y="81" width="288" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftf-pS-Bdc">
+                                <rect key="frame" x="16" y="148" width="288" height="30"/>
+                                <state key="normal" title="Borrar">
+                                    <color key="titleColor" red="1" green="0.1278103637557102" blue="0.21140459091134278" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteCardData" destination="Ikn-2w-Vpe" eventType="touchUpInside" id="NJC-vH-44S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Enj-7w-Qp2" firstAttribute="centerY" secondItem="f7y-ko-8H1" secondAttribute="centerY" id="Azx-8o-5Iw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Enj-7w-Qp2" secondAttribute="trailing" id="K43-X2-QhT"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Enj-7w-Qp2" secondAttribute="leading" id="ega-Vj-uIP"/>
-                            <constraint firstItem="Enj-7w-Qp2" firstAttribute="centerX" secondItem="f7y-ko-8H1" secondAttribute="centerX" id="nD7-HJ-EME"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="mjL-Ji-nnC" secondAttribute="leading" id="DDk-QW-UIQ"/>
+                            <constraint firstItem="mjL-Ji-nnC" firstAttribute="top" secondItem="1O4-Zd-rYd" secondAttribute="bottom" constant="17" id="Huw-uJ-R1L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ftf-pS-Bdc" secondAttribute="trailing" id="PPU-V5-TKt"/>
+                            <constraint firstItem="ftf-pS-Bdc" firstAttribute="leading" secondItem="f7y-ko-8H1" secondAttribute="leadingMargin" id="fBp-6q-gTN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mjL-Ji-nnC" secondAttribute="trailing" id="zeU-Od-QoZ"/>
+                            <constraint firstItem="ftf-pS-Bdc" firstAttribute="top" secondItem="mjL-Ji-nnC" secondAttribute="bottom" constant="46.5" id="zjB-la-Z5c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kwb-11-yMF"/>
