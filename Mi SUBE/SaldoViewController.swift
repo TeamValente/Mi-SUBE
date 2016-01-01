@@ -10,12 +10,16 @@ import UIKit
 
 class SaldoViewController: UIViewController {
     
-    
     //MARK: Variables
     var miTarjeta: Tarjeta!
     
     //MARK: Outelets
     
+    
+    @IBOutlet weak var labelTitulo: UILabel!
+    @IBOutlet weak var labelTituloTop: NSLayoutConstraint!
+    
+    @IBOutlet weak var SegmentedController: UISegmentedControl!
     @IBOutlet weak var labelSaldo: UILabel!
 
     @IBOutlet weak var labelLastUpdate: UILabel!
@@ -52,7 +56,30 @@ class SaldoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func cambiarPosicionTarjeta() {
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            self.labelTituloTop.constant = -32
+            self.labelTitulo.alpha = 0
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
     
     
+    @IBAction func cambiarSaldo(sender: UISegmentedControl) {
+        
+        // Creo animacion si "Registrar una carga" fue activado
+        switch SegmentedController.selectedSegmentIndex {
+        
+        case 0:
+            cambiarPosicionTarjeta()
+            print("Registrar una carga")
+        case 1:
+            print("Registrar un viaje")
+        default:
+            break
+        }
+        
+    }
     
 }
