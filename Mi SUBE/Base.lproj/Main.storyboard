@@ -269,7 +269,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMW-A8-Hx8" customClass="KYCircularProgress" customModule="KYCircularProgress">
-                                            <rect key="frame" x="114" y="177.5" width="100" height="100"/>
+                                            <rect key="frame" x="114" y="178" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="DyA-1M-4L8"/>
                                                 <constraint firstAttribute="height" constant="100" id="aVc-yt-VHg"/>
@@ -395,12 +395,15 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SAg-L2-117">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="SAg-L2-117">
                                 <rect key="frame" x="16" y="475" width="288" height="29"/>
                                 <segments>
                                     <segment title="Registrar una carga"/>
                                     <segment title="Registrar un viaje"/>
                                 </segments>
+                                <connections>
+                                    <action selector="cambiarSaldo:" destination="yNX-vN-G4n" eventType="valueChanged" id="EQA-jG-nPa"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -419,8 +422,11 @@
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="SegmentedController" destination="SAg-L2-117" id="Tkz-D2-1cl"/>
                         <outlet property="labelLastUpdate" destination="Ewp-GZ-W5M" id="F52-52-8Pd"/>
                         <outlet property="labelSaldo" destination="PJJ-BD-4Wc" id="lX7-Ac-OfG"/>
+                        <outlet property="labelTitulo" destination="5hH-SS-mxu" id="ckg-W1-2xs"/>
+                        <outlet property="labelTituloTop" destination="p54-tP-MLb" id="abz-7C-Hg6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,7 +499,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Librerías utilizadas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3PH-jI-ePZ">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Librerias utilizadas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3PH-jI-ePZ">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -561,7 +567,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aca va la descripción del teamValente!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-wa-Hs3">
-                                <rect key="frame" x="13.5" y="273.5" width="293" height="20.5"/>
+                                <rect key="frame" x="14" y="274" width="293" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -594,11 +600,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bdw-tX-qMS">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOZ-wP-UtR" userLabel="Content">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SOZ-wP-UtR" userLabel="Content">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="543"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="AZg-58-me6">
-                                                <rect key="frame" x="8" y="0.0" width="304" height="123.5"/>
+                                                <rect key="frame" x="8" y="0.0" width="304" height="124"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <string key="text">Nosotros como equipo apoyamos el desarrollo de Software Open Source y creemos en su filosofía.
 Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicación.</string>
@@ -606,33 +612,33 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Librerías utilizadas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESg-sq-aZR">
-                                                <rect key="frame" x="8" y="139" width="304" height="20.5"/>
+                                                <rect key="frame" x="8" y="139" width="304" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH4-t6-Iv0">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH4-t6-Iv0">
                                                 <rect key="frame" x="8" y="191" width="304" height="30"/>
                                                 <state key="normal" title="Cocoapods"/>
                                                 <connections>
                                                     <action selector="openLink:" destination="5a9-62-NeF" eventType="touchUpInside" id="SSx-cC-x8k"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjA-cn-a5z">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjA-cn-a5z">
                                                 <rect key="frame" x="8" y="237" width="304" height="30"/>
                                                 <state key="normal" title="Realm"/>
                                                 <connections>
                                                     <action selector="openLink:" destination="5a9-62-NeF" eventType="touchUpInside" id="szD-Uo-hSW"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKO-R3-jpt">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKO-R3-jpt">
                                                 <rect key="frame" x="8" y="283" width="304" height="30"/>
                                                 <state key="normal" title="UIColor-Hex-Swift"/>
                                                 <connections>
                                                     <action selector="openLink:" destination="5a9-62-NeF" eventType="touchUpInside" id="NPT-tv-iUf"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-t4-aOf">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-t4-aOf">
                                                 <rect key="frame" x="8" y="329" width="304" height="30"/>
                                                 <state key="normal" title="KYCircularProgress"/>
                                                 <connections>
@@ -700,7 +706,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftf-pS-Bdc">
-                                <rect key="frame" x="16" y="204.5" width="288" height="30"/>
+                                <rect key="frame" x="16" y="205" width="288" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.12781036379999999" blue="0.21140459089999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Borrar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -715,7 +721,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminar datos de la tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjL-Ji-nnC">
-                                <rect key="frame" x="16" y="124" width="288" height="20.5"/>
+                                <rect key="frame" x="16" y="124" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
