@@ -15,6 +15,8 @@ class SaldoViewController: UIViewController {
     
     //MARK: Outelets
     
+    @IBOutlet weak var cardView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,6 +24,10 @@ class SaldoViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        cardView.layer.cornerRadius = 10;
+        cardView.layer.masksToBounds = true;
+
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
         

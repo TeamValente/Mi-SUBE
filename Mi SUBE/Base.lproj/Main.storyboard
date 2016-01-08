@@ -374,7 +374,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdR-Rl-egN">
                                 <rect key="frame" x="16" y="68" width="288" height="162"/>
-                                <color key="backgroundColor" red="0.17030649646028573" green="0.40652341578038409" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.23529411764705882" green="0.51372549019607838" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zdR-Rl-egN" secondAttribute="height" multiplier="16:9" id="Irh-yM-vGt"/>
                                 </constraints>
@@ -415,6 +415,9 @@
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cardView" destination="zdR-Rl-egN" id="vEF-vB-vbs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
