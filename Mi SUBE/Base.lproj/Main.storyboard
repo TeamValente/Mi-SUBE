@@ -341,7 +341,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5hH-SS-mxu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5hH-SS-mxu" userLabel="Titulo">
                                 <rect key="frame" x="115" y="35" width="90" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <color key="textColor" red="0.17715003069999999" green="0.35853607382550334" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -400,37 +400,111 @@
                                     <outletCollection property="gestureRecognizers" destination="uzm-JJ-VVn" appends="YES" id="HyV-9B-jKL"/>
                                 </connections>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="SAg-L2-117">
-                                <rect key="frame" x="16" y="475" width="288" height="29"/>
-                                <segments>
-                                    <segment title="Registrar una carga"/>
-                                    <segment title="Registrar un viaje"/>
-                                </segments>
-                                <connections>
-                                    <action selector="cambiarSaldo:" destination="yNX-vN-G4n" eventType="valueChanged" id="EQA-jG-nPa"/>
-                                </connections>
-                            </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uYF-2k-P7u">
-                                <rect key="frame" x="112" y="254" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWW-eh-lsk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="0,0" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="uYF-2k-P7u">
+                                        <rect key="frame" x="108" y="0.0" width="105" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="105" id="6fS-mg-Gsn"/>
+                                            <constraint firstAttribute="height" constant="50" id="ZDy-au-eaz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="SAg-L2-117">
+                                        <rect key="frame" x="16" y="0.0" width="288" height="29"/>
+                                        <segments>
+                                            <segment title="Registrar una carga"/>
+                                            <segment title="Registrar un viaje"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="cambiarSaldo:" destination="yNX-vN-G4n" eventType="valueChanged" id="EQA-jG-nPa"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ki-qo-AX9">
+                                        <rect key="frame" x="16" y="203" width="288" height="162"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="58.50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Fkh-WE-Fjb">
+                                                <rect key="frame" x="36" y="36" width="230" height="91"/>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="76"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actualizado hace 2 horas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Vyx-GI-R65">
+                                                <rect key="frame" x="8" y="142" width="262" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RUa-uJ-Ael">
+                                                <rect key="frame" x="16" y="52" width="16" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALDO ACTUAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaT-1O-73Z">
+                                                <rect key="frame" x="16" y="32" width="83" height="12"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="10"/>
+                                                <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1764705882" green="0.42745098040000001" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5ki-qo-AX9" secondAttribute="height" multiplier="16:9" id="7eK-Ka-r0S"/>
+                                            <constraint firstItem="Fkh-WE-Fjb" firstAttribute="top" secondItem="zaT-1O-73Z" secondAttribute="bottom" constant="-8" id="9wY-Lb-UQr"/>
+                                            <constraint firstItem="Fkh-WE-Fjb" firstAttribute="top" secondItem="RUa-uJ-Ael" secondAttribute="bottom" constant="-46" id="GQD-2p-2q9"/>
+                                            <constraint firstAttribute="bottom" secondItem="Vyx-GI-R65" secondAttribute="bottom" constant="8" id="MDx-c3-kzD"/>
+                                            <constraint firstItem="RUa-uJ-Ael" firstAttribute="leading" secondItem="5ki-qo-AX9" secondAttribute="leading" constant="16" id="SNa-25-Z9p"/>
+                                            <constraint firstItem="Fkh-WE-Fjb" firstAttribute="leading" secondItem="RUa-uJ-Ael" secondAttribute="trailing" constant="4" id="XR8-vH-MB2"/>
+                                            <constraint firstItem="zaT-1O-73Z" firstAttribute="leading" secondItem="5ki-qo-AX9" secondAttribute="leading" constant="16" id="cuE-Id-Sfe"/>
+                                            <constraint firstItem="Fkh-WE-Fjb" firstAttribute="centerY" secondItem="5ki-qo-AX9" secondAttribute="centerY" id="h70-uB-kLI"/>
+                                            <constraint firstItem="Vyx-GI-R65" firstAttribute="leading" secondItem="5ki-qo-AX9" secondAttribute="leading" constant="8" id="nF0-Xr-2rd"/>
+                                            <constraint firstAttribute="trailing" secondItem="Vyx-GI-R65" secondAttribute="trailing" constant="18" id="pr9-4v-1Rl"/>
+                                            <constraint firstItem="Fkh-WE-Fjb" firstAttribute="width" secondItem="5ki-qo-AX9" secondAttribute="width" multiplier="0.8" id="taL-a8-rSV"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Gaa-yj-SrK" userLabel="Titulo">
+                                        <rect key="frame" x="115" y="270" width="90" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <color key="textColor" red="0.17715003069999999" green="0.35853607380000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.28809249161073824" green="0.0" blue="1" alpha="0.72807112068965518" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="uYF-2k-P7u" firstAttribute="centerX" secondItem="jWW-eh-lsk" secondAttribute="centerX" id="62I-qB-QJa"/>
+                                    <constraint firstItem="5ki-qo-AX9" firstAttribute="top" secondItem="jWW-eh-lsk" secondAttribute="top" constant="203" id="6Cf-bG-3C8"/>
+                                    <constraint firstItem="SAg-L2-117" firstAttribute="trailing" secondItem="5ki-qo-AX9" secondAttribute="trailing" id="792-EP-ec1"/>
+                                    <constraint firstItem="5ki-qo-AX9" firstAttribute="centerY" secondItem="jWW-eh-lsk" secondAttribute="centerY" id="IeQ-JM-YuZ"/>
+                                    <constraint firstItem="SAg-L2-117" firstAttribute="leading" secondItem="5ki-qo-AX9" secondAttribute="leading" id="JeQ-fP-CXl"/>
+                                    <constraint firstItem="Gaa-yj-SrK" firstAttribute="centerX" secondItem="jWW-eh-lsk" secondAttribute="centerX" id="Opr-AV-Wgz"/>
+                                    <constraint firstItem="Gaa-yj-SrK" firstAttribute="leading" secondItem="jWW-eh-lsk" secondAttribute="leading" constant="115" id="cUT-PJ-dsm"/>
+                                    <constraint firstItem="5ki-qo-AX9" firstAttribute="leading" secondItem="jWW-eh-lsk" secondAttribute="leading" constant="16" id="e2S-nN-LWq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gaa-yj-SrK" secondAttribute="trailing" constant="115" id="iuY-5b-KUn"/>
+                                    <constraint firstItem="Gaa-yj-SrK" firstAttribute="top" secondItem="jWW-eh-lsk" secondAttribute="top" constant="270" id="rAu-6P-Y8L"/>
+                                    <constraint firstItem="uYF-2k-P7u" firstAttribute="top" secondItem="jWW-eh-lsk" secondAttribute="top" id="s9t-sn-xKN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5hH-SS-mxu" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="1nZ-oX-ZHa"/>
-                            <constraint firstItem="SAg-L2-117" firstAttribute="leading" secondItem="IFL-iz-jSa" secondAttribute="leading" id="3pF-Sn-l7Q"/>
-                            <constraint firstItem="uYF-2k-P7u" firstAttribute="centerY" secondItem="eL5-TQ-uDo" secondAttribute="centerY" id="EVw-Of-ZOp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="uYF-2k-P7u" secondAttribute="trailing" constant="91" id="Jn4-U9-zxc"/>
-                            <constraint firstItem="SAg-L2-117" firstAttribute="trailing" secondItem="IFL-iz-jSa" secondAttribute="trailing" id="L7U-lB-Pu9"/>
+                            <constraint firstItem="jWW-eh-lsk" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="OI8-7y-DGs"/>
+                            <constraint firstItem="jWW-eh-lsk" firstAttribute="centerY" secondItem="eL5-TQ-uDo" secondAttribute="centerY" id="Poo-ur-F0i"/>
                             <constraint firstAttribute="leadingMargin" secondItem="IFL-iz-jSa" secondAttribute="leading" id="TQd-Vn-cKm"/>
-                            <constraint firstItem="6gt-dV-Lub" firstAttribute="top" secondItem="SAg-L2-117" secondAttribute="bottom" constant="16" id="bgn-QC-CUp"/>
+                            <constraint firstItem="jWW-eh-lsk" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" id="kff-w2-WIc"/>
                             <constraint firstItem="IFL-iz-jSa" firstAttribute="top" secondItem="5hH-SS-mxu" secondAttribute="bottom" constant="15" id="nds-K4-cZf"/>
                             <constraint firstItem="5hH-SS-mxu" firstAttribute="top" secondItem="f2R-6W-YLa" secondAttribute="bottom" constant="15" id="p54-tP-MLb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IFL-iz-jSa" secondAttribute="trailing" id="pr4-1f-gII"/>
-                            <constraint firstItem="uYF-2k-P7u" firstAttribute="top" secondItem="IFL-iz-jSa" secondAttribute="bottom" constant="13" id="raT-ME-DE1"/>
-                            <constraint firstItem="SAg-L2-117" firstAttribute="width" secondItem="IFL-iz-jSa" secondAttribute="width" id="tad-IC-XrE"/>
-                            <constraint firstItem="uYF-2k-P7u" firstAttribute="leading" secondItem="eL5-TQ-uDo" secondAttribute="leadingMargin" constant="92" id="wnC-LT-gYD"/>
+                            <constraint firstItem="jWW-eh-lsk" firstAttribute="height" secondItem="eL5-TQ-uDo" secondAttribute="height" id="wed-dn-m71"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
