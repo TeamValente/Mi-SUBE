@@ -56,13 +56,33 @@ class SaldoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func cambiarPosicionTarjeta() {
+    @IBAction func swipeUp(sender: AnyObject) {
+        cambiarPosicionTarjeta("Up")
+    
+    }
+    
+    @IBAction func swipeDown(sender: AnyObject) {
+        cambiarPosicionTarjeta("Down")
+    }
+    
+    func cambiarPosicionTarjeta(swipe: String) {
         self.view.layoutIfNeeded()
+        
+        if swipe == "Up"{
         UIView.animateWithDuration(0.5, animations: {
             self.labelTituloTop.constant = -32
             self.labelTitulo.alpha = 0
             self.view.layoutIfNeeded()
             }, completion: nil)
+        }
+        else
+        {
+            UIView.animateWithDuration(0.5, animations: {
+                self.labelTituloTop.constant = +32
+                self.labelTitulo.alpha = 1
+                self.view.layoutIfNeeded()
+                }, completion: nil)
+        }
     }
     
     
@@ -72,7 +92,7 @@ class SaldoViewController: UIViewController {
         switch SegmentedController.selectedSegmentIndex {
         
         case 0:
-            cambiarPosicionTarjeta()
+            //cambiarPosicionTarjeta()
             print("Registrar una carga")
         case 1:
             print("Registrar un viaje")
