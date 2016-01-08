@@ -92,9 +92,10 @@ class SaldoViewController: UIViewController {
         switch SegmentedController.selectedSegmentIndex {
         
         case 0:
-            //cambiarPosicionTarjeta()
+            cambiarPosicionTarjeta("Up")
             print("Registrar una carga")
         case 1:
+            cambiarPosicionTarjeta("Up")
             print("Registrar un viaje")
         default:
             break
