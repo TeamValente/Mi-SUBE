@@ -344,22 +344,29 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bkg" translatesAutoresizingMaskIntoConstraints="NO" id="CS1-ir-4qr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ifc-Ub-ECM">
-                                <rect key="frame" x="-4" y="285" width="328" height="234"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifc-Ub-ECM">
+                                <rect key="frame" x="0.0" y="292" width="320" height="227"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Evw-b0-q9h">
-                                        <rect key="frame" x="22" y="0.0" width="246" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF0-YQ-GXZ">
-                                        <rect key="frame" x="276" y="-1" width="38" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF0-YQ-GXZ">
+                                        <rect key="frame" x="245" y="34" width="30" height="30"/>
                                         <state key="normal" title="OK"/>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" placeholder="0,0" textAlignment="center" minimumFontSize="48" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Evw-b0-q9h">
+                                        <rect key="frame" x="102" y="20" width="117" height="58"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="117" id="hDU-Ua-k5C"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="go"/>
+                                    </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.3820260067114094" alpha="0.54641702586206897" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Evw-b0-q9h" firstAttribute="top" secondItem="Ifc-Ub-ECM" secondAttribute="top" id="4EI-dB-RLZ"/>
+                                    <constraint firstItem="Evw-b0-q9h" firstAttribute="centerX" secondItem="Ifc-Ub-ECM" secondAttribute="centerX" id="4zO-LI-Py8"/>
+                                    <constraint firstItem="yF0-YQ-GXZ" firstAttribute="centerY" secondItem="Evw-b0-q9h" secondAttribute="centerY" id="B5w-9C-NNd"/>
+                                    <constraint firstItem="Evw-b0-q9h" firstAttribute="top" secondItem="Ifc-Ub-ECM" secondAttribute="top" constant="20" id="Ent-P8-5fg"/>
+                                    <constraint firstItem="yF0-YQ-GXZ" firstAttribute="leading" secondItem="Evw-b0-q9h" secondAttribute="trailing" constant="26" id="XV5-yf-zi8"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nec-aq-G5a">
@@ -382,12 +389,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ifc-Ub-ECM" firstAttribute="height" secondItem="eL5-TQ-uDo" secondAttribute="height" multiplier="0.4" id="0fE-TW-X6f"/>
+                            <constraint firstItem="Ifc-Ub-ECM" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="JFc-ed-nHL"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" id="Jec-PI-Nnr"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="centerY" secondItem="eL5-TQ-uDo" secondAttribute="centerY" id="V9G-4b-YnL"/>
+                            <constraint firstItem="Ifc-Ub-ECM" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" id="cNZ-56-ub7"/>
+                            <constraint firstItem="6gt-dV-Lub" firstAttribute="top" secondItem="Ifc-Ub-ECM" secondAttribute="bottom" id="jQf-9E-Y9o"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="height" secondItem="eL5-TQ-uDo" secondAttribute="height" id="pN6-4g-ry4"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -729,6 +741,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Dzi-1o-Cq9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Donde cargar" image="map" id="oAN-DO-wCi"/>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L1u-U0-7rZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
