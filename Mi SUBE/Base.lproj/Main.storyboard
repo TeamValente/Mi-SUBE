@@ -347,10 +347,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ifc-Ub-ECM">
                                 <rect key="frame" x="0.0" y="292" width="320" height="227"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF0-YQ-GXZ">
-                                        <rect key="frame" x="245" y="34" width="30" height="30"/>
-                                        <state key="normal" title="OK"/>
-                                    </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" placeholder="0,0" textAlignment="center" minimumFontSize="48" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Evw-b0-q9h">
                                         <rect key="frame" x="102" y="20" width="117" height="58"/>
                                         <constraints>
@@ -360,6 +356,13 @@
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" keyboardAppearance="alert" returnKeyType="go"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yF0-YQ-GXZ">
+                                        <rect key="frame" x="245" y="28" width="33" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.3820260067114094" alpha="0.54641702586206897" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -369,33 +372,44 @@
                                     <constraint firstItem="yF0-YQ-GXZ" firstAttribute="leading" secondItem="Evw-b0-q9h" secondAttribute="trailing" constant="26" id="XV5-yf-zi8"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nec-aq-G5a">
-                                <rect key="frame" x="125" y="20" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zdR-Rl-egN">
-                                <rect key="frame" x="40" y="49" width="240" height="128"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdR-Rl-egN">
+                                <rect key="frame" x="16" y="68" width="288" height="162"/>
                                 <color key="backgroundColor" red="0.17030649646028573" green="0.40652341578038409" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zdR-Rl-egN" secondAttribute="height" multiplier="16:9" id="Irh-yM-vGt"/>
+                                </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-Oa-O7v">
-                                <rect key="frame" x="100" y="185" width="121" height="29"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-Oa-O7v">
+                                <rect key="frame" x="16" y="254" width="288" height="29"/>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Registrar una carga"/>
+                                    <segment title="Registrar un viaje"/>
                                 </segments>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nec-aq-G5a">
+                                <rect key="frame" x="121" y="28" width="78" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ifc-Ub-ECM" firstAttribute="height" secondItem="eL5-TQ-uDo" secondAttribute="height" multiplier="0.4" id="0fE-TW-X6f"/>
+                            <constraint firstItem="zdR-Rl-egN" firstAttribute="width" secondItem="Ifc-Ub-ECM" secondAttribute="width" multiplier="0.9" id="801-bM-H7T"/>
+                            <constraint firstItem="ajs-Oa-O7v" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="H0j-3S-SgM"/>
                             <constraint firstItem="Ifc-Ub-ECM" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="JFc-ed-nHL"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" id="Jec-PI-Nnr"/>
+                            <constraint firstItem="ajs-Oa-O7v" firstAttribute="top" secondItem="zdR-Rl-egN" secondAttribute="bottom" constant="24" id="OQJ-NY-eRY"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="centerY" secondItem="eL5-TQ-uDo" secondAttribute="centerY" id="V9G-4b-YnL"/>
+                            <constraint firstItem="zdR-Rl-egN" firstAttribute="top" secondItem="nec-aq-G5a" secondAttribute="top" constant="40" id="WYo-44-9NF"/>
+                            <constraint firstItem="ajs-Oa-O7v" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" multiplier="0.9" id="a3l-pS-9uf"/>
                             <constraint firstItem="Ifc-Ub-ECM" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" id="cNZ-56-ub7"/>
                             <constraint firstItem="6gt-dV-Lub" firstAttribute="top" secondItem="Ifc-Ub-ECM" secondAttribute="bottom" id="jQf-9E-Y9o"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="height" secondItem="eL5-TQ-uDo" secondAttribute="height" id="pN6-4g-ry4"/>
+                            <constraint firstItem="nec-aq-G5a" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="r0V-cm-WPJ"/>
+                            <constraint firstItem="zdR-Rl-egN" firstAttribute="centerX" secondItem="Ifc-Ub-ECM" secondAttribute="centerX" id="sC9-lB-Wb0"/>
+                            <constraint firstItem="zdR-Rl-egN" firstAttribute="top" secondItem="f2R-6W-YLa" secondAttribute="bottom" constant="48" id="v8b-Xu-gyF"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Mi SUBE" image="card" id="KBm-H1-mwG"/>
