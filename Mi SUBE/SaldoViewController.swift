@@ -15,15 +15,6 @@ class SaldoViewController: UIViewController {
     
     //MARK: Outelets
     
-    
-    @IBOutlet weak var labelTitulo: UILabel!
-    @IBOutlet weak var labelTituloTop: NSLayoutConstraint!
-    
-    @IBOutlet weak var SegmentedController: UISegmentedControl!
-    @IBOutlet weak var labelSaldo: UILabel!
-
-    @IBOutlet weak var labelLastUpdate: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -46,8 +37,8 @@ class SaldoViewController: UIViewController {
             managerModelo.actualizarSaldo(miMovimiento)
         }
         
-        labelSaldo.text = "\(miTarjeta.saldo)"
-        labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
+        //labelSaldo.text = "\(miTarjeta.saldo)"
+        //labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
 
     }
     
@@ -70,16 +61,16 @@ class SaldoViewController: UIViewController {
         
         if swipe == "Up"{
         UIView.animateWithDuration(0.5, animations: {
-            self.labelTituloTop.constant = -32
-            self.labelTitulo.alpha = 0
+            //self.labelTituloTop.constant = -32
+            //self.labelTitulo.alpha = 0
             self.view.layoutIfNeeded()
             }, completion: nil)
         }
         else
         {
             UIView.animateWithDuration(0.5, animations: {
-                self.labelTituloTop.constant = +32
-                self.labelTitulo.alpha = 1
+                //self.labelTituloTop.constant = +32
+                //self.labelTitulo.alpha = 1
                 self.view.layoutIfNeeded()
                 }, completion: nil)
         }
@@ -89,17 +80,17 @@ class SaldoViewController: UIViewController {
     @IBAction func cambiarSaldo(sender: UISegmentedControl) {
         
         // Creo animacion si "Registrar una carga" fue activado
-        switch SegmentedController.selectedSegmentIndex {
-        
-        case 0:
-            cambiarPosicionTarjeta("Up")
-            print("Registrar una carga")
-        case 1:
-            cambiarPosicionTarjeta("Up")
-            print("Registrar un viaje")
-        default:
-            break
-        }
+//        switch SegmentedController.selectedSegmentIndex {
+//        
+//        case 0:
+//            cambiarPosicionTarjeta("Up")
+//            print("Registrar una carga")
+//        case 1:
+//            cambiarPosicionTarjeta("Up")
+//            print("Registrar un viaje")
+//        default:
+//            break
+//        }
         
     }
     
