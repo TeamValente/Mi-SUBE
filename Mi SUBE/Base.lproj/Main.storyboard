@@ -801,11 +801,11 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="dYC-KM-zVx" secondAttribute="bottom" constant="8" id="3zo-kx-KOb"/>
-                                            <constraint firstItem="ea8-Mn-Str" firstAttribute="leading" secondItem="uLf-Bu-47l" secondAttribute="trailing" constant="8" id="LyX-yB-7XS"/>
+                                            <constraint firstItem="ea8-Mn-Str" firstAttribute="leading" secondItem="uLf-Bu-47l" secondAttribute="trailing" constant="4" id="LyX-yB-7XS"/>
                                             <constraint firstItem="nv0-LX-eJX" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="REw-Fb-OcS"/>
                                             <constraint firstItem="uLf-Bu-47l" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="bLs-l2-AZY"/>
                                             <constraint firstItem="ea8-Mn-Str" firstAttribute="top" secondItem="nv0-LX-eJX" secondAttribute="bottom" id="dMb-eh-Sma"/>
-                                            <constraint firstItem="uLf-Bu-47l" firstAttribute="top" secondItem="nv0-LX-eJX" secondAttribute="bottom" constant="16" id="g1o-k5-cxy"/>
+                                            <constraint firstItem="uLf-Bu-47l" firstAttribute="top" secondItem="nv0-LX-eJX" secondAttribute="bottom" constant="18" id="g1o-k5-cxy"/>
                                             <constraint firstItem="nv0-LX-eJX" firstAttribute="top" secondItem="WYA-Lx-iph" secondAttribute="top" constant="22" id="jIA-ja-IFa"/>
                                             <constraint firstItem="dYC-KM-zVx" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="nFi-xJ-3pX"/>
                                         </constraints>
