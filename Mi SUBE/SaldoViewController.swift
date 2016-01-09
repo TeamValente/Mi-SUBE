@@ -48,9 +48,8 @@ class SaldoViewController: UIViewController {
     @IBAction func agregarMovimiento() {
         
         
-        if let input = monto.text{
-            if let valorDecimal = Double(input.stringByReplacingOccurrencesOfString(",", withString: "."))
-            {
+        if let input = monto.text {
+            if let valorDecimal = Double(input.stringByReplacingOccurrencesOfString(",", withString: ".")) {
                 let managerModelo = TarjetaSUBEService()
                 miTarjeta = managerModelo.getTarjeta()
                 switch segmentAction.selectedSegmentIndex {
@@ -73,11 +72,7 @@ class SaldoViewController: UIViewController {
                 monto.text = ""
             }
         }
-        
-        
-        
     }
-    
 
     override func viewDidAppear(animated: Bool) {
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -86,32 +81,24 @@ class SaldoViewController: UIViewController {
         cardView.layer.masksToBounds = true
         loadSaldo()
         
-        if monto.text?.characters.count > 0{
+        if monto.text?.characters.count > 0 {
             buttonDelete.highlighted = false
            
-        }else
-        {
+        } else {
             buttonDelete.highlighted = true
-            
         }
-        
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-        
     }
-    
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     @IBAction func setAmount(sender: UIButton) {
@@ -126,7 +113,7 @@ class SaldoViewController: UIViewController {
                 switchButtonState(false)
             }
         case ",":
-            if preMonto.rangeOfString(",") == nil{
+            if preMonto.rangeOfString(",") == nil {
                 preMonto = "\(preMonto)\(input)"
             }
         default:
@@ -135,11 +122,10 @@ class SaldoViewController: UIViewController {
         }
         
         monto.text = "\(preMonto)"
-        if monto.text?.characters.count > 0{
+        if monto.text?.characters.count > 0 {
             buttonDelete.highlighted = false
             
-        }else
-        {
+        } else {
             buttonDelete.highlighted = true
             
         }
@@ -152,10 +138,13 @@ class SaldoViewController: UIViewController {
         miTarjeta = managerModelo.getTarjeta()
         
         if miTarjeta.saldo < 0 {
-            cardView.backgroundColor = UIColor(rgba: "#E8573C")
+            UIView.animateWithDuration(0.5, animations: {
+                self.cardView.backgroundColor = UIColor(rgba: "#E8573C")
+            }, completion: nil)
         } else {
-            //labelSaldo.textColor = UIColor(rgba: "#3C83E9")
-            cardView.backgroundColor = UIColor(rgba: "#3C83E9")
+            UIView.animateWithDuration(0.5, animations: {
+                self.cardView.backgroundColor = UIColor(rgba: "#3C83E9")
+            }, completion: nil)
         }
         labelSaldo.text = "\(miTarjeta.saldo)"
         if managerModelo.getUltimoMovimiento().isEmpty {
