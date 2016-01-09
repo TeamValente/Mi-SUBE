@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C0930951C40AD7A005AB04B /* UIView_Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0930941C40AD7A005AB04B /* UIView_Borders.swift */; };
 		7C0F515B1C33934400EFBC22 /* OssViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F515A1C33934400EFBC22 /* OssViewController.swift */; };
 		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
 		7C9DB00E1C32363F003FC20F /* CardConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */; };
@@ -40,6 +41,7 @@
 		0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.debug.xcconfig"; sourceTree = "<group>"; };
 		2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.release.xcconfig"; sourceTree = "<group>"; };
 		4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mi_SUBE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C0930941C40AD7A005AB04B /* UIView_Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Borders.swift; sourceTree = "<group>"; };
 		7C0F515A1C33934400EFBC22 /* OssViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OssViewController.swift; sourceTree = "<group>"; };
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardConfigViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				ECABF5861C1E36CA00C8B25C /* DetailHelper.swift */,
+				7C0930941C40AD7A005AB04B /* UIView_Borders.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0930951C40AD7A005AB04B /* UIView_Borders.swift in Sources */,
 				EC946F081C18FD4200982CDA /* MapaService.swift in Sources */,
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
 				7C9DB00E1C32363F003FC20F /* CardConfigViewController.swift in Sources */,
