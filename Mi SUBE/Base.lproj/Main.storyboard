@@ -862,6 +862,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttonDelete" destination="EO3-FQ-Jun" id="KFG-VX-DzO"/>
                         <outlet property="button_ok" destination="Bul-hZ-0gh" id="0ST-Cu-uff"/>
                         <outlet property="cardView" destination="zdR-Rl-egN" id="vEF-vB-vbs"/>
                         <outlet property="labelLastUpdate" destination="dYC-KM-zVx" id="3dz-fE-VeK"/>
