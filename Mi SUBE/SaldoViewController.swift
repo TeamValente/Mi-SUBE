@@ -21,6 +21,26 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var labelSaldo: UILabel!
     @IBOutlet weak var labelLastUpdate: UILabel!
     
+    @IBOutlet weak var button_ok: UIButton!
+    @IBOutlet weak var position_ok: NSLayoutConstraint!
+    
+    func switchButtonState(enabled:Bool) {
+    
+        switch enabled {
+        case true:
+                UIView.animateWithDuration(0.25, animations: {
+                    self.button_ok.alpha = 1
+                    self.position_ok.constant = 0
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+        case false:
+                UIView.animateWithDuration(0.15, animations: {
+                    self.button_ok.alpha = 0
+                    self.position_ok.constant = -8
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
+        }
+    }
     
     @IBAction func agregarMovimiento() {
         
@@ -59,12 +79,15 @@ class SaldoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        button_ok.alpha = 0
+        
     }
     
     override func viewDidAppear(animated: Bool) {
   
-        cardView.layer.cornerRadius = 10;
-        cardView.layer.masksToBounds = true;
+        cardView.layer.cornerRadius = 10
+        cardView.layer.masksToBounds = true
         
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
@@ -74,6 +97,9 @@ class SaldoViewController: UIViewController {
         } else {
         labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
         }
+        
+        
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -91,6 +117,8 @@ class SaldoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     @IBAction func setAmount(sender: UIButton) {
         
         let input: String = sender.titleLabel!.text!
@@ -100,12 +128,14 @@ class SaldoViewController: UIViewController {
         case "Borrar":
             if preMonto.characters.count > 0 {
                 preMonto.removeAtIndex(preMonto.endIndex.predecessor())
+                switchButtonState(false)
             }
         case ",":
             if preMonto.rangeOfString(",") == nil{
                 preMonto = "\(preMonto)\(input)"
             }
         default:
+            switchButtonStatea(true)
             preMonto = "\(preMonto)\(input)"
         }
         
