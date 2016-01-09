@@ -16,8 +16,37 @@ class SaldoViewController: UIViewController {
     //MARK: Outelets
     
     @IBOutlet weak var cardView: UIView!
-    
     @IBOutlet weak var monto: UILabel!
+    @IBOutlet weak var segmentAction: UISegmentedControl!
+    
+    @IBAction func agregarMovimiento() {
+        
+        
+        if let input = monto.text{
+            if let valorDecimal = Double(input)
+            {
+                let managerModelo = TarjetaSUBEService()
+                miTarjeta = managerModelo.getTarjeta()
+                switch segmentAction {
+                case 0:
+                    let miMovimiento = Movimiento()
+                    miMovimiento.fechaMovimiento = NSDate()
+                    miMovimiento.valorMovimiento = valorDecimal
+                    managerModelo.actualizarSaldo(miMovimiento)
+                case 1:
+                    let miMovimiento = Movimiento()
+                    miMovimiento.fechaMovimiento = NSDate()
+                    miMovimiento.valorMovimiento = valorDecimal - (valorDecimal*2)
+                    managerModelo.actualizarSaldo(miMovimiento)
+                default:
+                    break
+                }
+            }
+        }
+        
+        
+        
+    }
     
     
     override func viewDidLoad() {
@@ -31,76 +60,18 @@ class SaldoViewController: UIViewController {
         
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
-        
-        if miTarjeta.saldo == 0{
-            let miMovimiento = Movimiento()
-            miMovimiento.fechaMovimiento = NSDate()
-            miMovimiento.valorMovimiento = 100
-            managerModelo.actualizarSaldo(miMovimiento)
-        }else if miTarjeta.saldo == 100{
-            let miMovimiento = Movimiento()
-            miMovimiento.fechaMovimiento = NSDate()
-            miMovimiento.valorMovimiento = -3.5
-            managerModelo.actualizarSaldo(miMovimiento)
-        }
-        
         //labelSaldo.text = "\(miTarjeta.saldo)"
         //labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
         
     }
     
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func swipeUp(sender: AnyObject) {
-        cambiarPosicionTarjeta("Up")
-        
-    }
-    
-    @IBAction func swipeDown(sender: AnyObject) {
-        cambiarPosicionTarjeta("Down")
-    }
-    
-    func cambiarPosicionTarjeta(swipe: String) {
-        self.view.layoutIfNeeded()
-        
-        if swipe == "Up"{
-            UIView.animateWithDuration(0.5, animations: {
-                //self.labelTituloTop.constant = -32
-                //self.labelTitulo.alpha = 0
-                self.view.layoutIfNeeded()
-                }, completion: nil)
-        }
-        else
-        {
-            UIView.animateWithDuration(0.5, animations: {
-                //self.labelTituloTop.constant = +32
-                //self.labelTitulo.alpha = 1
-                self.view.layoutIfNeeded()
-                }, completion: nil)
-        }
-    }
-    
-    
-    @IBAction func cambiarSaldo(sender: UISegmentedControl) {
-        
-        // Creo animacion si "Registrar una carga" fue activado
-        //        switch SegmentedController.selectedSegmentIndex {
-        //
-        //        case 0:
-        //            cambiarPosicionTarjeta("Up")
-        //            print("Registrar una carga")
-        //        case 1:
-        //            cambiarPosicionTarjeta("Up")
-        //            print("Registrar un viaje")
-        //        default:
-        //            break
-        //        }
-        
-    }
-    
     
     @IBAction func setAmount(sender: UIButton) {
         
@@ -117,9 +88,7 @@ class SaldoViewController: UIViewController {
                 preMonto = "\(preMonto)\(input)"
             }
         default:
-            
             preMonto = "\(preMonto)\(input)"
-            
         }
         
         monto.text = "\(preMonto)"

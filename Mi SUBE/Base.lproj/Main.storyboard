@@ -369,6 +369,9 @@
                                             <constraint firstAttribute="height" constant="45" id="22B-3p-Lgz"/>
                                         </constraints>
                                         <state key="normal" title="OK"/>
+                                        <connections>
+                                            <action selector="agregarMovimiento" destination="yNX-vN-G4n" eventType="touchUpInside" id="L3X-jr-Iys"/>
+                                        </connections>
                                     </button>
                                     <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YzB-hb-ibK">
                                         <rect key="frame" x="0.0" y="45" width="320" height="182"/>
@@ -735,11 +738,11 @@
                                     <constraint firstAttribute="width" secondItem="zdR-Rl-egN" secondAttribute="height" multiplier="16:9" id="Irh-yM-vGt"/>
                                 </constraints>
                             </view>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-Oa-O7v">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-Oa-O7v">
                                 <rect key="frame" x="16" y="254" width="288" height="29"/>
                                 <segments>
-                                    <segment title="Registrar una carga"/>
                                     <segment title="Registrar un viaje"/>
+                                    <segment title="Registrar una carga"/>
                                 </segments>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nec-aq-G5a">
@@ -775,6 +778,7 @@
                     <connections>
                         <outlet property="cardView" destination="zdR-Rl-egN" id="vEF-vB-vbs"/>
                         <outlet property="monto" destination="yT1-Uw-tSp" id="6iE-H5-DgS"/>
+                        <outlet property="segmentAction" destination="ajs-Oa-O7v" id="vel-av-Yqp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZIR-tQ-fS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
