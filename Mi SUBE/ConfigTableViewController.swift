@@ -25,6 +25,10 @@ class ConfigTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+         switchDelete.setOn(true, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -62,7 +66,7 @@ class ConfigTableViewController: UITableViewController {
         //show the alert
         self.presentViewController(alertMessage, animated: true, completion: nil)
         
-        switchDelete.setOn(true, animated: true)
+       
 
     
     }
