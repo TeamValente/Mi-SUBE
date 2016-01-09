@@ -746,7 +746,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-Mn-Str">
                                                 <rect key="frame" x="25" y="43" width="0.0" height="0.0"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -818,9 +818,8 @@
                     <connections>
                         <outlet property="cardView" destination="zdR-Rl-egN" id="vEF-vB-vbs"/>
                         <outlet property="labelLastUpdate" destination="dYC-KM-zVx" id="3dz-fE-VeK"/>
-                        <outlet property="labelSaldo" destination="uLf-Bu-47l" id="G3M-1B-q31"/>
+                        <outlet property="labelSaldo" destination="ea8-Mn-Str" id="eYZ-p1-Dx9"/>
                         <outlet property="monto" destination="yT1-Uw-tSp" id="6iE-H5-DgS"/>
-                        <outlet property="saldoView" destination="ea8-Mn-Str" id="qBy-x1-gqh"/>
                         <outlet property="segmentAction" destination="ajs-Oa-O7v" id="vel-av-Yqp"/>
                     </connections>
                 </viewController>

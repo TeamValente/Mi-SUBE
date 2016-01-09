@@ -18,7 +18,6 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var monto: UILabel!
     @IBOutlet weak var segmentAction: UISegmentedControl!
-    @IBOutlet weak var saldoView: UILabel!
     @IBOutlet weak var labelSaldo: UILabel!
     @IBOutlet weak var labelLastUpdate: UILabel!
     
