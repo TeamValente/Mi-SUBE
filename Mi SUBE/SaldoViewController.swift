@@ -75,17 +75,12 @@ class SaldoViewController: UIViewController {
         
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
+    override func viewDidAppear(animated: Bool) {
         
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         button_ok.alpha = 0
         
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-  
         cardView.layer.cornerRadius = 10
         cardView.layer.masksToBounds = true
         
@@ -135,7 +130,7 @@ class SaldoViewController: UIViewController {
                 preMonto = "\(preMonto)\(input)"
             }
         default:
-            switchButtonStatea(true)
+            switchButtonState(true)
             preMonto = "\(preMonto)\(input)"
         }
         

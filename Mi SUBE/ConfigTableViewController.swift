@@ -19,20 +19,14 @@ class ConfigTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    override func viewDidAppear(animated: Bool) {
+         switchDelete.setOn(true, animated: true)
+         UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     override func viewWillDisappear(animated: Bool) {
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-         switchDelete.setOn(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
