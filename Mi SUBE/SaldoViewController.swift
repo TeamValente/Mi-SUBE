@@ -68,7 +68,11 @@ class SaldoViewController: UIViewController {
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
         labelSaldo.text = "\(miTarjeta.saldo)"
+        if managerModelo.getUltimoMovimiento().isEmpty {
+            labelLastUpdate.text = "No hay movientos registrados."
+        } else {
         labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
+        }
     }
     
     
