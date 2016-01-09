@@ -61,7 +61,10 @@ class ConfigTableViewController: UITableViewController {
         }))
         
         // add cancel Action
-        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
+        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: { Void in
+            // set switch on
+             self.switchDelete.setOn(true, animated: true)
+        }))
         
         //show the alert
         self.presentViewController(alertMessage, animated: true, completion: nil)
