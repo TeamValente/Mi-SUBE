@@ -7,4 +7,5 @@ target 'Mi SUBE' do
     pod 'UIColor_Hex_Swift', '~> 1.8'
     pod 'RealmSwift'
     pod 'KYCircularProgress', '~> 0.5'
+    pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 end
