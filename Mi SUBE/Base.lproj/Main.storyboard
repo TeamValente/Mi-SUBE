@@ -386,7 +386,7 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rightBorderWidth">
                                                             <real key="value" value="1"/>
@@ -409,7 +409,7 @@
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rightBorderWidth">
                                                             <real key="value" value="0.0"/>
@@ -609,7 +609,7 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="leftBorderWidth">
                                                             <real key="value" value="0.0"/>
@@ -669,7 +669,7 @@
                                             </constraints>
                                         </view>
                                         <vibrancyEffect>
-                                            <blurEffect style="light"/>
+                                            <blurEffect style="dark"/>
                                         </vibrancyEffect>
                                     </visualEffectView>
                                 </subviews>
