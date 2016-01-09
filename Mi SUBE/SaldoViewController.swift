@@ -24,6 +24,9 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var button_ok: UIButton!
     @IBOutlet weak var position_ok: NSLayoutConstraint!
     
+    @IBOutlet weak var buttonDelete: UIButton!
+    
+    
     func switchButtonState(enabled:Bool) {
     
         switch enabled {
@@ -66,9 +69,7 @@ class SaldoViewController: UIViewController {
                 default:
                     break
                 }
-                miTarjeta = managerModelo.getTarjeta()
-                labelSaldo.text = "\(miTarjeta.saldo)"
-                labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
+                loadSaldo()
                 monto.text = ""
             }
         }
@@ -79,23 +80,20 @@ class SaldoViewController: UIViewController {
     
 
     override func viewDidAppear(animated: Bool) {
-        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         button_ok.alpha = 0
-        
         cardView.layer.cornerRadius = 10
         cardView.layer.masksToBounds = true
+        loadSaldo()
         
-        let managerModelo = TarjetaSUBEService()
-        miTarjeta = managerModelo.getTarjeta()
-        labelSaldo.text = "\(miTarjeta.saldo)"
-        if managerModelo.getUltimoMovimiento().isEmpty {
-            labelLastUpdate.text = "No hay movientos registrados."
-        } else {
-        labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
+        if monto.text?.characters.count > 0{
+            buttonDelete.highlighted = false
+           
+        }else
+        {
+            buttonDelete.highlighted = true
+            
         }
-        
-        
         
     }
     
@@ -137,7 +135,37 @@ class SaldoViewController: UIViewController {
         }
         
         monto.text = "\(preMonto)"
+        if monto.text?.characters.count > 0{
+            buttonDelete.highlighted = false
+            
+        }else
+        {
+            buttonDelete.highlighted = true
+            
+        }
         
+    }
+    
+    func loadSaldo()
+    {
+        let managerModelo = TarjetaSUBEService()
+        miTarjeta = managerModelo.getTarjeta()
+        
+        if miTarjeta.saldo < 0
+        {
+            
+            cardView.backgroundColor = UIColor(rgba: "#E8573C")
+        }else
+        {
+            labelSaldo.textColor = UIColor(rgba: "#3C83E9")
+        }
+        labelSaldo.text = "\(miTarjeta.saldo)"
+        if managerModelo.getUltimoMovimiento().isEmpty {
+            labelLastUpdate.text = "No hay movientos registrados."
+        } else {
+            labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
+        }
+
     }
     
     
