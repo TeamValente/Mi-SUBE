@@ -90,7 +90,7 @@ class SaldoViewController: UIViewController {
                 preMonto.removeAtIndex(preMonto.endIndex.predecessor())
             }
         case ",":
-            if preMonto.rangeOfString(".") == nil{
+            if preMonto.rangeOfString(",") == nil{
                 preMonto = "\(preMonto)\(input)"
             }
         default:
