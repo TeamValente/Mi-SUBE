@@ -838,25 +838,35 @@
                         <sections>
                             <tableViewSection headerTitle=" " footerTitle=" " id="fTr-Tk-mE6">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="apt-R2-UVu" style="IBUITableViewCellStyleDefault" id="eMW-dq-YBE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eMW-dq-YBE">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eMW-dq-YBE" id="WYk-AW-ubj">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ajustes de tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="apt-R2-UVu">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQx-dr-Oyl">
+                                                    <rect key="frame" x="255" y="4" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="deleteCard:" destination="8Tw-jc-x3d" eventType="valueChanged" id="jma-L1-6Kk"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borrar tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qa9-qE-JOJ">
+                                                    <rect key="frame" x="16" y="11" width="101.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="MQx-dr-Oyl" secondAttribute="trailing" constant="8" id="DrX-jI-e1y"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qa9-qE-JOJ" secondAttribute="bottom" constant="3.5" id="L2a-e7-PdG"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MQx-dr-Oyl" secondAttribute="bottom" constant="0.5" id="ZhU-JD-DmI"/>
+                                                <constraint firstItem="MQx-dr-Oyl" firstAttribute="top" secondItem="WYk-AW-ubj" secondAttribute="topMargin" constant="-4" id="fzd-Kk-it7"/>
+                                                <constraint firstItem="Qa9-qE-JOJ" firstAttribute="top" secondItem="WYk-AW-ubj" secondAttribute="topMargin" constant="3" id="j4d-vR-r46"/>
+                                                <constraint firstItem="Qa9-qE-JOJ" firstAttribute="leading" secondItem="WYk-AW-ubj" secondAttribute="leadingMargin" constant="8" id="uRT-lJ-ptr"/>
+                                            </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="Ikn-2w-Vpe" kind="push" id="JFA-3b-tVC"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -943,6 +953,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="203-I8-UgK"/>
+                    <connections>
+                        <outlet property="switchDelete" destination="MQx-dr-Oyl" id="oQt-g7-RML"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6a-of-6Yw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -977,7 +990,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isd-tf-c5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1652" y="1169"/>
+            <point key="canvasLocation" x="1673" y="1036"/>
         </scene>
         <!--Oss View Controller-->
         <scene sceneID="DeB-u4-1B6">
@@ -1086,56 +1099,6 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUS-wt-Fcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1652" y="2001"/>
-        </scene>
-        <!--Card Config View Controller-->
-        <scene sceneID="Req-NO-fl2">
-            <objects>
-                <viewController id="Ikn-2w-Vpe" customClass="CardConfigViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1O4-Zd-rYd"/>
-                        <viewControllerLayoutGuide type="bottom" id="4uu-PZ-BSY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="f7y-ko-8H1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftf-pS-Bdc">
-                                <rect key="frame" x="16" y="205" width="288" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.12781036379999999" blue="0.21140459089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Borrar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="4"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="deleteCardData" destination="Ikn-2w-Vpe" eventType="touchUpInside" id="NJC-vH-44S"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eliminar datos de la tarjeta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjL-Ji-nnC">
-                                <rect key="frame" x="16" y="124" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="mjL-Ji-nnC" secondAttribute="leading" id="DDk-QW-UIQ"/>
-                            <constraint firstItem="mjL-Ji-nnC" firstAttribute="top" secondItem="1O4-Zd-rYd" secondAttribute="bottom" constant="60" id="Huw-uJ-R1L"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ftf-pS-Bdc" secondAttribute="trailing" id="PPU-V5-TKt"/>
-                            <constraint firstItem="ftf-pS-Bdc" firstAttribute="leading" secondItem="f7y-ko-8H1" secondAttribute="leadingMargin" id="fBp-6q-gTN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mjL-Ji-nnC" secondAttribute="trailing" id="zeU-Od-QoZ"/>
-                            <constraint firstItem="ftf-pS-Bdc" firstAttribute="top" secondItem="mjL-Ji-nnC" secondAttribute="bottom" constant="60" id="zjB-la-Z5c"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="kwb-11-yMF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CqG-mU-Xed" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1652" y="475"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pwp-DN-9iB">

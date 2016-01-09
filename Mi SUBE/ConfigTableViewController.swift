@@ -10,6 +10,12 @@ import UIKit
 
 class ConfigTableViewController: UITableViewController {
 
+    
+    // MARK: Outlets
+    @IBOutlet weak var switchDelete: UISwitch!
+    
+    
+    // MARK: View Events
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,6 +42,31 @@ class ConfigTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
+    
+    // MARK: Actions
+    @IBAction func deleteCard(sender: AnyObject) {
+        
+        // set alertController
+        let alertMessage = UIAlertController(title: "Cuidado", message: "Estas seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .Alert)
+        
+        // add delete Action
+        alertMessage.addAction(UIAlertAction(title: "Continuar", style: .Default, handler: { Void in
+            // remove all data from the DB
+            let modelManager = TarjetaSUBEService()
+            modelManager.removeTarjeta()
+        }))
+        
+        // add cancel Action
+        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
+        
+        //show the alert
+        self.presentViewController(alertMessage, animated: true, completion: nil)
+        
+        switchDelete.setOn(true, animated: true)
+
+    
+    }
+    
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
