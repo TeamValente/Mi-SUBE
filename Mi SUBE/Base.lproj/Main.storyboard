@@ -733,8 +733,8 @@
                                         <rect key="frame" x="8" y="8" width="272" height="146"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALDO ACTUAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv0-LX-eJX">
-                                                <rect key="frame" x="8" y="22" width="84.5" height="13.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <rect key="frame" x="8" y="22" width="87" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -745,19 +745,27 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-Mn-Str">
-                                                <rect key="frame" x="25.5" y="43.5" width="0.0" height="0.0"/>
+                                                <rect key="frame" x="25" y="43" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actualizado hace 2 horas..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYC-KM-zVx">
+                                                <rect key="frame" x="8" y="124.5" width="148.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="dYC-KM-zVx" secondAttribute="bottom" constant="8" id="3zo-kx-KOb"/>
                                             <constraint firstItem="ea8-Mn-Str" firstAttribute="leading" secondItem="uLf-Bu-47l" secondAttribute="trailing" constant="8" id="LyX-yB-7XS"/>
                                             <constraint firstItem="nv0-LX-eJX" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="REw-Fb-OcS"/>
                                             <constraint firstItem="uLf-Bu-47l" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="bLs-l2-AZY"/>
                                             <constraint firstItem="ea8-Mn-Str" firstAttribute="top" secondItem="nv0-LX-eJX" secondAttribute="bottom" constant="8" id="dMb-eh-Sma"/>
                                             <constraint firstItem="uLf-Bu-47l" firstAttribute="top" secondItem="nv0-LX-eJX" secondAttribute="bottom" constant="8" id="g1o-k5-cxy"/>
                                             <constraint firstItem="nv0-LX-eJX" firstAttribute="top" secondItem="WYA-Lx-iph" secondAttribute="top" constant="22" id="jIA-ja-IFa"/>
+                                            <constraint firstItem="dYC-KM-zVx" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="nFi-xJ-3pX"/>
                                         </constraints>
                                     </view>
                                 </subviews>
