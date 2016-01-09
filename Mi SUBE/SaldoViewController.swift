@@ -19,6 +19,9 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var monto: UILabel!
     @IBOutlet weak var segmentAction: UISegmentedControl!
     @IBOutlet weak var saldoView: UILabel!
+    @IBOutlet weak var labelSaldo: UILabel!
+    @IBOutlet weak var labelLastUpdate: UILabel!
+    
     
     @IBAction func agregarMovimiento() {
         
@@ -28,20 +31,24 @@ class SaldoViewController: UIViewController {
             {
                 let managerModelo = TarjetaSUBEService()
                 miTarjeta = managerModelo.getTarjeta()
-                switch segmentAction {
+                switch segmentAction.selectedSegmentIndex {
                 case 0:
-                    let miMovimiento = Movimiento()
-                    miMovimiento.fechaMovimiento = NSDate()
-                    miMovimiento.valorMovimiento = valorDecimal
-                    managerModelo.actualizarSaldo(miMovimiento)
-                case 1:
                     let miMovimiento = Movimiento()
                     miMovimiento.fechaMovimiento = NSDate()
                     miMovimiento.valorMovimiento = valorDecimal - (valorDecimal*2)
                     managerModelo.actualizarSaldo(miMovimiento)
+                case 1:
+                    let miMovimiento = Movimiento()
+                    miMovimiento.fechaMovimiento = NSDate()
+                    miMovimiento.valorMovimiento = valorDecimal
+                    managerModelo.actualizarSaldo(miMovimiento)
                 default:
                     break
                 }
+                miTarjeta = managerModelo.getTarjeta()
+                labelSaldo.text = "\(miTarjeta.saldo)"
+                labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
+                monto.text = ""
             }
         }
         
@@ -61,8 +68,8 @@ class SaldoViewController: UIViewController {
         
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
-        //labelSaldo.text = "\(miTarjeta.saldo)"
-        //labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
+        labelSaldo.text = "\(miTarjeta.saldo)"
+        labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
         
         //prueba
     }

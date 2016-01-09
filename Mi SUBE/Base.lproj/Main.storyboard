@@ -817,6 +817,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cardView" destination="zdR-Rl-egN" id="vEF-vB-vbs"/>
+                        <outlet property="labelLastUpdate" destination="dYC-KM-zVx" id="3dz-fE-VeK"/>
+                        <outlet property="labelSaldo" destination="uLf-Bu-47l" id="G3M-1B-q31"/>
                         <outlet property="monto" destination="yT1-Uw-tSp" id="6iE-H5-DgS"/>
                         <outlet property="saldoView" destination="ea8-Mn-Str" id="qBy-x1-gqh"/>
                         <outlet property="segmentAction" destination="ajs-Oa-O7v" id="vel-av-Yqp"/>
