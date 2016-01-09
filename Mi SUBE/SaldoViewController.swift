@@ -26,7 +26,7 @@ class SaldoViewController: UIViewController {
         
         
         if let input = monto.text{
-            if let valorDecimal = Double(input)
+            if let valorDecimal = Double(input.stringByReplacingOccurrencesOfString(",", withString: "."))
             {
                 let managerModelo = TarjetaSUBEService()
                 miTarjeta = managerModelo.getTarjeta()
@@ -89,7 +89,7 @@ class SaldoViewController: UIViewController {
             if preMonto.characters.count > 0 {
                 preMonto.removeAtIndex(preMonto.endIndex.predecessor())
             }
-        case ".":
+        case ",":
             if preMonto.rangeOfString(".") == nil{
                 preMonto = "\(preMonto)\(input)"
             }
