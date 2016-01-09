@@ -392,7 +392,7 @@
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rightBorderWidth">
                                                             <real key="value" value="0.0"/>
@@ -604,9 +604,6 @@
                                                         <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
                                                         <action selector="setAmount:" destination="yNX-vN-G4n" eventType="touchUpInside" id="ddI-C6-hd4"/>
@@ -625,7 +622,7 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="leftBorderWidth">
                                                             <real key="value" value="0.0"/>
@@ -645,16 +642,13 @@
                                                             <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
-                                                            <real key="value" value="0.0"/>
+                                                            <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="rightBorderWidth">
                                                             <real key="value" value="1"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
                                                             <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
@@ -713,10 +707,11 @@
                                                 <constraint firstItem="OON-BE-zw1" firstAttribute="width" secondItem="S9c-dM-8Qr" secondAttribute="width" id="ze1-jw-tzl"/>
                                             </constraints>
                                         </view>
-                                        <blurEffect style="dark"/>
+                                        <vibrancyEffect>
+                                            <blurEffect style="dark"/>
+                                        </vibrancyEffect>
                                     </visualEffectView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="0.3820260067114094" alpha="0.54641702586206897" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="YzB-hb-ibK" secondAttribute="bottom" id="2cU-fC-EWk"/>
                                     <constraint firstItem="OVv-jc-Iej" firstAttribute="leading" secondItem="Ifc-Ub-ECM" secondAttribute="leading" id="34i-DY-IU9"/>
