@@ -28,13 +28,13 @@ class SaldoViewController: UIViewController {
     
         switch enabled {
         case true:
-                UIView.animateWithDuration(0.25, animations: {
+                UIView.animateWithDuration(0.5, animations: {
                     self.button_ok.alpha = 1
                     self.position_ok.constant = 0
                     self.view.layoutIfNeeded()
                 }, completion: nil)
         case false:
-                UIView.animateWithDuration(0.15, animations: {
+                UIView.animateWithDuration(0.35, animations: {
                     self.button_ok.alpha = 0
                     self.position_ok.constant = -8
                     self.view.layoutIfNeeded()
@@ -56,11 +56,13 @@ class SaldoViewController: UIViewController {
                     miMovimiento.fechaMovimiento = NSDate()
                     miMovimiento.valorMovimiento = valorDecimal - (valorDecimal*2)
                     managerModelo.actualizarSaldo(miMovimiento)
+                    switchButtonState(false)
                 case 1:
                     let miMovimiento = Movimiento()
                     miMovimiento.fechaMovimiento = NSDate()
                     miMovimiento.valorMovimiento = valorDecimal
                     managerModelo.actualizarSaldo(miMovimiento)
+                    switchButtonState(false)
                 default:
                     break
                 }
