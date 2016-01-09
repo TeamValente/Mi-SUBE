@@ -17,6 +17,9 @@ class SaldoViewController: UIViewController {
     
     @IBOutlet weak var cardView: UIView!
     
+    @IBOutlet weak var monto: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -25,7 +28,7 @@ class SaldoViewController: UIViewController {
         
         cardView.layer.cornerRadius = 10;
         cardView.layer.masksToBounds = true;
-
+        
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
         
@@ -43,7 +46,7 @@ class SaldoViewController: UIViewController {
         
         //labelSaldo.text = "\(miTarjeta.saldo)"
         //labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -53,7 +56,7 @@ class SaldoViewController: UIViewController {
     
     @IBAction func swipeUp(sender: AnyObject) {
         cambiarPosicionTarjeta("Up")
-    
+        
     }
     
     @IBAction func swipeDown(sender: AnyObject) {
@@ -64,11 +67,11 @@ class SaldoViewController: UIViewController {
         self.view.layoutIfNeeded()
         
         if swipe == "Up"{
-        UIView.animateWithDuration(0.5, animations: {
-            //self.labelTituloTop.constant = -32
-            //self.labelTitulo.alpha = 0
-            self.view.layoutIfNeeded()
-            }, completion: nil)
+            UIView.animateWithDuration(0.5, animations: {
+                //self.labelTituloTop.constant = -32
+                //self.labelTitulo.alpha = 0
+                self.view.layoutIfNeeded()
+                }, completion: nil)
         }
         else
         {
@@ -84,18 +87,45 @@ class SaldoViewController: UIViewController {
     @IBAction func cambiarSaldo(sender: UISegmentedControl) {
         
         // Creo animacion si "Registrar una carga" fue activado
-//        switch SegmentedController.selectedSegmentIndex {
-//        
-//        case 0:
-//            cambiarPosicionTarjeta("Up")
-//            print("Registrar una carga")
-//        case 1:
-//            cambiarPosicionTarjeta("Up")
-//            print("Registrar un viaje")
-//        default:
-//            break
-//        }
+        //        switch SegmentedController.selectedSegmentIndex {
+        //
+        //        case 0:
+        //            cambiarPosicionTarjeta("Up")
+        //            print("Registrar una carga")
+        //        case 1:
+        //            cambiarPosicionTarjeta("Up")
+        //            print("Registrar un viaje")
+        //        default:
+        //            break
+        //        }
         
     }
+    
+    
+    @IBAction func setAmount(sender: UIButton) {
+        
+        let input: String = sender.titleLabel!.text!
+        var preMonto: String = monto.text!
+        
+        switch input{
+        case "Borrar":
+            if preMonto.characters.count > 0 {
+                preMonto.removeAtIndex(preMonto.endIndex.predecessor())
+            }
+        case ".":
+            if preMonto.rangeOfString(".") == nil{
+                preMonto = "\(preMonto)\(input)"
+            }
+        default:
+            
+            preMonto = "\(preMonto)\(input)"
+            
+        }
+        
+        monto.text = "\(preMonto)"
+        
+    }
+    
+    
     
 }
