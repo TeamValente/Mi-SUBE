@@ -58,6 +58,7 @@ class SaldoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,6 +74,13 @@ class SaldoViewController: UIViewController {
         } else {
         labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
     }
     
     

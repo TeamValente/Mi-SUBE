@@ -40,6 +40,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         // navigation controller hidden
         self.navigationController?.navigationBarHidden = true
         //Activo el Manager
@@ -78,6 +79,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         manager.delegate = self
         mapa.delegate = self
         //En este punto cargo los centro que vienen por defecto
+    }
+    
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
