@@ -403,7 +403,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0g-3A-uDR">
-                                                    <rect key="frame" x="0.0" y="46" width="106.5" height="45"/>
+                                                    <rect key="frame" x="0.0" y="45" width="106.5" height="45.5"/>
                                                     <state key="normal" title="4">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -472,7 +472,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22N-ER-G9X">
-                                                    <rect key="frame" x="0.0" y="91" width="107" height="45.5"/>
+                                                    <rect key="frame" x="0.0" y="90" width="107" height="45.5"/>
                                                     <state key="normal" title="7">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -541,7 +541,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKx-DE-24w">
-                                                    <rect key="frame" x="0.0" y="136" width="106.5" height="45"/>
+                                                    <rect key="frame" x="0.0" y="136" width="106.5" height="45.5"/>
                                                     <state key="normal" title=".">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -633,7 +633,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9d-dj-n1w">
-                                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="46"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="106.5" height="45.5"/>
                                                     <state key="normal" title="1">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -728,9 +728,46 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdR-Rl-egN">
                                 <rect key="frame" x="16" y="68" width="288" height="162"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYA-Lx-iph">
+                                        <rect key="frame" x="8" y="8" width="272" height="146"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SALDO ACTUAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv0-LX-eJX">
+                                                <rect key="frame" x="8" y="22" width="84.5" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLf-Bu-47l">
+                                                <rect key="frame" x="8" y="43" width="9.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ea8-Mn-Str">
+                                                <rect key="frame" x="25.5" y="43.5" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ea8-Mn-Str" firstAttribute="leading" secondItem="uLf-Bu-47l" secondAttribute="trailing" constant="8" id="LyX-yB-7XS"/>
+                                            <constraint firstItem="nv0-LX-eJX" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="REw-Fb-OcS"/>
+                                            <constraint firstItem="uLf-Bu-47l" firstAttribute="leading" secondItem="WYA-Lx-iph" secondAttribute="leading" constant="8" id="bLs-l2-AZY"/>
+                                            <constraint firstItem="ea8-Mn-Str" firstAttribute="top" secondItem="nv0-LX-eJX" secondAttribute="bottom" constant="8" id="dMb-eh-Sma"/>
+                                            <constraint firstItem="uLf-Bu-47l" firstAttribute="top" secondItem="nv0-LX-eJX" secondAttribute="bottom" constant="8" id="g1o-k5-cxy"/>
+                                            <constraint firstItem="nv0-LX-eJX" firstAttribute="top" secondItem="WYA-Lx-iph" secondAttribute="top" constant="22" id="jIA-ja-IFa"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" red="0.23529411764705882" green="0.51372549019607838" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="WYA-Lx-iph" firstAttribute="top" secondItem="zdR-Rl-egN" secondAttribute="top" constant="8" id="Ahp-9u-JuU"/>
+                                    <constraint firstItem="WYA-Lx-iph" firstAttribute="leading" secondItem="zdR-Rl-egN" secondAttribute="leading" constant="8" id="Hcr-UF-8UX"/>
+                                    <constraint firstAttribute="trailing" secondItem="WYA-Lx-iph" secondAttribute="trailing" constant="8" id="IVB-uB-uQ3"/>
                                     <constraint firstAttribute="width" secondItem="zdR-Rl-egN" secondAttribute="height" multiplier="16:9" id="Irh-yM-vGt"/>
+                                    <constraint firstAttribute="bottom" secondItem="WYA-Lx-iph" secondAttribute="bottom" constant="8" id="n29-aW-k4Z"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-Oa-O7v">
@@ -773,6 +810,7 @@
                     <connections>
                         <outlet property="cardView" destination="zdR-Rl-egN" id="vEF-vB-vbs"/>
                         <outlet property="monto" destination="yT1-Uw-tSp" id="6iE-H5-DgS"/>
+                        <outlet property="saldoView" destination="ea8-Mn-Str" id="qBy-x1-gqh"/>
                         <outlet property="segmentAction" destination="ajs-Oa-O7v" id="vel-av-Yqp"/>
                     </connections>
                 </viewController>

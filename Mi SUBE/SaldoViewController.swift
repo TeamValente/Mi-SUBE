@@ -18,6 +18,7 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var monto: UILabel!
     @IBOutlet weak var segmentAction: UISegmentedControl!
+    @IBOutlet weak var saldoView: UILabel!
     
     @IBAction func agregarMovimiento() {
         
