@@ -146,18 +146,16 @@ class SaldoViewController: UIViewController {
         
     }
     
-    func loadSaldo()
-    {
+    func loadSaldo() {
+        
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
         
-        if miTarjeta.saldo < 0
-        {
-            
+        if miTarjeta.saldo < 0 {
             cardView.backgroundColor = UIColor(rgba: "#E8573C")
-        }else
-        {
-            labelSaldo.textColor = UIColor(rgba: "#3C83E9")
+        } else {
+            //labelSaldo.textColor = UIColor(rgba: "#3C83E9")
+            cardView.backgroundColor = UIColor(rgba: "#3C83E9")
         }
         labelSaldo.text = "\(miTarjeta.saldo)"
         if managerModelo.getUltimoMovimiento().isEmpty {
