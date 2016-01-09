@@ -58,11 +58,12 @@ class SaldoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-    }
+            }
     
     override func viewDidAppear(animated: Bool) {
   
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+
         cardView.layer.cornerRadius = 10;
         cardView.layer.masksToBounds = true;
         
