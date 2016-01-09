@@ -61,7 +61,7 @@ class SaldoViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+  
         cardView.layer.cornerRadius = 10;
         cardView.layer.masksToBounds = true;
         
@@ -69,8 +69,6 @@ class SaldoViewController: UIViewController {
         miTarjeta = managerModelo.getTarjeta()
         labelSaldo.text = "\(miTarjeta.saldo)"
         labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
-        
-        //prueba
     }
     
     
