@@ -110,7 +110,10 @@ class SaldoViewController: UIViewController {
         case "Borrar":
             if preMonto.characters.count > 0 {
                 preMonto.removeAtIndex(preMonto.endIndex.predecessor())
-                switchButtonState(false)
+                
+                if preMonto.characters.count == 0 {
+                    switchButtonState(false)
+                }
             }
         case ",":
             if preMonto.rangeOfString(",") == nil {
