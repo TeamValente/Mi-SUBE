@@ -26,19 +26,19 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var buttonDelete: UIButton!
     
     func switchButtonState(enabled:Bool) {
-    
+        
         switch enabled {
         case true:
-                UIView.animateWithDuration(0.5, animations: {
-                    self.button_ok.alpha = 1
-                    self.position_ok.constant = 0
-                    self.view.layoutIfNeeded()
+            UIView.animateWithDuration(0.5, animations: {
+                self.button_ok.alpha = 1
+                self.position_ok.constant = 0
+                self.view.layoutIfNeeded()
                 }, completion: nil)
         case false:
-                UIView.animateWithDuration(0.35, animations: {
-                    self.button_ok.alpha = 0
-                    self.position_ok.constant = -8
-                    self.view.layoutIfNeeded()
+            UIView.animateWithDuration(0.35, animations: {
+                self.button_ok.alpha = 0
+                self.position_ok.constant = -8
+                self.view.layoutIfNeeded()
                 }, completion: nil)
         }
     }
@@ -71,7 +71,7 @@ class SaldoViewController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         
         
@@ -83,7 +83,7 @@ class SaldoViewController: UIViewController {
         
         if monto.text?.characters.count > 0 {
             buttonDelete.highlighted = false
-           
+            
         } else {
             buttonDelete.highlighted = true
         }
@@ -130,7 +130,6 @@ class SaldoViewController: UIViewController {
             
         } else {
             buttonDelete.highlighted = true
-            
         }
         
     }
@@ -143,11 +142,11 @@ class SaldoViewController: UIViewController {
         if miTarjeta.saldo < 0 {
             UIView.animateWithDuration(0.5, animations: {
                 self.cardView.backgroundColor = UIColor(rgba: "#E8573C")
-            }, completion: nil)
+                }, completion: nil)
         } else {
             UIView.animateWithDuration(0.5, animations: {
                 self.cardView.backgroundColor = UIColor(rgba: "#3C83E9")
-            }, completion: nil)
+                }, completion: nil)
         }
         labelSaldo.text = "\(miTarjeta.saldo)"
         if managerModelo.getUltimoMovimiento().isEmpty {
@@ -155,7 +154,7 @@ class SaldoViewController: UIViewController {
         } else {
             labelLastUpdate.text = "Actualizado hace \(managerModelo.getUltimoMovimiento())."
         }
-
+        
     }
     
     
