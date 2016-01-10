@@ -116,12 +116,16 @@ class SaldoViewController: UIViewController {
                 }
             }
         case ",":
-            if preMonto.rangeOfString(",") == nil {
-                preMonto = "\(preMonto)\(input)"
+            if preMonto.characters.count < 6 {
+                if preMonto.rangeOfString(",") == nil {
+                    preMonto = "\(preMonto)\(input)"
+                }
             }
         default:
-            switchButtonState(true)
-            preMonto = "\(preMonto)\(input)"
+            if preMonto.characters.count < 7 {
+                switchButtonState(true)
+                preMonto = "\(preMonto)\(input)"
+            }
         }
         
         monto.text = "\(preMonto)"
