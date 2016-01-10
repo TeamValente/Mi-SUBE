@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 class SaldoViewController: UIViewController {
     
@@ -20,12 +21,9 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var segmentAction: UISegmentedControl!
     @IBOutlet weak var labelSaldo: UILabel!
     @IBOutlet weak var labelLastUpdate: UILabel!
-    
     @IBOutlet weak var button_ok: UIButton!
     @IBOutlet weak var position_ok: NSLayoutConstraint!
-    
     @IBOutlet weak var buttonDelete: UIButton!
-    
     
     func switchButtonState(enabled:Bool) {
     
@@ -75,6 +73,8 @@ class SaldoViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
+        
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         button_ok.alpha = 0
         cardView.layer.cornerRadius = 10
