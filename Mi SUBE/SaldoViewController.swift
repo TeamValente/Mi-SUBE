@@ -152,7 +152,7 @@ class SaldoViewController: UIViewController {
                 self.cardView.backgroundColor = UIColor(rgba: "#3C83E9")
                 }, completion: nil)
         }
-        labelSaldo.text = "\(miTarjeta.saldo)"
+        labelSaldo.text = String(format: "%.2f", miTarjeta.saldo)
         if managerModelo.getUltimoMovimiento().isEmpty {
             labelLastUpdate.text = "No hay movientos registrados."
         } else {
