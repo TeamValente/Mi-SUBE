@@ -35,6 +35,8 @@
 		ECC647D11C12938A00896171 /* PuntoCarga.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647D01C12938A00896171 /* PuntoCarga.swift */; };
 		ECC647D41C12B39100896171 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647D31C12B39100896171 /* Extensions.swift */; };
 		ECC9679B1C1A32EC0070BA4F /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC9679A1C1A32EC0070BA4F /* SaldoViewController.swift */; };
+		FCB703CA1C45D750003F1072 /* MovimientosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */; };
+		FCB703CD1C45DCD6003F1072 /* MovimientoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		ECC647D01C12938A00896171 /* PuntoCarga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoCarga.swift; sourceTree = "<group>"; };
 		ECC647D31C12B39100896171 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECC9679A1C1A32EC0070BA4F /* SaldoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
+		FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientosTableViewController.swift; sourceTree = "<group>"; };
+		FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		ECC647B51C12822600896171 /* Mi SUBE */ = {
 			isa = PBXGroup;
 			children = (
+				FCB703CB1C45DCC2003F1072 /* Cells */,
 				ECFA445C1C1F719000717AEA /* Helper */,
 				EC105EE31C15C94E001847F6 /* GPX */,
 				EC5B5BE21C1496F500327D19 /* Factory */,
@@ -169,6 +174,7 @@
 				D57C57ED1C22FB540019AC00 /* ConfigTableViewController.swift */,
 				7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */,
 				7C0F515A1C33934400EFBC22 /* OssViewController.swift */,
+				FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +216,14 @@
 				7C0930941C40AD7A005AB04B /* UIView_Borders.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		FCB703CB1C45DCC2003F1072 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +362,8 @@
 				EC6836371C17B603000EC0C8 /* TarjetaSUBEService.swift in Sources */,
 				ECC647B91C12822600896171 /* MapViewController.swift in Sources */,
 				D57C57EE1C22FB540019AC00 /* ConfigTableViewController.swift in Sources */,
+				FCB703CA1C45D750003F1072 /* MovimientosTableViewController.swift in Sources */,
+				FCB703CD1C45DCD6003F1072 /* MovimientoTableViewCell.swift in Sources */,
 				ECC647CF1C12932C00896171 /* DondeCargoService.swift in Sources */,
 				EC3BA51E1C1CE37C0058CDD1 /* RouteViewController.swift in Sources */,
 				ECABF5871C1E36CA00C8B25C /* DetailHelper.swift in Sources */,

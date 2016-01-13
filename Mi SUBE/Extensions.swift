@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 //Con esta extension para String se hace el decode de los caracteres HTML
 extension String {
@@ -124,4 +125,8 @@ extension NSDate
         return "1 segundo"
     }
     
+    
+    
 }
+
+

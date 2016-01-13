@@ -9,6 +9,12 @@
 import Foundation
 import RealmSwift
 
+extension Results {
+    func toArray() -> [Results.Generator.Element] {
+        return map { $0 }
+    }
+}
+
 class TarjetaSUBEService{
     
     private var miTarjeta:Tarjeta
@@ -34,9 +40,21 @@ class TarjetaSUBEService{
         }
     }
     
-    func listadoDeMovimientos()->List<Movimiento>
+    func listadoDeMovimientos(orderBy: String)->[Movimiento]
     {
-        return miTarjeta.movimientos
+        
+        //ManagerRealm
+        let realm = try! Realm()
+        var order = true
+        
+        if orderBy == "desc"
+        {
+           order = false
+        }
+        
+        let  movimientos = realm.objects(Movimiento).sorted("fechaMovimiento", ascending: order)
+        return movimientos.toArray()
+        
     }
     
     func getTarjeta()->Tarjeta
