@@ -25,12 +25,11 @@ class MovimientosTableViewController: UITableViewController {
         self.navigationController?.navigationBarHidden = false
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
-        
-        
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         self.navigationController?.navigationBarHidden = false
     }
     

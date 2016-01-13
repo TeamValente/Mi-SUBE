@@ -936,7 +936,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovimientoTableViewCell" rowHeight="53" id="Okl-1f-Lvk" customClass="MovimientoTableViewCell" customModule="Mi_SUBE" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovimientoTableViewCell" rowHeight="53" id="Okl-1f-Lvk" customClass="MovimientoTableViewCell" customModule="Mi_SUBE" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Okl-1f-Lvk" id="coA-cw-UyT">
@@ -1330,6 +1330,11 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oij-bK-IYl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
