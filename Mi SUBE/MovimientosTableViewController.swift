@@ -63,7 +63,7 @@ class MovimientosTableViewController: UITableViewController {
 
         let mov = managerModelo.listadoDeMovimientos("desc")[indexPath.row]
         let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.dateStyle = NSDateFormatterStyle.ShortStyle
         formatter.timeStyle = .ShortStyle
         
         cell.labelFecha.text = formatter.stringFromDate(mov.fechaMovimiento)
@@ -79,7 +79,7 @@ class MovimientosTableViewController: UITableViewController {
             cell.imgOperation.tintColor = UIColor(rgba: "#E8573C")
         }
         
-        cell.labelMonto.text = "\(mov.valorMovimiento)"
+        cell.labelMonto.text = String(format: "%.2f",mov.valorMovimiento)
         
         // Configure the cell...
         return cell
