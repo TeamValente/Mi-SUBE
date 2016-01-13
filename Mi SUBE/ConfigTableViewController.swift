@@ -67,13 +67,15 @@ class ConfigTableViewController: UITableViewController {
         }))
         
         //show the alert
-        self.presentViewController(alertMessage, animated: true, completion: nil)
-        
-       
-
-    
+        self.presentViewController(alertMessage, animated: true, completion: nil)    
     }
     
+    //MARK: Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Atrás"
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

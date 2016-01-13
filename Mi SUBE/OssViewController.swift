@@ -19,9 +19,6 @@ class OssViewController: UIViewController {
     }
     
     @IBAction func openLink(sender: UIButton) {
-        
-        //print(sender.tag)
-    
         switch(sender.tag) {
             case 1 :
                 if let cocoapodsLink = NSURL(string: "https://cocoapods.org") {

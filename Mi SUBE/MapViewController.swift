@@ -84,8 +84,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //En este punto cargo los centro que vienen por defecto
     }
     
-    
-    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -95,9 +93,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "mapViewToRouteView" {
-            if let routeController = segue.destinationViewController as? RouteViewController{
-                if mapa.selectedAnnotations.count == 1
-                {
+            if let routeController = segue.destinationViewController as? RouteViewController {
+                if mapa.selectedAnnotations.count == 1 {
                     let puntoSeleccionado = mapa.selectedAnnotations[0]
                     if !(puntoSeleccionado is CustomPointAnnotation) {
                         return
@@ -105,10 +102,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     let cpa = puntoSeleccionado as! CustomPointAnnotation
                     routeController.puntoDestino = cpa.datos
                     routeController.miUbicacion = miUbicacion!
-                    
                 }
             }
         }
+        let backItem = UIBarButtonItem()
+        backItem.title = "Atrás"
+        navigationItem.backBarButtonItem = backItem
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
