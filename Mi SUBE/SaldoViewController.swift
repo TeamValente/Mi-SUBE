@@ -15,7 +15,6 @@ class SaldoViewController: UIViewController {
     var miTarjeta: Tarjeta!
     
     //MARK: Outelets
-    
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var monto: UILabel!
     @IBOutlet weak var segmentAction: UISegmentedControl!
@@ -171,6 +170,11 @@ class SaldoViewController: UIViewController {
         
     }
     
-    
+    //MARK: Segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Atras"
+        navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
+    }
     
 }

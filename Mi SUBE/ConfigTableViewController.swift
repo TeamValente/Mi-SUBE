@@ -18,8 +18,8 @@ class ConfigTableViewController: UITableViewController {
     // MARK: View Events
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         switchDelete.setOn(true, animated: true)
