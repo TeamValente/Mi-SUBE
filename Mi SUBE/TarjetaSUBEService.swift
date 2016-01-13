@@ -70,7 +70,8 @@ class TarjetaSUBEService{
         let tarjetas = realm.objects(Tarjeta).filter("id = 1")
         if tarjetas.count != 0{
             try! realm.write {
-                realm.delete(tarjetas[0])
+                realm.deleteAll()
+                //realm.delete(tarjetas[0])
             }
             
         }
