@@ -173,7 +173,7 @@ class SaldoViewController: UIViewController {
     //MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let backItem = UIBarButtonItem()
-        backItem.title = "Atras"
+        backItem.title = "Atrás"
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
     }
     

@@ -945,21 +945,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC6-1o-6fG">
-                                            <rect key="frame" x="189.5" y="12" width="122.5" height="21"/>
+                                            <rect key="frame" x="187" y="12" width="125" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V36-QJ-dnZ">
-                                            <rect key="frame" x="51" y="12" width="122.5" height="21"/>
+                                            <rect key="frame" x="46" y="12" width="125" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_local_atm" translatesAutoresizingMaskIntoConstraints="NO" id="zts-sO-Duf">
-                                            <rect key="frame" x="8" y="13" width="27" height="27"/>
+                                            <rect key="frame" x="8" y="15.5" width="22" height="22"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="27" id="4n4-Nc-VTt"/>
+                                                <constraint firstAttribute="width" constant="22" id="4n4-Nc-VTt"/>
                                                 <constraint firstAttribute="width" secondItem="zts-sO-Duf" secondAttribute="height" multiplier="1:1" id="oOR-Vm-Pv6"/>
                                             </constraints>
                                         </imageView>
