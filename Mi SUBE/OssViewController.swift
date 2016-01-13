@@ -20,7 +20,7 @@ class OssViewController: UIViewController {
     
     @IBAction func openLink(sender: UIButton) {
         
-        print(sender.tag)
+        //print(sender.tag)
     
         switch(sender.tag) {
             case 1 :

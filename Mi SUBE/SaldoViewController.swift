@@ -25,6 +25,11 @@ class SaldoViewController: UIViewController {
     @IBOutlet weak var position_ok: NSLayoutConstraint!
     @IBOutlet weak var buttonDelete: UIButton!
     
+    override func viewDidLoad() {
+        // navigation controller hidden
+        self.navigationController?.navigationBarHidden = true
+    }
+    
     func switchButtonState(enabled:Bool) {
         
         switch enabled {
@@ -74,8 +79,13 @@ class SaldoViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        super.viewDidAppear(animated)
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        // navigation controller hidden
+        self.navigationController?.navigationBarHidden = true
+        
         button_ok.alpha = 0
         cardView.layer.cornerRadius = 10
         cardView.layer.masksToBounds = true

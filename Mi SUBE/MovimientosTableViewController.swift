@@ -1,89 +1,86 @@
 //
-//  ConfigTableViewController.swift
+//  MovimientosTableViewController.swift
 //  Mi SUBE
 //
-//  Created by Mariano Molina on 12/17/15.
-//  Copyright © 2015 Hernan Matias Coppola. All rights reserved.
+//  Created by Hernan Matias Coppola on 12/1/16.
+//  Copyright © 2016 Hernan Matias Coppola. All rights reserved.
 //
 
 import UIKit
 
-class ConfigTableViewController: UITableViewController {
+class MovimientosTableViewController: UITableViewController {
 
+    //MARK: Variables
+    var miTarjeta: Tarjeta!
+    let managerModelo = TarjetaSUBEService()
     
-    // MARK: Outlets
-    @IBOutlet weak var switchDelete: UISwitch!
-    
-    
-    // MARK: View Events
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    }
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        switchDelete.setOn(true, animated: true)
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationController?.navigationBarHidden = false
+        let managerModelo = TarjetaSUBEService()
+        miTarjeta = managerModelo.getTarjeta()
+        
+        
     }
 
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBarHidden = false
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 1
     }
     
-    // MARK: Actions
-    @IBAction func deleteCard(sender: AnyObject) {
-        
-        // set alertController
-        let alertMessage = UIAlertController(title: "Cuidado", message: "Estas seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .Alert)
-        
-        // add delete Action
-        alertMessage.addAction(UIAlertAction(title: "Continuar", style: .Default, handler: { Void in
-            // remove all data from the DB
-            let modelManager = TarjetaSUBEService()
-            modelManager.removeTarjeta()
-        }))
-        
-        // add cancel Action
-        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: { Void in
-            // set switch on
-             self.switchDelete.setOn(true, animated: true)
-        }))
-        
-        //show the alert
-        self.presentViewController(alertMessage, animated: true, completion: nil)
-        
-       
-
-    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return managerModelo.listadoDeMovimientos("desc").count
     }
+
     
-
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        
+        let cellIdentifier = "MovimientoTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MovimientoTableViewCell
 
+        let mov = managerModelo.listadoDeMovimientos("desc")[indexPath.row]
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.timeStyle = .ShortStyle
+        
+        cell.labelFecha.text = formatter.stringFromDate(mov.fechaMovimiento)
+        if mov.valorMovimiento > 0{
+            cell.labelMonto.textColor = UIColor.greenColor()
+        }else
+        {
+            cell.labelMonto.textColor = UIColor.redColor()
+        }
+        
+        cell.labelMonto.text = "\(mov.valorMovimiento)"
+        
         // Configure the cell...
-
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

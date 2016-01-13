@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 class DondeCargoService{
     
     func generarURLValida(url: String) -> String {
