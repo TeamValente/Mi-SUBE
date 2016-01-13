@@ -22,7 +22,7 @@ class MovimientosTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = false
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
         
@@ -31,7 +31,7 @@ class MovimientosTableViewController: UITableViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.navigationBarHidden = false
     }
     
     override func didReceiveMemoryWarning() {
