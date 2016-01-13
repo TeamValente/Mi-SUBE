@@ -78,7 +78,7 @@ class SaldoViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        self.viewDidAppear(animated)
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         

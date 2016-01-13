@@ -21,8 +21,9 @@ class ConfigTableViewController: UITableViewController {
 
     }
     override func viewDidAppear(animated: Bool) {
-         switchDelete.setOn(true, animated: true)
-         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        self.viewDidAppear(animated)
+        switchDelete.setOn(true, animated: true)
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     override func viewWillDisappear(animated: Bool) {
