@@ -30,7 +30,7 @@ class MovimientosTableViewController: UITableViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        self.viewDidAppear(animated)
+        super.viewDidAppear(animated)
         self.navigationController?.navigationBarHidden = true
     }
     
