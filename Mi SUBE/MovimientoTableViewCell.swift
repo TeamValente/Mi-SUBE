@@ -14,6 +14,7 @@ class MovimientoTableViewCell: UITableViewCell {
     //MARK: Properties
     @IBOutlet weak var labelFecha: UILabel!
     @IBOutlet weak var labelMonto: UILabel!
+    @IBOutlet weak var imgOperation: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +23,6 @@ class MovimientoTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

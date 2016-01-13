@@ -68,10 +68,15 @@ class MovimientosTableViewController: UITableViewController {
         
         cell.labelFecha.text = formatter.stringFromDate(mov.fechaMovimiento)
         if mov.valorMovimiento > 0{
-            cell.labelMonto.textColor = UIColor.greenColor()
-        }else
-        {
-            cell.labelMonto.textColor = UIColor.redColor()
+            cell.labelMonto.textColor = UIColor(rgba: "#4CAF50")
+            cell.imgOperation.image = UIImage(named: "ic_local_atm")
+            cell.imgOperation.image = cell.imgOperation.image?.imageWithRenderingMode(.AlwaysTemplate)
+            cell.imgOperation.tintColor = UIColor(rgba: "#4CAF50")
+        } else {
+            cell.labelMonto.textColor = UIColor(rgba: "#E8573C")
+            cell.imgOperation.image = UIImage(named: "ic_directions_bus")
+            cell.imgOperation.image = cell.imgOperation.image?.imageWithRenderingMode(.AlwaysTemplate)
+            cell.imgOperation.tintColor = UIColor(rgba: "#E8573C")
         }
         
         cell.labelMonto.text = "\(mov.valorMovimiento)"

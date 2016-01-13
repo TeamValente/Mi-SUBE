@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -927,7 +928,7 @@
             </objects>
             <point key="canvasLocation" x="1233" y="288"/>
         </scene>
-        <!--Movimientos Table View Controller-->
+        <!--Movimientos-->
         <scene sceneID="8cH-Vc-0h3">
             <objects>
                 <tableViewController id="rx2-WN-WlQ" customClass="MovimientosTableViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
@@ -944,28 +945,40 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC6-1o-6fG">
-                                            <rect key="frame" x="8" y="0.0" width="304" height="20.5"/>
+                                            <rect key="frame" x="189.5" y="12" width="122.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V36-QJ-dnZ">
-                                            <rect key="frame" x="8" y="24" width="304" height="20.5"/>
+                                            <rect key="frame" x="51" y="12" width="122.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_local_atm" translatesAutoresizingMaskIntoConstraints="NO" id="zts-sO-Duf">
+                                            <rect key="frame" x="8" y="13" width="27" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="27" id="4n4-Nc-VTt"/>
+                                                <constraint firstAttribute="width" secondItem="zts-sO-Duf" secondAttribute="height" multiplier="1:1" id="oOR-Vm-Pv6"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="pC6-1o-6fG" firstAttribute="top" secondItem="coA-cw-UyT" secondAttribute="topMargin" constant="-8" id="4DP-78-oza"/>
-                                        <constraint firstItem="V36-QJ-dnZ" firstAttribute="bottom" secondItem="coA-cw-UyT" secondAttribute="bottomMargin" id="7wl-8m-ryG"/>
-                                        <constraint firstItem="pC6-1o-6fG" firstAttribute="leading" secondItem="coA-cw-UyT" secondAttribute="leadingMargin" id="Z60-Zt-fus"/>
-                                        <constraint firstItem="V36-QJ-dnZ" firstAttribute="trailing" secondItem="coA-cw-UyT" secondAttribute="trailingMargin" id="hIS-zD-lWa"/>
-                                        <constraint firstItem="pC6-1o-6fG" firstAttribute="trailing" secondItem="coA-cw-UyT" secondAttribute="trailingMargin" id="pzu-UU-nJl"/>
-                                        <constraint firstItem="V36-QJ-dnZ" firstAttribute="leading" secondItem="coA-cw-UyT" secondAttribute="leadingMargin" id="qFQ-Br-0wf"/>
+                                        <constraint firstItem="V36-QJ-dnZ" firstAttribute="leading" secondItem="zts-sO-Duf" secondAttribute="trailing" constant="16" id="2AL-I8-dFa"/>
+                                        <constraint firstItem="pC6-1o-6fG" firstAttribute="firstBaseline" secondItem="V36-QJ-dnZ" secondAttribute="firstBaseline" id="5rz-qB-7WK"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="zts-sO-Duf" secondAttribute="leading" id="AJe-HP-JNL"/>
+                                        <constraint firstItem="V36-QJ-dnZ" firstAttribute="width" secondItem="pC6-1o-6fG" secondAttribute="width" id="GQd-Jl-ebO"/>
+                                        <constraint firstItem="pC6-1o-6fG" firstAttribute="top" secondItem="coA-cw-UyT" secondAttribute="topMargin" constant="4" id="LiC-0y-Xgj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="pC6-1o-6fG" secondAttribute="trailing" id="RAY-xD-fxf"/>
+                                        <constraint firstItem="pC6-1o-6fG" firstAttribute="leading" secondItem="V36-QJ-dnZ" secondAttribute="trailing" constant="16" id="XQX-XG-81d"/>
+                                        <constraint firstItem="pC6-1o-6fG" firstAttribute="baseline" secondItem="V36-QJ-dnZ" secondAttribute="baseline" id="gMg-vq-nLF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="pC6-1o-6fG" secondAttribute="bottom" constant="11.5" id="jO1-Zb-iaa"/>
+                                        <constraint firstItem="zts-sO-Duf" firstAttribute="centerY" secondItem="coA-cw-UyT" secondAttribute="centerY" id="nrS-ER-vFd"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="imgOperation" destination="zts-sO-Duf" id="E3V-1d-Vql"/>
                                     <outlet property="labelFecha" destination="pC6-1o-6fG" id="kMj-LA-V6e"/>
                                     <outlet property="labelMonto" destination="V36-QJ-dnZ" id="vGe-0n-afD"/>
                                 </connections>
@@ -977,7 +990,7 @@
                             <outlet property="delegate" destination="rx2-WN-WlQ" id="bFE-tQ-T2D"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eUt-o8-a2p"/>
+                    <navigationItem key="navigationItem" title="Movimientos" id="eUt-o8-a2p"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sig-cK-KJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1351,6 +1364,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
         <image name="card" width="36" height="25"/>
         <image name="close" width="92" height="92"/>
         <image name="config" width="25" height="25"/>
+        <image name="ic_local_atm" width="24" height="24"/>
         <image name="location" width="128" height="128"/>
         <image name="map" width="25" height="25"/>
     </resources>
