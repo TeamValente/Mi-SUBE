@@ -34,6 +34,11 @@ class MovimientosTableViewController: UITableViewController {
         self.navigationController?.navigationBarHidden = false
     }
     
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
