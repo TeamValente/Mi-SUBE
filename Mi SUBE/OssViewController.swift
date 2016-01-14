@@ -12,6 +12,7 @@ class OssViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +36,10 @@ class OssViewController: UIViewController {
             case 4 :
                 if let progressLink = NSURL(string: "https://github.com/kentya6/KYCircularProgress") {
                     UIApplication.sharedApplication().openURL(progressLink)
+                }
+            case 5 :
+                if let springLink = NSURL(string: "https://github.com/MengTo/Spring") {
+                    UIApplication.sharedApplication().openURL(springLink)
                 }
             default:
                 print("tag erroneo!")
