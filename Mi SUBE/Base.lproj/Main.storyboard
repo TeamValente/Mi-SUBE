@@ -1220,6 +1220,9 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                                 <rect key="frame" x="8" y="392" width="304" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <state key="normal" title="Spring"/>
+                                                <connections>
+                                                    <action selector="openLink:" destination="5a9-62-NeF" eventType="touchUpInside" id="zI5-7n-aWU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
