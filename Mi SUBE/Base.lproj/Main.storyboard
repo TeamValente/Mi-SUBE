@@ -789,7 +789,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zdR-Rl-egN" customClass="SpringView" customModule="Spring">
-                                <rect key="frame" x="16" y="124" width="288" height="158"/>
+                                <rect key="frame" x="16" y="80" width="288" height="158"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYA-Lx-iph">
                                         <rect key="frame" x="8" y="8" width="272" height="142"/>
@@ -876,19 +876,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ajs-Oa-O7v" userLabel="Registrar">
-                                <rect key="frame" x="16" y="298" width="288" height="29"/>
+                                <rect key="frame" x="16" y="254" width="288" height="29"/>
                                 <segments>
                                     <segment title="Registrar un viaje"/>
                                     <segment title="Registrar una carga"/>
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nec-aq-G5a">
-                                <rect key="frame" x="121" y="80" width="77.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -900,14 +894,12 @@
                             <constraint firstItem="ajs-Oa-O7v" firstAttribute="top" secondItem="zdR-Rl-egN" secondAttribute="bottom" constant="16" id="OQJ-NY-eRY"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="centerY" secondItem="eL5-TQ-uDo" secondAttribute="centerY" id="V9G-4b-YnL"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="leading" secondItem="Ifc-Ub-ECM" secondAttribute="leading" id="VWW-RI-wY5"/>
-                            <constraint firstItem="zdR-Rl-egN" firstAttribute="top" secondItem="nec-aq-G5a" secondAttribute="bottom" constant="20" id="WYo-44-9NF"/>
                             <constraint firstItem="ajs-Oa-O7v" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" multiplier="0.9" id="a3l-pS-9uf"/>
                             <constraint firstItem="Ifc-Ub-ECM" firstAttribute="width" secondItem="eL5-TQ-uDo" secondAttribute="width" id="cNZ-56-ub7"/>
                             <constraint firstItem="6gt-dV-Lub" firstAttribute="top" secondItem="Ifc-Ub-ECM" secondAttribute="bottom" id="jQf-9E-Y9o"/>
                             <constraint firstItem="CS1-ir-4qr" firstAttribute="height" secondItem="eL5-TQ-uDo" secondAttribute="height" id="pN6-4g-ry4"/>
-                            <constraint firstItem="nec-aq-G5a" firstAttribute="centerX" secondItem="eL5-TQ-uDo" secondAttribute="centerX" id="r0V-cm-WPJ"/>
                             <constraint firstItem="zdR-Rl-egN" firstAttribute="centerX" secondItem="Ifc-Ub-ECM" secondAttribute="centerX" id="sC9-lB-Wb0"/>
-                            <constraint firstItem="zdR-Rl-egN" firstAttribute="top" secondItem="f2R-6W-YLa" secondAttribute="bottom" constant="60" id="v8b-Xu-gyF"/>
+                            <constraint firstItem="zdR-Rl-egN" firstAttribute="top" secondItem="f2R-6W-YLa" secondAttribute="bottom" constant="16" id="v8b-Xu-gyF"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9vJ-BX-BH6"/>
