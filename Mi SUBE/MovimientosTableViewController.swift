@@ -14,6 +14,8 @@ class MovimientosTableViewController: UITableViewController {
     var miTarjeta: Tarjeta!
     let managerModelo = TarjetaSUBEService()
     
+    @IBOutlet var tablaMovimientos: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,6 +33,8 @@ class MovimientosTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         self.navigationController?.navigationBarHidden = false
+        
+        tablaMovimientos.reloadData()
     }
     
     override func viewDidDisappear(animated: Bool) {

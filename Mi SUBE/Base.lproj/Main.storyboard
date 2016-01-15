@@ -982,6 +982,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Movimientos" id="eUt-o8-a2p"/>
+                    <connections>
+                        <outlet property="tablaMovimientos" destination="WdU-Fj-vlv" id="cEG-x9-FUJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sig-cK-KJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
