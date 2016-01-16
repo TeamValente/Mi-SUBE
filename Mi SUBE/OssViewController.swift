@@ -41,6 +41,10 @@ class OssViewController: UIViewController {
                 if let springLink = NSURL(string: "https://github.com/MengTo/Spring") {
                     UIApplication.sharedApplication().openURL(springLink)
                 }
+        case 6 :
+            if let dondeCargoLaSUBE = NSURL(string: "http://dondecargolasube.com.ar/#footer") {
+                UIApplication.sharedApplication().openURL(dondeCargoLaSUBE)
+            }
             default:
                 print("tag erroneo!")
             

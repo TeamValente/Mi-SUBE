@@ -1155,7 +1155,7 @@
             </objects>
             <point key="canvasLocation" x="1673" y="1036"/>
         </scene>
-        <!--Librerías OSS-->
+        <!--Nos ayudaron-->
         <scene sceneID="DeB-u4-1B6">
             <objects>
                 <viewController id="5a9-62-NeF" customClass="OssViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
@@ -1171,24 +1171,23 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SOZ-wP-UtR" userLabel="Content">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="557"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504.5"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="AZg-58-me6">
-                                                <rect key="frame" x="8" y="-30" width="304" height="138"/>
+                                                <rect key="frame" x="8" y="-30" width="304" height="117.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <string key="text">Nosotros como equipo apoyamos el desarrollo de Software Open Source y creemos en su filosofía.
-Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicación.</string>
+                                                <string key="text">Mi SUBE no pudo haber sido realizada sin la buena voluntad de muchas personas. Nuestro agradecimiento a los desarrolladores que han compartido sus librerías.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Librerías utilizadas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESg-sq-aZR">
-                                                <rect key="frame" x="8" y="140" width="304" height="24"/>
+                                                <rect key="frame" x="8" y="103.5" width="304" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH4-t6-Iv0">
-                                                <rect key="frame" x="8" y="196" width="304" height="33"/>
+                                                <rect key="frame" x="8" y="143.5" width="304" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <state key="normal" title="Cocoapods"/>
                                                 <connections>
@@ -1196,7 +1195,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjA-cn-a5z">
-                                                <rect key="frame" x="8" y="245" width="304" height="33"/>
+                                                <rect key="frame" x="8" y="192.5" width="304" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <state key="normal" title="Realm"/>
                                                 <connections>
@@ -1204,7 +1203,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKO-R3-jpt">
-                                                <rect key="frame" x="8" y="294" width="304" height="33"/>
+                                                <rect key="frame" x="8" y="241.5" width="304" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <state key="normal" title="UIColor-Hex-Swift"/>
                                                 <connections>
@@ -1212,7 +1211,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pBa-t4-aOf">
-                                                <rect key="frame" x="8" y="343" width="304" height="33"/>
+                                                <rect key="frame" x="8" y="290.5" width="304" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <state key="normal" title="KYCircularProgress"/>
                                                 <connections>
@@ -1220,11 +1219,19 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPt-Nz-9zz">
-                                                <rect key="frame" x="8" y="392" width="304" height="33"/>
+                                                <rect key="frame" x="8" y="339.5" width="304" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                 <state key="normal" title="Spring"/>
                                                 <connections>
                                                     <action selector="openLink:" destination="5a9-62-NeF" eventType="touchUpInside" id="zI5-7n-aWU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0g-Re-j5H">
+                                                <rect key="frame" x="8" y="388.5" width="304" height="33"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <state key="normal" title="¿Donde #&amp;$!@ cargo la SUBE?"/>
+                                                <connections>
+                                                    <action selector="openLink:" destination="5a9-62-NeF" eventType="touchUpInside" id="np2-WH-dki"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1233,20 +1240,23 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                                             <constraint firstAttribute="trailing" secondItem="PjA-cn-a5z" secondAttribute="trailing" constant="8" id="2JN-Pa-wxW"/>
                                             <constraint firstItem="ESg-sq-aZR" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="7sp-d3-Wdf"/>
                                             <constraint firstItem="pBa-t4-aOf" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="AN6-D1-XXL"/>
-                                            <constraint firstAttribute="bottom" secondItem="LPt-Nz-9zz" secondAttribute="bottom" constant="132" id="C7f-KG-bBU"/>
-                                            <constraint firstItem="ESg-sq-aZR" firstAttribute="top" secondItem="AZg-58-me6" secondAttribute="bottom" constant="32" id="CKn-16-slX"/>
+                                            <constraint firstItem="ESg-sq-aZR" firstAttribute="top" secondItem="AZg-58-me6" secondAttribute="bottom" constant="16" id="CKn-16-slX"/>
                                             <constraint firstAttribute="trailing" secondItem="LPt-Nz-9zz" secondAttribute="trailing" constant="8" id="HBm-ez-acX"/>
                                             <constraint firstAttribute="trailing" secondItem="AZg-58-me6" secondAttribute="trailing" constant="8" id="Ln9-ib-haf"/>
                                             <constraint firstItem="YH4-t6-Iv0" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="Lw1-bB-bDS"/>
                                             <constraint firstItem="UKO-R3-jpt" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="M83-zh-wby"/>
+                                            <constraint firstItem="O0g-Re-j5H" firstAttribute="top" secondItem="LPt-Nz-9zz" secondAttribute="bottom" constant="16" id="MG3-C5-wgo"/>
+                                            <constraint firstAttribute="bottom" secondItem="O0g-Re-j5H" secondAttribute="bottom" constant="83" id="VXf-DW-fqU"/>
                                             <constraint firstItem="LPt-Nz-9zz" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="Vo7-2a-ogK"/>
                                             <constraint firstItem="LPt-Nz-9zz" firstAttribute="top" secondItem="pBa-t4-aOf" secondAttribute="bottom" constant="16" id="YJX-t7-1GN"/>
                                             <constraint firstItem="PjA-cn-a5z" firstAttribute="top" secondItem="YH4-t6-Iv0" secondAttribute="bottom" constant="16" id="YUm-rs-20c"/>
                                             <constraint firstItem="UKO-R3-jpt" firstAttribute="top" secondItem="PjA-cn-a5z" secondAttribute="bottom" constant="16" id="bvX-9E-Cjl"/>
                                             <constraint firstAttribute="trailing" secondItem="ESg-sq-aZR" secondAttribute="trailing" constant="8" id="cAl-if-uio"/>
+                                            <constraint firstAttribute="trailing" secondItem="O0g-Re-j5H" secondAttribute="trailing" constant="8" id="gQS-u5-qPO"/>
                                             <constraint firstAttribute="trailing" secondItem="YH4-t6-Iv0" secondAttribute="trailing" constant="8" id="lU5-f0-235"/>
+                                            <constraint firstItem="O0g-Re-j5H" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="mtU-GW-pBz"/>
                                             <constraint firstItem="AZg-58-me6" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="pR3-Wg-dPx"/>
-                                            <constraint firstItem="YH4-t6-Iv0" firstAttribute="top" secondItem="ESg-sq-aZR" secondAttribute="bottom" constant="32" id="ptJ-xR-dTz"/>
+                                            <constraint firstItem="YH4-t6-Iv0" firstAttribute="top" secondItem="ESg-sq-aZR" secondAttribute="bottom" constant="16" id="ptJ-xR-dTz"/>
                                             <constraint firstItem="PjA-cn-a5z" firstAttribute="leading" secondItem="SOZ-wP-UtR" secondAttribute="leading" constant="8" id="u6g-xV-hXw"/>
                                             <constraint firstItem="pBa-t4-aOf" firstAttribute="top" secondItem="UKO-R3-jpt" secondAttribute="bottom" constant="16" id="uEJ-32-50P"/>
                                             <constraint firstAttribute="trailing" secondItem="pBa-t4-aOf" secondAttribute="trailing" constant="8" id="vIF-TN-K2P"/>
@@ -1272,7 +1282,7 @@ Por eso listamos las librerías que utilizamos para desarrollar nuestra aplicaci
                             <constraint firstItem="bdw-tX-qMS" firstAttribute="top" secondItem="55S-Xu-VVz" secondAttribute="bottom" id="vXu-Mh-HFq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Librerías OSS" id="Wel-Vp-w0a"/>
+                    <navigationItem key="navigationItem" title="Nos ayudaron" id="Wel-Vp-w0a"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oUS-wt-Fcd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
