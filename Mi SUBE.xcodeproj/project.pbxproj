@@ -157,8 +157,8 @@
 				ECC647C81C1282AE00896171 /* Controllers */,
 				ECC647B61C12822600896171 /* AppDelegate.swift */,
 				ECC647BA1C12822600896171 /* Main.storyboard */,
-				ECC647BD1C12822600896171 /* Assets.xcassets */,
 				ECC647BF1C12822600896171 /* LaunchScreen.storyboard */,
+				ECC647BD1C12822600896171 /* Assets.xcassets */,
 				ECC647C21C12822600896171 /* Info.plist */,
 			);
 			path = "Mi SUBE";
@@ -261,7 +261,7 @@
 				TargetAttributes = {
 					ECC647B21C12822600896171 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = M28HMKLN5F;
+						DevelopmentTeam = MCJ455R27F;
 					};
 				};
 			};
@@ -491,7 +491,7 @@
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -508,7 +508,7 @@
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.pixelbeat.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
