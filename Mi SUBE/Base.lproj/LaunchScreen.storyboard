@@ -17,50 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-XI-hnC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-XI-hnC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-Nm-8dH" userLabel="logo">
-                                <rect key="frame" x="85" y="237" width="151" height="94"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-card-back" translatesAutoresizingMaskIntoConstraints="NO" id="hAx-O6-gLb">
-                                        <rect key="frame" x="10" y="0.0" width="141" height="94"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="141" id="Lzq-0w-KxG"/>
-                                            <constraint firstAttribute="height" constant="94" id="OaQ-Lg-EDf"/>
-                                        </constraints>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-card-front" translatesAutoresizingMaskIntoConstraints="NO" id="ZQu-Qw-Qfk">
-                                        <rect key="frame" x="0.0" y="15" width="138" height="79"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="138" id="Bey-cF-nQh"/>
-                                            <constraint firstAttribute="height" constant="79" id="LsI-K2-unU"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="hAx-O6-gLb" secondAttribute="trailing" id="0Zx-Ds-s0D"/>
-                                    <constraint firstAttribute="height" constant="94" id="AsV-Vj-eZx"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZQu-Qw-Qfk" secondAttribute="bottom" id="D4l-QJ-soa"/>
-                                    <constraint firstItem="hAx-O6-gLb" firstAttribute="top" secondItem="uYv-Nm-8dH" secondAttribute="top" id="Iar-xx-kpm"/>
-                                    <constraint firstItem="hAx-O6-gLb" firstAttribute="leading" secondItem="uYv-Nm-8dH" secondAttribute="leading" constant="10" id="dCb-JX-No5"/>
-                                    <constraint firstAttribute="width" constant="151" id="ph3-IE-gee"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZQu-Qw-Qfk" secondAttribute="trailing" constant="13" id="r6c-uX-tqD"/>
-                                    <constraint firstItem="ZQu-Qw-Qfk" firstAttribute="leading" secondItem="uYv-Nm-8dH" secondAttribute="leading" id="x2N-Um-wDZ"/>
-                                </constraints>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mi SUBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XTn-3X-ziN">
-                                <rect key="frame" x="85" y="371" width="150" height="46"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iJD-NA-KuX">
-                                <rect key="frame" x="116" y="433" width="87" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versión 1.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-Gu-HJl">
                                 <rect key="frame" x="126" y="529" width="69" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
@@ -70,16 +29,10 @@
                         </subviews>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XTn-3X-ziN" firstAttribute="top" secondItem="uYv-Nm-8dH" secondAttribute="bottom" constant="40" id="42V-9r-f55"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="74T-bz-Mxb"/>
-                            <constraint firstItem="uYv-Nm-8dH" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="AtF-6D-P6x"/>
-                            <constraint firstItem="uYv-Nm-8dH" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Bmt-Dd-rkj"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="Ez4-4d-GvQ"/>
-                            <constraint firstItem="XTn-3X-ziN" firstAttribute="centerX" secondItem="uYv-Nm-8dH" secondAttribute="centerX" id="Gl2-Ve-7mC"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="IiZ-hi-ZfF"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="gTl-Gu-HJl" secondAttribute="bottom" constant="24" id="YW2-W5-AvX"/>
-                            <constraint firstItem="iJD-NA-KuX" firstAttribute="top" secondItem="XTn-3X-ziN" secondAttribute="bottom" constant="16" id="b66-5T-a3Z"/>
-                            <constraint firstItem="iJD-NA-KuX" firstAttribute="centerX" secondItem="XTn-3X-ziN" secondAttribute="centerX" id="hrw-Qk-2bb"/>
                             <constraint firstItem="gTl-Gu-HJl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lXS-63-Ohp"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="t7g-tv-dSE"/>
                         </constraints>
@@ -91,8 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bkg" width="828" height="1472"/>
-        <image name="icon-card-back" width="339" height="304"/>
-        <image name="icon-card-front" width="336" height="256"/>
+        <image name="splash" width="828" height="1472"/>
     </resources>
 </document>
