@@ -66,8 +66,8 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         if (overlay is MKPolyline) {
-            polylineRenderer.strokeColor = UIColor(rgba: "#02BB4F").colorWithAlphaComponent(0.75)
-            polylineRenderer.lineWidth = 5
+            polylineRenderer.strokeColor = UIColor(rgba: "#3C83E9").colorWithAlphaComponent(0.75)
+            polylineRenderer.lineWidth = 4
         }
         return polylineRenderer
     }
@@ -98,7 +98,8 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     
     
     private func configureFourColorCircularProgress() {
-        circularProgress.colors = [UIColor(rgba: 0xA6E39D11), UIColor(rgba: 0xAEC1E355), UIColor(rgba: 0xAEC1E3AA), UIColor(rgba: 0xF3C0ABFF)]
+        circularProgress.lineWidth = 4.0
+        circularProgress.colors = [UIColor(rgba: 0x3C83E9FF)]
         //view.addSubview(circularProgress)
     }
     
