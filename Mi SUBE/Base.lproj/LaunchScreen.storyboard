@@ -20,20 +20,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-XI-hnC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versión 1.01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gTl-Gu-HJl" userLabel="version">
-                                <rect key="frame" x="126" y="529" width="69" height="15"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="74T-bz-Mxb"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="Ez4-4d-GvQ"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="IiZ-hi-ZfF"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="gTl-Gu-HJl" secondAttribute="bottom" constant="24" id="YW2-W5-AvX"/>
-                            <constraint firstItem="gTl-Gu-HJl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lXS-63-Ohp"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="t7g-tv-dSE"/>
                         </constraints>
                     </view>
