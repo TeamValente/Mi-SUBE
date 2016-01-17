@@ -59,10 +59,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidAppear(animated)
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
-
-        
-        // navigation controller hidden
-        self.navigationController?.navigationBarHidden = true
         
         //Pido Request del Location
         if CLLocationManager.authorizationStatus() == .NotDetermined {
@@ -82,6 +78,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         manager.delegate = self
         mapa.delegate = self
         //En este punto cargo los centro que vienen por defecto
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        // navigation controller hidden
+        self.navigationController?.navigationBarHidden = true
     }
     
     override func viewWillDisappear(animated: Bool) {
