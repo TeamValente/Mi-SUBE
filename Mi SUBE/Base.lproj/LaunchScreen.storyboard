@@ -20,10 +20,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-XI-hnC">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJ9-yz-OzC" userLabel="overdrop">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" red="0.12549019607843137" green="0.4823529411764706" blue="0.96470588235294119" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                            </view>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uYv-Nm-8dH" userLabel="logo">
                                 <rect key="frame" x="85" y="237" width="151" height="94"/>
                                 <subviews>
@@ -82,13 +78,9 @@
                             <constraint firstItem="XTn-3X-ziN" firstAttribute="centerX" secondItem="uYv-Nm-8dH" secondAttribute="centerX" id="Gl2-Ve-7mC"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="IiZ-hi-ZfF"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="gTl-Gu-HJl" secondAttribute="bottom" constant="24" id="YW2-W5-AvX"/>
-                            <constraint firstItem="cJ9-yz-OzC" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="akf-Zk-TpF"/>
                             <constraint firstItem="iJD-NA-KuX" firstAttribute="top" secondItem="XTn-3X-ziN" secondAttribute="bottom" constant="16" id="b66-5T-a3Z"/>
-                            <constraint firstItem="cJ9-yz-OzC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hDn-JC-5ax"/>
-                            <constraint firstItem="cJ9-yz-OzC" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="hTL-gB-3gs"/>
                             <constraint firstItem="iJD-NA-KuX" firstAttribute="centerX" secondItem="XTn-3X-ziN" secondAttribute="centerX" id="hrw-Qk-2bb"/>
                             <constraint firstItem="gTl-Gu-HJl" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lXS-63-Ohp"/>
-                            <constraint firstItem="cJ9-yz-OzC" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qck-Py-iYJ"/>
                             <constraint firstItem="Zqt-XI-hnC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="t7g-tv-dSE"/>
                         </constraints>
                     </view>
