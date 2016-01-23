@@ -11,6 +11,7 @@
 		7C0F515B1C33934400EFBC22 /* OssViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F515A1C33934400EFBC22 /* OssViewController.swift */; };
 		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
 		7C9DB00E1C32363F003FC20F /* CardConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */; };
+		7CCE422C1C542353005F54B4 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCE422B1C542353005F54B4 /* AboutViewController.swift */; };
 		99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */; };
 		D57C57EE1C22FB540019AC00 /* ConfigTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57C57ED1C22FB540019AC00 /* ConfigTableViewController.swift */; };
 		EC3BA51E1C1CE37C0058CDD1 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3BA51D1C1CE37C0058CDD1 /* RouteViewController.swift */; };
@@ -47,6 +48,7 @@
 		7C0F515A1C33934400EFBC22 /* OssViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OssViewController.swift; sourceTree = "<group>"; };
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardConfigViewController.swift; sourceTree = "<group>"; };
+		7CCE422B1C542353005F54B4 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D57C57ED1C22FB540019AC00 /* ConfigTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigTableViewController.swift; sourceTree = "<group>"; };
 		EC3BA51D1C1CE37C0058CDD1 /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		EC5B5BE31C14972200327D19 /* MarkerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkerFactory.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				EC3BA51D1C1CE37C0058CDD1 /* RouteViewController.swift */,
 				D57C57ED1C22FB540019AC00 /* ConfigTableViewController.swift */,
 				7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */,
+				7CCE422B1C542353005F54B4 /* AboutViewController.swift */,
 				7C0F515A1C33934400EFBC22 /* OssViewController.swift */,
 				FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */,
 			);
@@ -373,6 +376,7 @@
 				EC5B5BE41C14972200327D19 /* MarkerFactory.swift in Sources */,
 				ECC647D11C12938A00896171 /* PuntoCarga.swift in Sources */,
 				EC6836331C17AC6A000EC0C8 /* MiSUBEModel.swift in Sources */,
+				7CCE422C1C542353005F54B4 /* AboutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

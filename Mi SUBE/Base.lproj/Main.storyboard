@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lge-0e-Fi6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lge-0e-Fi6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -1041,7 +1041,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Acerca de Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mDR-Ez-192">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sobre Mi SUBE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mDR-Ez-192">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -1123,10 +1123,10 @@
             </objects>
             <point key="canvasLocation" x="1152" y="1036"/>
         </scene>
-        <!--View Controller-->
+        <!--Sobre Mi SUBE-->
         <scene sceneID="G5u-4m-Hmp">
             <objects>
-                <viewController id="bnV-cO-52m" sceneMemberID="viewController">
+                <viewController id="bnV-cO-52m" customClass="AboutViewController" customModule="Mi_SUBE" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gay-3y-H2g"/>
                         <viewControllerLayoutGuide type="bottom" id="ezP-1a-gwb"/>
@@ -1135,20 +1135,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aca va la descripción del teamValente!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0Zv-wa-Hs3">
-                                <rect key="frame" x="14" y="274" width="293" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-ue-C0Y">
+                                <rect key="frame" x="-12" y="0.0" width="344" height="568"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0Zv-wa-Hs3" firstAttribute="centerY" secondItem="Df4-No-EzO" secondAttribute="centerY" id="RfW-5c-U8o"/>
-                            <constraint firstItem="0Zv-wa-Hs3" firstAttribute="centerX" secondItem="Df4-No-EzO" secondAttribute="centerX" id="rKY-1W-BOY"/>
+                            <constraint firstItem="FN0-ue-C0Y" firstAttribute="top" secondItem="gay-3y-H2g" secondAttribute="bottom" constant="-64" id="3sf-g8-BLQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FN0-ue-C0Y" secondAttribute="trailing" constant="-28" id="91Q-vY-hmW"/>
+                            <constraint firstItem="ezP-1a-gwb" firstAttribute="top" secondItem="FN0-ue-C0Y" secondAttribute="bottom" constant="-49" id="AsD-ve-WJk"/>
+                            <constraint firstItem="FN0-ue-C0Y" firstAttribute="leading" secondItem="Df4-No-EzO" secondAttribute="leadingMargin" constant="-28" id="h23-Jt-L24"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jQE-J6-l9q"/>
+                    <navigationItem key="navigationItem" title="Sobre Mi SUBE" id="jQE-J6-l9q"/>
+                    <connections>
+                        <outlet property="aboutWebView" destination="FN0-ue-C0Y" id="6XP-Vb-bEK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="isd-tf-c5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
