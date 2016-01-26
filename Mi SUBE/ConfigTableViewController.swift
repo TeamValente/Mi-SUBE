@@ -13,7 +13,7 @@ class ConfigTableViewController: UITableViewController {
     
     // MARK: Outlets
     @IBOutlet weak var switchDelete: UISwitch!
-    
+    @IBOutlet weak var versionLabel: UILabel!
     
     // MARK: View Events
     override func viewDidLoad() {
@@ -22,8 +22,14 @@ class ConfigTableViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        switchDelete.setOn(true, animated: true)
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        switchDelete.setOn(true, animated: true)
+        
+        if let versionNumber = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+            self.versionLabel.text = "v\(versionNumber)"
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -37,7 +43,7 @@ class ConfigTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 4
+        return 5
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
