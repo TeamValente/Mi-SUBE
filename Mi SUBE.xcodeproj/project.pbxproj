@@ -264,7 +264,7 @@
 				TargetAttributes = {
 					ECC647B21C12822600896171 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = M28HMKLN5F;
+						DevelopmentTeam = HLY49RTLRG;
 					};
 				};
 			};
@@ -495,7 +495,7 @@
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "funka.la.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -512,7 +512,7 @@
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
+				PRODUCT_BUNDLE_IDENTIFIER = "funka.la.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

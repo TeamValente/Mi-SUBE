@@ -32,11 +32,9 @@ class ConfigTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 4
@@ -70,13 +68,27 @@ class ConfigTableViewController: UITableViewController {
         self.presentViewController(alertMessage, animated: true, completion: nil)    
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.section == 3 {
+            let APPID = 1076019287
+            rateApp(APPID)
+        }
+    }
+    
     //MARK: Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let backItem = UIBarButtonItem()
         backItem.title = "Atrás"
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
     }
-
+    
+    func rateApp(appId: Int) {
+        // itms-apps://itunes.apple.com/app/1076019287
+        let url = NSURL(string: "itms-apps://itunes.apple.com/app/\(appId)")!
+        UIApplication.sharedApplication().openURL(url)
+    }
+    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
@@ -119,16 +131,6 @@ class ConfigTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     */
 
