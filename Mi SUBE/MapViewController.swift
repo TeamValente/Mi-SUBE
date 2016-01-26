@@ -40,8 +40,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: UIViewController
     override func viewDidLoad() {
         super.viewDidLoad()
-                // navigation controller hidden
-        self.navigationController?.navigationBarHidden = true
         //Activo el Manager
         manager = CLLocationManager()
         //Arranca con el menu oculto
@@ -52,7 +50,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -66,8 +63,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
         if CLLocationManager.locationServicesEnabled() {
             //Distancia accuracy
-            if miUbicacion == nil
-            {
+            if miUbicacion == nil {
                 manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
                 manager.distanceFilter = 10 //Metros
                 manager.startUpdatingLocation()
@@ -83,13 +79,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewWillAppear(animated: Bool) {
         // navigation controller hidden
         self.navigationController?.navigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

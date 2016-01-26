@@ -90,10 +90,7 @@ class SaldoViewController: UIViewController {
         super.viewDidAppear(animated)
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
-        
-        // navigation controller hidden
-        self.navigationController?.navigationBarHidden = true
-        
+
         button_ok.alpha = 0
         cardView.layer.cornerRadius = 10
         cardView.layer.masksToBounds = true
@@ -107,10 +104,9 @@ class SaldoViewController: UIViewController {
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+    override func viewWillAppear(animated: Bool) {
+        // navigation controller hidden
+        self.navigationController?.navigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning() {
