@@ -26,7 +26,8 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // StatusBar Light
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
         // NavigationController Visible
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         configureFourColorCircularProgress()
@@ -43,7 +44,6 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-       
         if let puntoDestino = self.puntoDestino {
 
             let pinFactory = MarkerFactory()

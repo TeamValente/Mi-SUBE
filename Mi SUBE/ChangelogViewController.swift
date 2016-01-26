@@ -19,7 +19,7 @@ class ChangelogViewController: UIViewController, UIWebViewDelegate {
         
         changesWebview.delegate = self
         
-        let url = NSURL(string: "http://misube.com/about.html")
+        let url = NSURL(string: "http://misube.com/changelog.html")
         let requestObj = NSURLRequest(URL: url!)
         changesWebview.loadRequest(requestObj)
     }

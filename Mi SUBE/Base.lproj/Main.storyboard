@@ -1168,16 +1168,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FN0-ue-C0Y">
-                                <rect key="frame" x="-12" y="0.0" width="344" height="568"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FN0-ue-C0Y" firstAttribute="top" secondItem="gay-3y-H2g" secondAttribute="bottom" constant="-64" id="3sf-g8-BLQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FN0-ue-C0Y" secondAttribute="trailing" constant="-28" id="91Q-vY-hmW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FN0-ue-C0Y" secondAttribute="trailing" constant="-20" id="91Q-vY-hmW"/>
                             <constraint firstItem="ezP-1a-gwb" firstAttribute="top" secondItem="FN0-ue-C0Y" secondAttribute="bottom" constant="-49" id="AsD-ve-WJk"/>
-                            <constraint firstItem="FN0-ue-C0Y" firstAttribute="leading" secondItem="Df4-No-EzO" secondAttribute="leadingMargin" constant="-28" id="h23-Jt-L24"/>
+                            <constraint firstItem="FN0-ue-C0Y" firstAttribute="leading" secondItem="Df4-No-EzO" secondAttribute="leadingMargin" constant="-20" id="h23-Jt-L24"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sobre Mi SUBE" id="jQE-J6-l9q"/>
