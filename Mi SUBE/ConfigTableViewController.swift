@@ -55,7 +55,7 @@ class ConfigTableViewController: UITableViewController {
     @IBAction func deleteCard(sender: AnyObject) {
         
         // set alertController
-        let alertMessage = UIAlertController(title: "Cuidado", message: "Estas seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .Alert)
+        let alertMessage = UIAlertController(title: "Cuidado", message: "Seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .Alert)
         
         // add delete Action
         alertMessage.addAction(UIAlertAction(title: "Continuar", style: .Default, handler: { Void in
