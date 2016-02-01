@@ -28,7 +28,7 @@ class PuntoCarga{
     var longitude: Double
     var type: String
     var icon:String
-    var cost:String
+    var cost:Int
     var hourOpen:Int
     var hourClose:Int
     var flagSeller:Int
@@ -37,7 +37,7 @@ class PuntoCarga{
     var coordinate: CLLocationCoordinate2D
 
     
-    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String,cost:String,hourOpen:Int,hourClose:Int,flagSeller:Int,flagInvalid:Int){
+    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String,cost:Int,hourOpen:Int,hourClose:Int,flagSeller:Int,flagInvalid:Int){
         
         self.idPunto = idPunto
         self.address = address
@@ -55,7 +55,7 @@ class PuntoCarga{
         self.coordinate.longitude = longitude
     }
     
-    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: String,hourOpen:Int,hourClose:Int, flagSeller: Int){
+    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: Int,hourOpen:Int,hourClose:Int, flagSeller: Int){
         
         self.idPunto = idPunto
         self.address = address
@@ -74,7 +74,7 @@ class PuntoCarga{
         
     }
     
-    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: String,hourOpen:Int,hourClose:Int, flagSeller: Int, idType: Int ){
+    init(idPunto:Int,address:String,latitude: Double,longitude: Double,type: String,icon:String, cost: Int,hourOpen:Int,hourClose:Int, flagSeller: Int, idType: Int ){
         
         self.idPunto = idPunto
         self.address = address
@@ -132,17 +132,17 @@ class PuntoCarga{
     }
     
     func vendeSube() -> Bool {
-        if self.flagSeller == 0 {
-            return false
+        if self.flagSeller > 0 {
+            return true
         }
-        return true
+        return false
     }
     
     func cobraPorCargar() ->Bool{
-        if self.cost == "0"{
-            return false
+        if self.cost > 0 {
+            return true
         }
-        return true
+        return false
     
     }
     

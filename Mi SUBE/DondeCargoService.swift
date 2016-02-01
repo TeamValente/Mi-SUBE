@@ -192,7 +192,7 @@ class DondeCargoService{
         var listadoPuntos = [PuntoCarga]()
         var horaApertura = 0
         var horaCierre = 0
-        var cost = "0"
+        var cost = 0
         var flagSeller = 0
         
         for index in 0...jsonDictionaryArray.count-1{
@@ -210,7 +210,7 @@ class DondeCargoService{
                                     if let hourClose = punto["hclose"] as? String{
                                         horaCierre = Int(hourClose)!
                                     }
-                                    if let costoCarga = punto["cost"] as? String{
+                                    if let costoCarga = punto["cost"] as? Int{
                                         cost = costoCarga
                                     }
                                     if let fSeller = punto["flagSeller"] as? String{
