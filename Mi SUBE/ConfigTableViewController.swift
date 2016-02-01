@@ -90,7 +90,7 @@ class ConfigTableViewController: UITableViewController {
     }
     
     func rateApp(APP_ID: Int) {
-        let url = NSURL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=\(APP_ID)&onlyLatestVersion=true&pageNumber=0&sortOrdering=1)")!
+        let url = NSURL(string: "itms-apps://itunes.apple.com/app/id\(APP_ID)")!
         UIApplication.sharedApplication().openURL(url)
     }
     
