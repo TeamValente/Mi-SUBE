@@ -34,7 +34,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
-    var miUbicacion:MiUbicacion!
+    var miUbicacion: MiUbicacion!
+    var miFiltro: Filtro!
     
     
     //MARK: UIViewController
@@ -42,6 +43,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.viewDidLoad()
         //Activo el Manager
         manager = CLLocationManager()
+        
+        //Cargo un filtro para probar
+        miFiltro = Filtro()
+        //miFiltro = Filtro(verCobraCarga: false, verCerrados: true, verVendeSUBE: true )
         //Arranca con el menu oculto
         self.closeButton.alpha = 0
         //Los detalles deben arrancar oculto
@@ -230,6 +235,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: Funciones generales
     func obtenerPuntosDeCargas(){
         let servidorDePuntos = DondeCargoService()
+        servidorDePuntos.miFiltro = self.miFiltro
         servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
             if let misPuntos = puntoCargo{
                 //Borro todos los puntos para volver a cargarlos

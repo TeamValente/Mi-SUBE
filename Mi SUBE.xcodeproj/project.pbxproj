@@ -37,6 +37,7 @@
 		ECC647D11C12938A00896171 /* PuntoCarga.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647D01C12938A00896171 /* PuntoCarga.swift */; };
 		ECC647D41C12B39100896171 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647D31C12B39100896171 /* Extensions.swift */; };
 		ECC9679B1C1A32EC0070BA4F /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC9679A1C1A32EC0070BA4F /* SaldoViewController.swift */; };
+		FC8B0D571C603650009DAD77 /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8B0D561C603650009DAD77 /* Filtro.swift */; };
 		FCB703CA1C45D750003F1072 /* MovimientosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */; };
 		FCB703CD1C45DCD6003F1072 /* MovimientoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		ECC647D01C12938A00896171 /* PuntoCarga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoCarga.swift; sourceTree = "<group>"; };
 		ECC647D31C12B39100896171 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECC9679A1C1A32EC0070BA4F /* SaldoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
+		FC8B0D561C603650009DAD77 /* Filtro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtro.swift; sourceTree = "<group>"; };
 		FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientosTableViewController.swift; sourceTree = "<group>"; };
 		FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +205,7 @@
 				EC94BF9A1C138A3E005A88A2 /* MiUbicacion.swift */,
 				EC5B5BE51C14980600327D19 /* CustomPointAnnotation.swift */,
 				EC9C0C141C170A7C002C5F2A /* Distancia.swift */,
+				FC8B0D561C603650009DAD77 /* Filtro.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				ECC647D11C12938A00896171 /* PuntoCarga.swift in Sources */,
 				EC6836331C17AC6A000EC0C8 /* MiSUBEModel.swift in Sources */,
 				7CCE422C1C542353005F54B4 /* AboutViewController.swift in Sources */,
+				FC8B0D571C603650009DAD77 /* Filtro.swift in Sources */,
 				D5BE93A91C57CCC40056C629 /* ChangelogViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

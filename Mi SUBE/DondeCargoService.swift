@@ -12,6 +12,10 @@ import Foundation
 
 class DondeCargoService{
     
+    
+    var miFiltro: Filtro!
+    
+    
     func generarURLValida(url: String) -> String {
         return url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
     }
@@ -218,7 +222,14 @@ class DondeCargoService{
                                     }
                                     //Cargo el punto
                                     
-                                    listadoPuntos.append(PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono,cost: cost, hourOpen: horaApertura, hourClose: horaCierre, flagSeller: flagSeller))
+                                    let nuevoPunto = PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono,cost: cost, hourOpen: horaApertura, hourClose: horaCierre, flagSeller: flagSeller)
+                                    
+                                    
+                                    if aplicarFiltro(nuevoPunto)
+                                    {
+                                        listadoPuntos.append(nuevoPunto)
+                                    }
+                                    
                                 }
                             }
                         }
@@ -229,5 +240,39 @@ class DondeCargoService{
         
         return listadoPuntos
         
+    }
+    
+    
+    func aplicarFiltro(miPunto: PuntoCarga)->Bool
+    {
+    
+        if !miFiltro.verCerrados
+        {
+            if miPunto.estaAbierto() == EstadoNegocio.Cerrado
+            {
+                return false
+            }
+            
+        }
+        
+        if !miFiltro.verCobraCarga
+        {
+            if miPunto.cobraPorCargar() == true
+            {
+                return false
+            }
+        
+        }
+        
+        if !miFiltro.verVendeSUBE
+        {
+            if miPunto.vendeSube() == true
+            {
+                return false
+            }
+        
+        }
+    
+        return true
     }
 }
