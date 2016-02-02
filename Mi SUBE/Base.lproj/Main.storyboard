@@ -221,25 +221,40 @@
                                     <action selector="closeDetail" destination="BYZ-38-t0r" eventType="touchUpInside" id="62l-ej-HFm"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiI-Yd-rRp" userLabel="Filter View">
+                                <rect key="frame" x="-4" y="163" width="328" height="356"/>
+                                <subviews>
+                                    <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kja-aN-TPs">
+                                        <rect key="frame" x="0.0" y="0.0" width="312" height="356"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Es9-Ux-0Eq" firstAttribute="width" secondItem="RsN-Gz-LKJ" secondAttribute="width" id="3VC-cE-Qf6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MiI-Yd-rRp" secondAttribute="trailing" constant="-20" id="3l3-Ht-SPN"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5qB-uO-t9K" secondAttribute="bottom" constant="16" id="4Zz-B0-IPU"/>
                             <constraint firstItem="Es9-Ux-0Eq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9S3-YQ-xJn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RsN-Gz-LKJ" secondAttribute="trailing" constant="-20" id="9Vw-39-epW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MiI-Yd-rRp" secondAttribute="bottom" id="CXr-iD-jCo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5qB-uO-t9K" secondAttribute="trailing" constant="-4" id="D5K-NH-iu1"/>
                             <constraint firstItem="ihs-Qn-ddu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="DNk-pH-EX3"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="FOZ-1k-ZOy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ihs-Qn-ddu" secondAttribute="trailing" constant="-4" id="Ls2-pG-YaN"/>
                             <constraint firstItem="RsN-Gz-LKJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="MRL-RZ-UBZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RsN-Gz-LKJ" secondAttribute="bottom" id="O2a-Ui-k8A"/>
+                            <constraint firstItem="MiI-Yd-rRp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="On6-Dg-55l"/>
                             <constraint firstItem="Es9-Ux-0Eq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="QHZ-h6-6FI"/>
                             <constraint firstItem="QW5-XO-ETn" firstAttribute="width" secondItem="QW5-XO-ETn" secondAttribute="height" multiplier="1:1" id="Sqf-FZ-KGW"/>
+                            <constraint firstItem="MiI-Yd-rRp" firstAttribute="height" secondItem="RsN-Gz-LKJ" secondAttribute="height" multiplier="0.75" id="UdT-oN-IKW"/>
                             <constraint firstItem="LPP-re-z3G" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cel-Y3-yiI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QW5-XO-ETn" secondAttribute="trailing" constant="-4" id="hom-RH-bUI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Es9-Ux-0Eq" secondAttribute="trailing" constant="-20" id="nIx-MA-YVl"/>
                             <constraint firstItem="5qB-uO-t9K" firstAttribute="bottom" secondItem="QW5-XO-ETn" secondAttribute="bottom" constant="64" id="oX5-7p-KMJ"/>
+                            <constraint firstItem="MiI-Yd-rRp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="xNE-cx-hHH"/>
+                            <constraint firstItem="MiI-Yd-rRp" firstAttribute="width" secondItem="RsN-Gz-LKJ" secondAttribute="width" id="xhe-QI-2sq"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Es9-Ux-0Eq" secondAttribute="bottom" constant="1" id="zWh-ER-9Cm"/>
                             <constraint firstItem="Es9-Ux-0Eq" firstAttribute="height" secondItem="RsN-Gz-LKJ" secondAttribute="height" multiplier="0.45" id="zot-Bh-lUb"/>
                         </constraints>
@@ -262,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1058.6666666666667" y="-417.48000000000002"/>
+            <point key="canvasLocation" x="1058" y="-418"/>
         </scene>
         <!--Route View Controller-->
         <scene sceneID="bvb-Wk-6xE">
