@@ -217,7 +217,7 @@ class DondeCargoService{
                                     if let costoCarga = punto["cost"] as? Int{
                                         cost = costoCarga
                                     }
-                                    if let fSeller = punto["flagSeller"] as? String{
+                                    if let fSeller = punto["flag_seller"] as? String{
                                         flagSeller = Int(fSeller)!
                                     }
                                     //Cargo el punto

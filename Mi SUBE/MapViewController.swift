@@ -198,7 +198,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         view.image = UIImage(named:cpa.imageName)
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: self.miUbicacion!.coordinate, span: span)
-        self.constraintDetalle.constant = -500
+        
+        //Se cierra el detalle cuando se saca el foco de un punto.
+        
+        self.cerrarDetalle()
         UIView.animateWithDuration(0.5, animations: {
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
@@ -231,6 +234,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: BTN Detail
     @IBAction func closeDetail() {
+        self.cerrarDetalle()
+        self.mapa.deselectAnnotation(nil,animated: false)
+    }
+    
+    func cerrarDetalle()
+    {
+    
         UIView.animateWithDuration(0.5, animations: {
             self.backdropView.alpha = 0
             self.constraintDetalle.constant = -500
@@ -241,8 +251,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.view.layoutIfNeeded()
             }, completion: nil)
 
-        self.mapa.deselectAnnotation(nil,animated: false)
     }
+    
+    
     
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
         performSegueWithIdentifier("mapViewToRouteView", sender: self)
