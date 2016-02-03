@@ -15,13 +15,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: Outlets
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var locateButton: UIButton!
-    
+    @IBOutlet weak var filterButton: UIButton!
     
     // Outlets detailView
     @IBOutlet weak var selectedPointDistance: UIButton!
     @IBOutlet weak var detailView: UIVisualEffectView!
     @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
     
+    @IBOutlet weak var filterView: UIVisualEffectView!
+    @IBOutlet weak var constrainFiltro: NSLayoutConstraint!
     
     //MARK: OutletsDetail
     @IBOutlet weak var closeButton: UIButton!
@@ -51,6 +53,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.closeButton.alpha = 0
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
+        self.constrainFiltro.constant = -500
     }
     
     override func didReceiveMemoryWarning() {
@@ -208,23 +211,31 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    //MARK: Cerrar detalle
+    //MARK: BTN Detail
     @IBAction func closeDetail() {
         self.constraintDetalle.constant = -500
         self.mapa.deselectAnnotation(nil,animated: false)
     }
-    
     
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
         performSegueWithIdentifier("mapViewToRouteView", sender: self)
         //self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    
-    //MARK: Botonera Ubicarme
+    //MARK: BTN Location
     @IBAction func buscarmeEnElMundo() {
         manager.startUpdatingLocation()
     }
+    
+    
+    @IBAction func openFilterView() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.constrainFiltro.constant = 0
+            self.closeButton.alpha = 1
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    }
+    
     
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga) {
