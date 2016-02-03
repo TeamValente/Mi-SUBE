@@ -51,6 +51,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //miFiltro = Filtro(verCobraCarga: false, verCerrados: true, verVendeSUBE: true )
         //Arranca con el menu oculto
         self.closeButton.alpha = 0
+        
+        //Arranca con boton de filtro oculto
+        self.filterButton.alpha = 0
+        
         //Los detalles deben arrancar oculto
         self.constraintDetalle.constant = -500
         self.constrainFiltro.constant = -500
@@ -182,7 +186,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         UIView.animateWithDuration(0.5, animations: {
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
-            self.closeButton.alpha = 0
             self.locateButton.alpha = 1
             }, completion: nil)
     }
@@ -213,7 +216,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: BTN Detail
     @IBAction func closeDetail() {
-        self.constraintDetalle.constant = -500
+        UIView.animateWithDuration(0.5, animations: {
+            self.constraintDetalle.constant = -500
+            self.constrainFiltro.constant = -500
+            self.closeButton.alpha = 0
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+
         self.mapa.deselectAnnotation(nil,animated: false)
     }
     
@@ -236,6 +245,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }, completion: nil)
     }
     
+    //MARK: Show Filter Button
+    func mostrarFiltro() {
+        UIView.animateWithDuration(0.25, animations: {
+            self.filterButton.alpha = 1
+            self.view.layoutIfNeeded()
+            }, completion: nil)
+    
+    }
+    
+    
+    
     
     //MARK: Funciones de Mapa
     func marcarPuntoEnMapa(miPunto: PuntoCarga) {
@@ -254,6 +274,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 for miPunto in misPuntos{
                     self.marcarPuntoEnMapa(miPunto)
                 }
+                //Muestro boton de filtro
+                self.mostrarFiltro()
             }
         }
     }
