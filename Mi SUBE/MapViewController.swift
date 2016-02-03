@@ -34,6 +34,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var selectedPointCostCharge: UILabel!
     
     
+    @IBOutlet weak var switchCerrado: UISwitch!
+    
+    @IBOutlet weak var switchCobraCarga: UISwitch!
+    
+    @IBOutlet weak var switchVendeSUBE: UISwitch!
+    
     //MARK: Variables de la clase
     var manager: CLLocationManager!
     var miUbicacion: MiUbicacion!
@@ -48,7 +54,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Cargo un filtro para probar
         miFiltro = Filtro()
-        //miFiltro = Filtro(verCobraCarga: false, verCerrados: true, verVendeSUBE: true )
+        
         //Arranca con el menu oculto
         self.closeButton.alpha = 0
         
@@ -255,6 +261,21 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
+    //MARK: Funciones Filtrado
+    @IBAction func verCerrados(sender: AnyObject) {
+        miFiltro.verCerrados = self.switchCerrado.on
+        obtenerPuntosDeCargas()
+    }
+    
+    @IBAction func verCobroCarga(sender: AnyObject){
+        miFiltro.verCobraCarga = switchCobraCarga.on
+        obtenerPuntosDeCargas()
+    }
+    
+    @IBAction func verVendeSUBE(sender: AnyObject) {
+        miFiltro.verVendeSUBE = switchVendeSUBE.on
+        obtenerPuntosDeCargas()
+    }
     
     
     //MARK: Funciones de Mapa
