@@ -222,7 +222,7 @@
                                     <action selector="closeDetail" destination="BYZ-38-t0r" eventType="touchUpInside" id="62l-ej-HFm"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-Jg-LIN">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-Jg-LIN" userLabel="Filter View">
                                 <rect key="frame" x="-4" y="138" width="328" height="380"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pwa-0f-OuE">
                                     <rect key="frame" x="0.0" y="0.0" width="328" height="380"/>
