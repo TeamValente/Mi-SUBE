@@ -16,12 +16,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var mapa: MKMapView!
     @IBOutlet weak var locateButton: UIButton!
     @IBOutlet weak var filterButton: UIButton!
+
+    //MARK: Outlet backdrop
     
-    // Outlets detailView
+    @IBOutlet weak var backdropView: UIView!
+    
+    //MARK: Outlets detailView
     @IBOutlet weak var selectedPointDistance: UIButton!
     @IBOutlet weak var detailView: UIVisualEffectView!
     @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
+
     
+    //MARK: Outlets filterView
     @IBOutlet weak var filterView: UIVisualEffectView!
     @IBOutlet weak var constrainFiltro: NSLayoutConstraint!
     
@@ -54,6 +60,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         //Cargo un filtro para probar
         miFiltro = Filtro()
+        
+        self.backdropView.alpha = 0
         
         //Arranca con el menu oculto
         self.closeButton.alpha = 0
@@ -167,6 +175,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.view.layoutIfNeeded()
             self.closeButton.alpha = 1
             self.locateButton.alpha = 0
+            self.filterButton.alpha = 0
             }, completion: nil)
         
         // seteamos los datos en el detalle
@@ -192,7 +201,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         UIView.animateWithDuration(0.5, animations: {
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
-            self.locateButton.alpha = 1
             }, completion: nil)
     }
     
@@ -223,9 +231,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     //MARK: BTN Detail
     @IBAction func closeDetail() {
         UIView.animateWithDuration(0.5, animations: {
+            self.backdropView.alpha = 0
             self.constraintDetalle.constant = -500
             self.constrainFiltro.constant = -500
             self.closeButton.alpha = 0
+            self.locateButton.alpha = 1
+            self.filterButton.alpha = 1
             self.view.layoutIfNeeded()
             }, completion: nil)
 
@@ -245,8 +256,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func openFilterView() {
         UIView.animateWithDuration(0.5, animations: {
+            self.backdropView.alpha = 1
             self.constrainFiltro.constant = 0
             self.closeButton.alpha = 1
+            self.locateButton.alpha = 0
+            self.filterButton.alpha = 0
             self.view.layoutIfNeeded()
             }, completion: nil)
     }
