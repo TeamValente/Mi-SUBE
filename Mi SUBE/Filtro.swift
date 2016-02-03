@@ -10,19 +10,21 @@ import Foundation
 
 class Filtro {
 
-    var verCobraCarga = true
-    var verCerrados = true
-    var verVendeSUBE = true
+    var ocultarCobraCarga = false
+    var ocultarCerrados = false
+    var ocultarNoVendeSUBE = false
+    var ocutarHorarioSinIndicar = false
     
     
     init(){}
     
-    init(verCobraCarga: Bool, verCerrados: Bool, verVendeSUBE: Bool)
+    init(ocultarCobraCarga: Bool, ocultarCerrados: Bool, ocultarNoVendeSUBE: Bool, ocutarHorarioSinIndicar: Bool)
     {
         //Siempre se reciben
-        self.verCobraCarga = verCobraCarga
-        self.verCerrados = verCerrados
-        self.verVendeSUBE   = verVendeSUBE
+        self.ocultarCobraCarga = ocultarCobraCarga
+        self.ocultarCerrados = ocultarCerrados
+        self.ocultarNoVendeSUBE   = ocultarNoVendeSUBE
+        self.ocutarHorarioSinIndicar = ocutarHorarioSinIndicar
     }
     
     

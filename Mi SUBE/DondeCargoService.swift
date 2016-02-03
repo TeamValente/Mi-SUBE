@@ -246,7 +246,7 @@ class DondeCargoService{
     func aplicarFiltro(miPunto: PuntoCarga)->Bool
     {
     
-        if !miFiltro.verCerrados
+        if miFiltro.ocultarCerrados
         {
             if miPunto.estaAbierto() == EstadoNegocio.Cerrado
             {
@@ -255,7 +255,7 @@ class DondeCargoService{
             
         }
         
-        if !miFiltro.verCobraCarga
+        if miFiltro.ocultarCobraCarga
         {
             if miPunto.cobraPorCargar() == true
             {
@@ -264,14 +264,23 @@ class DondeCargoService{
         
         }
         
-        if !miFiltro.verVendeSUBE
+        if miFiltro.ocultarNoVendeSUBE
         {
-            if miPunto.vendeSube() == true
+            if miPunto.vendeSube() == false
             {
                 return false
             }
         
         }
+        
+        if miFiltro.ocutarHorarioSinIndicar
+        {
+            if miPunto.estaAbierto() == EstadoNegocio.Indeterminado
+            {
+                return false
+            }
+        }
+        
     
         return true
     }

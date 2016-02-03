@@ -48,6 +48,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
+    @IBOutlet weak var switchHorarioSinIndicar: UISwitch!
     var miUbicacion: MiUbicacion!
     var miFiltro: Filtro!
     
@@ -277,19 +278,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: Funciones Filtrado
     @IBAction func verCerrados(sender: AnyObject) {
-        miFiltro.verCerrados = self.switchCerrado.on
+        miFiltro.ocultarCerrados = self.switchCerrado.on
         obtenerPuntosDeCargas()
     }
     
     @IBAction func verCobroCarga(sender: AnyObject){
-        miFiltro.verCobraCarga = switchCobraCarga.on
+        miFiltro.ocultarCobraCarga = switchCobraCarga.on
         obtenerPuntosDeCargas()
     }
     
     @IBAction func verVendeSUBE(sender: AnyObject) {
-        miFiltro.verVendeSUBE = switchVendeSUBE.on
+        miFiltro.ocultarNoVendeSUBE = switchVendeSUBE.on
         obtenerPuntosDeCargas()
     }
+    
+    @IBAction func verHorarioSinIndicar(sender: AnyObject) {
+        
+        miFiltro.ocutarHorarioSinIndicar = switchHorarioSinIndicar.on
+        
+        obtenerPuntosDeCargas()
+        
+    }
+    
+    
+    
     
     
     //MARK: Funciones de Mapa
