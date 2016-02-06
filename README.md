@@ -1,8 +1,10 @@
-# Mi-Sube
+# Mi-SUBE
 
 ![Mi SUBE App Icon](/Mi SUBE/Assets.xcassets/AppIcon.appiconset/icon180.png)
 
 Aplicación iOS para saber donde cargar la tarjeta SUBE y controlar tus gastos.
+
+[Instalá Mi SUBE](https://itunes.apple.com/ar/app/mi-sube/id1076019287) desde el App Store.
 
 ## Desarrollada por:
 * Hernán [aitchbot](https://github.com/aitchbot)
