@@ -37,6 +37,7 @@
 		ECC647D11C12938A00896171 /* PuntoCarga.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647D01C12938A00896171 /* PuntoCarga.swift */; };
 		ECC647D41C12B39100896171 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC647D31C12B39100896171 /* Extensions.swift */; };
 		ECC9679B1C1A32EC0070BA4F /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC9679A1C1A32EC0070BA4F /* SaldoViewController.swift */; };
+		FC701B5A1C66812300762543 /* MixPanelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC701B591C66812300762543 /* MixPanelHelper.swift */; };
 		FC8B0D571C603650009DAD77 /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8B0D561C603650009DAD77 /* Filtro.swift */; };
 		FCB703CA1C45D750003F1072 /* MovimientosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */; };
 		FCB703CD1C45DCD6003F1072 /* MovimientoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */; };
@@ -77,6 +78,7 @@
 		ECC647D01C12938A00896171 /* PuntoCarga.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuntoCarga.swift; sourceTree = "<group>"; };
 		ECC647D31C12B39100896171 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		ECC9679A1C1A32EC0070BA4F /* SaldoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
+		FC701B591C66812300762543 /* MixPanelHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixPanelHelper.swift; sourceTree = "<group>"; };
 		FC8B0D561C603650009DAD77 /* Filtro.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filtro.swift; sourceTree = "<group>"; };
 		FCB703C91C45D750003F1072 /* MovimientosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientosTableViewController.swift; sourceTree = "<group>"; };
 		FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientoTableViewCell.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				ECABF5861C1E36CA00C8B25C /* DetailHelper.swift */,
 				7C0930941C40AD7A005AB04B /* UIView_Borders.swift */,
+				FC701B591C66812300762543 /* MixPanelHelper.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
 				7C9DB00E1C32363F003FC20F /* CardConfigViewController.swift in Sources */,
 				EC94BF9B1C138A3E005A88A2 /* MiUbicacion.swift in Sources */,
+				FC701B5A1C66812300762543 /* MixPanelHelper.swift in Sources */,
 				EC5B5BE61C14980600327D19 /* CustomPointAnnotation.swift in Sources */,
 				7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */,
 				7C0F515B1C33934400EFBC22 /* OssViewController.swift in Sources */,
