@@ -28,7 +28,7 @@ class SaldoViewController: UIViewController {
         // navigation controller hidden
         self.navigationController?.navigationBarHidden = true
         
-        let longGesture = UILongPressGestureRecognizer(target: self, action: "Long") //Long function will call when user long press on button.
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(SaldoViewController.Long)) //Long function will call when user long press on button.
         //tapGesture.numberOfTapsRequired = 1
         buttonDelete.addGestureRecognizer(longGesture)
     }

@@ -31,7 +31,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         // NavigationController Visible
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         configureFourColorCircularProgress()
-        NSTimer.scheduledTimerWithTimeInterval(0.003, target: self, selector: Selector("updateProgress"), userInfo: nil, repeats: true)
+        NSTimer.scheduledTimerWithTimeInterval(0.003, target: self, selector: #selector(RouteViewController.updateProgress), userInfo: nil, repeats: true)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
