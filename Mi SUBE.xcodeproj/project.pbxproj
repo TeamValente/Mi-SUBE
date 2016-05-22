@@ -245,12 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECC647C51C12822600896171 /* Build configuration list for PBXNativeTarget "Mi SUBE" */;
 			buildPhases = (
-				F9A2F19BAC9F75133391078B /* Check Pods Manifest.lock */,
+				F9A2F19BAC9F75133391078B /* 📦 Check Pods Manifest.lock */,
 				ECC647AF1C12822600896171 /* Sources */,
 				ECC647B01C12822600896171 /* Frameworks */,
 				ECC647B11C12822600896171 /* Resources */,
-				A541F643BFFCD79EFD979226 /* Embed Pods Frameworks */,
-				0550BFEDD3A009271EC141FA /* Copy Pods Resources */,
+				A541F643BFFCD79EFD979226 /* 📦 Embed Pods Frameworks */,
+				0550BFEDD3A009271EC141FA /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -311,14 +311,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0550BFEDD3A009271EC141FA /* Copy Pods Resources */ = {
+		0550BFEDD3A009271EC141FA /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,14 +326,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A541F643BFFCD79EFD979226 /* Embed Pods Frameworks */ = {
+		A541F643BFFCD79EFD979226 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,14 +341,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F9A2F19BAC9F75133391078B /* Check Pods Manifest.lock */ = {
+		F9A2F19BAC9F75133391078B /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
