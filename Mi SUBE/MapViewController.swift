@@ -22,7 +22,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var backdropView: UIView!
     
     //MARK: Outlets detailView
-    @IBOutlet weak var selectedPointDistance: UIButton!
+    @IBOutlet weak var selectedPointDistance: UILabel!
+    
     @IBOutlet weak var detailView: UIVisualEffectView!
     @IBOutlet weak var constraintDetalle: NSLayoutConstraint!
 
@@ -182,7 +183,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // seteamos los datos en el detalle
         let factoryDetalles = DetailHelper(datos: cpa.datos)
         self.selectedPointDirection.text = factoryDetalles.getDireccion()
-        self.selectedPointDistance.setTitle(factoryDetalles.getDistancia(miUbicacion), forState: .Normal)
+        //self.selectedPointDistance.setTitle(factoryDetalles.getDistancia(miUbicacion), forState: .Normal)
+        self.selectedPointDistance.text = factoryDetalles.getDistancia(miUbicacion)
         self.selectedPointHours.text = factoryDetalles.getHorario()
         self.selectedPointSellSube.text = factoryDetalles.getVendeSube()
         self.selectedPointCostCharge.text = factoryDetalles.getCobraCarga()
@@ -238,8 +240,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.mapa.deselectAnnotation(nil,animated: false)
     }
     
-    func cerrarDetalle()
-    {
+    func cerrarDetalle() {
     
         UIView.animateWithDuration(0.5, animations: {
             self.backdropView.alpha = 0
@@ -249,10 +250,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.locateButton.alpha = 1
             self.filterButton.alpha = 1
             self.view.layoutIfNeeded()
-            }, completion: nil)
+        }, completion: nil)
 
     }
-    
     
     
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
@@ -274,7 +274,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             self.locateButton.alpha = 0
             self.filterButton.alpha = 0
             self.view.layoutIfNeeded()
-            }, completion: nil)
+        }, completion: nil)
     }
     
     //MARK: Show Filter Button
@@ -282,8 +282,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         UIView.animateWithDuration(0.25, animations: {
             self.filterButton.alpha = 1
             self.view.layoutIfNeeded()
-            }, completion: nil)
-    
+        }, completion: nil)
     }
     
     
@@ -304,15 +303,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     @IBAction func verHorarioSinIndicar(sender: AnyObject) {
-        
         miFiltro.ocutarHorarioSinIndicar = switchHorarioSinIndicar.on
-        
         obtenerPuntosDeCargas()
-        
     }
-    
-    
-    
     
     
     //MARK: Funciones de Mapa
