@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Crashlytics
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
@@ -256,8 +257,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
+        // TODO: Add tracking event
+        // Answers.logCustomEventWithName("Open Route View", customAttributes: ["destinationPoin": ])
         performSegueWithIdentifier("mapViewToRouteView", sender: self)
-        //self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     //MARK: BTN Location

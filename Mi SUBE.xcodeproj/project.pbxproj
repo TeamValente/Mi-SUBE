@@ -251,6 +251,7 @@
 				ECC647B11C12822600896171 /* Resources */,
 				A541F643BFFCD79EFD979226 /* 📦 Embed Pods Frameworks */,
 				0550BFEDD3A009271EC141FA /* 📦 Copy Pods Resources */,
+				7C04AE351CF263B500315742 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -325,6 +326,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7C04AE351CF263B500315742 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" b3cccb3b1223b4b1195f59fc480c887fa9fbe047 2192dfeae61858108e22da6617c14fc33871d23abec7a281639fe845583f8d32";
 		};
 		A541F643BFFCD79EFD979226 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -291,11 +291,11 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wA5-jU-RL8">
-                                                            <rect key="frame" x="200" y="75" width="90" height="27"/>
+                                                            <rect key="frame" x="200" y="80" width="90" height="26"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="90" id="Ycu-LY-Apv"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                             <state key="normal" title="Cómo llegar">
                                                                 <color key="titleColor" red="1" green="0.61579559620000002" blue="0.13806767510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </state>
@@ -320,7 +320,7 @@
                                                         <constraint firstItem="nLU-sT-iQ0" firstAttribute="leading" secondItem="wsV-xL-MaL" secondAttribute="trailing" constant="-2" id="0bj-kn-CtM"/>
                                                         <constraint firstItem="yUd-NS-20Q" firstAttribute="leading" secondItem="LPP-re-z3G" secondAttribute="leading" constant="30" id="22u-xV-KFT"/>
                                                         <constraint firstAttribute="trailing" secondItem="WDN-oh-GU6" secondAttribute="trailing" constant="30" id="3xY-tw-pne"/>
-                                                        <constraint firstItem="wA5-jU-RL8" firstAttribute="top" secondItem="LPP-re-z3G" secondAttribute="top" constant="75" id="6oM-Na-zzt"/>
+                                                        <constraint firstItem="wA5-jU-RL8" firstAttribute="top" secondItem="LPP-re-z3G" secondAttribute="top" constant="80" id="6oM-Na-zzt"/>
                                                         <constraint firstItem="XGD-qY-rjk" firstAttribute="top" secondItem="q7q-Or-y2A" secondAttribute="bottom" constant="8" id="7Lp-hj-lbV"/>
                                                         <constraint firstItem="Isi-I7-Lya" firstAttribute="leading" secondItem="LPP-re-z3G" secondAttribute="leading" constant="30" id="8O0-0C-SqW"/>
                                                         <constraint firstItem="5KM-pR-hhY" firstAttribute="top" secondItem="nLU-sT-iQ0" secondAttribute="bottom" constant="8" id="8T8-KH-sYm"/>
