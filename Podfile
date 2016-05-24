@@ -8,7 +8,6 @@ target 'Mi SUBE' do
     pod 'RealmSwift'
     pod 'KYCircularProgress', '~> 0.5'
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
-    pod 'Mixpanel'
     pod 'Fabric'
 	pod 'Crashlytics'
 end
