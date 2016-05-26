@@ -23,9 +23,9 @@ class MiSUBEService {
         let parameters = [
             "session": "1390472",
             "params": [
-                "lat": dondeEstoy?.latitude,
-                "lng": dondeEstoy?.longitude]
-            
+                "lat": "\(dondeEstoy?.latitude)",
+                "lng": "\(dondeEstoy?.longitude)"
+            ]
         ]
 
         Alamofire.request(.POST, self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints"), parameters: parameters)
