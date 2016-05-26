@@ -10,4 +10,5 @@ target 'Mi SUBE' do
     pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
     pod 'Fabric'
 	pod 'Crashlytics'
+    pod 'Alamofire', '~> 3.4'
 end
