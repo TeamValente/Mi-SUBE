@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class ConfigTableViewController: UITableViewController {
 
@@ -62,12 +63,15 @@ class ConfigTableViewController: UITableViewController {
             // remove all data from the DB
             let modelManager = TarjetaSUBEService()
             modelManager.removeTarjeta()
+            Answers.logCustomEventWithName("Remove Card", customAttributes: ["Removio": "SI"])
         }))
         
         // add cancel Action
         alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: { Void in
             // set switch on
              self.switchDelete.setOn(true, animated: true)
+            Answers.logCustomEventWithName("Remove Card", customAttributes: ["Removio": "NO"])
+
         }))
         
         //show the alert

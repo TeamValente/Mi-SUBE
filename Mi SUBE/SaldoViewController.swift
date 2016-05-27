@@ -8,6 +8,7 @@
 
 import UIKit
 import Spring
+import Crashlytics
 
 class SaldoViewController: UIViewController {
     
@@ -70,12 +71,14 @@ class SaldoViewController: UIViewController {
                     miMovimiento.valorMovimiento = valorDecimal - (valorDecimal*2)
                     managerModelo.actualizarSaldo(miMovimiento)
                     switchButtonState(false)
+                    Answers.logCustomEventWithName("Add Travel", customAttributes: ["Price": valorDecimal])
                 case 1:
                     let miMovimiento = Movimiento()
                     miMovimiento.fechaMovimiento = NSDate()
                     miMovimiento.valorMovimiento = valorDecimal
                     managerModelo.actualizarSaldo(miMovimiento)
                     switchButtonState(false)
+                    Answers.logCustomEventWithName("Add Charge", customAttributes: ["Price": valorDecimal])
                 default:
                     break
                 }

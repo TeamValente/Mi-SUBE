@@ -121,6 +121,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     let cpa = puntoSeleccionado as! CustomPointAnnotation
                     routeController.puntoDestino = cpa.datos
                     routeController.miUbicacion = miUbicacion!
+                    Answers.logCustomEventWithName("Open Route View", customAttributes: ["destinationPoin": cpa.datos.address])
                 }
             }
         }
@@ -190,6 +191,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.selectedPointSellSube.text = factoryDetalles.getVendeSube()
         self.selectedPointCostCharge.text = factoryDetalles.getCobraCarga()
         self.selectedPointType.text = factoryDetalles.getTipoPunto()
+        Answers.logCustomEventWithName("Point Detail", customAttributes: ["Address": cpa.datos.address])
+
         
     }
     
@@ -258,7 +261,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func selectedPointDistanceButton(sender: AnyObject) {
         // TODO: Add tracking event
-        // Answers.logCustomEventWithName("Open Route View", customAttributes: ["destinationPoin": ])
+        
         performSegueWithIdentifier("mapViewToRouteView", sender: self)
     }
     
