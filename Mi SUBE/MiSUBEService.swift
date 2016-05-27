@@ -19,15 +19,16 @@ class MiSUBEService {
     }
     
     
-    func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? -> () ) {
+    func obtenerPuntosPOST(dondeEstoy: MiUbicacion, callback: [PuntoCarga]? -> () ) {
         
         let parameters = [
             "session": "1390472",
             "params": [
-                "lat": "\(dondeEstoy?.latitude)",
-                "lng": "\(dondeEstoy?.longitude)"
+                "lat": "\(dondeEstoy.latitude)",
+                "lng": "\(dondeEstoy.longitude)"
             ]
         ]
+        
 
         Alamofire.request(.POST, self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints"), parameters: parameters)
          .validate()
@@ -38,12 +39,16 @@ class MiSUBEService {
                 
                     if let value = response.result.value {
                         let json = JSON(value)
-
-                        self.jsonParser(json)
+                        dispatch_async(dispatch_get_main_queue()){
+                            callback(self.jsonParser(json))
+                        }
                     }
                 
                 case .Failure(let error):
                     print(error)
+                    dispatch_async(dispatch_get_main_queue()){
+                        callback(nil)
+                    }
              }
          }
     }
@@ -92,16 +97,13 @@ class MiSUBEService {
             if miPunto.cobraPorCargar() == true {
                 return false
             }
-            
         }
         
         if mFiltro.ocultarNoVendeSUBE {
             if miPunto.vendeSube() == false {
                 return false
             }
-            
         }
-        
         if mFiltro.ocutarHorarioSinIndicar {
             if miPunto.estaAbierto() == EstadoNegocio.Indeterminado {
                 return false
