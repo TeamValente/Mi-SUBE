@@ -341,8 +341,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 //Borro todos los puntos para volver a cargarlos
                 self.mapa.removeAnnotations(self.mapa.annotations)
                 
-                for miPunto in mPunto {
-                    self.marcarPuntoEnMapa(miPunto)
+                for punto in mPunto {
+                    self.marcarPuntoEnMapa(punto)
                 }
                 
                 //Muestro boton de filtro
