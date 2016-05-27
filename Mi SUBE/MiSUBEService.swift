@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class MiSUBEService {
     
@@ -18,7 +19,7 @@ class MiSUBEService {
     }
     
     
-    func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? ->()){
+    func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? -> () ) {
         
         let parameters = [
             "session": "1390472",
@@ -32,14 +33,82 @@ class MiSUBEService {
          .validate()
          .responseJSON { response in
              switch response.result {
-             case .Success:
-                 print("Validation Successful")
-             case .Failure(let error):
-                 print(error)
+                case .Success:
+                    print("Validation Successful")
+                
+                    if let value = response.result.value {
+                        let json = JSON(value)
+
+                        self.jsonParser(json)
+                    }
+                
+                case .Failure(let error):
+                    print(error)
              }
          }
-        // HTTP body: foo=bar&baz[]=a&baz[]=1&qux[x]=1&qux[y]=2&qux[z]=3
-
     }
+    
+    private func jsonParser(json: JSON) -> [PuntoCarga] {
+        
+        var listadoPuntos = [PuntoCarga]()
+        
+        for (_, subJson):(String, JSON) in json {
+            
+            let pointID = "\(subJson["id"])"
+            let adressPoint = "\(subJson["address"])"
+            let lat = "\(subJson["latitude"])"
+            let lng = "\(subJson["longitude"])"
+            let typePoint = "\(subJson["type"])"
+            let iconPoint = "\(subJson["icon"])"
+            let hourOpen = "\(subJson["hopen"])"
+            let hourClose = "\(subJson["hclose"])"
+            let costoCarga = "\(subJson["cost"])"
+            let fSeller = "\(subJson["flag_seller"])"
+            
+            
+            //Cargo el punto
+            let nuevoPunto = PuntoCarga(idPunto: Int(pointID)!, address: adressPoint.htmlDecoded(), latitude: Double(lat)!, longitude: Double(lng)!, type: typePoint, icon: iconPoint, cost: Int(costoCarga)!, hourOpen: Int(hourOpen)!, hourClose: Int(hourClose)!, flagSeller: Int(fSeller)!)
+            
+            if aplicarFiltro(nuevoPunto) {
+                listadoPuntos.append(nuevoPunto)
+            }
+            
+        }
+        
+        return listadoPuntos
+    }
+    
+    
+    
+    func aplicarFiltro(miPunto: PuntoCarga) -> Bool {
+        
+        if mFiltro.ocultarCerrados {
+            if miPunto.estaAbierto() == EstadoNegocio.Cerrado {
+                return false
+            }
+        }
+        
+        if mFiltro.ocultarCobraCarga {
+            if miPunto.cobraPorCargar() == true {
+                return false
+            }
+            
+        }
+        
+        if mFiltro.ocultarNoVendeSUBE {
+            if miPunto.vendeSube() == false {
+                return false
+            }
+            
+        }
+        
+        if mFiltro.ocutarHorarioSinIndicar {
+            if miPunto.estaAbierto() == EstadoNegocio.Indeterminado {
+                return false
+            }
+        }
+        return true
+    }
+
     
 }

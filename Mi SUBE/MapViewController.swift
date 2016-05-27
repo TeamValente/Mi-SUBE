@@ -317,20 +317,39 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     //MARK: Funciones generales
-    func obtenerPuntosDeCargas(){
-        let servidorDePuntos = DondeCargoService()
-        servidorDePuntos.miFiltro = self.miFiltro
-        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
-            if let misPuntos = puntoCargo{
+    func obtenerPuntosDeCargas() {
+//        let servidorDePuntos = DondeCargoService()
+//        servidorDePuntos.miFiltro = self.miFiltro
+//        servidorDePuntos.obtenerPuntosPOST(self.miUbicacion){(puntoCargo) -> () in
+//            if let misPuntos = puntoCargo{
+//                //Borro todos los puntos para volver a cargarlos
+//                self.mapa.removeAnnotations(self.mapa.annotations)
+//                for miPunto in misPuntos{
+//                    self.marcarPuntoEnMapa(miPunto)
+//                }
+//                //Muestro boton de filtro
+//                self.mostrarFiltro()
+//            }
+//        }
+        
+        let miSubeService = MiSUBEService()
+        
+        miSubeService.mFiltro = self.miFiltro
+        
+        miSubeService.obtenerPuntosPOST(self.miUbicacion) { (PuntoCarga) -> () in
+            if let mPunto = PuntoCarga {
                 //Borro todos los puntos para volver a cargarlos
                 self.mapa.removeAnnotations(self.mapa.annotations)
-                for miPunto in misPuntos{
+                
+                for miPunto in mPunto {
                     self.marcarPuntoEnMapa(miPunto)
                 }
+                
                 //Muestro boton de filtro
                 self.mostrarFiltro()
             }
         }
+        
     }
 
 }
