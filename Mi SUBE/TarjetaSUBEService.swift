@@ -17,7 +17,7 @@ extension Results {
 
 class TarjetaSUBEService{
     
-    private var miTarjeta:Tarjeta
+    fileprivate var miTarjeta:Tarjeta
     //Creo una tarjeta de cero si no existen
     init()
     {
@@ -40,7 +40,7 @@ class TarjetaSUBEService{
         }
     }
     
-    func listadoDeMovimientos(orderBy: String)->[Movimiento]
+    func listadoDeMovimientos(_ orderBy: String)->[Movimiento]
     {
         
         //ManagerRealm
@@ -77,7 +77,7 @@ class TarjetaSUBEService{
         }
     }
     
-    func actualizarSaldo(nuevoMovimiento: Movimiento)
+    func actualizarSaldo(_ nuevoMovimiento: Movimiento)
     {
         
         //ManagerRealm
@@ -99,11 +99,11 @@ class TarjetaSUBEService{
         {
             if let ultimoMov = realm.objects(Movimiento).last
             {
-                let fechaUltimoMov: NSDate = ultimoMov.fechaMovimiento
+                let fechaUltimoMov: Date = ultimoMov.fechaMovimiento
                 print(retorno)
                 
-                retorno = NSDate().offsetFrom(fechaUltimoMov)
-                print(NSDate().offsetFrom(fechaUltimoMov))
+                retorno = Date().offsetFrom(fechaUltimoMov)
+                print(Date().offsetFrom(fechaUltimoMov))
                 
             }
             

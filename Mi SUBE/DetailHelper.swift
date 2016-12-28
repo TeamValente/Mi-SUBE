@@ -11,7 +11,7 @@ import Foundation
 class DetailHelper{
 
 
-    private let datos: PuntoCarga
+    fileprivate let datos: PuntoCarga
     
     init(datos: PuntoCarga){
     
@@ -25,7 +25,7 @@ class DetailHelper{
     
     }
     
-    func getDistancia(miUbicacion: MiUbicacion)->String
+    func getDistancia(_ miUbicacion: MiUbicacion)->String
     {
         let distancia = miUbicacion.getDistanciaAPuntoCarga(datos)
         return "\(distancia.valorString) \(distancia.unidad)"
@@ -33,10 +33,10 @@ class DetailHelper{
     
     func getHorario()->String
     {
-        if datos.estaAbierto() == EstadoNegocio.Abierto
+        if datos.estaAbierto() == EstadoNegocio.abierto
         {
             return  "\(datos.getHorarioDeAtencion()), Abierto ahora"
-        } else if datos.estaAbierto() == EstadoNegocio.Cerrado
+        } else if datos.estaAbierto() == EstadoNegocio.cerrado
         {
             return "\(datos.getHorarioDeAtencion()), Cerrado"
         }else

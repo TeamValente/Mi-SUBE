@@ -14,12 +14,12 @@ class MiSUBEService {
     
     var mFiltro: Filtro!
     
-    func generarURLValida(url: String) -> String {
-        return url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+    func generarURLValida(_ url: String) -> String {
+        return url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
     }
     
     
-    func obtenerPuntosPOST(dondeEstoy: MiUbicacion, callback: [PuntoCarga]? -> () ) {
+    func obtenerPuntosPOST(_ dondeEstoy: MiUbicacion, callback: @escaping ([PuntoCarga]?) -> () ) {
         
         let parameters = [
             "session": "1390472",
@@ -27,7 +27,7 @@ class MiSUBEService {
                 "lat": "\(dondeEstoy.latitude)",
                 "lng": "\(dondeEstoy.longitude)"
             ]
-        ]
+        ] as [String : Any]
         
 
         Alamofire.request(.POST, self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints"), parameters: parameters)
@@ -53,7 +53,7 @@ class MiSUBEService {
          }
     }
     
-    private func jsonParser(json: JSON) -> [PuntoCarga] {
+    fileprivate func jsonParser(_ json: JSON) -> [PuntoCarga] {
         
         var listadoPuntos = [PuntoCarga]()
         
@@ -85,10 +85,10 @@ class MiSUBEService {
     
     
     
-    func aplicarFiltro(miPunto: PuntoCarga) -> Bool {
+    func aplicarFiltro(_ miPunto: PuntoCarga) -> Bool {
         
         if mFiltro.ocultarCerrados {
-            if miPunto.estaAbierto() == EstadoNegocio.Cerrado {
+            if miPunto.estaAbierto() == EstadoNegocio.cerrado {
                 return false
             }
         }
@@ -105,7 +105,7 @@ class MiSUBEService {
             }
         }
         if mFiltro.ocutarHorarioSinIndicar {
-            if miPunto.estaAbierto() == EstadoNegocio.Indeterminado {
+            if miPunto.estaAbierto() == EstadoNegocio.indeterminado {
                 return false
             }
         }

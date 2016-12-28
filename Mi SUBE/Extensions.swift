@@ -32,13 +32,13 @@ extension String {
         ]
         
         for (name,value) in entities {
-            newStr = newStr.stringByReplacingOccurrencesOfString(name, withString: value)
+            newStr = newStr.replacingOccurrences(of: name, with: value)
         }
         return newStr
     }
     
     subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
+        return self[self.characters.index(self.startIndex, offsetBy: i)]
     }
     
     subscript (i: Int) -> String {
@@ -47,70 +47,70 @@ extension String {
     
     subscript (r: Range<Int>) -> String {
         //return substringWithRange(Range(start: startIndex.advancedBy(r.startIndex), end: startIndex.advancedBy(r.endIndex)))
-        let range = startIndex.advancedBy(r.startIndex) ..< startIndex.advancedBy(r.endIndex)
-        return substringWithRange(Range(range))
+        let range = characters.index(startIndex, offsetBy: r.lowerBound) ..< characters.index(startIndex, offsetBy: r.upperBound)
+        return substring(with: Range(range))
     }
 }
 
-extension NSDate
+extension Date
 {
     func hour() -> Int
     {
         //Get Hour
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.Hour, fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components(.hour, from: self)
         let hour = components.hour
         
         //Return Hour
-        return hour
+        return hour!
     }
     
     
     func minute() -> Int
     {
         //Get Minute
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.Minute, fromDate: self)
+        let calendar = Calendar.current
+        let components = (calendar as NSCalendar).components(.minute, from: self)
         let minute = components.minute
         
         //Return Minute
-        return minute
+        return minute!
     }
     
     func toShortTimeString() -> String
     {
         //Get Short Time String
-        let formatter = NSDateFormatter()
-        formatter.timeStyle = .ShortStyle
-        let timeString = formatter.stringFromDate(self)
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        let timeString = formatter.string(from: self)
         
         //Return Short Time String
         return timeString
     }
     
-    func yearsFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.Year, fromDate: date, toDate: self, options: []).year
+    func yearsFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.year, from: date, to: self, options: []).year!
     }
-    func monthsFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.Month, fromDate: date, toDate: self, options: []).month
+    func monthsFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.month, from: date, to: self, options: []).month!
     }
-    func weeksFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.WeekOfYear, fromDate: date, toDate: self, options: []).weekOfYear
+    func weeksFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.weekOfYear, from: date, to: self, options: []).weekOfYear!
     }
-    func daysFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.Day, fromDate: date, toDate: self, options: []).day
+    func daysFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.day, from: date, to: self, options: []).day!
     }
-    func hoursFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.Hour, fromDate: date, toDate: self, options: []).hour
+    func hoursFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.hour, from: date, to: self, options: []).hour!
     }
-    func minutesFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.Minute, fromDate: date, toDate: self, options: []).minute
+    func minutesFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.minute, from: date, to: self, options: []).minute!
     }
-    func secondsFrom(date:NSDate) -> Int{
-        return NSCalendar.currentCalendar().components(.Second, fromDate: date, toDate: self, options: []).second
+    func secondsFrom(_ date:Date) -> Int{
+        return (Calendar.current as NSCalendar).components(.second, from: date, to: self, options: []).second!
     }
     
-    func offsetFrom(date:NSDate) -> String {
+    func offsetFrom(_ date:Date) -> String {
         if yearsFrom(date)   > 1 { return "\(yearsFrom(date)) años"   }
         if yearsFrom(date)   == 1 { return "\(yearsFrom(date)) año"   }
         if monthsFrom(date)  > 1 { return "\(monthsFrom(date)) meses"  }

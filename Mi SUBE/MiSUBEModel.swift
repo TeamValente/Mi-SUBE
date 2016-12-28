@@ -23,7 +23,7 @@ class Tarjeta: Object {
 
 // Dog model
 class Movimiento: Object {
-    dynamic var fechaMovimiento = NSDate()
+    dynamic var fechaMovimiento = Date()
     dynamic var valorMovimiento: Double = 0
     // Properties can be optional
 }

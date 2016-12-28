@@ -19,7 +19,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     // progress
     @IBOutlet weak var circularProgress: KYCircularProgress!
     @IBOutlet weak var progressOverlay: UIVisualEffectView!
-    private var progress: UInt8 = 0
+    fileprivate var progress: UInt8 = 0
     
     //MARK: Outlet
     @IBOutlet weak var mapa: MKMapView!
@@ -27,11 +27,11 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // StatusBar Light
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         // NavigationController Visible
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         configureFourColorCircularProgress()
-        NSTimer.scheduledTimerWithTimeInterval(0.003, target: self, selector: #selector(RouteViewController.updateProgress), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 0.003, target: self, selector: #selector(RouteViewController.updateProgress), userInfo: nil, repeats: true)
         
         let span = MKCoordinateSpan(latitudeDelta: 0.012, longitudeDelta: 0.012)
         let region = MKCoordinateRegion(center: miUbicacion.coordinate, span: span)
@@ -41,7 +41,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if let puntoDestino = self.puntoDestino {
@@ -63,7 +63,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     
     //MARK: MKMapViewDelegate
     //Seteo el color de la linea del mapa
-    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         if (overlay is MKPolyline) {
             polylineRenderer.strokeColor = UIColor(rgba: "#3C83E9").colorWithAlphaComponent(0.75)
@@ -74,12 +74,12 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     
     
     //Dibujo los puntos que vinieron
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is CustomPointAnnotation) {
             return nil
         }
         let reuseId = "pin"
-        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         if anView == nil {
             anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             anView!.canShowCallout = false
@@ -97,7 +97,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     }
     
     
-    private func configureFourColorCircularProgress() {
+    fileprivate func configureFourColorCircularProgress() {
         circularProgress.lineWidth = 4.0
         circularProgress.colors = [UIColor(rgba: 0x3C83E9FF)]
         //view.addSubview(circularProgress)

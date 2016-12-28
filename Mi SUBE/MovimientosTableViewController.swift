@@ -24,22 +24,22 @@ class MovimientosTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationController?.navigationBarHidden = false
+        self.navigationController?.isNavigationBarHidden = false
         let managerModelo = TarjetaSUBEService()
         miTarjeta = managerModelo.getTarjeta()
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
-        self.navigationController?.navigationBarHidden = false
+        UIApplication.shared.statusBarStyle = .lightContent
+        self.navigationController?.isNavigationBarHidden = false
         
         tablaMovimientos.reloadData()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,37 +49,37 @@ class MovimientosTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return managerModelo.listadoDeMovimientos("desc").count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "MovimientoTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MovimientoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MovimientoTableViewCell
 
         let mov = managerModelo.listadoDeMovimientos("desc")[indexPath.row]
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        formatter.timeStyle = .ShortStyle
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.short
+        formatter.timeStyle = .short
         
-        cell.labelFecha.text = formatter.stringFromDate(mov.fechaMovimiento)
+        cell.labelFecha.text = formatter.string(from: mov.fechaMovimiento)
         if mov.valorMovimiento > 0{
             cell.labelMonto.textColor = UIColor(rgba: "#4CAF50")
             cell.imgOperation.image = UIImage(named: "ic_local_atm")
-            cell.imgOperation.image = cell.imgOperation.image?.imageWithRenderingMode(.AlwaysTemplate)
+            cell.imgOperation.image = cell.imgOperation.image?.withRenderingMode(.alwaysTemplate)
             cell.imgOperation.tintColor = UIColor(rgba: "#4CAF50")
         } else {
             cell.labelMonto.textColor = UIColor(rgba: "#E8573C")
             cell.imgOperation.image = UIImage(named: "ic_directions_bus")
-            cell.imgOperation.image = cell.imgOperation.image?.imageWithRenderingMode(.AlwaysTemplate)
+            cell.imgOperation.image = cell.imgOperation.image?.withRenderingMode(.alwaysTemplate)
             cell.imgOperation.tintColor = UIColor(rgba: "#E8573C")
         }
         

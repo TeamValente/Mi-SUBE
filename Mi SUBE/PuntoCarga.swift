@@ -14,9 +14,9 @@ import CoreLocation
 
 enum EstadoNegocio
 {
-    case Abierto
-    case Cerrado
-    case Indeterminado
+    case abierto
+    case cerrado
+    case indeterminado
 }
 
 
@@ -96,21 +96,21 @@ class PuntoCarga{
     
     func estaAbierto() -> EstadoNegocio {
         //Get Current Date
-        let currentDate = NSDate()
+        let currentDate = Date()
         
         if self.hourClose + self.hourOpen == 0{
             //Sin horario determinado devuelvo false
-            return EstadoNegocio.Indeterminado
+            return EstadoNegocio.indeterminado
         }
         if currentDate.hour() >= self.hourOpen && currentDate.hour() < self.hourClose
         {
-            return EstadoNegocio.Abierto
+            return EstadoNegocio.abierto
         }else if self.hourOpen >= self.hourClose
         {
-            return EstadoNegocio.Abierto
+            return EstadoNegocio.abierto
         }else
         {
-            return EstadoNegocio.Cerrado
+            return EstadoNegocio.cerrado
         }
     
     }

@@ -81,13 +81,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
         
         //Pido Request del Location
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
+        if CLLocationManager.authorizationStatus() == .notDetermined {
             manager.requestWhenInUseAuthorization()
         }
         if CLLocationManager.locationServicesEnabled() {
@@ -105,14 +105,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //En este punto cargo los centro que vienen por defecto
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // navigation controller hidden
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mapViewToRouteView" {
-            if let routeController = segue.destinationViewController as? RouteViewController {
+            if let routeController = segue.destination as? RouteViewController {
                 if mapa.selectedAnnotations.count == 1 {
                     let puntoSeleccionado = mapa.selectedAnnotations[0]
                     if !(puntoSeleccionado is CustomPointAnnotation) {
@@ -121,7 +121,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     let cpa = puntoSeleccionado as! CustomPointAnnotation
                     routeController.puntoDestino = cpa.datos
                     routeController.miUbicacion = miUbicacion!
-                    Answers.logCustomEventWithName("Open Route View", customAttributes: ["destinationPoin": cpa.datos.address])
+                    Answers.logCustomEvent(withName: "Open Route View", customAttributes: ["destinationPoin": cpa.datos.address])
                 }
             }
         }
@@ -130,12 +130,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         navigationItem.backBarButtonItem = backItem
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         return true
     }
     
     //MARK: CLLocationManagerDelegate
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         manager.stopUpdatingLocation() //Parar de buscar la ubicacion
         
         if let location = locations.last{
@@ -154,13 +154,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
     
     
     //MARK: MKMapViewDelegate
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if !(view.annotation is CustomPointAnnotation) {
             return
         }
@@ -174,7 +174,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //mapa.setRegion(region, animated: true)
         self.constraintDetalle.constant = 0
         //self.detailView.layoutIfNeeded()
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
             self.closeButton.alpha = 1
@@ -191,12 +191,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.selectedPointSellSube.text = factoryDetalles.getVendeSube()
         self.selectedPointCostCharge.text = factoryDetalles.getCobraCarga()
         self.selectedPointType.text = factoryDetalles.getTipoPunto()
-        Answers.logCustomEventWithName("Point Detail", customAttributes: ["Address": cpa.datos.address])
+        Answers.logCustomEvent(withName: "Point Detail", customAttributes: ["Address": cpa.datos.address])
 
         
     }
     
-    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
         if !(view.annotation is CustomPointAnnotation) {
             return
         }
@@ -208,18 +208,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         //Se cierra el detalle cuando se saca el foco de un punto.
         
         self.cerrarDetalle()
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.mapa.setRegion(region, animated: true)
             self.view.layoutIfNeeded()
             }, completion: nil)
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is CustomPointAnnotation) {
             return nil
         }
         let reuseId = "pin"
-        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        var anView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
         if anView == nil {
             anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             anView!.canShowCallout = false
@@ -246,7 +246,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     func cerrarDetalle() {
     
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.backdropView.alpha = 0
             self.constraintDetalle.constant = -500
             self.constrainFiltro.constant = -500
@@ -259,10 +259,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     
-    @IBAction func selectedPointDistanceButton(sender: AnyObject) {
+    @IBAction func selectedPointDistanceButton(_ sender: AnyObject) {
         // TODO: Add tracking event
         
-        performSegueWithIdentifier("mapViewToRouteView", sender: self)
+        performSegue(withIdentifier: "mapViewToRouteView", sender: self)
     }
     
     //MARK: BTN Location
@@ -272,7 +272,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     @IBAction func openFilterView() {
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.backdropView.alpha = 1
             self.constrainFiltro.constant = 0
             self.closeButton.alpha = 1
@@ -284,7 +284,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     //MARK: Show Filter Button
     func mostrarFiltro() {
-        UIView.animateWithDuration(0.25, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.filterButton.alpha = 1
             self.view.layoutIfNeeded()
         }, completion: nil)
@@ -292,29 +292,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     //MARK: Funciones Filtrado
-    @IBAction func verCerrados(sender: AnyObject) {
-        miFiltro.ocultarCerrados = self.switchCerrado.on
+    @IBAction func verCerrados(_ sender: AnyObject) {
+        miFiltro.ocultarCerrados = self.switchCerrado.isOn
         obtenerPuntosDeCargas()
     }
     
-    @IBAction func verCobroCarga(sender: AnyObject){
-        miFiltro.ocultarCobraCarga = switchCobraCarga.on
+    @IBAction func verCobroCarga(_ sender: AnyObject){
+        miFiltro.ocultarCobraCarga = switchCobraCarga.isOn
         obtenerPuntosDeCargas()
     }
     
-    @IBAction func verVendeSUBE(sender: AnyObject) {
-        miFiltro.ocultarNoVendeSUBE = switchVendeSUBE.on
+    @IBAction func verVendeSUBE(_ sender: AnyObject) {
+        miFiltro.ocultarNoVendeSUBE = switchVendeSUBE.isOn
         obtenerPuntosDeCargas()
     }
     
-    @IBAction func verHorarioSinIndicar(sender: AnyObject) {
-        miFiltro.ocutarHorarioSinIndicar = switchHorarioSinIndicar.on
+    @IBAction func verHorarioSinIndicar(_ sender: AnyObject) {
+        miFiltro.ocutarHorarioSinIndicar = switchHorarioSinIndicar.isOn
         obtenerPuntosDeCargas()
     }
     
     
     //MARK: Funciones de Mapa
-    func marcarPuntoEnMapa(miPunto: PuntoCarga) {
+    func marcarPuntoEnMapa(_ miPunto: PuntoCarga) {
         let pinFactory = MarkerFactory()
         mapa.addAnnotation(pinFactory.makeCustomMarker(miPunto))
     }
