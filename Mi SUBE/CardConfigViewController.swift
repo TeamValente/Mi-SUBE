@@ -21,18 +21,18 @@ class CardConfigViewController: UIViewController {
     @IBAction func deleteCardData() {
         
         // set alertController
-        let alertMessage = UIAlertController(title: "Cuidado", message: "Estas seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .Alert)
+        let alertMessage = UIAlertController(title: "Cuidado", message: "Estas seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .alert)
         
         // add delete Action
-        alertMessage.addAction(UIAlertAction(title: "Continuar", style: .Default, handler: { Void in
+        alertMessage.addAction(UIAlertAction(title: "Continuar", style: .default, handler: { Void in
             // remove all data from the DB
             let modelManager = TarjetaSUBEService()
             modelManager.removeTarjeta()
         }))
         // add cancel Action
-        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: nil))
+        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         
         //show the alert
-        self.presentViewController(alertMessage, animated: true, completion: nil)
+        self.present(alertMessage, animated: true, completion: nil)
     }
 }

@@ -9,6 +9,30 @@
 import UIKit
 import Spring
 import Crashlytics
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class SaldoViewController: UIViewController {
     
@@ -27,7 +51,7 @@ class SaldoViewController: UIViewController {
     
     override func viewDidLoad() {
         // navigation controller hidden
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(SaldoViewController.Long)) //Long function will call when user long press on button.
         //tapGesture.numberOfTapsRequired = 1
@@ -39,17 +63,17 @@ class SaldoViewController: UIViewController {
         self.monto.text = ""
     }
     
-    func switchButtonState(enabled:Bool) {
+    func switchButtonState(_ enabled:Bool) {
         
         switch enabled {
         case true:
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.button_ok.alpha = 1
                 self.position_ok.constant = 0
                 self.view.layoutIfNeeded()
                 }, completion: nil)
         case false:
-            UIView.animateWithDuration(0.35, animations: {
+            UIView.animate(withDuration: 0.35, animations: {
                 self.button_ok.alpha = 0
                 self.position_ok.constant = -8
                 self.view.layoutIfNeeded()
@@ -61,24 +85,24 @@ class SaldoViewController: UIViewController {
         
         
         if let input = monto.text {
-            if let valorDecimal = Double(input.stringByReplacingOccurrencesOfString(",", withString: ".")) {
+            if let valorDecimal = Double(input.replacingOccurrences(of: ",", with: ".")) {
                 let managerModelo = TarjetaSUBEService()
                 miTarjeta = managerModelo.getTarjeta()
                 switch segmentAction.selectedSegmentIndex {
                 case 0:
                     let miMovimiento = Movimiento()
-                    miMovimiento.fechaMovimiento = NSDate()
+                    miMovimiento.fechaMovimiento = Date()
                     miMovimiento.valorMovimiento = valorDecimal - (valorDecimal*2)
                     managerModelo.actualizarSaldo(miMovimiento)
                     switchButtonState(false)
-                    Answers.logCustomEventWithName("Add Travel", customAttributes: ["Price": valorDecimal])
+                    Answers.logCustomEvent(withName: "Add Travel", customAttributes: ["Price": valorDecimal])
                 case 1:
                     let miMovimiento = Movimiento()
-                    miMovimiento.fechaMovimiento = NSDate()
+                    miMovimiento.fechaMovimiento = Date()
                     miMovimiento.valorMovimiento = valorDecimal
                     managerModelo.actualizarSaldo(miMovimiento)
                     switchButtonState(false)
-                    Answers.logCustomEventWithName("Add Charge", customAttributes: ["Price": valorDecimal])
+                    Answers.logCustomEvent(withName: "Add Charge", customAttributes: ["Price": valorDecimal])
                 default:
                     break
                 }
@@ -88,11 +112,11 @@ class SaldoViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidAppear(animated)
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
 
         button_ok.alpha = 0
         cardView.layer.cornerRadius = 10
@@ -100,16 +124,16 @@ class SaldoViewController: UIViewController {
         loadSaldo()
         
         if monto.text?.characters.count > 0 {
-            buttonDelete.highlighted = false
+            buttonDelete.isHighlighted = false
             
         } else {
-            buttonDelete.highlighted = true
+            buttonDelete.isHighlighted = true
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         // navigation controller hidden
-        self.navigationController?.navigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -118,7 +142,7 @@ class SaldoViewController: UIViewController {
     }
     
     
-    @IBAction func setAmount(sender: UIButton) {
+    @IBAction func setAmount(_ sender: UIButton) {
         
         let input: String = sender.titleLabel!.text!
         var preMonto: String = monto.text!
@@ -126,7 +150,7 @@ class SaldoViewController: UIViewController {
         switch input{
         case "Borrar":
             if preMonto.characters.count > 0 {
-                preMonto.removeAtIndex(preMonto.endIndex.predecessor())
+                preMonto.remove(at: preMonto.characters.index(before: preMonto.endIndex))
                 
                 if preMonto.characters.count == 0 {
                     switchButtonState(false)
@@ -134,7 +158,7 @@ class SaldoViewController: UIViewController {
             }
         case ",":
             if preMonto.characters.count < 6 {
-                if preMonto.rangeOfString(",") == nil {
+                if preMonto.range(of: ",") == nil {
                     preMonto = "\(preMonto)\(input)"
                 }
             }
@@ -147,10 +171,10 @@ class SaldoViewController: UIViewController {
         
         monto.text = "\(preMonto)"
         if monto.text?.characters.count > 0 {
-            buttonDelete.highlighted = false
+            buttonDelete.isHighlighted = false
             
         } else {
-            buttonDelete.highlighted = true
+            buttonDelete.isHighlighted = true
         }
         
     }
@@ -161,12 +185,12 @@ class SaldoViewController: UIViewController {
         miTarjeta = managerModelo.getTarjeta()
         
         if miTarjeta.saldo < 0 {
-            UIView.animateWithDuration(0.5, animations: {
-                self.cardView.backgroundColor = UIColor(rgba: "#E8573C")
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.backgroundColor = UIColor("#E8573C")
                 }, completion: nil)
         } else {
-            UIView.animateWithDuration(0.5, animations: {
-                self.cardView.backgroundColor = UIColor(rgba: "#3C83E9")
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.backgroundColor = UIColor("#3C83E9")
                 }, completion: nil)
         }
         labelSaldo.text = String(format: "%.2f", miTarjeta.saldo)
@@ -179,7 +203,7 @@ class SaldoViewController: UIViewController {
     }
     
     //MARK: Segue
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = "Atrás"
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed

@@ -15,42 +15,42 @@ import UIKit
 class MapaService {
     
     
-    func removeRoute(mapa: MKMapView)
+    func removeRoute(_ mapa: MKMapView)
     {
         if mapa.overlays.count == 1 {
-            mapa.removeOverlay(mapa.overlays.first!)
+            mapa.remove(mapa.overlays.first!)
         }
     }
     
-    func calculateSegmentDirections(puntoFuente: MiUbicacion ,puntoDestino: PuntoCarga, mapa: MKMapView, layoutProgress: UIVisualEffectView) {
+    func calculateSegmentDirections(_ puntoFuente: MiUbicacion ,puntoDestino: PuntoCarga, mapa: MKMapView, layoutProgress: UIVisualEffectView) {
         let placemarkSource = MKPlacemark(coordinate: puntoFuente.coordinate, addressDictionary: nil)
         let placermarkerDestination = MKPlacemark(coordinate: puntoDestino.coordinate, addressDictionary: nil)
         let request: MKDirectionsRequest = MKDirectionsRequest()
         request.source =  MKMapItem(placemark: placemarkSource)
         request.destination = MKMapItem(placemark: placermarkerDestination)
         // 3
-        request.transportType = .Walking
+        request.transportType = .walking
         // 4
         let directions = MKDirections(request: request)
-        directions.calculateDirectionsWithCompletionHandler ({
+        directions.calculate (completionHandler: {
             (response: MKDirectionsResponse?, error: NSError?) in
             if let routeResponse = response?.routes {
                 let quickestRouteForSegment: MKRoute =
-                routeResponse.sort({$0.expectedTravelTime <
+                routeResponse.sorted(by: {$0.expectedTravelTime <
                     $1.expectedTravelTime})[0]
                 self.dibujarRuta(quickestRouteForSegment,mapa: mapa)
-                layoutProgress.hidden = true
+                layoutProgress.isHidden = true
                 
             } else if let _ = error {
                 
             }
-        })
+        } as! MKDirectionsHandler)
     }
     
-    private func dibujarRuta(route: MKRoute, mapa: MKMapView) {
+    fileprivate func dibujarRuta(_ route: MKRoute, mapa: MKMapView) {
         
         // 1
-        mapa.addOverlay(route.polyline)
+        mapa.add(route.polyline)
         // 2
         if mapa.overlays.count == 1 {
             mapa.setVisibleMapRect(route.polyline.boundingMapRect,
@@ -59,7 +59,7 @@ class MapaService {
         }
             // 3
         else {
-            mapa.removeOverlay(mapa.overlays.first!)
+            mapa.remove(mapa.overlays.first!)
             let polylineBoundingRect =  MKMapRectUnion(mapa.visibleMapRect,
                 route.polyline.boundingMapRect)
             mapa.setVisibleMapRect(polylineBoundingRect,

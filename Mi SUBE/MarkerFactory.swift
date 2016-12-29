@@ -12,7 +12,7 @@ import MapKit
 class MarkerFactory{
 
 
-    private func makeMarkerOpen()->CustomPointAnnotation
+    fileprivate func makeMarkerOpen()->CustomPointAnnotation
     {
         
         let point = CustomPointAnnotation()
@@ -21,7 +21,7 @@ class MarkerFactory{
         
     }
     
-    private func makeMarkerClose()->CustomPointAnnotation
+    fileprivate func makeMarkerClose()->CustomPointAnnotation
     {
         
         let point = CustomPointAnnotation()
@@ -31,11 +31,11 @@ class MarkerFactory{
     }
     
     
-    func makeCustomMarker(miPunto: PuntoCarga)->CustomPointAnnotation
+    func makeCustomMarker(_ miPunto: PuntoCarga)->CustomPointAnnotation
     {
         var puntoRetorno: CustomPointAnnotation
         
-        if (miPunto.estaAbierto() == EstadoNegocio.Abierto)
+        if (miPunto.estaAbierto() == EstadoNegocio.abierto)
         {
             puntoRetorno =  makeMarkerOpen()
         }else

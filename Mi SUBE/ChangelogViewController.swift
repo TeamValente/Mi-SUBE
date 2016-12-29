@@ -15,12 +15,12 @@ class ChangelogViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         
         changesWebview.delegate = self
         
-        let url = NSURL(string: "http://misube.com/changelog.html")
-        let requestObj = NSURLRequest(URL: url!)
+        let url = URL(string: "http://misube.com/changelog.html")
+        let requestObj = URLRequest(url: url!)
         changesWebview.loadRequest(requestObj)
     }
 
@@ -28,11 +28,11 @@ class ChangelogViewController: UIViewController, UIWebViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        let url: NSURL = request.URL!
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        let url: URL = request.url!
         let isExternalLink: Bool = url.scheme == "http" || url.scheme == "https" || url.scheme == "mailto"
-        if (isExternalLink && navigationType == UIWebViewNavigationType.LinkClicked) {
-            return !UIApplication.sharedApplication().openURL(request.URL!)
+        if (isExternalLink && navigationType == UIWebViewNavigationType.linkClicked) {
+            return !UIApplication.shared.openURL(request.url!)
         } else {
             return true
         }

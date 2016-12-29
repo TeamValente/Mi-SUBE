@@ -14,38 +14,38 @@ class TabBarController: UITabBarController, UINavigationControllerDelegate {
         super.viewDidLoad()
         
         // Sets the default color of the icon of the selected UITabBarItem and Title
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UITabBar.appearance().tintColor = UIColor.white
         
         // set the default color of the text for normal state
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor()], forState:.Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.white], for:UIControlState())
 
         // Sets the default color of the background of the UITabBar
-        UITabBar.appearance().barTintColor = UIColor(rgba: "#3C83E9")
+        UITabBar.appearance().barTintColor = UIColor("#3C83E9")
         
         // Sets the background color of the selected UITabBarItem (using and plain colored UIImage with the width = 1/5 of the tabBar (if you have 5 items) and the height of the tabBar)
-        UITabBar.appearance().selectionIndicatorImage = UIImage().makeImageWithColorAndSize(UIColor(rgba: "#236ED6"), size: CGSizeMake(tabBar.frame.width/3, tabBar.frame.height))
+        UITabBar.appearance().selectionIndicatorImage = UIImage().makeImageWithColorAndSize(UIColor("#236ED6"), size: CGSize(width: tabBar.frame.width/3, height: tabBar.frame.height))
 
         // Uses the original colors for your images, so they aren't not rendered as grey automatically.
         for item in (self.tabBar.items as [UITabBarItem]!)! {
             if let image = item.image {
-                item.image = image.imageWithRenderingMode(.AlwaysOriginal)
+                item.image = image.withRenderingMode(.alwaysOriginal)
             }
         }
     }
     
     // block autorotate
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return false
     }
 }
 
 extension UIImage {
-    func makeImageWithColorAndSize(color: UIColor, size: CGSize) -> UIImage {
+    func makeImageWithColorAndSize(_ color: UIColor, size: CGSize) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         color.setFill()
-        UIRectFill(CGRectMake(0, 0, size.width, size.height))
+        UIRectFill(CGRect(x: 0, y: 0, width: size.width, height: size.height))
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return image
+        return image!
     }
 }

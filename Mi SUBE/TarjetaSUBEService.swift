@@ -17,7 +17,7 @@ extension Results {
 
 class TarjetaSUBEService{
     
-    private var miTarjeta:Tarjeta
+    fileprivate var miTarjeta:Tarjeta
     //Creo una tarjeta de cero si no existen
     init()
     {
@@ -27,7 +27,7 @@ class TarjetaSUBEService{
         
         
         //Traigo las tarjeta debe venir solo una
-        let tarjetas = realm.objects(Tarjeta).filter("id = 1")
+        let tarjetas = realm.objects(Tarjeta.self).filter("id = 1")
         if tarjetas.count == 0{
             miTarjeta = Tarjeta()
             try! realm.write {
@@ -40,7 +40,7 @@ class TarjetaSUBEService{
         }
     }
     
-    func listadoDeMovimientos(orderBy: String)->[Movimiento]
+    func listadoDeMovimientos(_ orderBy: String)->[Movimiento]
     {
         
         //ManagerRealm
@@ -52,7 +52,7 @@ class TarjetaSUBEService{
            order = false
         }
         
-        let  movimientos = realm.objects(Movimiento).sorted("fechaMovimiento", ascending: order)
+        let  movimientos = realm.objects(Movimiento.self).sorted(byProperty: "fechaMovimiento", ascending: order)
         return movimientos.toArray()
         
     }
@@ -67,7 +67,7 @@ class TarjetaSUBEService{
         //ManagerRealm
         let realm = try! Realm()
         //Traigo las tarjeta debe venir solo una
-        let tarjetas = realm.objects(Tarjeta).filter("id = 1")
+        let tarjetas = realm.objects(Tarjeta.self).filter("id = 1")
         if tarjetas.count != 0{
             try! realm.write {
                 realm.deleteAll()
@@ -77,7 +77,7 @@ class TarjetaSUBEService{
         }
     }
     
-    func actualizarSaldo(nuevoMovimiento: Movimiento)
+    func actualizarSaldo(_ nuevoMovimiento: Movimiento)
     {
         
         //ManagerRealm
@@ -97,13 +97,13 @@ class TarjetaSUBEService{
         var retorno:String = ""
         if miTarjeta.movimientos.count > 0
         {
-            if let ultimoMov = realm.objects(Movimiento).last
+            if let ultimoMov = realm.objects(Movimiento.self).last
             {
-                let fechaUltimoMov: NSDate = ultimoMov.fechaMovimiento
+                let fechaUltimoMov: Date = ultimoMov.fechaMovimiento
                 print(retorno)
                 
-                retorno = NSDate().offsetFrom(fechaUltimoMov)
-                print(NSDate().offsetFrom(fechaUltimoMov))
+                retorno = Date().offsetFrom(fechaUltimoMov)
+                print(Date().offsetFrom(fechaUltimoMov))
                 
             }
             

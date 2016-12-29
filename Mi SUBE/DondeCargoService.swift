@@ -10,17 +10,17 @@ import Foundation
 
 
 
-class DondeCargoService{
+class DondeCargoService {
     
     
     var miFiltro: Filtro!
     
     
-    func generarURLValida(url: String) -> String {
-        return url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+    func generarURLValida(_ url: String) -> String {
+        return url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
     }
     
-    private func generarBodyParaAgregarPuntoCarga(nuevoPunto: PuntoCarga) ->String{
+    fileprivate func generarBodyParaAgregarPuntoCarga(_ nuevoPunto: PuntoCarga) -> String {
         
         var resultado:String
         var parametro0:String
@@ -47,7 +47,7 @@ class DondeCargoService{
         
     }
     
-    private func generarBodyDenunciarPuntoCarga(nuevoPunto: PuntoCarga) ->String{
+    fileprivate func generarBodyDenunciarPuntoCarga(_ nuevoPunto: PuntoCarga) -> String {
         
         var resultado:String
         var parametro0:String
@@ -62,7 +62,7 @@ class DondeCargoService{
         
     }
     
-    private func generarBodyObtenerPuntosPOST(miUbicacion: MiUbicacion) ->String{
+    fileprivate func generarBodyObtenerPuntosPOST(_ miUbicacion: MiUbicacion) -> String {
         
         var resultado:String
         var parametro0:String
@@ -75,123 +75,140 @@ class DondeCargoService{
         
         return resultado
         
-        
-        
     }
     
     
     
-    func agregarPuntoCarga(puntoNuevo: PuntoCarga, completionHandler: (response: Bool) -> ())
-    {
-        var urlString: String
-        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=addPoint")
-        if let url = NSURL(string: urlString) {
-            let request = NSMutableURLRequest(URL: url)
+    func agregarPuntoCarga(_ puntoNuevo: PuntoCarga, completionHandler: @escaping (_ response: Bool) -> ()) {
+        
+        let urlString: String = generarURLValida("http://dondecargolasube.com.ar/core/?query=addPoint")
+        //urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=addPoint")
+        
+        if let url = URL(string: urlString) {
+            
+            //let request = NSMutableURLRequest(url: url)
+            var request = URLRequest(url: url)
             let bodyData = self.generarBodyParaAgregarPuntoCarga(puntoNuevo)
-            request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
-            request.HTTPMethod = "POST"
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
+            request.httpBody = bodyData.data(using: String.Encoding.utf8)
+            request.httpMethod = "POST"
+
+            // let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                data, response, error in
+                
                 if error != nil {
                     print("error=\(error)")
-                    completionHandler(response: false)
+                    completionHandler(false)
                 }
                 print("response = \(response)")
                 
-                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print("data: \(responseString)")
                 
-                if responseString! == "\"OK\""
-                {
-                    completionHandler(response: true)
-                }else
-                {
-                    completionHandler(response: false)
+                if responseString! == "\"OK\"" {
+                    completionHandler(true)
+                } else {
+                    completionHandler(false)
                 }
             }
+            
             task.resume()
         }
         
     }
     
-    func denunciarPuntoCarga(puntoDenunciado: PuntoCarga, completionHandler: (response: Bool) -> ())
-    {
-        var urlString: String
-        urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=addFlagInvalid")
-        if let url = NSURL(string: urlString) {
-            let request = NSMutableURLRequest(URL: url)
+    func denunciarPuntoCarga(_ puntoDenunciado: PuntoCarga, completionHandler: @escaping (_ response: Bool) -> ()) {
+        //var urlString: String
+        let urlString = generarURLValida("http://dondecargolasube.com.ar/core/?query=addFlagInvalid")
+        
+        if let url = URL(string: urlString) {
+            
+            //let request = NSMutableURLRequest(url: url)
+            var request = URLRequest(url: url)
             let bodyData = self.generarBodyDenunciarPuntoCarga(puntoDenunciado)
-            request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
-            request.HTTPMethod = "POST"
-            let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
+            request.httpBody = bodyData.data(using: String.Encoding.utf8)
+            request.httpMethod = "POST"
+            
+            // let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+            let task = URLSession.shared.dataTask(with: request as URLRequest){
+                data, response, error in
+                
                 if error != nil {
                     print("error=\(error)")
-                    completionHandler(response: false)
+                    completionHandler(false)
                 }
                 print("response = \(response)")
                 
-                let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print("data: \(responseString)")
                 
-                if responseString! == "\"OK\""
-                {
-                    completionHandler(response: true)
-                }else
-                {
-                    completionHandler(response: false)
+                if responseString! == "\"OK\"" {
+                    completionHandler(true)
+                } else {
+                    completionHandler(false)
                 }
             }
+                
             task.resume()
         }
         
     }
     
     
-    func obtenerPuntosPOST(dondeEstoy: MiUbicacion?, callback: [PuntoCarga]? ->()){
-        var urlString: String
-        urlString = self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
-        if let url = NSURL(string: urlString) {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH,0)){
-                let request = NSMutableURLRequest(URL: url)
+    func obtenerPuntosPOST(_ dondeEstoy: MiUbicacion?, callback: @escaping ([PuntoCarga]?) -> ()) {
+        // var urlString: String
+        let urlString = self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints")
+        
+        if let url = URL(string: urlString) {
+            
+            // DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.high).async { // deprecated in IOS 8.0
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+                //let request = NSMutableURLRequest(url: url)
+                var request = URLRequest(url: url)
+                
                 if dondeEstoy != nil{
                     let bodyData = self.generarBodyObtenerPuntosPOST(dondeEstoy!)
-                    request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding)
+                    request.httpBody = bodyData.data(using: String.Encoding.utf8)
                 }
-                request.HTTPMethod = "POST"
-                let task = NSURLSession.sharedSession().dataTaskWithRequest(request){ (data, response, error) in
+                
+                request.httpMethod = "POST"
+                
+                //let task = URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
+                let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                    data, response, error in
+                    
                     if error != nil {
                         print("error=\(error)")
-                        dispatch_async(dispatch_get_main_queue()){
+                        DispatchQueue.main.async{
                             callback(nil)
                         }
                     }
-                    if let payload = data
-                    {
-                        do{
-                            let jsonDictionary = try NSJSONSerialization.JSONObjectWithData(payload, options: NSJSONReadingOptions.AllowFragments) as! NSArray
-                            dispatch_async(dispatch_get_main_queue()){
+                    
+                    if let payload = data {
+                        do {
+                            let jsonDictionary = try JSONSerialization.jsonObject(with: payload, options: JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+                            DispatchQueue.main.async{
                                 callback(self.desempaquetarPayLoad(jsonDictionary))
                             }
-                        }catch{
-                            dispatch_async(dispatch_get_main_queue()){
-                            callback(nil)
+                        } catch {
+                            DispatchQueue.main.async{
+                                callback(nil)
                             }
-                            
                         }
-                    }else
-                    {
-                        dispatch_async(dispatch_get_main_queue()){
+                    } else {
+                        DispatchQueue.main.async{
                             callback(nil)
                         }
                     }
                 }
+                
                 task.resume()
             }
         }
     }
     
     
-    private func desempaquetarPayLoad(jsonDictionaryArray: NSArray)->[PuntoCarga]
-    {
+    fileprivate func desempaquetarPayLoad(_ jsonDictionaryArray: NSArray) -> [PuntoCarga] {
         
         var listadoPuntos = [PuntoCarga]()
         var horaApertura = 0
@@ -199,34 +216,31 @@ class DondeCargoService{
         var cost = 0
         var flagSeller = 0
         
-        for index in 0...jsonDictionaryArray.count-1{
-            let item : AnyObject? = jsonDictionaryArray[index]
+        for index in 0...jsonDictionaryArray.count - 1 {
+            let item : AnyObject? = jsonDictionaryArray[index] as AnyObject?
             let punto = item as! Dictionary<String, AnyObject>
-            if let puntoId = punto["id"] as? String{
-                if let direccion = punto["address"] as? String{
-                    if let latitud = punto["latitude"] as? String{
-                        if let longitud = punto["longitude"] as? String{
-                            if let tipo = punto["type"] as? String{
-                                if let icono = punto["icon"] as? String{
-                                    if let hourOpen = punto["hopen"] as? String{
+            if let puntoId = punto["id"] as? String {
+                if let direccion = punto["address"] as? String {
+                    if let latitud = punto["latitude"] as? String {
+                        if let longitud = punto["longitude"] as? String {
+                            if let tipo = punto["type"] as? String {
+                                if let icono = punto["icon"] as? String {
+                                    if let hourOpen = punto["hopen"] as? String {
                                         horaApertura = Int(hourOpen)!
                                     }
-                                    if let hourClose = punto["hclose"] as? String{
+                                    if let hourClose = punto["hclose"] as? String {
                                         horaCierre = Int(hourClose)!
                                     }
-                                    if let costoCarga = punto["cost"] as? Int{
+                                    if let costoCarga = punto["cost"] as? Int {
                                         cost = costoCarga
                                     }
-                                    if let fSeller = punto["flag_seller"] as? String{
+                                    if let fSeller = punto["flag_seller"] as? String {
                                         flagSeller = Int(fSeller)!
                                     }
-                                    //Cargo el punto
-                                    
+                                    // Cargo el punto
                                     let nuevoPunto = PuntoCarga(idPunto: Int(puntoId)!, address: direccion.htmlDecoded(), latitude: Double(latitud)!, longitude: Double(longitud)!, type: tipo, icon: icono,cost: cost, hourOpen: horaApertura, hourClose: horaCierre, flagSeller: flagSeller)
                                     
-                                    
-                                    if aplicarFiltro(nuevoPunto)
-                                    {
+                                    if aplicarFiltro(nuevoPunto) {
                                         listadoPuntos.append(nuevoPunto)
                                     }
                                     
@@ -243,44 +257,34 @@ class DondeCargoService{
     }
     
     
-    func aplicarFiltro(miPunto: PuntoCarga)->Bool
-    {
+    func aplicarFiltro(_ miPunto: PuntoCarga) -> Bool {
     
-        if miFiltro.ocultarCerrados
-        {
-            if miPunto.estaAbierto() == EstadoNegocio.Cerrado
-            {
+        if miFiltro.ocultarCerrados {
+            if miPunto.estaAbierto() == EstadoNegocio.cerrado {
                 return false
             }
             
         }
         
-        if miFiltro.ocultarCobraCarga
-        {
-            if miPunto.cobraPorCargar() == true
-            {
+        if miFiltro.ocultarCobraCarga {
+            if miPunto.cobraPorCargar() == true {
                 return false
             }
         
         }
         
-        if miFiltro.ocultarNoVendeSUBE
-        {
-            if miPunto.vendeSube() == false
-            {
+        if miFiltro.ocultarNoVendeSUBE {
+            if miPunto.vendeSube() == false {
                 return false
             }
         
         }
         
-        if miFiltro.ocutarHorarioSinIndicar
-        {
-            if miPunto.estaAbierto() == EstadoNegocio.Indeterminado
-            {
+        if miFiltro.ocutarHorarioSinIndicar {
+            if miPunto.estaAbierto() == EstadoNegocio.indeterminado {
                 return false
             }
         }
-        
     
         return true
     }

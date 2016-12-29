@@ -21,20 +21,20 @@ class ConfigTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         
         switchDelete.setOn(true, animated: true)
         
-        if let versionNumber = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+        if let versionNumber = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
             self.versionLabel.text = "v\(versionNumber)"
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+    override func viewWillDisappear(_ animated: Bool) {
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,43 +42,43 @@ class ConfigTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 5
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
     
     // MARK: Actions
-    @IBAction func deleteCard(sender: AnyObject) {
+    @IBAction func deleteCard(_ sender: AnyObject) {
         
         // set alertController
-        let alertMessage = UIAlertController(title: "Cuidado", message: "Seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .Alert)
+        let alertMessage = UIAlertController(title: "Cuidado", message: "Seguro que quieres eliminar todos los datos de tu tarjeta SUBE", preferredStyle: .alert)
         
         // add delete Action
-        alertMessage.addAction(UIAlertAction(title: "Continuar", style: .Default, handler: { Void in
+        alertMessage.addAction(UIAlertAction(title: "Continuar", style: .default, handler: { Void in
             // remove all data from the DB
             let modelManager = TarjetaSUBEService()
             modelManager.removeTarjeta()
-            Answers.logCustomEventWithName("Remove Card", customAttributes: ["Removio": "SI"])
+            Answers.logCustomEvent(withName: "Remove Card", customAttributes: ["Removio": "SI"])
         }))
         
         // add cancel Action
-        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .Cancel, handler: { Void in
+        alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { Void in
             // set switch on
              self.switchDelete.setOn(true, animated: true)
-            Answers.logCustomEventWithName("Remove Card", customAttributes: ["Removio": "NO"])
+            Answers.logCustomEvent(withName: "Remove Card", customAttributes: ["Removio": "NO"])
 
         }))
         
         //show the alert
-        self.presentViewController(alertMessage, animated: true, completion: nil)    
+        self.present(alertMessage, animated: true, completion: nil)    
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.section == 3 {
             let APP_ID = 1076019287
@@ -87,15 +87,15 @@ class ConfigTableViewController: UITableViewController {
     }
     
     //MARK: Segue
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = "Atrás"
         navigationItem.backBarButtonItem = backItem // This will show in the next view controller being pushed
     }
     
-    func rateApp(APP_ID: Int) {
-        let url = NSURL(string: "itms-apps://itunes.apple.com/app/id\(APP_ID)")!
-        UIApplication.sharedApplication().openURL(url)
+    func rateApp(_ APP_ID: Int) {
+        let url = URL(string: "itms-apps://itunes.apple.com/app/id\(APP_ID)")!
+        UIApplication.shared.openURL(url)
     }
     
 }
