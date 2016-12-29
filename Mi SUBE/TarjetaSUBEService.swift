@@ -27,7 +27,7 @@ class TarjetaSUBEService{
         
         
         //Traigo las tarjeta debe venir solo una
-        let tarjetas = realm.objects(Tarjeta).filter("id = 1")
+        let tarjetas = realm.objects(Tarjeta.self).filter("id = 1")
         if tarjetas.count == 0{
             miTarjeta = Tarjeta()
             try! realm.write {
@@ -52,7 +52,7 @@ class TarjetaSUBEService{
            order = false
         }
         
-        let  movimientos = realm.objects(Movimiento).sorted("fechaMovimiento", ascending: order)
+        let  movimientos = realm.objects(Movimiento.self).sorted(byProperty: "fechaMovimiento", ascending: order)
         return movimientos.toArray()
         
     }
@@ -67,7 +67,7 @@ class TarjetaSUBEService{
         //ManagerRealm
         let realm = try! Realm()
         //Traigo las tarjeta debe venir solo una
-        let tarjetas = realm.objects(Tarjeta).filter("id = 1")
+        let tarjetas = realm.objects(Tarjeta.self).filter("id = 1")
         if tarjetas.count != 0{
             try! realm.write {
                 realm.deleteAll()
@@ -97,7 +97,7 @@ class TarjetaSUBEService{
         var retorno:String = ""
         if miTarjeta.movimientos.count > 0
         {
-            if let ultimoMov = realm.objects(Movimiento).last
+            if let ultimoMov = realm.objects(Movimiento.self).last
             {
                 let fechaUltimoMov: Date = ultimoMov.fechaMovimiento
                 print(retorno)

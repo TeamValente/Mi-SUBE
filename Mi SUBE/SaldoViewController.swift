@@ -185,12 +185,12 @@ class SaldoViewController: UIViewController {
         miTarjeta = managerModelo.getTarjeta()
         
         if miTarjeta.saldo < 0 {
-            UIView.animateWithDuration(0.5, animations: {
-                self.cardView.backgroundColor = UIColor(rgba: "#E8573C")
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.backgroundColor = UIColor("#E8573C")
                 }, completion: nil)
         } else {
-            UIView.animateWithDuration(0.5, animations: {
-                self.cardView.backgroundColor = UIColor(rgba: "#3C83E9")
+            UIView.animate(withDuration: 0.5, animations: {
+                self.cardView.backgroundColor = UIColor("#3C83E9")
                 }, completion: nil)
         }
         labelSaldo.text = String(format: "%.2f", miTarjeta.saldo)

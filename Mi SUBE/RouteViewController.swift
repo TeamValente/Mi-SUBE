@@ -66,7 +66,7 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         if (overlay is MKPolyline) {
-            polylineRenderer.strokeColor = UIColor(rgba: "#3C83E9").colorWithAlphaComponent(0.75)
+            polylineRenderer.strokeColor = UIColor("#3C83E9").withAlphaComponent(0.75)
             polylineRenderer.lineWidth = 4
         }
         return polylineRenderer

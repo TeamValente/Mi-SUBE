@@ -72,15 +72,15 @@ class MovimientosTableViewController: UITableViewController {
         
         cell.labelFecha.text = formatter.string(from: mov.fechaMovimiento)
         if mov.valorMovimiento > 0{
-            cell.labelMonto.textColor = UIColor(rgba: "#4CAF50")
+            cell.labelMonto.textColor = UIColor("#4CAF50")
             cell.imgOperation.image = UIImage(named: "ic_local_atm")
             cell.imgOperation.image = cell.imgOperation.image?.withRenderingMode(.alwaysTemplate)
-            cell.imgOperation.tintColor = UIColor(rgba: "#4CAF50")
+            cell.imgOperation.tintColor = UIColor("#4CAF50")
         } else {
-            cell.labelMonto.textColor = UIColor(rgba: "#E8573C")
+            cell.labelMonto.textColor = UIColor("#E8573C")
             cell.imgOperation.image = UIImage(named: "ic_directions_bus")
             cell.imgOperation.image = cell.imgOperation.image?.withRenderingMode(.alwaysTemplate)
-            cell.imgOperation.tintColor = UIColor(rgba: "#E8573C")
+            cell.imgOperation.tintColor = UIColor("#E8573C")
         }
         
         cell.labelMonto.text = String(format: "%.2f",mov.valorMovimiento)
