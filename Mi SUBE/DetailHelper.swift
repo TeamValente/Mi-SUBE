@@ -8,45 +8,36 @@
 
 import Foundation
 
-class DetailHelper{
-
+class DetailHelper {
 
     fileprivate let datos: PuntoCarga
     
-    init(datos: PuntoCarga){
-    
+    init(datos: PuntoCarga) {
         self.datos = datos
-    
     }
     
-    func getDireccion()->String
-    {
+    func getDireccion() -> String {
         return datos.address
-    
     }
     
-    func getDistancia(_ miUbicacion: MiUbicacion)->String
-    {
+    func getDistancia(_ miUbicacion: MiUbicacion) -> String {
         let distancia = miUbicacion.getDistanciaAPuntoCarga(datos)
         return "\(distancia.valorString) \(distancia.unidad)"
     }
     
-    func getHorario()->String
-    {
-        if datos.estaAbierto() == EstadoNegocio.abierto
-        {
+    func getHorario() -> String {
+        if datos.estaAbierto() == EstadoNegocio.abierto {
             return  "\(datos.getHorarioDeAtencion()), Abierto ahora"
-        } else if datos.estaAbierto() == EstadoNegocio.cerrado
-        {
+        
+        } else if datos.estaAbierto() == EstadoNegocio.cerrado {
             return "\(datos.getHorarioDeAtencion()), Cerrado"
-        }else
-        {
+        
+        } else {
             return "Sin horario cargado"
         }
     }
     
-    func getVendeSube()->String
-    {
+    func getVendeSube() -> String {
         if datos.vendeSube() {
             return "Si"
         } else {
@@ -55,22 +46,18 @@ class DetailHelper{
     
     }
     
-    func getCobraCarga()->String{
-        if datos.cobraPorCargar(){
+    func getCobraCarga() -> String {
+        if datos.cobraPorCargar() {
             return "Si"
         } else {
             return "No"
-            
         }
     
     }
     
-    func getTipoPunto()->String{
-    
+    func getTipoPunto() -> String {
         return datos.type
     
     }
-
-
 
 }

@@ -9,17 +9,32 @@
 import UIKit
 import Fabric
 import Crashlytics
+import Mofiler
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MofilerDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         Fabric.with([Crashlytics.self])
-        // Override point for customization after application launch.
+        
+        /**
+         Mofiler SDK integration
+         */
+        let mof = Mofiler.sharedInstance
+        
+        mof.initializeWith(appKey: "1076019287", appName: "MiSube", identity: ["username" : "marianomolina"])
+        mof.delegate = self
+        mof.url = "mofiler.com"
+        mof.addIdentity(identity: ["name":"mariano molina"])
+        mof.addIdentity(identity: ["email":"molina.mariano23@gmail.com"])
+        mof.useLocation = false
+        mof.useVerboseContext = true
+        
+        
         return true
     }
 
@@ -45,6 +60,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
+    // # MARK: - MofilerDelegate
+    public func responseValue(key: String, identityKey: String, identityValue: String, value: [String : Any]) {
+        print("MofilerDelegate: \(value)")
+    }
+    
+    func errorOcurred(error: String, userInfo: [String : String]) {
+        print("MofilerDelegate: \(error)")
+    }
 }
 
