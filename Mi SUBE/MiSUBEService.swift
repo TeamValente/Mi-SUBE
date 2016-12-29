@@ -30,23 +30,23 @@ class MiSUBEService {
         ] as [String : Any]
         
 
-        Alamofire.request(.POST, self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints"), parameters: parameters)
+        Alamofire.request(self.generarURLValida("http://dondecargolasube.com.ar/core/?query=getNearPoints"), method: .post, parameters: parameters)
          .validate()
          .responseJSON { response in
              switch response.result {
-                case .Success:
+                case .success:
                     print("Validation Successful")
                 
                     if let value = response.result.value {
                         let json = JSON(value)
-                        dispatch_async(dispatch_get_main_queue()){
+                        DispatchQueue.main.async {
                             callback(self.jsonParser(json))
                         }
                     }
                 
-                case .Failure(let error):
+                case .failure(let error):
                     print(error)
-                    dispatch_async(dispatch_get_main_queue()){
+                    DispatchQueue.main.async {
                         callback(nil)
                     }
              }
