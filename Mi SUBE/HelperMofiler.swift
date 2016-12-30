@@ -18,7 +18,7 @@ public class HelperMofiler {
         
     }
     
-    func setValue(newValue:String, valueDictionary: [String: Any], chekKey:String) {
+    func setValue(newValue: String, valueDictionary: [String: Any], chekKey: String) {
         let mof = Mofiler.sharedInstance
         mof.injectValue(newValue: [newValue: valueDictionary.description])
         mof.flushDataToMofiler()
