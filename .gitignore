@@ -195,6 +195,7 @@ xcuserdata/
 #!Podfile.lock
 
 Pods/
+Carthage/
 
 #
 # RUBY:

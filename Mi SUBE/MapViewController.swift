@@ -43,16 +43,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     
     @IBOutlet weak var switchCerrado: UISwitch!
-    
     @IBOutlet weak var switchCobraCarga: UISwitch!
-    
     @IBOutlet weak var switchVendeSUBE: UISwitch!
+    
     
     //MARK: Variables de la clase
     var manager: CLLocationManager!
     @IBOutlet weak var switchHorarioSinIndicar: UISwitch!
     var miUbicacion: MiUbicacion!
     var miFiltro: Filtro!
+    
+    //MARK: Mofiler Helper
+    let hMofiler = HelperMofiler(debugFlag: false)
     
     
     //MARK: UIViewController
@@ -122,6 +124,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                     routeController.puntoDestino = cpa.datos
                     routeController.miUbicacion = miUbicacion!
                     Answers.logCustomEvent(withName: "Open Route View", customAttributes: ["destinationPoin": cpa.datos.address])
+                    
+                    // mofiler track event
+                    let valueDictionary: [String:Any] = ["destinationPoin": cpa.datos.address]
+                    self.hMofiler.setValue(newValue: "openRouteView", valueDictionary: valueDictionary, chekKey: "destinationPoin")
                 }
             }
         }
@@ -150,6 +156,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if (self.mapa.annotations.count < 2 || (self.miUbicacion?.coordinate.latitude != location.coordinate.latitude && self.miUbicacion?.coordinate.longitude != location.coordinate.longitude) ){
                 self.miUbicacion = MiUbicacion(lat: location.coordinate.latitude,lon: location.coordinate.longitude)
                 obtenerPuntosDeCargas()
+                
+                // mofiler track event
+                let valueDictionary: [String:Any] = ["userLat": location.coordinate.latitude, "userLon": location.coordinate.longitude]
+                self.hMofiler.setValue(newValue: "userLocation", valueDictionary: valueDictionary, chekKey: "userLat")
             }
         }
     }
@@ -192,8 +202,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.selectedPointCostCharge.text = factoryDetalles.getCobraCarga()
         self.selectedPointType.text = factoryDetalles.getTipoPunto()
         Answers.logCustomEvent(withName: "Point Detail", customAttributes: ["Address": cpa.datos.address])
-
         
+        // mofiler track event
+        let valueDictionary: [String:Any] = ["pointAdress": cpa.datos.address]
+        self.hMofiler.setValue(newValue: "pointDetail", valueDictionary: valueDictionary, chekKey: "pointAdress")
     }
     
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Mofiler
 
 class CardConfigViewController: UIViewController {
     
@@ -28,7 +29,13 @@ class CardConfigViewController: UIViewController {
             // remove all data from the DB
             let modelManager = TarjetaSUBEService()
             modelManager.removeTarjeta()
+
+            // injectData
+            let mof = Mofiler.sharedInstance
+            mof.injectValue(newValue: ["userRemoveCard":"true"])
+            mof.flushDataToMofiler()
         }))
+        
         // add cancel Action
         alertMessage.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         

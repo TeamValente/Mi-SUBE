@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		7C04AE5D1CF7BA5F00315742 /* MiSUBEService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C04AE5C1CF7BA5F00315742 /* MiSUBEService.swift */; };
 		7C0930951C40AD7A005AB04B /* UIView_Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0930941C40AD7A005AB04B /* UIView_Borders.swift */; };
+		7C0D90C81E15D4C500CE3775 /* Mofiler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0D90C71E15D4C500CE3775 /* Mofiler.framework */; };
+		7C0D90C91E15D4C500CE3775 /* Mofiler.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C0D90C71E15D4C500CE3775 /* Mofiler.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7C0D90CD1E15D50A00CE3775 /* Mofiler.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7C0D90CC1E15D50A00CE3775 /* Mofiler.framework.dSYM */; };
+		7C0D90CF1E15D96900CE3775 /* HelperMofiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0D90CE1E15D96900CE3775 /* HelperMofiler.swift */; };
 		7C0F515B1C33934400EFBC22 /* OssViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F515A1C33934400EFBC22 /* OssViewController.swift */; };
 		7C1FCEA61C1735A4003AAFB4 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */; };
 		7C9DB00E1C32363F003FC20F /* CardConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */; };
@@ -43,12 +47,39 @@
 		FCB703CD1C45DCD6003F1072 /* MovimientoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB703CC1C45DCD6003F1072 /* MovimientoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7C0D90CA1E15D4C500CE3775 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7C0D90C91E15D4C500CE3775 /* Mofiler.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C0D90CB1E15D4E800CE3775 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				7C0D90CD1E15D50A00CE3775 /* Mofiler.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0300221B0D2217B5B0F0C565 /* Pods-Mi SUBE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.debug.xcconfig"; sourceTree = "<group>"; };
 		2A09F4F963C511FE65FD4652 /* Pods-Mi SUBE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mi SUBE.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mi SUBE/Pods-Mi SUBE.release.xcconfig"; sourceTree = "<group>"; };
 		4F5F5A1E1FF6DB055E23A461 /* Pods_Mi_SUBE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mi_SUBE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C04AE5C1CF7BA5F00315742 /* MiSUBEService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiSUBEService.swift; sourceTree = "<group>"; };
 		7C0930941C40AD7A005AB04B /* UIView_Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Borders.swift; sourceTree = "<group>"; };
+		7C0D90C71E15D4C500CE3775 /* Mofiler.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mofiler.framework; path = Carthage/Build/iOS/Mofiler.framework; sourceTree = "<group>"; };
+		7C0D90CC1E15D50A00CE3775 /* Mofiler.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Mofiler.framework.dSYM; path = Carthage/Build/iOS/Mofiler.framework.dSYM; sourceTree = "<group>"; };
+		7C0D90CE1E15D96900CE3775 /* HelperMofiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMofiler.swift; sourceTree = "<group>"; };
 		7C0F515A1C33934400EFBC22 /* OssViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OssViewController.swift; sourceTree = "<group>"; };
 		7C1FCEA51C1735A4003AAFB4 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7C9DB00D1C32363F003FC20F /* CardConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardConfigViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +123,7 @@
 				ECC647CD1C12832F00896171 /* MapKit.framework in Frameworks */,
 				ECC647CB1C12832A00896171 /* CoreLocation.framework in Frameworks */,
 				99113BC0CC102C1C558558F4 /* Pods_Mi_SUBE.framework in Frameworks */,
+				7C0D90C81E15D4C500CE3775 /* Mofiler.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +169,8 @@
 		ECC647AA1C12822600896171 = {
 			isa = PBXGroup;
 			children = (
+				7C0D90CC1E15D50A00CE3775 /* Mofiler.framework.dSYM */,
+				7C0D90C71E15D4C500CE3775 /* Mofiler.framework */,
 				ECC647B51C12822600896171 /* Mi SUBE */,
 				ECC647B41C12822600896171 /* Products */,
 				A966553260A75B5BA6B949AE /* Pods */,
@@ -225,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				ECABF5861C1E36CA00C8B25C /* DetailHelper.swift */,
+				7C0D90CE1E15D96900CE3775 /* HelperMofiler.swift */,
 				7C0930941C40AD7A005AB04B /* UIView_Borders.swift */,
 			);
 			name = Helper;
@@ -253,6 +288,8 @@
 				0550BFEDD3A009271EC141FA /* [CP] Copy Pods Resources */,
 				7C04AE351CF263B500315742 /* ShellScript */,
 				104DF29B9339A5AA8802B64D /* Embed Pods Frameworks */,
+				7C0D90CA1E15D4C500CE3775 /* Embed Frameworks */,
+				7C0D90CB1E15D4E800CE3775 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -394,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C0D90CF1E15D96900CE3775 /* HelperMofiler.swift in Sources */,
 				7C0930951C40AD7A005AB04B /* UIView_Borders.swift in Sources */,
 				EC946F081C18FD4200982CDA /* MapaService.swift in Sources */,
 				ECC647D41C12B39100896171 /* Extensions.swift in Sources */,
@@ -541,8 +579,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,8 +602,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Mi SUBE/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "hernan.coppola.Mi-SUBE";
 				PRODUCT_NAME = "$(TARGET_NAME)";

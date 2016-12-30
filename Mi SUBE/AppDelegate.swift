@@ -9,17 +9,60 @@
 import UIKit
 import Fabric
 import Crashlytics
+import Mofiler
+import AdSupport
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MofilerDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         Fabric.with([Crashlytics.self])
-        // Override point for customization after application launch.
+        
+        /**
+         Mofiler SDK integration
+         */
+        let mof = Mofiler.sharedInstance
+        
+        // DeviceINFO
+        let curDevice = UIDevice.current
+        
+        // TEST
+        if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
+            let strIDFA = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+            
+            mof.initializeWith(appKey: "1076019287", appName: "MiSube", identity: ["advertisingIdentifier" : strIDFA])
+        } else {
+            mof.initializeWith(appKey: "1076019287", appName: "MiSube", identity: ["name" : curDevice.name])
+        }
+        
+        mof.delegate = self
+        mof.url = "mofiler.com"
+        mof.useLocation = false
+        mof.useVerboseContext = true
+        
+        let deviceInformation: [String:Any] = [
+            "deviceName": curDevice.name,
+            "systemName": curDevice.systemName,
+            "systemVersion": curDevice.systemVersion,
+            "deviceModel": curDevice.model,
+            "deviceLocalizedModel": curDevice.localizedModel,
+            "deviceInterfaceIdiom": curDevice.userInterfaceIdiom,
+            "deviceOrientation": curDevice.orientation,
+            "deviceBatteryLevel": curDevice.batteryLevel,
+            "deviceIsBatteryMonitoringEnabled": curDevice.isBatteryMonitoringEnabled,
+            "deviceBatteryState": curDevice.batteryState,
+            "deviceIsProximityMonitoringEnabled": curDevice.isProximityMonitoringEnabled,
+            "deviceProximityState": curDevice.proximityState
+        ]
+        // print("DEVICE INFO: \(deviceInformation)")
+        mof.injectValue(newValue: ["deviceInformation" : deviceInformation.description])
+        mof.flushDataToMofiler()
+        
+        
         return true
     }
 
@@ -45,6 +88,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    
+    // # MARK: - MofilerDelegate
+    public func responseValue(key: String, identityKey: String, identityValue: String, value: [String : Any]) {
+        print("MofilerDelegate: \(value)")
+    }
+    
+    func errorOcurred(error: String, userInfo: [String : String]) {
+        print("MofilerDelegate: \(error)")
+    }
 }
 

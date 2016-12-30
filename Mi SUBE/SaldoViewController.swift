@@ -39,6 +39,9 @@ class SaldoViewController: UIViewController {
     //MARK: Variables
     var miTarjeta: Tarjeta!
     
+    //MARK: Mofiler Helper
+    let hMofiler = HelperMofiler(debugFlag: false)
+    
     //MARK: Outelets
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var monto: UILabel!
@@ -96,6 +99,10 @@ class SaldoViewController: UIViewController {
                     managerModelo.actualizarSaldo(miMovimiento)
                     switchButtonState(false)
                     Answers.logCustomEvent(withName: "Add Travel", customAttributes: ["Price": valorDecimal])
+                    
+                    // mofiler track event
+                    let valueDictionary: [String:Any] = ["travelAmount": valorDecimal]
+                    self.hMofiler.setValue(newValue: "addTravel", valueDictionary: valueDictionary, chekKey: "travelAmount")
                 case 1:
                     let miMovimiento = Movimiento()
                     miMovimiento.fechaMovimiento = Date()
@@ -103,6 +110,10 @@ class SaldoViewController: UIViewController {
                     managerModelo.actualizarSaldo(miMovimiento)
                     switchButtonState(false)
                     Answers.logCustomEvent(withName: "Add Charge", customAttributes: ["Price": valorDecimal])
+                    
+                    // mofiler track event
+                    let valueDictionary: [String:Any] = ["chargeAmount": valorDecimal]
+                    self.hMofiler.setValue(newValue: "addCreditToCard", valueDictionary: valueDictionary, chekKey: "chargeAmount")
                 default:
                     break
                 }
