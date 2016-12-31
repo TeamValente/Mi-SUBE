@@ -32,19 +32,21 @@ class MapaService {
         request.transportType = .walking
         // 4
         let directions = MKDirections(request: request)
-        directions.calculate (completionHandler: {
-            (response: MKDirectionsResponse?, error: NSError?) in
-            if let routeResponse = response?.routes {
-                let quickestRouteForSegment: MKRoute =
-                routeResponse.sorted(by: {$0.expectedTravelTime <
-                    $1.expectedTravelTime})[0]
-                self.dibujarRuta(quickestRouteForSegment,mapa: mapa)
-                layoutProgress.isHidden = true
-                
-            } else if let _ = error {
-                
+        directions.calculate(completionHandler: {(response, error) in
+            
+            if error != nil {
+                print("Error getting directions")
+            } else {
+                if let routeResponse = response?.routes
+                {
+                    let quickestRouteForSegment: MKRoute =
+                        routeResponse.sorted(by: {$0.expectedTravelTime <
+                            $1.expectedTravelTime})[0]
+                    self.dibujarRuta(quickestRouteForSegment,mapa: mapa)
+                    layoutProgress.isHidden = true
+                }
             }
-        } as! MKDirectionsHandler)
+        })
     }
     
     fileprivate func dibujarRuta(_ route: MKRoute, mapa: MKMapView) {
