@@ -34,35 +34,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MofilerDelegate {
         if ASIdentifierManager.shared().isAdvertisingTrackingEnabled {
             let strIDFA = ASIdentifierManager.shared().advertisingIdentifier.uuidString
             
-            mof.initializeWith(appKey: "1076019287", appName: "MiSube", identity: ["advertisingIdentifier" : strIDFA])
-        } else {
-            mof.initializeWith(appKey: "1076019287", appName: "MiSube", identity: ["name" : curDevice.name])
+            mof.initializeWith(appKey: "1076019287", appName: "MiSube")
+            mof.delegate = self
+            mof.url = "mofiler.com"
+            mof.addIdentity(identity: ["advertisingIdentifier" : strIDFA])
+            mof.useLocation = false
+            mof.useVerboseContext = true
+            
+            let deviceInformation: [String:Any] = [
+                "deviceName": curDevice.name,
+                "systemName": curDevice.systemName,
+                "systemVersion": curDevice.systemVersion,
+                "deviceModel": curDevice.model,
+                "deviceLocalizedModel": curDevice.localizedModel,
+                "deviceInterfaceIdiom": curDevice.userInterfaceIdiom,
+                "deviceOrientation": curDevice.orientation,
+                "deviceBatteryLevel": curDevice.batteryLevel,
+                "deviceIsBatteryMonitoringEnabled": curDevice.isBatteryMonitoringEnabled,
+                "deviceBatteryState": curDevice.batteryState,
+                "deviceIsProximityMonitoringEnabled": curDevice.isProximityMonitoringEnabled,
+                "deviceProximityState": curDevice.proximityState
+            ]
+            // print("DEVICE INFO: \(deviceInformation)")
+            mof.injectValue(newValue: ["deviceInformation" : deviceInformation.description])
+            mof.flushDataToMofiler()
+        
         }
-        
-        mof.delegate = self
-        mof.url = "mofiler.com"
-        mof.useLocation = false
-        mof.useVerboseContext = true
-        
-        let deviceInformation: [String:Any] = [
-            "deviceName": curDevice.name,
-            "systemName": curDevice.systemName,
-            "systemVersion": curDevice.systemVersion,
-            "deviceModel": curDevice.model,
-            "deviceLocalizedModel": curDevice.localizedModel,
-            "deviceInterfaceIdiom": curDevice.userInterfaceIdiom,
-            "deviceOrientation": curDevice.orientation,
-            "deviceBatteryLevel": curDevice.batteryLevel,
-            "deviceIsBatteryMonitoringEnabled": curDevice.isBatteryMonitoringEnabled,
-            "deviceBatteryState": curDevice.batteryState,
-            "deviceIsProximityMonitoringEnabled": curDevice.isProximityMonitoringEnabled,
-            "deviceProximityState": curDevice.proximityState
-        ]
-        // print("DEVICE INFO: \(deviceInformation)")
-        mof.injectValue(newValue: ["deviceInformation" : deviceInformation.description])
-        mof.flushDataToMofiler()
-        
-        
+    
         return true
     }
 
