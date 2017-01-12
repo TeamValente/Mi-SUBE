@@ -41,21 +41,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MofilerDelegate {
             mof.useLocation = false
             mof.useVerboseContext = true
             
+            // battery status
+            curDevice.isBatteryMonitoringEnabled = true
+            
+            let batteryLevel = curDevice.batteryLevel
+            
+            let batteryStateString: String
+            
+            let status = UIDevice.current.batteryState
+            switch status {
+            case .full:
+                batteryStateString = "Full"
+            case .unplugged:
+                batteryStateString = "Unplugged"
+            case .charging:
+                batteryStateString = "Charging"
+            case .unknown:
+                batteryStateString = "Unknown"
+            }
+            
+            
             let deviceInformation: [String:Any] = [
                 "deviceName": curDevice.name,
                 "systemName": curDevice.systemName,
                 "systemVersion": curDevice.systemVersion,
                 "deviceModel": curDevice.model,
                 "deviceLocalizedModel": curDevice.localizedModel,
-                "deviceInterfaceIdiom": curDevice.userInterfaceIdiom,
-                "deviceOrientation": curDevice.orientation,
-                "deviceBatteryLevel": curDevice.batteryLevel,
-                "deviceIsBatteryMonitoringEnabled": curDevice.isBatteryMonitoringEnabled,
-                "deviceBatteryState": curDevice.batteryState,
+                "deviceOrientation": curDevice.orientation.isLandscape ? "landscape" : "portrait",
+                "deviceBatteryLevel": "\(batteryLevel * 100)%",
+                "deviceBatteryState": batteryStateString,
                 "deviceIsProximityMonitoringEnabled": curDevice.isProximityMonitoringEnabled,
                 "deviceProximityState": curDevice.proximityState
             ]
-            // print("DEVICE INFO: \(deviceInformation)")
+            
+            //print("DEVICE INFO: \(deviceInformation)")
+            
             mof.injectValue(newValue: ["deviceInformation" : deviceInformation.description])
             mof.flushDataToMofiler()
         
